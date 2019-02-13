@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8F2D05F-D629-4682-92C1-7E463C027BE9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WCMS_ENTITY</RootNamespace>
+    <AssemblyName>WCMS_ENTITY</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.18.3.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgingBatch.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgingBatchInfo.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblyAttendance.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BomList.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommonObjects\LoginStatus.cs" />
+    <Compile Include="CustomModelEntity\AgBatchModel.cs" />
+    <Compile Include="CustomModelEntity\AgingChargingModel.cs" />
+    <Compile Include="CustomModelEntity\AssemblyLineInfo.cs" />
+    <Compile Include="CustomModelEntity\AssemblyLineproductionStatusModel.cs" />
+    <Compile Include="CustomModelEntity\AgingQcStationModel.cs" />
+    <Compile Include="CustomModelEntity\CkdModel.cs" />
+    <Compile Include="CustomModelEntity\GlueStationReport.cs" />
+    <Compile Include="CustomModelEntity\HourlyTargetModel.cs" />
+    <Compile Include="CustomModelEntity\ImeiModelUpload.cs" />
+    <Compile Include="CustomModelEntity\LogisticModel.cs" />
+    <Compile Include="CustomModelEntity\MasterBoxModel.cs" />
+    <Compile Include="CustomModelEntity\OQcReportModel.cs" />
+    <Compile Include="CustomModelEntity\OracleUploadEntity.cs" />
+    <Compile Include="CustomModelEntity\PackagingOQCModel.cs" />
+    <Compile Include="CustomModelEntity\PackingBoxModel.cs" />
+    <Compile Include="CustomModelEntity\ProductionOQC.cs" />
+    <Compile Include="CustomModelEntity\ProductionQcFaultScenerioModel.cs" />
+    <Compile Include="CustomModelEntity\ProjectBomMode.cs" />
+    <Compile Include="CustomModelEntity\RepairStationInfoModel.cs" />
+    <Compile Include="CustomModelEntity\ReworkList.cs" />
+    <Compile Include="CustomModelEntity\TpLcdReport.cs" />
+    <Compile Include="EmpAttendences.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>EmployeeEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInfo.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_Battery.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_CB.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_Charger.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_GB.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_GBW.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_IMEIC.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_IMEIC2.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_IMEIP.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_IMEIR.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_IMEIW.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_Pallet.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_CheckItems_Relation.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Projects.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_e.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_E8i.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_E8i_Coffee.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_E8s.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_EF6.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_EF6_100.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_EF6_300.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_EF7.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_F7s.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_F7_S.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_F8.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_GF7.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_GM3.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_H7s.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_HM4i.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_L25.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_L_6.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_MH17.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_ML13.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_MM17.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_MM18.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_NF3.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_NF_3.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_Q37.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_Q39.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_R5.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_RX6.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_S6_Dual.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_Sample.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Project_XXX.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_Rework.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkBattery.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkCarton.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkCartonWeight.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkCharger.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkCheckIMEIset.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkGifBox.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkGifboxWeight.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkHandset.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkIMEI.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkIMEIPrint.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkOutPallet.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkPallet.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkReadset.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_ReworkRelationCheck.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_UserManagement.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_WOManagement.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Issues.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyLogisticsTest_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OQcBatchInfo.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionMaster.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectBomList.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectMaster.cs">
+      <DependentUpon>WCMSCellPhoneProjectEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomModelEntity\DailyProductionModel.cs" />
+    <Compile Include="SPAssemblylineProductionStatus_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpDailyProductionFault_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetProductCount_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGlueStationReport_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpHourlyTargetEfficiency_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpLineWiseHourlyTargetEfficiency_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPLineWiseReport_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpLineWiseStationsHourlyStatus_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPOQcStatus_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpPackagingLineCount1_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpPackagingLineCount_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpProductionLineCount_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpTpLcdReport_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpTp_LcdReport_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAgingMaster.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAssemblyLineSetup.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAssemblyLineSetupDetails.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBarCodeInv.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBatteryComponentInfo.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBtteryScanner.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblChargerMaster.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCkdIssues.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCkdMmiMaster.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCkdRework.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCkdRfMaster.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCkdSmtMaster.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCkdSoftwareLoadMaster.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblColors.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblComponentRequisition.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDailyIssuedComponents.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDailyPacking.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDeletdPackagingBatchData.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGlueMaster.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblIMEIRecord.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLcdGlueIssuesList.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLcdGlueRework.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLcdGlueWorkingModels.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLineStatus.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLogin.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLogistics.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLogisticsSentItems.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMainMenu.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOqcCheckedItems.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPackagingBatch.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProductionLine.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRepairComponents.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRepairStatus.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRework.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRoles.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblScrew.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSolderingOthers.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSubMenu.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTimeRange.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTpLcdMaster.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblWarehouse.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestIMEIUploadForUpdate.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Testo_Result.cs">
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsun.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsun.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsun.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsun.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vsun.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vsun.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="WCMSCellPhoneProjectEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WCMSCellPhoneProjectEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WCMSCellPhoneProjectEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WCMSCellPhoneProjectEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WCMSCellPhoneProjectEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WCMSCellPhoneProjectEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="WCMSEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WCMSEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WCMSEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WCMSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WCMSEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WCMSEntities.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="EmployeeEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmployeeEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EmployeeEntity.edmx.diagram">
+      <DependentUpon>EmployeeEntity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="WCMSEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WCMSEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="WCMSCellPhoneProjectEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WCMSCellPhoneProjectEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="vsun.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>vsun.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="vsun.edmx.diagram">
+      <DependentUpon>vsun.edmx</DependentUpon>
+    </None>
+    <None Include="WCMSCellPhoneProjectEntity.edmx.diagram">
+      <DependentUpon>WCMSCellPhoneProjectEntity.edmx</DependentUpon>
+    </None>
+    <None Include="WCMSEntities.edmx.diagram">
+      <DependentUpon>WCMSEntities.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EmployeeEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmployeeEntity.edmx</DependentUpon>
+      <LastGenOutput>EmployeeEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EmployeeEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmployeeEntity.edmx</DependentUpon>
+      <LastGenOutput>EmployeeEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="vsun.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vsun.edmx</DependentUpon>
+      <LastGenOutput>vsun.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="vsun.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vsun.edmx</DependentUpon>
+      <LastGenOutput>vsun.cs</LastGenOutput>
+    </Content>
+    <Content Include="WCMSCellPhoneProjectEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WCMSCellPhoneProjectEntity.edmx</DependentUpon>
+      <LastGenOutput>WCMSCellPhoneProjectEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="WCMSCellPhoneProjectEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WCMSCellPhoneProjectEntity.edmx</DependentUpon>
+      <LastGenOutput>WCMSCellPhoneProjectEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="WCMSEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WCMSEntities.edmx</DependentUpon>
+      <LastGenOutput>WCMSEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="WCMSEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WCMSEntities.edmx</DependentUpon>
+      <LastGenOutput>WCMSEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Employee Entity\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

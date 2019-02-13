@@ -1,0 +1,259 @@
+﻿
+@{
+    ViewBag.Title = "GraphicialReports";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+</style>
+<div class="breadcrumb-holder container-fluid" style=" background-color: #C46154; ">
+    <ul class="breadcrumb" style="padding: 8px; ">
+        <li class="breadcrumb-item"><a href="">Charts</a></li>
+        <li class="breadcrumb-item active">hourly Production Graph </li>
+    </ul>
+</div>
+<section class="forms">
+    <div class="container-fluid">
+
+    </div>
+
+
+
+
+    <div class="col-lg-12" >
+        <div class="bar-chart-example card">
+            <div class="card-close">
+                <div class="dropdown">
+                    @*<button type="button" id="closeCard6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                    <div aria-labelledby="closeCard6" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>*@
+                </div>
+            </div>
+            <div class="card-header d-flex align-items-center">
+                <div class="form-group">
+                    <label class="col-sm-12 control-label"
+                           for="inputEmail3">Project Name</label>
+                    <div class="col-sm-12">
+                        <select id="txtProjectName" style="width: 100px;" data-placeholder="Choose a Project" class="chosen-select form-control form-control-success" tabindex="1"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-12 control-label"
+                           for="inputEmail3">Date</label>
+                    <div class="col-sm-12">
+                        <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-12 control-label"
+                           for="inputEmail3">&nbsp;</label>
+                    <div class="col-sm-12">
+                        <input type="button" id="btnSearch" value="Search" class="btn btn-success" onclick="GetPassedRate();">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" id="card-body">
+                <canvas id="barChartExample"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <input type="hidden" name="hdcomponentId" id="hdcomponentId" />
+    <input type="hidden" name="hdprojectId" id="hdprojectId" />
+    <input type="hidden" name="hdprojectName" id="hdprojectName" />
+</section>
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/chart.js/Chart.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+    function LoadAllProjects() {
+        var url = "  @Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtProjectName");
+            $("#txtProjectName").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "200px", height: "10px" });
+
+
+        });
+    }
+
+
+
+
+    $(function () {
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+    });
+    var ctx1 = $("canvas").get(0).getContext("2d");
+    var gradient1 = ctx1.createLinearGradient(150, 0, 150, 300);
+    gradient1.addColorStop(0, 'rgba(133, 180, 242, 0.91)');
+    gradient1.addColorStop(1, 'rgba(255, 119, 119, 0.94)');
+
+    var gradient2 = ctx1.createLinearGradient(146.000, 0.000, 154.000, 300.000);
+    gradient2.addColorStop(0, 'rgba(104, 179, 112, 0.85)');
+    gradient2.addColorStop(1, 'rgba(76, 162, 205, 0.85)');
+
+
+
+
+    var rows = [];
+
+
+
+
+
+    var d = new Date();
+    $(document).ready(function () {
+
+        //GetPassedRate();
+        LoadAllProjects();
+        //project Name Auto Complete
+
+
+
+    });
+
+
+
+
+    function GetPassedRate() {
+
+        debugger;
+
+
+        var gridate = $("#txtReqDate").val().split('-');
+        var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+
+        var colors = ['#fed6e3', '#37ecba', '#d558c8', '#64b3f4', '#12fff7', '#F9FEA5', '#50A7C2', '#F578DC', '#F9FEA5', '#00ecbc', '#80d0c7'];
+
+
+        $.ajax({
+            url: "@Url.Action("GetPassedRate", "Report")",
+            type: 'POST',
+            data: JSON.stringify({ projectId: $('#txtProjectName').val(), date: convertDate }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+                console.log(result);
+
+
+
+                var barchartexmple = $('#barChartExample');
+                
+                var barChartExample = new Chart(barchartexmple, {
+                    
+                    type: 'bar',
+                    options: {
+                        scales: {
+                            xAxes: [{
+                                display: true,
+                                gridLines: {
+                                    color: '#eee'
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                gridLines: {
+                                    color: '#eee'
+                                }
+                            }]
+                        },
+                    },
+                    data: {
+
+                        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"],
+                        datasets:
+                            []
+
+                    }
+
+
+                });
+
+                $.each(result, function (index, itemData) {
+
+                    barChartExample.data.datasets.push({
+                        label:itemData.label,
+                        fill: true,
+                        backgroundColor: colors[index],
+                        borderColor: gradient1,
+                        pointBorderColor: gradient1,
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 2,
+                        pointHoverRadius: 2,
+                        pointHoverBackgroundColor: gradient2,
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        data:itemData.data,
+                        pointHitRadius: 10,
+                        
+                    });
+                   
+                    barChartExample.update();
+                });
+                barChartExample.update();
+                
+               
+                return true;
+                //location.reload();
+            } ,
+
+
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+
+                //return false;
+            }
+        });
+
+    }
+    
+
+
+
+    //setTimeout(function () {
+    //    GetPassedRate();
+    //}, 1000);
+
+
+
+   
+
+</script>

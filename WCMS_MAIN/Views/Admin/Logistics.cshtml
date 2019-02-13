@@ -1,0 +1,373 @@
+﻿@{
+    ViewBag.Title = "Logistics";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<style>
+    #tblComponent tr td {
+        padding: 0px;
+    }
+
+    #tblComponent > tbody > tr > td {
+        height: 10px;
+        font-size: 15px;
+        padding: 0px;
+        border-top: 0px;
+    }
+
+    #tblComponent td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    #tblComponent th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+<div class="col-lg-1">
+    &nbsp;
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            &nbsp;
+        </div>
+        <div class="col-lg-4">
+            <div class="card" style="height: 150px; border: 1px solid #dcdcdc; font-weight: normal; font-style: normal; ">
+
+                <div class="card-header d-flex " style="background-color: #a52a2a; font-weight: normal; font-style: normal; color: white; text-align: center; ">
+                    <h3 class="h4" style="text-align: center"> Total  Received Items</h3>
+                </div>
+                <div class="card-body" style="text-align: center">
+                    <span id="total" style="color: #a52a2a;font-size: 45px;text-align: center;margin-bottom: 5px;"></span>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+        <div class="col-lg-4">
+            &nbsp;
+        </div>
+
+
+
+
+
+
+        <div class="col-lg-5">
+            <div class="card" style="height: 300px; border: 1px solid #431D0B; font-weight: normal; font-style: normal; ">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center" style="background-color: #431D0B; font-weight: normal; font-style: normal; color: white; text-align: center; ">
+                    <h3 class="h4">Search Product to receive</h3>
+                </div>
+                <div class="card-body">
+
+                    <div class="form-horizontal" style="margin-top: 30px;">
+                        <div class="form-group row" id="divSingleCode">
+                            <label class="col-sm-4 form-control-label">Scan Box Code</label>
+                            <div class="col-sm-8" id="">
+
+                                <input id="txtMobileCode" type="text" placeholder="Scan Code" required="" class="form-control form-control-success">
+                            </div>
+
+
+                        </div>
+                        <div class="form-group row" id="divSingleCode">
+                            <div class="col-sm-8 offset-sm-4" id="">
+
+                                <button class="btn btn-primary" id="btnSaveEmployeeLine" onclick="location.reload();"> Clear All</button>
+                            </div>
+
+
+
+                        </div>
+
+                        @*<div class="form-group row" id="divCheckBox" style="display: none">
+                                <label class="col-sm-4 form-control-label">&nbsp;</label>
+                                <div class="i-checks col-sm-8">
+                                    <input id="chkPassed" type="checkbox" value="y" class="checkbox-template">
+                                    <label for="chkPassed">All Received</label>
+
+                                </div>
+
+
+                            </div>*@
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Horizontal Form-->
+
+
+
+
+        </div>
+
+        <div class="col-lg-7" id="divtblData" style="display: none">
+            <div class="card" style="height: 700px; border: 1px solid #6826AE; font-style: normal; font-weight: normal; ">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center" style="background-color: #6826AE; font-style: normal; font-weight: normal; color: white; text-align: center; ">
+                    <h3 class="h4">Generated Batch <span id="batchCount" style="text-align: center;margin-left: 50px;"></span></h3>
+                </div>
+                <div class="card-body" style="overflow: auto">
+                    <div class="form-group row" id="divBatchFailed">
+
+                        <div class="col-sm-7" id="">
+                            <button class="btn btn-primary" id="btnReceived" style="width: 200px;" onclick="">Receive All Product</button>
+                        </div>
+
+
+                    </div>
+
+                    <table class="table table-responsive-lg header-fixed table-striped table-bordered table-condensed table-hover dataTable no-footer " id="tblComponent">
+                        <thead class="" style="background-color: #054C32; font-weight: normal; font-style: normal; color: white; font-size: 12px; ">
+                            <tr>
+                                <th class="text-center">BatchNumber</th>
+                                <th class="text-center">IMEI-1</th>
+                                <th class="text-center">IMEI-2</th>
+
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 10px;"></tbody>
+                    </table>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+<script>
+
+
+
+    function CountLogisticsData() {
+
+
+        $.ajax({
+            url: '  @Url.Action("GetLogisticDataCount", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                console.log(result);
+                $("#total").text(result);
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+
+
+    $(document).ready(function () {
+
+        $('#txtMobileCode').focus();
+        CountLogisticsData();
+    });
+
+    $('#txtMobileCode').keydown(function () {
+        debugger;
+        var lastTwoDigits = this.value.slice(-2);
+        if (lastTwoDigits.toLocaleLowerCase() == '-y' || lastTwoDigits.toLocaleLowerCase() == '-n') {
+
+
+            var boxCode = this.value.slice(0, -2);
+
+            GetBatchData(boxCode);
+        }
+    });
+
+
+    function GetBatchData(boxCode) {
+
+        debugger;
+        // var mobileCode = codeValue.slice(0, -2);
+        // var status = (codeValue.slice(-1)).toLowerCase();
+
+        $.ajax({
+            url: " @Url.Action("GetLogisticBatchData", "Production")",
+            type: 'Post',
+            data: JSON.stringify({ batchCode: boxCode }),
+            dataType: 'json',
+            async: true,
+            contentType: 'application/json',
+            success: function (data) {
+                console.log(data);
+
+
+                if (data.length > 0) {
+                    $('#divtblData').show();
+                    $('#tblComponent tbody').empty();
+
+                    $.each(data, function (index, itemData) {
+                        //new logic
+
+
+                        var row = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                            "<td style='height:3px;' class='text-center'>" + itemData.MasterBatch + "</td>" +
+                            "<td style='height:3px;font-size=10px' class='text-center'>" + itemData.Imei1 + "</td>" +
+                            "<td style='height:3px;font-size=10px' class='text-center'>" + itemData.Imei2 + "</td>" +
+
+                            "</tr>";
+                        $('#tblComponent tbody').append(row);
+                    });
+                    $('#divCheckBox').show();
+                    $('#batchCount').text('( Total Items: ' + data.length + ')');
+
+
+                    $('#txtMobileCode').val('');
+
+
+                }
+
+                else {
+                    iziToast.warning({
+
+                        message: data.Message,
+                        timeout: 1000,
+                        imageWidth: 100,
+                        position: 'center',
+                        title: 'Warning!- ',
+                        backgroundColor: '#E70F0F',
+                        theme: 'dark', // dark
+                        progressBarColor: '#091B2B',
+                        titleSize: 15,
+                        messageColor: '#FDFEFE',
+                        messageSize: 15,
+
+                    });
+
+                    $('#tblComponent tbody').empty();
+                    $('#txtMobileCode').val('');
+                    $('#divtblData').hide();
+                }
+
+
+            },
+            error: function (data, textStatus, jqXHR) {
+
+            }
+        });
+
+
+    }
+
+    $("#btnReceived").click(function () {
+
+
+        var tblLogistics = [];
+
+
+        $('#tblComponent tbody').find("tr").each(function (row, tr) {
+
+            tblLogistics.push({
+
+                BoxCode: $(tr).find('td:eq(0)').text().trim(),
+                Imei1: $(tr).find('td:eq(1)').text().trim(),
+                Imei2: $(tr).find('td:eq(2)').text().trim(),
+
+            });
+        });
+
+
+        $.ajax({
+            url: ' @Url.Action("ReceiveLogisticItems", "Production")',
+            type: 'Post',
+            data: JSON.stringify({ logistics: tblLogistics }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                if (result.IsSuccess) {
+                    iziToast.success({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Success',
+                        message: 'Received Successfully'
+                    });
+
+                    $('#tblComponent tbody').empty();
+                    $("#tblRow").hide();
+                    $("#divtblData").hide();
+                    $('#txtMobileCode').focus();
+                    CountLogisticsData();
+                    return true;
+
+                }
+                else if (result.Id == "0") {
+                    window.location = '@Url.Action("LogOut", "Account")';
+
+                }
+
+
+                else {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result.Message
+                    });
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: result.Message
+                });
+
+                //return false;
+            }
+        });
+
+
+    });
+
+</script>

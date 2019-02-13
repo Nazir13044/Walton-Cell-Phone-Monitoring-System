@@ -1,0 +1,73 @@
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.csprojResolveAssemblyReference.cache
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.dll.config
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.csprojResolveAssemblyReference.cache
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.dll.config
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.csprojResolveAssemblyReference.cache
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.dll.config
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.csprojResolveAssemblyReference.cache
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.dll.config
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_BLL.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_COMMON.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_DAL.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\WCMS_ENTITY.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\bin\Debug\EntityFramework.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.csprojResolveAssemblyReference.cache
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_BLL\obj\Debug\WCMS_BLL.pdb

@@ -1,0 +1,1230 @@
+﻿
+@{
+    ViewBag.Title = "NewAgingQc";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+
+    #tblComponent tr td {
+        padding: 0px;
+    }
+
+    #tblComponent > tbody > tr > td {
+        height: 10px;
+        font-size: 15px;
+        padding: 0px;
+        border-top: 0px;
+    }
+    #tblComponent td {
+        text-align: center;
+        vertical-align: middle;
+    }
+    #tblComponent th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .form-control-label {
+
+        font-size: 14px;
+
+    }
+
+    .table tbody {
+        font-size:15px;
+        color: black;
+    }
+    #tblComponent tbody {
+        font-size: 15px;
+        color: black;
+    }
+
+</style>
+<div class="col-lg-1">
+    &nbsp;
+</div>
+
+
+@Html.Partial("~/Views/PartialViews/Reports/_OqcStationReport.cshtml")
+
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card" style="height: 350px; border: 1px solid #1e2631; font-weight: normal; font-style: normal; ">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center" style="background-color: #123d6a; font-weight: normal; font-style: normal; color: white; text-align: center; ">
+                        <h3 class="h4">Search Batch</h3>
+                    </div>
+                    <div class="card-body">
+                       
+                        <div class="form-horizontal" style="margin-top: 30px;">
+                            
+                            <div class="form-group row" id="divCheckBoxs" style="">
+                                <label class="col-sm-4 form-control-label">Box Type :</label>
+                               
+                                <div class="i-checks col-sm-8 squaredOne">
+                                    <select id="ddlBoxQuantity" data-placeholder="Choose box Quantity" class="chosen-select form-control" tabindex="1">
+                                        <option value="0">Select Quantity</option>
+                                        <option value="20">20 Box</option>
+                                        <option value="40">40 Box</option>
+                                        <option value="other">Others Box</option>
+
+                                    </select>
+
+
+                                </div>
+                              
+                            </div>
+                            
+                            
+
+                            <div class="form-group row" id="">
+                                <label class="col-sm-4 form-control-label">Project :</label>
+                                <div class="col-sm-8" id="">
+                                   
+                                    <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                                </div>
+
+
+                            </div>
+                            
+                            
+
+                            <div class="form-group row" id="divSingleCode">
+                                <label class="col-sm-4 form-control-label">Box Code :</label>
+                                <div class="col-sm-8" id="">
+                                   
+                                    <input id="txtMobileCode" style="font-size:15px; " type="text" placeholder="Scan Code" required="" class="form-control form-control-success">
+                                </div>
+
+
+                            </div>
+                            <div class="form-group row" id="divCheckBox" style="display: none">
+                                <label class="col-sm-4 form-control-label">&nbsp;</label>
+                                <div class="i-checks col-sm-8">
+                                    <input id="chkPassed" type="checkbox" value="y" class="checkbox-template">
+                                    <label for="chkPassed">Batch Passed</label>
+                                    &nbsp; &nbsp;
+                                    @*<input id="chkFailed" type="checkbox" value="n" class="checkbox-template">
+                                    <label for="chkFailed">Batch Failed</label>*@
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <div class="form-group row">
+
+                            <div class="col-sm-8 offset-sm-4">
+
+                                <button class="btn btn-primary" id="btnSaveEmployeeLine" onclick="location.reload();"> Clear All</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-8">
+                <div class="card" style="height: 350px; border: 1px solid #123d6a; font-weight: normal; font-style: normal; overflow: auto">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center" style="background-color: #123d6a; font-weight: normal; font-style: normal; color: white; text-align: center; ">
+                        <h3 class="h4">Scan OQC Checked    "IMEI Numbers"</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-horizontal" style="margin-top: 30px;">
+                            <div class="form-group row" id="divSingleCode">
+                                <label class="col-sm-3 form-control-label">Imei Code :</label>
+                                <div class="col-sm-5" id="">
+
+                                    <input id="txtOqcImeiCode" style="font-size:15px; " type="text" placeholder="Scan Imei Code" required="" class="form-control form-control-success">
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                        <div class="form-group row" style="overflow: auto">
+                            <table class="table table-bordered table-hover" id="tblcheckedItems" style="font-size: 12px;">
+                                <thead style="text-align: center">
+                                    <tr>
+                                        <th style="background-color: #1e2631; color: white">Imei1</th>
+                                        <th style="background-color: #1e2631; color: white; ">Imei2</th>
+                                        <th style="background-color: #1e2631; color: white; ">Status </th>
+                                        <th style="background-color: #1e2631; color: white; ">Issues </th>
+                                        <th style="background-color: #1e2631; color: white; ">Remarks </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbody" style="overflow: auto">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+
+
+            <div class="col-lg-12" id="divtblData" style="display: none">
+                <div class="card" style="height: 900px; border: 1px solid #123d6a; font-style: normal; font-weight: normal; ">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center" style="background-color: #123d6a; font-style: normal; font-weight: normal; color: white; text-align: center; ">
+                        <h3 class="h4">Generated Batch <span id="batchStatus" style="text-align: center;margin-left: 20px;"></span></h3>
+                    </div>
+                    <div class="card-body" style="overflow: auto">
+                        @*<div class="form-group row" id="divBatchFailed"  style="display: none">
+                            <label class="col-sm-2 form-control-label">Scan IMEI</label>
+                            <div class="col-sm-4" id="">
+                                
+                                <input id="txtScanAll" type="text" placeholder="Scan Imei Code" required="" class="form-control form-control-success">
+                            </div>
+
+
+                        </div>*@
+                        
+                        
+                        
+                        <div class="card " style="border: 2px solid #0c9050">
+                            @*<div class="card-header d-flex align-items-center" style="background-color: #1e2631; font-weight: normal; color: white">
+                                <h3 class="h4" style="font-weight: normal">Scan count</h3>
+                            </div>*@
+                            <div class="card-body text-center">
+
+
+                                <table class="table table-bordered table-hover" style="font-size: 15px;">
+                                    <thead style="text-align: center">
+                                        <tr>
+                                            <th style="background-color: #3f536f; color: white; ">Total</th>
+                                            <th style="background-color: #7ca38f; color: white; ">Passed</th>
+                                            <th style="background-color: #be5555; color: white; ">Failed </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tbody">
+
+                                        <tr>
+                                            <td><span id="total"></span></td>
+                                            <td><span id="passed">0</span></td>
+                                            <td><span id="failed">0</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+
+                        <table class="table table-responsive-lg header-fixed table-striped table-bordered table-condensed table-hover dataTable no-footer " id="tblComponent">
+                            <thead class="" style="background-color: #054C32; font-weight: normal; font-style: normal; color: white; font-size: 12px; ">
+                                <tr>
+                                    <th class="text-center">MasterCode</th>
+                                    <th class="text-center">IMEI-1</th>
+                                    <th class="text-center">IMEI-2</th>
+                                    @*<th class="text-center">BatchNumber</th>*@
+                                    <th class="text-center">Pass</th>
+                                    <th class="text-center">Fail</th>
+                                    <th class="text-center">Is Sample</th>
+                                    <th class="text-center">Remarks</th>
+
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 5px;"></tbody>
+                        </table>
+
+
+                        <div class="form-group row" style="">
+                            <label class="col-lg-4 form-control-label">&nbsp; &nbsp;</label>
+                            <div class="col-lg-2">
+                                <button class="btn btn-primary" id="btnOQCSave" style="width: 200px;"> Save</button>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Horizontal Form-->
+
+            <div class="col-lg-1">
+                &nbsp;
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link href="~/css/jquery-ui-1.12.css" rel="stylesheet" />
+
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/jquery-ui-1.12.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+<script>  
+    
+
+    
+
+    $(document).on("keydown", "#txtScanAll", function () {
+       
+        //$('#txtAllMobileCode').keydown(function () {
+        debugger;
+        debugger;
+        var text = $("#txtScanAll").val();
+        var mobileCode = text.slice(0, -2);
+        var status = (text.slice(-1)).toLowerCase().trim();
+        var passedCount;
+        var failedCount;
+        //alert(text);
+
+
+
+
+        $("#tblComponent tbody tr").each(function () {
+            
+            if ((($(this).find("td:eq(1)").text().trim()) == mobileCode || ($(this).find("td:eq(2)").text().trim()) == mobileCode) && status == 'y') {
+
+                $(this).find('input[class=pass]').prop('checked', true);
+                $(this).css('background', '#127348');
+                $(this).css('color', 'whitesmoke'); //new
+                $(this).find('input[class=pass]').prop('checked', true);
+                $(this).find('input[class=fail]').prop('checked', false);
+                $("#txtScanAll").val('');
+            }
+
+            if ((($(this).find("td:eq(1)").text().trim()) == mobileCode || ($(this).find("td:eq(2)").text().trim()) == mobileCode) && status == 'n') {
+                //alert("oky")
+                $(this).find('input[class=fail]').prop('checked', true);
+                $(this).css('background', '#E31613');
+                $(this).find('input[class=fail]').prop('checked', true);
+                $(this).css('color', 'whitesmoke'); //new
+                $("#txtScanAll").val('');
+                $(this).find('input[class=fail]').prop('checked', true);
+                $(this).find('input[class=pass]').prop('checked', false);
+            }
+
+            passedCount = $('input[class=pass]:checked').length;
+            failedCount = $('input[class=fail]:checked').length;
+
+            //alert()
+
+            $('#passed').text(passedCount);
+            $('#failed').text(failedCount);
+
+
+
+        });
+
+
+
+
+    });
+
+
+
+
+    $('input.checkbox-templates').on('change', function () {
+
+        debugger;
+        $('input.checkbox-templates').not(this).prop('checked', false);
+        $('#tblComponent tbody').empty();
+        $('#txtMobileCode').val('');
+        $('#divtblData').hide();
+
+    });
+
+
+
+
+
+
+    $('input.checkbox-template').on('change', function () {
+
+        debugger;
+        $('input.checkbox-template').not(this).prop('checked', false);
+
+
+    });
+
+    function LoadAllProjectsVsun() {
+
+        var url = "@Url.Action("GetProjecFormvsunDb", "Project")";
+        $.getJSON(url, function(json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function(idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+    function Clear() {
+
+        $('#txtMobileCode').val('');
+        $('#txtMobileCode').focus();
+    }
+
+
+    $(document).ready(function() {
+        LoadAllProjectsVsun();
+        $("#ddlBoxQuantity").chosen();
+        //GetVsunData(1);
+        $('#txtMobileCode').focus();
+    });
+
+
+    $('input.checkbox-template').on('change', function() {
+
+        debugger;
+        $('input.checkbox-template').not(this).prop('checked', false);
+
+    });
+
+
+    //key up function 
+
+
+    $(function() {
+
+        $('#txtOqcImeiCode').keydown(function () {
+            var lastTwoDigits = this.value.slice(-2);
+            if (lastTwoDigits.toLocaleLowerCase() == '-y' || lastTwoDigits.toLocaleLowerCase() == '-n') {
+
+                getImeiDetailsData((this.value).slice(0, -2));
+            }
+
+
+        });
+
+
+        function getImeiDetailsData(imeiCode) {
+
+
+            //var project = $("#txtProject").val();
+            $.ajax({
+                url: " @Url.Action("GetImeiData", "Production")",
+                type: 'Post',
+                data: JSON.stringify({ code: imeiCode}),
+                dataType: 'json',
+                async: true,
+                contentType: 'application/json',
+                success: function(data) {
+                   // console.log(data);
+
+
+                    if (data !== null && data !== undefined) {
+                        
+
+
+                        var isExist = false;
+
+                        $('#tblcheckedItems  tbody').find("tr").each(function (roww, tr) {
+                            debugger;
+
+                            if (($(tr).find('td:eq(0)').text() == data.IMEI1)) {
+
+                                isExist = true;
+                                return false;
+
+                            }
+                        });
+
+
+
+                        if (!isExist)
+                        {
+                            //$('#tblcheckedItems tbody').empty();
+                            // $.each(data, function(index, itemData) {
+                            var row = "<tr class='active' style='font-size=5px;height:3px;'>" +
+                                "<td style='font-size:12px;' class='text-center'>" + data.IMEI1 + "</td>" +
+                                "<td style='font-size:12px;' class='text-center'>" + data.IMEI2 + "</td>" +
+                                "<td class='text-center'><select id='status'  class='status form-control' name='status' style='color:black;width:100px;font-size:12px;'><option value=P>Passed</option><option value=F>Failed</option></select></td>" +
+                               "<td style='width:150px;' class='text-center'><input type='text' name='txtIssues' style='width:150px;font-size:12px;' class='form-control' /></td>" +
+                                "<td style='width:150px;' class='text-center'><input type='text' name='txtRemarks' style='width:150px;font-size:12px;' class='form-control' /></td>" +
+                                "</tr>";
+                            $('#tblcheckedItems tbody').append(row);
+                            //});
+                            $('#txtOqcImeiCode').val('');
+                            $('#txtOqcImeiCode').focus();
+
+                        }
+
+
+                        else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: 'Already added'
+                            });
+                            $('#txtOqcImeiCode').val('');
+                            $('#txtOqcImeiCode').focus();
+                            return false;
+                        }
+                            
+                        
+
+
+
+
+
+                    }
+                    
+
+
+
+
+                    }
+                });
+            
+
+
+        }
+    // $(document).on("keydown", "#txtMobileCode",function(){
+    
+
+
+    $('#txtMobileCode').keydown(function() {
+        debugger;
+
+            var lastTwoDigits = this.value.slice(-2);
+            if (lastTwoDigits.toLocaleLowerCase() == '-y' || lastTwoDigits.toLocaleLowerCase() == '-n') {
+                
+                //var is20 = $("#box20").is(":checked");
+                //var is40 = $("#box40").is(":checked");
+
+                var boxType = $("#ddlBoxQuantity").val();
+                var project = $("#txtProject").val();
+                 
+                if (boxType==0) {
+
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'Please Select a box type'
+                    });
+
+
+                }
+
+                else if (project == 0) {
+
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'Please Select a Project'
+                    });
+
+
+                }
+                else {
+                    
+                    GetVsunData((this.value));
+                }
+
+                //GetBatchData((this.value));
+               
+            }
+    });
+    });
+
+    function GetVsunData(codeValue) {
+        debugger;
+        var boxCode = codeValue.slice(0, -2);
+        //var status = (codeValue.slice(-1)).toLowerCase();
+        //var boxCode = 'H7s180700000001';
+        var boxType = $("#ddlBoxQuantity").val(); //$("input.box-check:checked").val();
+       
+        var project = $("#txtProject").val();
+        $.ajax({
+            url: " @Url.Action("GetMasterBoxData", "Production")",
+            type: 'Post',
+            data: JSON.stringify({ boxCode: boxCode, project: project }),
+            dataType: 'json',
+            async: true,
+            contentType: 'application/json',
+            success: function(data) {
+                //console.log(data);
+
+
+                if (data.length > 0) {
+                    $('#divtblData').show();
+                    $('#divBatchFailed').show();
+                    $('#txtScanAll').focus();
+                    $('#divCheckBox').show();
+
+
+                    if (boxType == "20") {
+                        $('#tblComponent tbody').empty();
+
+                        $.each(data, function(index, itemData) {
+                            //new logic
+
+
+                            var row = "<tr class='active' style='font-size=5px;height:3px;'>" +
+                                "<td style='height:5px;' class='text-center'>" + itemData.T_BOXID + "</td>" +
+                                "<td style='height:3px; class='text-center'>" + itemData.T_IMEI1 + "</td>" +
+                                "<td style='height:3px'; class='text-center'>" + itemData.T_IMEI2 + "</td>" +
+                                "<td style='height:3px;' class='text-center'><input type='checkbox' class='pass' value=''></td>" +
+                                "<td style='height:3px;' class='text-center'><input type='checkbox'class='fail' value=''></td>" +
+                                "<td style='height:3px;' class='text-center'><input type='checkbox' class='sample' value=''></td>" +
+                                "<td style='height:3px;width:200px;' class='text-center'><input type='text' name='txtRemarks' style='width:200px;' class='form-control' /></td>" +
+                                "</tr>";
+
+
+                            $('#tblComponent tbody').append(row);
+                        });
+                        $('#txtMobileCode').val('');
+                        $('#txtMobileCode').focus();
+                    }
+
+
+                    if (boxType == "other") {
+                        $('#tblComponent tbody').empty();
+
+                        $.each(data, function(index, itemData) {
+                            //new logic
+
+
+                            var row = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                                "<td style='height:5px;' class='text-center'>" + itemData.T_BOXID + "</td>" +
+                                "<td style='height:3px;' class='text-center'>" + itemData.T_IMEI1 + "</td>" +
+                                "<td style='height:3px;' class='text-center'>" + itemData.T_IMEI2 + "</td>" +
+                                "<td style='height:3px;' class='text-center'><input type='checkbox' class='pass' value=''></td>" +
+                                "<td style='height:3px;' class='text-center'><input type='checkbox'class='fail' value=''></td>" +
+                                "<td style='height:3px;' class='text-center'><input type='checkbox' class='sample' value=''></td>" +
+                                "<td style='height:3px;width:200px;' class='text-center'><input type='text' name='txtRemarks' style='width:200px;' class='form-control' /></td>" +
+                                "</tr>";
+
+
+                            $('#tblComponent tbody').append(row);
+                        });
+                        $('#txtMobileCode').val('');
+                        $('#txtMobileCode').focus();
+                    }
+
+                
+                    if (boxType == "40") {
+                        //$('#tblComponent tbody').empty();
+
+                        $.each(data, function(index, itemData) {
+                            //new logic
+
+
+                            var row = "<tr class='active' style='font-size=5px;color:black;height:3px;'>" +
+                                "<td style='height:5px;' class='text-center'>" + itemData.T_BOXID + "</td>" +
+                                "<td style='height:3px;' class='text-center'>" + itemData.T_IMEI1 + "</td>" +
+                                "<td style='height:3px;' class='text-center'>" + itemData.T_IMEI2 + "</td>" +
+                                "<td style='height:3px;' class='text-center'><input type='checkbox' class='pass' value=''></td>" +
+                                "<td style='height:3px;' class='text-center'><input type='checkbox'class='fail' value=''></td>" +
+                                "<td style='height:3px;' class='text-center'><input type='checkbox' class='sample' value=''></td>" +
+                                "<td style='height:3px;width:200px;' class='text-center'><input type='text' name='txtRemarks' style='width:200px;' class='form-control' /></td>" +
+                                "</tr>";
+
+
+                            $('#tblComponent tbody').append(row);
+                        });
+                        $('#txtMobileCode').val('');
+                        $('#txtMobileCode').focus();
+                    }
+
+                    var rowCount = $('#tblComponent tbody tr').length;
+                    $('#total').text(rowCount);
+
+                    $('#batchStatus').text(rowCount);
+                    // $('#txtMobileCode').prop('disabled', true);
+
+                }
+
+                if (data.length == 0) {
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: "No Data Found"
+                    });
+
+                    $('#tblComponent tbody').empty();
+                    $('#txtMobileCode').val('');
+                    $('#divtblData').hide();
+                }
+
+
+            },
+            error: function(data, textStatus, jqXHR) {
+
+            }
+        });
+
+    }
+
+
+    $(document).on("click", "#chkPassed", function() {
+        var count;
+        if ($(this).is(":checked")) {
+            $("#tblComponent tbody tr").each(function(index, element) {
+
+
+                $(this).find('input[class=pass]').prop('checked', true);
+                $(this).css('background', '#127348');
+                $(this).find('input[class=fail]').prop('checked', false);
+
+                $(this).css('color', 'whitesmoke'); //new
+                //$("#divBatchFailed").hide();
+                // $('#divSingleCode').show();
+                count = index + 1;
+            });
+            $('#txtMobileCode').focus();
+            $('#passed').text(count);
+
+            $('#failed').text('0');
+        } else {
+            $("#tblComponent tbody tr").each(function() {
+
+
+                $(this).find('input[class=pass]').prop('checked', false);
+                $(this).find('input[class=fail]').prop('checked', false);
+                $(this).css('background', 'transparent');
+                $(this).css('color', 'black'); //new
+                // $("#divBatchFailed").hide();
+                //$('#divSingleCode').show();
+            });
+            count = 0;
+            $('#passed').text(count);
+        }
+    });
+
+
+    $(document).on("click", "#chkFailed", function() {
+
+        if ($(this).is(":checked")) {
+            $("#tblComponent tbody tr").each(function() {
+
+
+                $(this).find('input[class=pass]').prop('checked', false);
+                $(this).css('background', 'transparent');
+                $(this).css('color', 'black'); //new
+                $("#txtScanAll").focus();
+
+                //$("#divBatchFailed").show();
+                //$('#divSingleCode').hide();
+            });
+        } else {
+            $("#tblComponent tbody tr").each(function() {
+
+
+                $(this).find('input[class=pass]').prop('checked', false);
+                $(this).css('background', 'transparent');
+                $(this).css('color', 'black'); //new
+                //$("#divBatchFailed").hide();
+                //$('#divSingleCode').show();
+
+            });
+        }
+    });
+
+
+    $(document).on("keyup", "#txtScanAllFailed", function() {
+
+        //$('#txtAllMobileCode').keydown(function () {
+        debugger;
+        debugger;
+        var text = $("#txtScanAllFailed").val();
+        var mobileCode = text.slice(0, -2);
+        var status = (text.slice(-1)).toLowerCase().trim();
+        //alert(text);
+       
+
+        $("#tblComponent tbody tr").each(function() {
+            if (($(this).find("td:first").text().trim()) == mobileCode && status == "y") {
+
+
+                $(this).find('input[class=pass]').prop('checked', true);
+                $(this).css('background', '#127348');
+                $(this).css('color', 'whitesmoke'); //new
+                $(this).find('input[class=pass]').prop('checked', true);
+                $("#txtAllMobileCode").val('');
+            }
+
+            if (($(this).find("td:first").text().trim()) == mobileCode && status == "n") {
+                //alert("oky")
+                $(this).find('input[class=fail]').prop('checked', true);
+                $(this).css('background', '#E31613');
+                $(this).find('input[class=fail]').prop('checked', true);
+                $(this).css('color', 'whitesmoke'); //new
+                $("#txtAllMobileCode").val('');
+                $(this).find('input[class=fail]').prop('checked', true);
+            }
+
+
+        });
+
+
+    });
+
+    //Table operation script   //***********************Start***********************
+    //Table operation script   //***********************Start***********************
+
+    $(document).on("click", "input[class=sample]", function() {
+        var $row = $(this).closest("tr"); // Find the row
+        var $text = $row.find(".fail");
+        if ($(this).is(':checked')) {
+            $('input[class=sample]').not(this).attr('disabled', true);
+            $('input[class=fail]').not($(this).closest("tr").find('input[class=fail]')).attr('disabled', true);
+            $('input[class=pass]').not($(this).closest("tr").find('input[class=pass]')).attr('disabled', true);
+
+            $('input[class=pass]').attr('checked', false);
+            $('input[class=fail]').attr('checked', false);
+            $(this).closest("tr").css('background', 'transparent');
+            $("#tblComponent tbody tr").css('color', 'black'); //new
+
+            $("#tblComponent tbody tr").css('background', 'transparent');
+
+            $("#tblComponent tbody tr").css('color', 'black'); //new
+
+
+        } else {
+            $('input[class=sample]').attr('disabled', false);
+            $('input[class=fail]').attr('disabled', false);
+            $('input[class=pass]').attr('disabled', false);
+            $('input[class=pass]').attr('checked', false);
+            $('input[class=fail]').attr('checked', false);
+            // $(this).closest("tr").css('background', 'transparent');
+            $("#tblComponent tbody tr").css('background', 'transparent');
+            $("#tblComponent tbody tr").css('color', 'black'); //new
+        }
+    });
+
+
+    $(document).on("click", "input[class=pass]", function() {
+        debugger;
+        if ($(this).is(':checked')) {
+
+
+            $(this).closest("tr").find('input[class=fail]').attr("checked", false);
+            //$('input[class=fail]').attr('checked', false);
+
+            if ($(this).closest("tr").find('input[class=sample]').prop("checked") == true) {
+
+                $('#tblComponent tbody').find("tr").each(function(row, tr) {
+                    // alert("adasd");
+
+                    if ($(tr).find('input[class="fail"]').prop("checked") == false) {
+
+                        $('input[class=pass]').prop('checked', true);
+                        $('input[class=pass]').attr('disabled', false);
+                        $('input[class=fail]').attr('disabled', false);
+                        $(tr).css('background', '#127348');
+                        $(this).css('color', 'whitesmoke'); //new
+
+                        $('input[class=pass]').prop('checked', true);
+
+                        //$('.myCheckbox').prop('checked', true);
+
+
+                        //alert("g");
+
+                    }
+
+                });
+
+
+            } else {
+
+                $(this).closest("tr").css('background', '#127348');
+
+            }
+
+            //$('input[class=fail]').attr('checked',false);
+        } else {
+
+            $('input[class=pass]').prop('checked', false);
+
+            if ($(this).closest("tr").find('input[class=sample]').prop("checked") == true) {
+
+                $("#tblComponent tbody tr").css('background', 'transparent');
+
+
+            } else {
+
+                $(this).closest("tr").css('background', 'transparent');
+
+            }
+
+        }
+
+    });
+
+
+    $(document).on("click", "input[class=fail]", function() {
+        if ($(this).is(':checked')) {
+            $(this).closest("tr").css('background', '#FF4040');
+            $(this).closest("tr").css('color', 'whitesmoke'); //new
+            $(this).closest("tr").find('input[class=pass]').attr("checked", false);
+
+            if ($(this).closest("tr").find('input[class=sample]').prop("checked") == true) {
+                $('input[class=fail]').attr('disabled', false);
+                $('input[class=pass]').attr('disabled', false);
+                $(this).closest("tr").css('background', '#FF4040');
+                $(this).closest("tr").css('color', 'black'); //new
+                $('input[class=pass]').attr('checked', false);
+                $("#tblComponent tbody tr").css('background', 'transparent'); //new
+                $("#tblComponent tbody tr").css('color', 'black'); //new
+
+                //$('input[class=fail]').attr('checked', false);
+
+                $('input[class=fail]').not($(this).closest("tr").find('input[class=fail]')).attr('checked', false);
+
+
+                $('#tblComponent tbody').find("tr").each(function(row, tr) {
+                    // alert("adasd");
+
+                    if ($(tr).find('input[class="fail"]').prop("checked") == false && $(tr).find('input[class="pass"]').prop("checked") == false) {
+                        $("#tblComponent tbody tr").css('background', 'transparent');
+                    }
+
+                });
+                $(this).closest("tr").css('background', '#FF4040');
+                $(this).closest("tr").css('color', 'whitesmoke'); //new
+
+
+                //$(".dataTable tbody tr").css('background', '#90EE90');
+
+            }
+
+            //$(this).closest("tr").css('background', '#FF4040');
+            //$(this).closest("tr").find('input[class=pass]').attr('checked', false);
+        } else {
+
+            if ($(this).closest("tr").find('input[class=sample]').prop("checked") == true) {
+
+                $("#tblComponent tbody tr").css('background', 'transparent');
+                $("#tblComponent tbody tr").css('color', 'black');
+
+                $('input[class=pass]').attr('checked', false);
+                $('input[class=fail]').attr('checked', false);
+            }
+
+
+            $(this).closest("tr").css('background', 'transparent');
+            $(this).closest("tr").css('color', 'black');
+
+
+        }
+
+    });
+
+
+    //Table operation script
+    //Table operation script
+
+
+    //sav code
+
+
+    $("#btnOQCSave").click(function () {
+        debugger;
+        var rowCount = $('#tblComponent > tbody > tr').length;
+        var checkedImeiCount = $('#tblcheckedItems > tbody > tr').length;
+        var datacount = 0;
+        //if (rowCount < 0) {
+        //    iziToast.warning({
+        //        timeout: 2000,
+        //        imageWidth: 150,
+        //        position: 'center',
+        //        title: 'warning',
+        //        message: 'There should be 20 items in a batch'
+        //    });
+        //    return false;
+        //} 
+       
+         if (checkedImeiCount== 0) {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Please Add Checked Imei Code In The Table'
+            });
+            return false;
+
+        } else {
+            debugger;
+            var oqcList = [];
+            var checkedList = [];
+            var checkedPass;
+            var checkedFail;
+
+
+            $('#tblcheckedItems  tbody').find("tr").each(function (row, tr) {
+                   checkedList.push({
+                      
+                   Imei1: $(tr).find('td:eq(0)').text(),
+                   Imei2: $(tr).find('td:eq(1)').text(),
+                   OqcStatus: $(tr).find('select[name="status"]').val(),
+                   Issues: $(tr).find('input[name="txtIssues"]').val(),
+                   Remarks: $(tr).find('input[name="txtRemarks"]').val()
+                });
+
+
+            });
+
+
+
+
+
+            $('#tblComponent tbody').find("tr").each(function(row, tr) {
+                var checkedSample = "";
+                checkedPass = '';
+                if (!$(tr).find('input[class=pass]').is(':checked') && !$(tr).find('input[class=fail]').is(':checked')) {
+                    oqcList = [];
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: 'Please select pass or fail result'
+                    });
+                    return false;
+                } else {
+
+                    if ($(tr).find('input[class="pass"]').is(':checked') && !$(tr).find('input[class="fail"]').is(':checked')) {
+                        checkedPass = 'y';
+
+                    }
+                    if (!$(tr).find('input[class="pass"]').is(':checked') && $(tr).find('input[class="fail"]').is(':checked')) {
+
+                        checkedPass = 'n';
+
+                    }
+
+                    if ($(tr).find('input[class="sample"]').is(':checked')) {
+
+                        checkedSample = 'Y';
+
+                    }
+
+                    oqcList.push({
+                        MasterBatch: $(tr).find('td:eq(0)').text(),
+                        Imei1: $(tr).find('td:eq(1)').text(),
+                        Imei2: $(tr).find('td:eq(2)').text(),
+                        Passed: checkedPass,
+                        QcStation: "PACKGOQC",
+                        Remarks: $(tr).find('input[name="txtRemarks"]').val(),
+                        IsSample: checkedSample
+                    });
+
+
+                    //datacount++;
+                }
+
+
+            });
+            console.log(oqcList);
+            //table insertion script
+
+            if ((rowCount == oqcList.length) && (checkedImeiCount==checkedList.length)) {
+
+                $.ajax({
+                    url: ' @Url.Action("InsertPackagingOQcStatus", "Production")',
+                    type: 'Post',
+                    data: JSON.stringify({ productionOQc: oqcList, oqcChecked: checkedList }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function(result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: 'Information Saved Successfully'
+                            });
+                            //AllClear();
+                            $('#tblComponent tbody').empty();
+                            
+                            $('#tblcheckedItems tbody').empty();
+                            $("#tblRow").hide();
+                            $("#divtblData").hide();
+
+                            $('#chkPassed').prop('checked', false);
+                            $('#chkFailed').prop('checked', false);
+                            $('#passed').text('0');
+                            $('#failed').text('0');
+                            $('#total').text('0');
+                            //location.reload();
+                            return true;
+
+                        } else if (result.Id == "0") {
+                            window.location = '@Url.Action("LogOut", "Account")';
+
+                        }
+
+
+                        else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: result.Message
+                            });
+                            $('#chkPassed').prop('checked', false);
+                            $('#chkFailed').prop('checked', false);
+                            
+                        }
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message
+                        });
+
+                        //return false;
+                    }
+                });
+
+
+
+            }
+            
+
+            else {
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Items Not Added Correctly'
+                });
+
+                return false;
+            }
+
+            console.log(oqcList.length);
+
+            console.log(rowCount);
+
+        }
+
+    });
+    
+
+
+
+
+
+
+
+
+
+
+    $("#txtScanAllFailed").keyup(function () {
+
+        //$('#txtAllMobileCode').keydown(function () {
+        debugger;
+        debugger;
+        var text = $("#txtScanAllFailed").val();
+        var mobileCode = text.slice(0, -2);
+        var status = (text.slice(-1)).toLowerCase().trim();
+        var passedCount;
+        var failedCount;
+        //alert(text);
+
+
+        if (status == 'y' || status == 'n') {
+            
+            $("#tblComponent tbody tr").each(function () {
+
+
+
+
+
+                if ((($(this).find("td:first").text().trim()) == mobileCode || ($(this).find("td:eq(1)").text().trim()) == mobileCode) && status == "y") {
+
+
+                    $(this).find('input[class=pass]').prop('checked', true);
+                    $(this).css('background', '#127348');
+                    $(this).css('color', 'whitesmoke'); //new
+                    $(this).find('input[class=pass]').prop('checked', true);
+                    $(this).find('input[class=fail]').prop('checked', false);
+                    $("#txtScanAllFailed").val('');
+                    $("#txtScanAllFailed").focus();
+                }
+
+                if ((($(this).find("td:first").text().trim()) == mobileCode || ($(this).find("td:eq(1)").text().trim()) == mobileCode) && status == "n") {
+                    //alert("oky")
+                    $(this).find('input[class=fail]').prop('checked', true);
+                    $(this).css('background', '#E31613');
+                    $(this).find('input[class=fail]').prop('checked', true);
+                    $(this).css('color', 'whitesmoke'); //new
+                    $("#txtAllMobileCode").val('');
+                    $(this).find('input[class=fail]').prop('checked', true);
+                    $(this).find('input[class=pass]').prop('checked', false);
+                    $("#txtScanAllFailed").val('');
+                    $("#txtScanAllFailed").focus();
+                }
+
+                // passedCount = $('input[class=pass]:checked').length;
+                // failedCount = $('input[class=fail]:checked').length;
+
+                //alert()
+
+                //$('#passed').text(passedCount);
+                //$('#failed').text(failedCount);
+                //$("#txtScanAllFailed").val('');
+                $("#txtScanAllFailed").focus();
+
+            });
+
+        }
+
+       
+
+
+
+
+    });
+
+</script>

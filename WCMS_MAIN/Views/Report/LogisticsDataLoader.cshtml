@@ -1,0 +1,114 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+    <link href="~/css/iziToast.min.css" rel="stylesheet" />
+    <link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.min.css" rel="stylesheet" />
+
+
+
+    <script src="~/js/vendor/jquery/jquery-1.9.1.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/js/iziToast.min.js"></script>
+    <script src="~/js/vendor/chart.js/Chart.min.js"></script>
+    <script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+    <style>
+        
+
+      
+    </style>
+    <script>
+
+        $(function () {
+
+            var fromdate = '@ViewBag.fromdate';
+            var todate = '@ViewBag.todate';
+            var model = '@ViewBag.model';
+            var color = '@ViewBag.color';
+
+
+            getbyID(fromdate, todate, model, color);
+
+        });
+
+
+
+
+
+
+        function getbyID(fromdate, todate, model, color) {
+            //debugger;
+            //alert(model);
+            // var gridate = $("#txtReqDate").val().split('-');
+            //var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+
+            $.ajax({
+
+
+                url: " @Url.Action("GetLogisticsReportWithDateModel", "Report")", //?id=+ model,
+                type: "Post",
+                data: JSON.stringify({ fromdate: fromdate, todate: todate, model: model, color: color }),
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result);
+                    //$('table tbody').empty();
+                    $.each(result, function (key, item) {
+
+
+                        var row = "<tr style=display: table-row;vertical-align: inherit;border-color: inherit;>" +
+                            "<td style=isplay: table-cell;vertical-align: inherit;>" + item.Imei1 + "</td>" +
+                            "<td style=display: table-cell;vertical-align: inherit;>*DN</td>" +
+                            "</tr>";
+                        $('table tbody').append(row);
+
+
+
+
+                        //$("body").append('<p>'+item.Imei1+'\t*DN'+ '</p>');
+                        //$("#divImei2").append('<p>' + item.Imei2 + '</p>');
+                    });
+                    //console.log(result);
+
+                    // $('#myModal').modal('show');
+
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+
+        }
+
+
+
+    </script>
+</head>
+    <body >
+        
+      
+        <div><table cellpadding="3" cellspacing="3" class="reportTbl" border="0" align="center" style="float:left">
+                <tbody></tbody>
+            </table></div>
+
+
+
+</body>
+</html>
+

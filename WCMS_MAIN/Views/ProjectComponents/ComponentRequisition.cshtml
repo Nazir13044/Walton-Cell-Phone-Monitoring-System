@@ -1,0 +1,628 @@
+﻿
+@{
+    ViewBag.Title = "ComponentRequisition";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+</style>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Project Components </a></li>
+        <li class="breadcrumb-item active">Project Component Requisition</li>
+    </ul>
+</div>
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+       
+      
+
+            <div class="col-lg-8">
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("ComponentRequisitionList", "ProjectComponents")';return false;">
+                    View Component requisition List
+                </button>
+            
+            </div>
+          <br/>
+
+
+            &nbsp;
+            <div class="col-lg-6">
+                <div class="card" style="height: 400px;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Project Information</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-horizontal">
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Oracle Req. Date</label>
+                                <div class="col-sm-7">
+                                    <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Oracle Req. Number</label>
+                                <div class="col-sm-7">
+                                    <input id="txtReqNumber" type="text" placeholder="Requisition Number" class="form-control form-control-success">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Material Name</label>
+                                <div class="col-sm-7">
+                                    @*<input id="txtComponentName" disabled="disabled" type="text" placeholder=" Search material Name" required="" class="form-control form-control-success">*@
+                                    <select id="txtComponentName" data-placeholder="Choose a Component" class="chosen-select form-control" tabindex="1"></select>
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Quantity</label>
+                                <div class="col-sm-7">
+                                    <input id="txtQuantity" type="text" placeholder="Requisition Quantity" class="form-control form-control-success">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">&nbsp;</label>
+                                <div class="col-sm-7">
+                                    <input type="button" id="btnAdd" value="Add" style="width: 270px;" class="btn btn-primary">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Horizontal Form-->
+            <div class="col-lg-6" style="overflow: auto;">
+                <div class="card" style="overflow: auto; height: 400px;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Component List Information</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-horizontal">
+
+
+
+
+                            <table id="dgComponentList" style="width:700px;  overflow: auto" class="easyui-datagrid" title="Component List" data-options="
+                                                    rownumbers:false,
+
+                                                    singleSelect:true,
+                                                    autoRowHeight:false,
+                                                    pagination:false,
+                                                    pageSize:1000">
+                                <thead>
+                                    <tr>
+
+                                        <th data-options="field:'ComponentId',width:110,hidden:'true'">
+                                            ComponentId
+                                        </th>
+                                        <th data-options="field:'ComponentName',width:200">
+                                            Component Name
+                                        </th>
+                                        <th data-options="field:'ReqQuantity',width:130">
+                                            Requisition  Quantity
+                                        </th>
+                                        <th data-options="field:'OracleReqNumber',width:130">
+                                            Oracle Req. Number
+                                        </th>
+                                        <th data-options="field:'OracleReqDate',width:150">
+                                            Oracle Req. Date
+                                        </th>
+
+
+                                        <th data-options="field:'Delete',width:80,align:'left'"></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+
+            <!-- Inline Form-->
+            <!-- Modal Form-->
+            <!-- Form Elements -->
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="checkbox col-md-5">
+                        <div class="i-checks">
+                            <input id="chkSure" type="checkbox" value="" class="checkbox-template">
+                            <label for="chkSure">You sure want to submit component requisition information ?</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="button" id="btnSave" value="Save" style="display: none;width: 200px;" class="btn btn-lg btn-success" onclick="SaveProjectBomList();">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <input type="hidden" name="hdcomponentId" id="hdcomponentId" />
+    <input type="hidden" name="hdprojectId" id="hdprojectId" />
+    <input type="hidden" name="hdprojectName" id="hdprojectName" />
+</section>
+
+
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script>
+
+
+    $(function () {
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+    });
+
+
+    var rows = [];
+
+
+    function Clear() {
+        $("#hdcomponentId").val('');
+        $("#txtComponentName").val('');
+        $("#txtComponentNumber").val('');
+        $("#txtIcVendor").val('');
+        $("#txtQuantity").val('');
+        $("#txtRemarks").val('');
+
+
+    }
+
+    function DeleteProductData(btn) {
+
+        iziToast.question({
+            timeout: 20000,
+            close: false,
+            overlay: true,
+            toastOnce: true,
+            id: 'question',
+            zindex: 999,
+            title: 'Hey!',
+            message: 'Are you want to delete?',
+            position: 'center',
+            buttons: [
+                ['<button><b>YES</b></button>', function(instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                    var tr = $(btn).closest('tr.datagrid-row');
+                    var index = parseInt(tr.attr('datagrid-row-index'));
+                    var dg = tr.closest('div.datagrid-view').children('table');
+                    var row = dg.datagrid('getRows')[index];
+                    var rowIndex = $('#dgComponentList').datagrid('getRowIndex', row);
+                    console.log(row);
+                    // //var selectedrow = $('#dgBombList').datagrid('getSelected');
+                    //var rowIndex = $('#dgBombList').datagrid('getRowIndex', selectedrow);
+                    $('#dgComponentList').datagrid('deleteRow', rowIndex);
+
+                }, true],
+                ['<button>NO</button>', function(instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                }],
+            ],
+            onClosing: function(instance, toast, closedBy) {
+                console.info('Closing | closedBy: ' + closedBy);
+            },
+            onClosed: function(instance, toast, closedBy) {
+                console.info('Closed | closedBy: ' + closedBy);
+            }
+        });
+        //var result = confirm("Want to delete?");
+        //if (result) {
+        //    var tr = $(btn).closest('tr.datagrid-row');
+        //    var index = parseInt(tr.attr('datagrid-row-index'));
+        //    var dg = tr.closest('div.datagrid-view').children('table');
+        //    var row = dg.datagrid('getRows')[index];
+        //    var rowIndex = $('#dgBombList').datagrid('getRowIndex', row);
+        //    console.log(row);
+
+        //    // //var selectedrow = $('#dgBombList').datagrid('getSelected');
+        //    //var rowIndex = $('#dgBombList').datagrid('getRowIndex', selectedrow);
+
+        //    $('#dgBombList').datagrid('deleteRow', rowIndex);
+        //}
+    }
+
+    $(document).ready(function() {
+        // GetPassedRate();
+        LoadAllProjects();
+        LoadAllComponents();
+        var flag = 1;
+
+       
+
+
+
+
+
+
+      
+        $('#chkSure').change(function () {
+            if (this.checked)
+                $('#btnSave').fadeIn('slow');
+            else
+                $('#btnSave').fadeOut('slow');
+
+        });
+
+        $('#txtQuantity').keydown(function (e) {
+            if (e.shiftKey || e.ctrlKey || e.altKey) {
+                e.preventDefault();
+            } else {
+                var key = e.keyCode;
+                if (!((key == 8) || (key == 46) || (key >= 35 && key <= 40) || (key >= 48 && key <= 57) || (key >= 96 && key <= 105))) {
+                    e.preventDefault();
+                }
+            }
+        });
+
+ 
+        function LoadAllComponents() {
+            var url = "@Url.Action("GetAllComponentList", "Project")";
+            $.getJSON(url, function (json) {
+                var elem = $("#txtComponentName");
+                $("#txtComponentName").chosen("destroy");
+                elem.empty();
+
+                elem.append("<option value='0'>---Select---</option>");
+
+                $.each(json, function (idx, obj) {
+
+                    elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+                });
+
+                elem.chosen({ width: "100%", height: "10px" });
+
+                //$(".chosen-select").chosen({ height: "10%" });
+
+
+            });
+        }
+
+
+        //Load Project Names
+        function LoadAllProjects() {
+            var url = "  @Url.Action("GetProjec", "Project")";
+            $.getJSON(url, function (json) {
+                var elem = $("#txtProjectName");
+                $("#txtProjectName").chosen("destroy");
+                elem.empty();
+
+                elem.append("<option value='0'>---Select---</option>");
+
+                $.each(json, function (idx, obj) {
+
+                    elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+                });
+
+                elem.chosen({ width: "100%", height: "10px" });
+
+
+            });
+        }
+
+        //Component Name Auto Complete
+        //$('#txtComponentName').autocomplete({
+        //    source: "/Project/GetComponentList/",
+        //    minLength: 2,
+        //    select: function (event, ui) {
+        //        $("#hdcomponentId").val(ui.item.Id);
+        //    }
+        //});
+
+        $("#btnAdd").click(function () {
+            debugger;
+            
+            var selectedDate = $('#txtReqDate').datepicker('getDate');
+            var today = new Date();
+            today.setHours(0);
+            today.setMinutes(0);
+            today.setSeconds(0);
+            
+
+            if ($('#txtComponentName').val() ==0) {
+
+
+                iziToast.error({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Component name required'
+                });
+                return false;
+            }
+            else if ($('#txtReqNumber').val() == "") {
+
+
+                iziToast.error({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Requisition Number required'
+                });
+                return false;
+            }
+            
+            else if ($('#txtQuantity').val() == 0 || $('#txtQuantity').val()=="") {
+
+
+                iziToast.error({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Quantity required'
+                });
+                return false;
+            }
+            
+           
+            else if ($('#txtReqDate').val() == "") {
+
+
+                iziToast.error({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Requisition Date required'
+                });
+                return false;
+            }
+
+           
+           else if (Date.parse(today) < Date.parse(selectedDate)) {
+               iziToast.error({
+                   timeout: 1000,
+                   imageWidth: 150,
+                   position: 'center',
+                   title: 'Error',
+                   message: 'Requisition date can not be greater than current date'
+               });
+               return false;
+           }
+
+
+           else {
+               
+           
+                 rows.push({
+                     ComponentId: $("#txtComponentName").val(),
+                     ComponentName: $("#txtComponentName option:selected").text(), 
+                     ReqQuantity: $("#txtQuantity").val(),
+                     OracleReqNumber: $("#txtReqNumber").val(),
+                     OracleReqDate: $("#txtReqDate").val(),
+                   
+                     Delete: "<input type='image' style='width:20px;height:20px;' src='https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/128/Recycle_Bin_Full.png' class = 'btnDelete' id = " + $("#hdcomponentId").val() + "  title = 'Delete' onclick='DeleteProductData(this)'></div>"
+                 });
+                 LoadAllComponents();
+                 $("#txtQuantity").val('');
+                 //$("#txtReqNumber").val('');
+                 //$("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+                //$("#txtComponentName").val('0');
+                 $('#dgComponentList').datagrid('loadData', rows);
+
+                //ClearInputs();
+
+            }
+
+            
+
+            
+
+
+        });
+
+
+    });
+
+    function SaveProjectBomList() {
+
+        var componentListFinal = [];
+        debugger;
+        var componnentListData = $('#dgComponentList').datagrid('getRows');
+        if (componnentListData.length > 0) {
+
+
+            //iziToast.success({
+            //    timeout: 2000,
+            //    imageWidth: 150,
+            //    position: 'center',
+            //    title: 'Success',
+            //    message: 'Success'
+            //});
+
+            for (var i = 0; i < componnentListData.length; i++) {
+
+                //var gridate = (componnentListData[i].OracleReqDate).split('-');
+                var gridate = (componnentListData[i].OracleReqDate).split('-');
+                var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+                var reqDate = new Date(convertDate);
+                
+
+                componentListFinal.push({
+                    
+                    ComponentId: componnentListData[i].ComponentId,
+                    ComponentName: componnentListData[i].ComponentName,
+                    ReqQuantity: componnentListData[i].ReqQuantity,
+                    OracleReqNumber: componnentListData[i].OracleReqNumber,
+                    OracleReqDate: reqDate
+                   
+                });
+
+            }
+
+            console.log(componentListFinal);
+            if (componentListFinal.length != 0) {
+
+                $.ajax({
+                    url: '@Url.Action("InsertComponentRequisition", "ProjectComponents")',
+                    type: 'Post',
+                    data: JSON.stringify({ componentListFinal: componentListFinal }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function(result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: 'Result Saved Successfully'
+                            });
+
+                            $('#dgComponentList').datagrid('loadData', { total: 0, rows: [] });
+                            $("#txtQuantity").val('');
+                            $("#txtReqNumber").val('');
+                            $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+
+                            $('#chkSure').prop('checked', false);
+                            $('#btnSave').hide();
+                            return true;
+                            //location.reload();
+                        }
+
+                        else if (result.Id == "0") {
+                            window.location = '@Url.Action("LogOut", "Account")';
+
+                        }
+
+
+                        else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: 'Error Occured While Saving'
+                            });
+                        }
+
+                    },
+                    error: function(result, textStatus, jqXHR) {
+                        //toastr.error(result.Message);
+
+                        //return false;
+                    }
+                });
+            }
+
+        } else {
+
+
+            iziToast.error({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Error',
+                message: 'There must be at least 1 item in component list'
+            });
+            $('#chkSure').prop('checked', false);
+            $('#btnSave').hide();
+            return false;
+
+        }
+
+
+    }
+
+
+    function AllClear() {
+
+       
+        $('#dgComponentList').datagrid('loadData', { total: 0, rows: [] });
+        $("#txtQuantity").val('');
+        $("#txtReqNumber").val('');
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+
+        $('#chkSure').prop('checked', false);
+        $('#btnSave').hide();
+
+
+    }
+
+
+    function ClearInputs() {
+      
+        $("#txtQuantity").val('');
+        $("#txtReqNumber").val('');
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+
+    }
+
+</script>
+
+
+

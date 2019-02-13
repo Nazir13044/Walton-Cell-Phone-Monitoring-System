@@ -1,0 +1,244 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>ProductionDisplay</title>
+    <link href="~/css/style.default.css" rel="stylesheet" />
+    <link href="~/js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <style>
+        .clock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #17D4FE;
+            font-size: 35px;
+            font-family: Orbitron;
+            letter-spacing: 7px;
+            -webkit-animation-duration: 1s;
+            
+            -webkit-animation-direction: alternate;
+            -webkit-animation-iteration-count: infinite;
+            animation-duration: 1s;
+          
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+
+
+
+        #divGlow {
+           
+            
+            -webkit-transition: border 0.1s linear, box-shadow 0.1s linear;
+            -moz-transition: border 0.1s linear, box-shadow 0.1s linear;
+            transition: border 0.1s linear, box-shadow 0.1s linear;
+            
+        }
+
+            #divGlow.active {
+                border-color: #EBFC1B;
+                -webkit-box-shadow: 0 0 150px #EBFC1B;
+                -moz-box-shadow: 0 0 15px #EBFC1B;
+                box-shadow: 0 0 40px #EBFC1B;
+            }
+        </style>
+    
+   
+</head>
+    <body style="background-color: #400F4E">
+        <div class="container-fluid" >
+
+            <div class="row">
+                <div class="col-lg-12">
+                    &nbsp;
+                </div>
+
+                    <div class="col-lg-12" >
+                        <div class="card" id="divGlow" style="background-color: #440E16; color: white; border: 2px solid white; ">
+
+                            <div class="card-body">
+                                <h5 class="card-title" id="divDate" style=" color: white; font-size: 30px; font-family: Orbitron;"></h5>
+
+                            </div>
+                            <div class="clock" id="MyClockDispla" style="margin-right: 300px; color: #10D328; "> Production</div>
+                            <div class="clock pull-right" id="MyClockDisplay" style="margin-left: 380px;"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+        </div>
+
+
+        <div class="container-fluid" style="background-color: #FFFFFF; border: 0px solid #1F0B48;margin-top: 5px; ">
+            
+                <div class="row col-lg-12" id="divProductionLineData">
+                </div>
+            
+            </div>
+
+          
+        <script src="~/js/vendor/jquery/jquery-1.9.1.min.js"></script>
+        <script src="~/js/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/js/vendor/chart.js/Chart.min.js"></script>
+        
+        <script src="~/js/jquery.appear.js"></script>
+        <script src="~/js/modernizr-1.5.min.js"></script>
+        <script src="~/js/win8.js"></script>
+        <script>
+            var glower = $('#divGlow');
+            window.setInterval(function () {
+                glower.toggleClass('active');
+            }, 1000);
+
+            window.setInterval(function () {
+                $('#divProductionLineData').empty();
+                ProductionLineCount();
+            }, 5000);
+
+
+
+            setTimeout(function () {
+               
+                location.reload();
+            }, 600000);
+            
+            //window.setInterval(function () {
+            //    $('#HourlyLineWiseQcStatus').empty();
+                
+            //    HourlyLineWiseStationsStatus();
+            //}, 40000);
+
+
+            $(document).ready(function() {
+                showTime();
+                ProductionLineCount();
+               
+            });
+   
+   
+            //setTimeout(function () {   //calls click event after a certain time
+            //    HourlyLineWiseStationsStatus();
+            //}, 3000);
+
+
+           
+
+            function showTime() {
+                debugger 
+                //fir date
+                var dateonly = new Date();
+                var n = dateonly.toDateString();
+                document.getElementById("divDate").innerText = n;
+                document.getElementById("divDate").textContent = n;
+                //
+
+
+
+                var date = new Date();
+                var h = date.getHours(); // 0 - 23
+                var m = date.getMinutes(); // 0 - 59
+                var s = date.getSeconds(); // 0 - 59
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+
+                if (h >= 12) {
+                    //h = h - 12;
+                    session = "PM";
+                }
+
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+
+                h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+
+                var time = h + ":" + m + ":" + s + " " + session;
+                document.getElementById("MyClockDisplay").innerText = time;
+                document.getElementById("MyClockDisplay").textContent = time;
+
+                setTimeout(showTime, 1000);
+
+            }
+
+            function ProductionLineCount() {
+                
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; //January is 0!
+                var yyyy = today.getFullYear();
+
+                if (dd < 10) {
+                    dd = '0' + dd;
+                }
+
+                if (mm < 10) {
+                    mm = '0' + mm;
+                }
+
+                today = dd + '-' + mm + '-' + yyyy;
+
+
+                var gridate = today.split('-');
+                var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+                $.ajax({
+                    url: '@Url.Action("DisplayProductionCount", "Report")',
+                    type: 'POST',
+                    data: JSON.stringify({ date: convertDate }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        
+
+                        if (result.length == 0) {
+                            $('#divProductionLineData').empty();
+                            $('#divProductionLineData').text('No Production Data available');
+                        } else {
+
+                            $.each(result, function (index, itemData) {
+                                
+
+                                //$('#divProductionLineData').empty();
+                                $('#divProductionLineData').append(' <div class="col-lg-3" style="padding: 2px;"><div class="card" style="border: 2px solid #16BABA; padding: 5px;"><div class="card-body"><h5 class="card-title" style="font-size: 25px;background-color:green;border:1px solid;color:white;text-align:center;border-radius:50px;">' + itemData.LineName + '</h5><h5 class="card-title" style="font-size:25px;background-color:#272D64;border:1px solid;color:white;text-align:center;border-radius:50px;">' + itemData.ProjectName + '</h5></div><ul class="list-group list-group-flush" style="font-size: 30px;"><li class="list-group-item" style=""><strong>PCB : </strong><strong id="items" style="color:red;font-size:30px;" >' + itemData.IssuedComponent + '</strong></li><li class="list-group-item"><strong>Screw Done : </strong><strong id="items" style="color:red;font-size:30px;" >' + itemData.ScrewDone + '</strong></li><li class="list-group-item"><strong>Functional : </strong><strong id="items" style="color:red;font-size:30px;" >' + itemData.FunctionalQC + '</strong></li><li class="list-group-item"><strong>Aesthetic : </strong><strong id="items" style="color:red;font-size:30px;" >' + itemData.AestheticQc + '</strong></li><li class="list-group-item"><strong>Fault/Rework : </strong><strong id="items" style="color:red;font-size:30px;" >' + itemData.TotalReworkPending + '</strong></li></ul></div></div>');
+
+
+                            });
+                        }
+
+
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        //toastr.error(result.Message);
+                        // alert("Error");
+                        return false;
+                    }
+                });
+            }
+
+        </script>
+    </body>
+
+</html>

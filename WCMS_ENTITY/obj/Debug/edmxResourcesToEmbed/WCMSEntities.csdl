@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WCMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WCMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblMainMenu" EntityType="WCMSModel.tblMainMenu" />
+    <EntitySet Name="tblSubMenu" EntityType="WCMSModel.tblSubMenu" />
+    <AssociationSet Name="FK_tblSubMenu_tblRoles" Association="WCMSModel.FK_tblSubMenu_tblRoles">
+      <End Role="tblMainMenu" EntitySet="tblMainMenu" />
+      <End Role="tblSubMenu" EntitySet="tblSubMenu" />
+    </AssociationSet>
+    <EntitySet Name="AssemblyAttendance" EntityType="WCMSModel.AssemblyAttendance" />
+    <FunctionImport Name="SPGetProductCount" ReturnType="Collection(WCMSModel.SPGetProductCount_Result)">
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tblProductionLine" EntityType="WCMSModel.tblProductionLine" />
+    <EntitySet Name="tblSolderingOthers" EntityType="WCMSModel.tblSolderingOthers" />
+    <EntitySet Name="tblComponentRequisition" EntityType="WCMSModel.tblComponentRequisition" />
+    <EntitySet Name="tblAssemblyLineSetup" EntityType="WCMSModel.tblAssemblyLineSetup" />
+    <EntitySet Name="tblTimeRange" EntityType="WCMSModel.tblTimeRange" />
+    <EntitySet Name="OQcBatchInfo" EntityType="WCMSModel.OQcBatchInfo" />
+    <FunctionImport Name="SpHourlyTargetEfficiency" ReturnType="Collection(WCMSModel.SpHourlyTargetEfficiency_Result)">
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+      <Parameter Name="lineId" Mode="In" Type="Int64" />
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPOQcStatus" ReturnType="Collection(WCMSModel.SPOQcStatus_Result)">
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tblAssemblyLineSetupDetails" EntityType="WCMSModel.tblAssemblyLineSetupDetails" />
+    <EntitySet Name="Issues" EntityType="WCMSModel.Issues" />
+    <EntitySet Name="BomList" EntityType="WCMSModel.BomList" />
+    <EntitySet Name="EmpAttendences" EntityType="WCMSModel.EmpAttendences" />
+    <EntitySet Name="tblLogin" EntityType="WCMSModel.tblLogin" />
+    <EntitySet Name="tblRoles" EntityType="WCMSModel.tblRoles" />
+    <AssociationSet Name="FK_tblLogin_tblRoles" Association="WCMSModel.FK_tblLogin_tblRoles">
+      <End Role="tblRoles" EntitySet="tblRoles" />
+      <End Role="tblLogin" EntitySet="tblLogin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblRoles_tblRoles" Association="WCMSModel.FK_tblRoles_tblRoles">
+      <End Role="tblRoles" EntitySet="tblRoles" />
+      <End Role="tblRoles1" EntitySet="tblRoles" />
+    </AssociationSet>
+    <EntitySet Name="ProjectBomList" EntityType="WCMSModel.ProjectBomList" />
+    <EntitySet Name="tblDailyIssuedComponents" EntityType="WCMSModel.tblDailyIssuedComponents" />
+    <EntitySet Name="EmployeeInfo" EntityType="WCMSModel.EmployeeInfo" />
+    <EntitySet Name="tblDailyPacking" EntityType="WCMSModel.tblDailyPacking" />
+    <EntitySet Name="tblLineStatus" EntityType="WCMSModel.tblLineStatus" />
+    <FunctionImport Name="SpLineWiseHourlyTargetEfficiency" ReturnType="Collection(WCMSModel.SpLineWiseHourlyTargetEfficiency_Result)">
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpLineWiseStationsHourlyStatus" ReturnType="Collection(WCMSModel.SpLineWiseStationsHourlyStatus_Result)">
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpProductionLineCount" ReturnType="Collection(WCMSModel.SpProductionLineCount_Result)">
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="ProductionMaster" EntityType="WCMSModel.ProductionMaster" />
+    <EntitySet Name="tblPackagingBatch" EntityType="WCMSModel.tblPackagingBatch" />
+    <EntitySet Name="tblDeletdPackagingBatchData" EntityType="WCMSModel.tblDeletdPackagingBatchData" />
+    <FunctionImport Name="SpPackagingLineCount" ReturnType="Collection(WCMSModel.SpPackagingLineCount_Result)">
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Testo" ReturnType="Collection(WCMSModel.Testo_Result)">
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MyLogisticsTest" ReturnType="Collection(WCMSModel.MyLogisticsTest_Result)">
+      <Parameter Name="date" Mode="In" Type="String" />
+      <Parameter Name="model" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tblIMEIRecord" EntityType="WCMSModel.tblIMEIRecord" />
+    <EntitySet Name="tblRework" EntityType="WCMSModel.tblRework" />
+    <EntitySet Name="tblLogistics" EntityType="WCMSModel.tblLogistics" />
+    <EntitySet Name="tblScrew" EntityType="WCMSModel.tblScrew" />
+    <EntitySet Name="tblWarehouse" EntityType="WCMSModel.tblWarehouse" />
+    <EntitySet Name="tblLogisticsSentItems" EntityType="WCMSModel.tblLogisticsSentItems" />
+    <EntitySet Name="TestIMEIUploadForUpdate" EntityType="WCMSModel.TestIMEIUploadForUpdate" />
+    <EntitySet Name="tblGlueMaster" EntityType="WCMSModel.tblGlueMaster" />
+    <EntitySet Name="tblLcdGlueIssuesList" EntityType="WCMSModel.tblLcdGlueIssuesList" />
+    <EntitySet Name="tblTpLcdMaster" EntityType="WCMSModel.tblTpLcdMaster" />
+    <EntitySet Name="tblLcdGlueWorkingModels" EntityType="WCMSModel.tblLcdGlueWorkingModels" />
+    <EntitySet Name="tblLcdGlueRework" EntityType="WCMSModel.tblLcdGlueRework" />
+    <EntitySet Name="tblBarCodeInv" EntityType="WCMSModel.tblBarCodeInv" />
+    <FunctionImport Name="SpPackagingLineCount1" ReturnType="Collection(WCMSModel.SpPackagingLineCount1_Result)">
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpTpLcdReport" ReturnType="Collection(WCMSModel.SpTpLcdReport_Result)">
+      <Parameter Name="dateFrom" Mode="In" Type="String" />
+      <Parameter Name="dateTo" Mode="In" Type="String" />
+      <Parameter Name="project" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGlueStationReport" ReturnType="Collection(WCMSModel.SpGlueStationReport_Result)">
+      <Parameter Name="dateFrom" Mode="In" Type="String" />
+      <Parameter Name="dateTo" Mode="In" Type="String" />
+      <Parameter Name="project" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPLineWiseReport" ReturnType="Collection(WCMSModel.SPLineWiseReport_Result)">
+      <Parameter Name="LineId" Mode="In" Type="Int64" />
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpTp_LcdReport" ReturnType="Collection(WCMSModel.SpTp_LcdReport_Result)">
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+      <Parameter Name="fromDate" Mode="In" Type="String" />
+      <Parameter Name="toDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tblRepairStatus" EntityType="WCMSModel.tblRepairStatus" />
+    <EntitySet Name="tblColors" EntityType="WCMSModel.tblColors" />
+    <EntitySet Name="tblRepairComponents" EntityType="WCMSModel.tblRepairComponents" />
+    <EntitySet Name="tblBtteryScanner" EntityType="WCMSModel.tblBtteryScanner" />
+    <EntitySet Name="tblCkdMmiMaster" EntityType="WCMSModel.tblCkdMmiMaster" />
+    <EntitySet Name="tblCkdRework" EntityType="WCMSModel.tblCkdRework" />
+    <EntitySet Name="tblCkdRfMaster" EntityType="WCMSModel.tblCkdRfMaster" />
+    <EntitySet Name="tblCkdSmtMaster" EntityType="WCMSModel.tblCkdSmtMaster" />
+    <EntitySet Name="tblCkdSoftwareLoadMaster" EntityType="WCMSModel.tblCkdSoftwareLoadMaster" />
+    <FunctionImport Name="SPAssemblylineProductionStatus" ReturnType="Collection(WCMSModel.SPAssemblylineProductionStatus_Result)">
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+      <Parameter Name="fromdate" Mode="In" Type="String" />
+      <Parameter Name="todate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpDailyProductionFault" ReturnType="Collection(WCMSModel.SpDailyProductionFault_Result)">
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+      <Parameter Name="date" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPLineWiseIssueCount">
+      <Parameter Name="date" Mode="In" Type="String" />
+      <Parameter Name="projectId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="tblBatteryComponentInfo" EntityType="WCMSModel.tblBatteryComponentInfo" />
+    <EntitySet Name="tblOqcCheckedItems" EntityType="WCMSModel.tblOqcCheckedItems" />
+    <EntitySet Name="AgingBatch" EntityType="WCMSModel.AgingBatch" />
+    <EntitySet Name="AgingBatchInfo" EntityType="WCMSModel.AgingBatchInfo" />
+    <EntitySet Name="tblAgingMaster" EntityType="WCMSModel.tblAgingMaster" />
+    <EntitySet Name="tblChargerMaster" EntityType="WCMSModel.tblChargerMaster" />
+    <EntitySet Name="tblCkdIssues" EntityType="WCMSModel.tblCkdIssues" />
+  </EntityContainer>
+  <EntityType Name="tblMainMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainMenu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblSubMenu" Relationship="WCMSModel.FK_tblSubMenu_tblRoles" FromRole="tblMainMenu" ToRole="tblSubMenu" />
+  </EntityType>
+  <EntityType Name="tblSubMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubMenu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Controller" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MainMenuId" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="tblMainMenu" Relationship="WCMSModel.FK_tblSubMenu_tblRoles" FromRole="tblSubMenu" ToRole="tblMainMenu" />
+    <Property Name="IsMenue" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_tblSubMenu_tblRoles">
+    <End Type="WCMSModel.tblMainMenu" Role="tblMainMenu" Multiplicity="0..1" />
+    <End Type="WCMSModel.tblSubMenu" Role="tblSubMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMainMenu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSubMenu">
+        <PropertyRef Name="MainMenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AssemblyAttendance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AssemblyLineStage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="SPGetProductCount_Result">
+    <Property Type="Int32" Name="TimeHour" Nullable="true" />
+    <Property Type="Int32" Name="ProductCount" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblProductionLine">
+    <Key>
+      <PropertyRef Name="LineId" />
+    </Key>
+    <Property Name="LineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LineName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="Int64" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LineCriteria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblSolderingOthers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ComponentId" Type="Int64" />
+    <Property Name="ComponentName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RequsitionQuantity" Type="Int32" />
+    <Property Name="UsedQuantity" Type="Int32" />
+    <Property Name="WastedQuantity" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="ReworkId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tblComponentRequisition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComponentId" Type="Int64" />
+    <Property Name="ComponentName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ReqQuantity" Type="Int32" />
+    <Property Name="OracleReqNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OracleReqDate" Type="DateTime" Precision="3" />
+    <Property Name="UsedQuantity" Type="Int32" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblAssemblyLineSetup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AssemblyLineId" Type="Int32" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="ProjectName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IssuedQuantity" Type="Int32" />
+    <Property Name="HourlyTargetQuantity" Type="Int32" />
+    <Property Name="TotalTargetQuantity" Type="Int32" />
+    <Property Name="ManPower" Type="Int32" />
+    <Property Name="AddedBy" Type="Int32" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="PreviousQuantity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblTimeRange">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HourCount" Type="Int32" />
+    <Property Name="TimeRange" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OQcBatchInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MobileCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="Imei1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imei2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsSample" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="LineId" Type="Int64" />
+  </EntityType>
+  <ComplexType Name="SpHourlyTargetEfficiency_Result">
+    <Property Type="Int32" Name="HourCount" Nullable="true" />
+    <Property Type="String" Name="TimeRange" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="Int32" Name="QcPassed" Nullable="true" />
+    <Property Type="Int32" Name="TargrtedQ" Nullable="true" />
+    <Property Type="Int32" Name="TotalQcPassed" Nullable="true" />
+    <Property Type="Int32" Name="FunctionalFault" Nullable="true" />
+    <Property Type="Int32" Name="AestheticFault" Nullable="true" />
+    <Property Type="Int32" Name="TotalReworked" Nullable="true" />
+    <Property Type="Int32" Name="TotalReworkPending" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SPOQcStatus_Result">
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="String" Name="BatchNo" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="BatchQuantity" Nullable="true" />
+    <Property Type="Int32" Name="SampleQ" Nullable="true" />
+    <Property Type="Int32" Name="TotalFault" Nullable="true" />
+    <Property Type="String" Name="FaultyImei" Nullable="true" />
+    <Property Type="String" Name="Remarks" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblAssemblyLineSetupDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ComponentId" Type="Int64" />
+    <Property Name="ComponentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RequisitionQuantity" Type="Int32" />
+    <Property Name="SubmitQuantity" Type="Int32" />
+    <Property Name="AddedBy" Type="Int32" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Issues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FaultType" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Priority" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BomList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComponentName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ComponentCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EmpAttendences">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="RoleId" Type="Int64" />
+    <Property Name="InTime" Type="DateTime" Precision="3" />
+    <Property Name="OutTime" Type="DateTime" Precision="3" />
+    <Property Name="TotalWorkingHour" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="AddedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="Int64" />
+    <Property Name="EmployeeId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int32" />
+    <NavigationProperty Name="tblRoles" Relationship="WCMSModel.FK_tblLogin_tblRoles" FromRole="tblLogin" ToRole="tblRoles" />
+    <Property Name="RoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LineName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="Shifting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Roles" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblLogin" Relationship="WCMSModel.FK_tblLogin_tblRoles" FromRole="tblRoles" ToRole="tblLogin" />
+    <NavigationProperty Name="tblRoles1" Relationship="WCMSModel.FK_tblRoles_tblRoles" FromRole="tblRoles" ToRole="tblRoles1" />
+    <NavigationProperty Name="tblRoles2" Relationship="WCMSModel.FK_tblRoles_tblRoles" FromRole="tblRoles1" ToRole="tblRoles" />
+  </EntityType>
+  <Association Name="FK_tblLogin_tblRoles">
+    <End Type="WCMSModel.tblRoles" Role="tblRoles" Multiplicity="0..1" />
+    <End Type="WCMSModel.tblLogin" Role="tblLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblLogin">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblRoles_tblRoles">
+    <End Type="WCMSModel.tblRoles" Role="tblRoles" Multiplicity="1" />
+    <End Type="WCMSModel.tblRoles" Role="tblRoles1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblRoles1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ProjectBomList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectMasterId" Type="Int64" Nullable="false" />
+    <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComponentId" Type="Int64" Nullable="false" />
+    <Property Name="ComponentName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComponentNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IcVendor" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblDailyIssuedComponents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComponentName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="ComponentCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EmployeeInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentId" Type="Int64" />
+    <Property Name="SectionId" Type="Int64" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Shifting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblDailyPacking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComponentId" Type="Int64" />
+    <Property Name="ComponentName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComponentNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IcVendor" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblLineStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LineName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="SpLineWiseHourlyTargetEfficiency_Result">
+    <Property Type="Int32" Name="HourCount" Nullable="true" />
+    <Property Type="String" Name="TimeRange" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="Int64" Name="lineId" Nullable="true" />
+    <Property Type="Int32" Name="QcPassed" Nullable="true" />
+    <Property Type="Int32" Name="TargrtedQ" Nullable="true" />
+    <Property Type="Int32" Name="TotalQcPassed" Nullable="true" />
+    <Property Type="Int32" Name="FunctionalFault" Nullable="true" />
+    <Property Type="Int32" Name="AestheticFault" Nullable="true" />
+    <Property Type="Int32" Name="TotalReworked" Nullable="true" />
+    <Property Type="Int32" Name="TotalReworkPending" Nullable="true" />
+    <Property Type="Int32" Name="TotalWastages" Nullable="true" />
+    <Property Type="String" Name="LineName" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="SpLineWiseStationsHourlyStatus_Result">
+    <Property Type="Int32" Name="HourCount" Nullable="true" />
+    <Property Type="String" Name="TimeRange" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="Int64" Name="lineId" Nullable="true" />
+    <Property Type="Int32" Name="IssuedComponent" Nullable="true" />
+    <Property Type="Int32" Name="FunctionalQc" Nullable="true" />
+    <Property Type="Int32" Name="AestheticQc" Nullable="true" />
+    <Property Type="Int32" Name="AgingQc" Nullable="true" />
+    <Property Type="Int32" Name="PackagingQc" Nullable="true" />
+    <Property Type="Int32" Name="TotalReworkPending" Nullable="true" />
+    <Property Type="String" Name="LineName" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="SpProductionLineCount_Result">
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="lineId" Nullable="true" />
+    <Property Type="Int32" Name="IssuedComponent" Nullable="true" />
+    <Property Type="Int32" Name="FunctionalQc" Nullable="true" />
+    <Property Type="Int32" Name="AestheticQc" Nullable="true" />
+    <Property Type="Int32" Name="AgingQc" Nullable="true" />
+    <Property Type="Int32" Name="PackagingQc" Nullable="true" />
+    <Property Type="Int32" Name="TotalReworkPending" Nullable="true" />
+    <Property Type="String" Name="ProjectName1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LineName" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <EntityType Name="ProductionMaster">
+    <Key>
+      <PropertyRef Name="ProductionId" />
+    </Key>
+    <Property Name="ProductionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="PackagingLineId" Type="Int64" />
+    <Property Name="MobileCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imei1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imei2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="QcStation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AgingBatchNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="FinallyPassed" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FinallyPassedTime" Type="DateTime" Precision="3" />
+    <Property Name="FinallyPassedBy" Type="Int64" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FunctionalBy" Type="Int64" />
+    <Property Name="FunctionalAD" Type="DateTime" Precision="3" />
+    <Property Name="AestheticBy" Type="Int64" />
+    <Property Name="AestheticAD" Type="DateTime" Precision="3" />
+    <Property Name="AgingBy" Type="Int64" />
+    <Property Name="AgingAD" Type="DateTime" Precision="3" />
+    <Property Name="PackagingBy" Type="Int64" />
+    <Property Name="PackagingAD" Type="DateTime" Precision="3" />
+    <Property Name="PackagingAstheticBy" Type="Int64" />
+    <Property Name="PackagingAstheticAD" Type="DateTime" Precision="3" />
+    <Property Name="PackagingOQCBy" Type="Int64" />
+    <Property Name="PackagingOQCAD" Type="DateTime" Precision="3" />
+    <Property Name="OQCBatchNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblPackagingBatch">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="MobileCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Imei1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Imei2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SystemBatch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MasterBatch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Delivered" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="ReceivedBy" Type="Int64" />
+    <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
+    <Property Name="BatchCreatedBy" Type="Int64" />
+    <Property Name="BatchCreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Sample" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblDeletdPackagingBatchData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="MobileCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Imei1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Imei2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sample" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SystemBatch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MasterBatch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="SpPackagingLineCount_Result">
+    <Property Type="Int64" Name="PackagingLineId" Nullable="true" />
+    <Property Type="String" Name="LineName" Nullable="true" MaxLength="20" />
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PackagingPass" Nullable="true" />
+    <Property Type="Int32" Name="PackagingFault" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Testo_Result">
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="lineId" Nullable="true" />
+    <Property Type="Int32" Name="IssuedComponent" Nullable="true" />
+    <Property Type="Int32" Name="FunctionalQc" Nullable="true" />
+    <Property Type="Int32" Name="AestheticQc" Nullable="true" />
+    <Property Type="Int32" Name="AgingQc" Nullable="true" />
+    <Property Type="Int32" Name="PackagingQc" Nullable="true" />
+    <Property Type="Int32" Name="TotalReworkPending" Nullable="true" />
+    <Property Type="String" Name="ProjectName1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LineName" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="MyLogisticsTest_Result">
+    <Property Type="String" Name="Model" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProductionCount" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblIMEIRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IMEI1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IMEI2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Project" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EanCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Wifi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubSn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblRework">
+    <Key>
+      <PropertyRef Name="ReworkId" />
+    </Key>
+    <Property Name="ReworkId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="MobileCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imei1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imei2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Issues" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FailedStation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="StartedBy" Type="Int64" />
+    <Property Name="PauseDate" Type="DateTime" Precision="3" />
+    <Property Name="FinishedDate" Type="DateTime" Precision="3" />
+    <Property Name="FinishedBy" Type="Int64" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblLogistics">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BoxCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Imei1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imei2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="Uploaded" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UploadedDate" Type="DateTime" Precision="3" />
+    <Property Name="OracleUploaded" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OracleTransactionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OracleUploadedDate" Type="DateTime" Precision="3" />
+    <Property Name="OracleUploadedBy" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tblScrew">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblWarehouse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BoxCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Imei1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imei2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblLogisticsSentItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BoxCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Imei1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imei2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TestIMEIUploadForUpdate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IMEI1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IMEI2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblGlueMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="FinallyPassed" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblLcdGlueIssuesList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IssueName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Priority" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblTpLcdMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="FinallyPassed" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblLcdGlueWorkingModels">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="LineName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CurentlyRunning" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="Station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblLcdGlueRework">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Issue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FailedFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblBarCodeInv">
+    <Key>
+      <PropertyRef Name="RecID" />
+    </Key>
+    <Property Name="RecID" Type="Guid" Nullable="false" />
+    <Property Name="PrintDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProductType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BarCode" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="BarCode2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DelieveredTo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PrintSuccess" Type="Boolean" Nullable="false" />
+    <Property Name="AddedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updatedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateUpdated" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="SpPackagingLineCount1_Result">
+    <Property Type="Int64" Name="PackagingLineId" Nullable="true" />
+    <Property Type="String" Name="LineName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="LineId" Nullable="false" />
+    <Property Type="Int32" Name="PackagingPass" Nullable="true" />
+    <Property Type="Int32" Name="PackagingFault" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpTpLcdReport_Result">
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="AddedBy" Nullable="true" />
+    <Property Type="Int32" Name="Passed" Nullable="true" />
+    <Property Type="String" Name="EmployeeName" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="Fault" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGlueStationReport_Result">
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="AddedBy" Nullable="true" />
+    <Property Type="Int32" Name="Passed" Nullable="true" />
+    <Property Type="String" Name="EmployeeName" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="Fault" Nullable="true" />
+    <Property Type="Int32" Name="Fault1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SPLineWiseReport_Result">
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="Int64" Name="LineId" Nullable="true" />
+    <Property Type="DateTime" Name="SAddedDate" Nullable="true" />
+    <Property Type="Int32" Name="ScrewDone" Nullable="true" />
+    <Property Type="Int32" Name="TodaysPcb" Nullable="true" />
+    <Property Type="Int32" Name="FunctionalQc" Nullable="true" />
+    <Property Type="Int32" Name="AestheticQc" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpTp_LcdReport_Result">
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="Int32" Name="Worked" Nullable="true" />
+    <Property Type="Int32" Name="QcPass" Nullable="true" />
+    <Property Type="DateTime" Name="AddedDate" Nullable="true" />
+    <Property Type="Int32" Name="QcFail" Nullable="true" />
+    <Property Type="Int32" Name="Reworked" Nullable="true" />
+    <Property Type="Int32" Name="ReworkPending" Nullable="true" />
+    <Property Type="Int32" Name="NonReparable" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblRepairStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReworkId" Type="Int64" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="Issue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MaterialFault" Type="Boolean" />
+    <Property Name="ProcessFault" Type="Boolean" />
+    <Property Name="IsFaulty" Type="Boolean" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="OthersRemarks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblColors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblRepairComponents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReworkId" Type="Int64" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="UsedComponents" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BomId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsedQuantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Used" Type="Boolean" />
+    <Property Name="Waste" Type="Boolean" />
+    <Property Name="WasteQuantiy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblBtteryScanner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="Int64" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblCkdMmiMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LotNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblCkdRework">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Issues" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FailedStation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LotNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="FinishedBy" Type="Int64" />
+    <Property Name="FinishedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblCkdRfMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LotNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblCkdSmtMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LotNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblCkdSoftwareLoadMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LotNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="SPAssemblylineProductionStatus_Result">
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="LineId" Nullable="true" />
+    <Property Type="String" Name="LineName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IssuedInLine" Nullable="true" />
+    <Property Type="Int32" Name="TotalQcChecked" Nullable="true" />
+    <Property Type="Int32" Name="QcPassed" Nullable="true" />
+    <Property Type="Int32" Name="FunctionalFault" Nullable="true" />
+    <Property Type="Int32" Name="AestheticFault" Nullable="true" />
+    <Property Type="Int32" Name="Reworked" Nullable="true" />
+    <Property Type="Int32" Name="ReworkPending" Nullable="true" />
+    <Property Type="Int32" Name="Nonreparable" Nullable="true" />
+    <Property Type="Int32" Name="TotalFault" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpDailyProductionFault_Result">
+    <Property Type="Int64" Name="ProjectId" Nullable="true" />
+    <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="LineId" Nullable="true" />
+    <Property Type="String" Name="LineName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="TotalChecked" Nullable="true" />
+    <Property Type="Int32" Name="TotalPassed" Nullable="true" />
+    <Property Type="Int32" Name="Fault" Nullable="true" />
+    <Property Type="Int32" Name="TotalFault" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblBatteryComponentInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PorjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int32" />
+    <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PcbIssued" Type="Int32" />
+    <Property Name="PcbPassed" Type="Int32" />
+    <Property Name="PcbFailed" Type="Int32" />
+    <Property Name="CellIssued" Type="Int32" />
+    <Property Name="CellPassed" Type="Int32" />
+    <Property Name="CellFailed" Type="Int32" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="Int64" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblOqcCheckedItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="Imei1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imei2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OqcStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Issues" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="AddedBy" Type="Int64" />
+  </EntityType>
+  <EntityType Name="AgingBatch">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BatchType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Passed" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="AgingBatchInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AgingFailed" Type="Boolean" />
+    <Property Name="ChargingFailed" Type="Boolean" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblAgingMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="MobileCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AgingBatch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AgingPassed" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="AgingIssue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reworked" Type="Boolean" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblChargerMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="ProjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="Int64" />
+    <Property Name="MobileCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ChargingBatch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ChargingPassed" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="ChargingIssue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reworked" Type="Boolean" />
+    <Property Name="AddedBy" Type="Int64" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblCkdIssues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Station" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

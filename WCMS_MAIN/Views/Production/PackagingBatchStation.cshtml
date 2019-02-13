@@ -1,0 +1,283 @@
+﻿
+@{
+    ViewBag.Title = "PackagingBatchStation";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+
+
+
+
+    .circle {
+        margin: 26px;
+        display: inline-block;
+        padding: 16px;
+        text-align: center;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 2px solid #1d2087;
+    }
+
+        .circle::before,
+        .circle::after {
+            position: absolute;
+            z-index: -1;
+            display: block;
+            content: '';
+        }
+
+        .circle,
+        .circle::before,
+        .circle::after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+
+    .circle {
+        position: relative;
+        z-index: 2;
+        background-color: #fff;
+        border: 2px solid #5c5eae;
+        color: #5c5eae;
+        line-height: 50px;
+        overflow: hidden;
+    }
+
+        .circle:hover {
+            color: #fff;
+        }
+
+        .circle::after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+        }
+
+        .circle:hover::after {
+            background: #5c5eae;
+            border-radius: 50%;
+            -webkit-transform: scale(.9);
+            transform: scale(.9);
+        }
+
+    .circle1 {
+        opacity: 0.4;
+    }
+
+    .circle2 {
+        opacity: 0.6;
+    }
+
+    .circle3 {
+        opacity: 0.8;
+    }
+
+    .circle a {
+        text-decoration: none;
+        color: #1d2087;
+    }
+
+    .circle h2 {
+        font-size: 60px;
+    }
+
+        .circle h2 small {
+            color: #1d2087;
+        }
+
+    .circle p {
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    .failed {
+        background-color: red;
+    }
+</style>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Packaging Station </a></li>
+        <li class="breadcrumb-item active">Packaging OQC Batch Station</li>
+    </ul>
+</div>
+
+<section class="forms" id="divForm">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="circle">
+                    <a href=""><h2 id="idCount"></h2><small>Items</small><p>Scanned</p></a>
+                </div>
+            </div>
+
+            <!-- Horizontal Form-->
+            <div class="col-lg-9" id="divCard">
+                <div class="card" style="height: 300px;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Packaging batch </h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-horizontal">
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Scan IMEI Barcode</label>
+                                <div class="col-sm-6">
+                                    <input id="txtImeiCode" style="height: 100px;" type="text" placeholder="Scan Barcode" class="form-control form-control-success">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link href="~/css/jquery-ui-1.12.css" rel="stylesheet" />
+
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/jquery-ui-1.12.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+<script>
+    
+    $(document).ready(function () {
+        //CountIssues();
+        CountOqcBatch();
+        $('#txtImeiCode').focus();
+        $('#txtImeiCode').keyup(function () {
+            debugger;
+            var lastTwoDigits = this.value.slice(-2);
+            if (lastTwoDigits == '-Y') {
+                InsertOQCBatchInfo(this.value);
+                // insertIssuedComponent(this.value);
+            }
+        });
+
+    });
+    
+
+    function CountOqcBatch() {
+
+        $.ajax({
+            url: '  @Url.Action("CountOqcBatch", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                if (result.length == 0)
+                    $('#idCount').text('0');
+                else
+                    $('#idCount').text(result[0].batchComponentcount);
+
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+
+
+    }
+
+
+    //create packaging batch information
+    //create packaging batch information
+    
+    function InsertOQCBatchInfo(code) {
+        debugger;
+        var codeValue = code.substring(0, code.length - 2);
+       
+        $.ajax({
+            url: '  @Url.Action("CreateOQCBacthInfo", "Production")',
+            type: 'Post',
+            data: JSON.stringify({ imeiCode: codeValue }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+                if (result.IsSuccess) {
+
+                    iziToast.success({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Success',
+                        message: 'Saved Successfully'
+                    });
+
+                    // CountIssues();
+                    CountOqcBatch();
+
+                    $("#divForm").removeClass("failed");
+                    $('#txtMaterialName').val('');
+                    $('#txtMaterialName').focus();
+                    //location.reload();
+                    return true;
+
+                } else {
+
+
+                    iziToast.error({
+                        timeout: 5000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result.Message
+                    });
+                    $('#txtMaterialName').val('');
+                    $("#divForm").addClass("failed");
+                    $('#txtMaterialName').val('');
+                    //window.location = '@Url.Action("LogOut", "Account")';
+                    return false;
+
+
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+
+                //return false;
+            }
+
+
+        });
+
+        $('#txtImeiCode').val('');
+        $('#txtImeiCode').focus();
+        //location.reload();
+    }
+
+
+</script>

@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WCMSModelStoreContainer" CdmEntityContainer="WCMSEntities">
+    <EntitySetMapping Name="tblMainMenu">
+      <EntityTypeMapping TypeName="WCMSModel.tblMainMenu">
+        <MappingFragment StoreEntitySet="tblMainMenu">
+          <ScalarProperty Name="MainMenu" ColumnName="MainMenu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSubMenu">
+      <EntityTypeMapping TypeName="WCMSModel.tblSubMenu">
+        <MappingFragment StoreEntitySet="tblSubMenu">
+          <ScalarProperty Name="IsMenue" ColumnName="IsMenue" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="MainMenuId" ColumnName="MainMenuId" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="SubMenu" ColumnName="SubMenu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssemblyAttendance">
+      <EntityTypeMapping TypeName="WCMSModel.AssemblyAttendance">
+        <MappingFragment StoreEntitySet="AssemblyAttendance">
+          <ScalarProperty Name="AssemblyLineStage" ColumnName="AssemblyLineStage" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SPGetProductCount" FunctionName="WCMSModel.Store.SPGetProductCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SPGetProductCount_Result">
+          <ScalarProperty Name="TimeHour" ColumnName="TimeHour" />
+          <ScalarProperty Name="ProductCount" ColumnName="ProductCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tblProductionLine">
+      <EntityTypeMapping TypeName="WCMSModel.tblProductionLine">
+        <MappingFragment StoreEntitySet="tblProductionLine">
+          <ScalarProperty Name="LineCriteria" ColumnName="LineCriteria" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSolderingOthers">
+      <EntityTypeMapping TypeName="WCMSModel.tblSolderingOthers">
+        <MappingFragment StoreEntitySet="tblSolderingOthers">
+          <ScalarProperty Name="ReworkId" ColumnName="ReworkId" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="WastedQuantity" ColumnName="WastedQuantity" />
+          <ScalarProperty Name="UsedQuantity" ColumnName="UsedQuantity" />
+          <ScalarProperty Name="RequsitionQuantity" ColumnName="RequsitionQuantity" />
+          <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblComponentRequisition">
+      <EntityTypeMapping TypeName="WCMSModel.tblComponentRequisition">
+        <MappingFragment StoreEntitySet="tblComponentRequisition">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="UsedQuantity" ColumnName="UsedQuantity" />
+          <ScalarProperty Name="OracleReqDate" ColumnName="OracleReqDate" />
+          <ScalarProperty Name="OracleReqNumber" ColumnName="OracleReqNumber" />
+          <ScalarProperty Name="ReqQuantity" ColumnName="ReqQuantity" />
+          <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAssemblyLineSetup">
+      <EntityTypeMapping TypeName="WCMSModel.tblAssemblyLineSetup">
+        <MappingFragment StoreEntitySet="tblAssemblyLineSetup">
+          <ScalarProperty Name="PreviousQuantity" ColumnName="PreviousQuantity" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="ManPower" ColumnName="ManPower" />
+          <ScalarProperty Name="TotalTargetQuantity" ColumnName="TotalTargetQuantity" />
+          <ScalarProperty Name="HourlyTargetQuantity" ColumnName="HourlyTargetQuantity" />
+          <ScalarProperty Name="IssuedQuantity" ColumnName="IssuedQuantity" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="AssemblyLineId" ColumnName="AssemblyLineId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTimeRange">
+      <EntityTypeMapping TypeName="WCMSModel.tblTimeRange">
+        <MappingFragment StoreEntitySet="tblTimeRange">
+          <ScalarProperty Name="TimeRange" ColumnName="TimeRange" />
+          <ScalarProperty Name="HourCount" ColumnName="HourCount" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OQcBatchInfo">
+      <EntityTypeMapping TypeName="WCMSModel.OQcBatchInfo">
+        <MappingFragment StoreEntitySet="OQcBatchInfo">
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsSample" ColumnName="IsSample" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MobileCode" ColumnName="MobileCode" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpHourlyTargetEfficiency" FunctionName="WCMSModel.Store.SpHourlyTargetEfficiency">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SpHourlyTargetEfficiency_Result">
+          <ScalarProperty Name="HourCount" ColumnName="HourCount" />
+          <ScalarProperty Name="TimeRange" ColumnName="TimeRange" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="QcPassed" ColumnName="QcPassed" />
+          <ScalarProperty Name="TargrtedQ" ColumnName="TargrtedQ" />
+          <ScalarProperty Name="TotalQcPassed" ColumnName="TotalQcPassed" />
+          <ScalarProperty Name="FunctionalFault" ColumnName="FunctionalFault" />
+          <ScalarProperty Name="AestheticFault" ColumnName="AestheticFault" />
+          <ScalarProperty Name="TotalReworked" ColumnName="TotalReworked" />
+          <ScalarProperty Name="TotalReworkPending" ColumnName="TotalReworkPending" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPOQcStatus" FunctionName="WCMSModel.Store.SPOQcStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SPOQcStatus_Result">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="BatchQuantity" ColumnName="BatchQuantity" />
+          <ScalarProperty Name="SampleQ" ColumnName="SampleQ" />
+          <ScalarProperty Name="TotalFault" ColumnName="TotalFault" />
+          <ScalarProperty Name="FaultyImei" ColumnName="FaultyImei" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tblAssemblyLineSetupDetails">
+      <EntityTypeMapping TypeName="WCMSModel.tblAssemblyLineSetupDetails">
+        <MappingFragment StoreEntitySet="tblAssemblyLineSetupDetails">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="SubmitQuantity" ColumnName="SubmitQuantity" />
+          <ScalarProperty Name="RequisitionQuantity" ColumnName="RequisitionQuantity" />
+          <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Issues">
+      <EntityTypeMapping TypeName="WCMSModel.Issues">
+        <MappingFragment StoreEntitySet="Issues">
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="FaultType" ColumnName="FaultType" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BomList">
+      <EntityTypeMapping TypeName="WCMSModel.BomList">
+        <MappingFragment StoreEntitySet="BomList">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="ComponentCode" ColumnName="ComponentCode" />
+          <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpAttendences">
+      <EntityTypeMapping TypeName="WCMSModel.EmpAttendences">
+        <MappingFragment StoreEntitySet="EmpAttendences">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalWorkingHour" ColumnName="TotalWorkingHour" />
+          <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+          <ScalarProperty Name="InTime" ColumnName="InTime" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLogin">
+      <EntityTypeMapping TypeName="WCMSModel.tblLogin">
+        <MappingFragment StoreEntitySet="tblLogin">
+          <ScalarProperty Name="Shifting" ColumnName="Shifting" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRoles">
+      <EntityTypeMapping TypeName="WCMSModel.tblRoles">
+        <MappingFragment StoreEntitySet="tblRoles">
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectBomList">
+      <EntityTypeMapping TypeName="WCMSModel.ProjectBomList">
+        <MappingFragment StoreEntitySet="ProjectBomList">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="IcVendor" ColumnName="IcVendor" />
+          <ScalarProperty Name="ComponentNumber" ColumnName="ComponentNumber" />
+          <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectMasterId" ColumnName="ProjectMasterId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDailyIssuedComponents">
+      <EntityTypeMapping TypeName="WCMSModel.tblDailyIssuedComponents">
+        <MappingFragment StoreEntitySet="tblDailyIssuedComponents">
+          <ScalarProperty Name="ComponentCode" ColumnName="ComponentCode" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeInfo">
+      <EntityTypeMapping TypeName="WCMSModel.EmployeeInfo">
+        <MappingFragment StoreEntitySet="EmployeeInfo">
+          <ScalarProperty Name="Shifting" ColumnName="Shifting" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDailyPacking">
+      <EntityTypeMapping TypeName="WCMSModel.tblDailyPacking">
+        <MappingFragment StoreEntitySet="tblDailyPacking">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="IcVendor" ColumnName="IcVendor" />
+          <ScalarProperty Name="ComponentNumber" ColumnName="ComponentNumber" />
+          <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLineStatus">
+      <EntityTypeMapping TypeName="WCMSModel.tblLineStatus">
+        <MappingFragment StoreEntitySet="tblLineStatus">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpLineWiseHourlyTargetEfficiency" FunctionName="WCMSModel.Store.SpLineWiseHourlyTargetEfficiency">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SpLineWiseHourlyTargetEfficiency_Result">
+          <ScalarProperty Name="HourCount" ColumnName="HourCount" />
+          <ScalarProperty Name="TimeRange" ColumnName="TimeRange" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="lineId" ColumnName="lineId" />
+          <ScalarProperty Name="QcPassed" ColumnName="QcPassed" />
+          <ScalarProperty Name="TargrtedQ" ColumnName="TargrtedQ" />
+          <ScalarProperty Name="TotalQcPassed" ColumnName="TotalQcPassed" />
+          <ScalarProperty Name="FunctionalFault" ColumnName="FunctionalFault" />
+          <ScalarProperty Name="AestheticFault" ColumnName="AestheticFault" />
+          <ScalarProperty Name="TotalReworked" ColumnName="TotalReworked" />
+          <ScalarProperty Name="TotalReworkPending" ColumnName="TotalReworkPending" />
+          <ScalarProperty Name="TotalWastages" ColumnName="TotalWastages" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpLineWiseStationsHourlyStatus" FunctionName="WCMSModel.Store.SpLineWiseStationsHourlyStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SpLineWiseStationsHourlyStatus_Result">
+          <ScalarProperty Name="HourCount" ColumnName="HourCount" />
+          <ScalarProperty Name="TimeRange" ColumnName="TimeRange" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="lineId" ColumnName="lineId" />
+          <ScalarProperty Name="IssuedComponent" ColumnName="IssuedComponent" />
+          <ScalarProperty Name="FunctionalQc" ColumnName="FunctionalQc" />
+          <ScalarProperty Name="AestheticQc" ColumnName="AestheticQc" />
+          <ScalarProperty Name="AgingQc" ColumnName="AgingQc" />
+          <ScalarProperty Name="PackagingQc" ColumnName="PackagingQc" />
+          <ScalarProperty Name="TotalReworkPending" ColumnName="TotalReworkPending" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpProductionLineCount" FunctionName="WCMSModel.Store.SpProductionLineCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SpProductionLineCount_Result">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="lineId" ColumnName="lineId" />
+          <ScalarProperty Name="IssuedComponent" ColumnName="IssuedComponent" />
+          <ScalarProperty Name="FunctionalQc" ColumnName="FunctionalQc" />
+          <ScalarProperty Name="AestheticQc" ColumnName="AestheticQc" />
+          <ScalarProperty Name="AgingQc" ColumnName="AgingQc" />
+          <ScalarProperty Name="PackagingQc" ColumnName="PackagingQc" />
+          <ScalarProperty Name="TotalReworkPending" ColumnName="TotalReworkPending" />
+          <ScalarProperty Name="ProjectName1" ColumnName="ProjectName1" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProductionMaster">
+      <EntityTypeMapping TypeName="WCMSModel.ProductionMaster">
+        <MappingFragment StoreEntitySet="ProductionMaster">
+          <ScalarProperty Name="OQCBatchNumber" ColumnName="OQCBatchNumber" />
+          <ScalarProperty Name="PackagingOQCAD" ColumnName="PackagingOQCAD" />
+          <ScalarProperty Name="PackagingOQCBy" ColumnName="PackagingOQCBy" />
+          <ScalarProperty Name="PackagingAstheticAD" ColumnName="PackagingAstheticAD" />
+          <ScalarProperty Name="PackagingAstheticBy" ColumnName="PackagingAstheticBy" />
+          <ScalarProperty Name="PackagingAD" ColumnName="PackagingAD" />
+          <ScalarProperty Name="PackagingBy" ColumnName="PackagingBy" />
+          <ScalarProperty Name="AgingAD" ColumnName="AgingAD" />
+          <ScalarProperty Name="AgingBy" ColumnName="AgingBy" />
+          <ScalarProperty Name="AestheticAD" ColumnName="AestheticAD" />
+          <ScalarProperty Name="AestheticBy" ColumnName="AestheticBy" />
+          <ScalarProperty Name="FunctionalAD" ColumnName="FunctionalAD" />
+          <ScalarProperty Name="FunctionalBy" ColumnName="FunctionalBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="FinallyPassedBy" ColumnName="FinallyPassedBy" />
+          <ScalarProperty Name="FinallyPassedTime" ColumnName="FinallyPassedTime" />
+          <ScalarProperty Name="FinallyPassed" ColumnName="FinallyPassed" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="AgingBatchNumber" ColumnName="AgingBatchNumber" />
+          <ScalarProperty Name="QcStation" ColumnName="QcStation" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="MobileCode" ColumnName="MobileCode" />
+          <ScalarProperty Name="PackagingLineId" ColumnName="PackagingLineId" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProductionId" ColumnName="ProductionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPackagingBatch">
+      <EntityTypeMapping TypeName="WCMSModel.tblPackagingBatch">
+        <MappingFragment StoreEntitySet="tblPackagingBatch">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="Sample" ColumnName="Sample" />
+          <ScalarProperty Name="BatchCreatedDate" ColumnName="BatchCreatedDate" />
+          <ScalarProperty Name="BatchCreatedBy" ColumnName="BatchCreatedBy" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Delivered" ColumnName="Delivered" />
+          <ScalarProperty Name="MasterBatch" ColumnName="MasterBatch" />
+          <ScalarProperty Name="SystemBatch" ColumnName="SystemBatch" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="MobileCode" ColumnName="MobileCode" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDeletdPackagingBatchData">
+      <EntityTypeMapping TypeName="WCMSModel.tblDeletdPackagingBatchData">
+        <MappingFragment StoreEntitySet="tblDeletdPackagingBatchData">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="MasterBatch" ColumnName="MasterBatch" />
+          <ScalarProperty Name="SystemBatch" ColumnName="SystemBatch" />
+          <ScalarProperty Name="Sample" ColumnName="Sample" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="MobileCode" ColumnName="MobileCode" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Testo" FunctionName="WCMSModel.Store.Testo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.Testo_Result">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="lineId" ColumnName="lineId" />
+          <ScalarProperty Name="IssuedComponent" ColumnName="IssuedComponent" />
+          <ScalarProperty Name="FunctionalQc" ColumnName="FunctionalQc" />
+          <ScalarProperty Name="AestheticQc" ColumnName="AestheticQc" />
+          <ScalarProperty Name="AgingQc" ColumnName="AgingQc" />
+          <ScalarProperty Name="PackagingQc" ColumnName="PackagingQc" />
+          <ScalarProperty Name="TotalReworkPending" ColumnName="TotalReworkPending" />
+          <ScalarProperty Name="ProjectName1" ColumnName="ProjectName1" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tblIMEIRecord">
+      <EntityTypeMapping TypeName="WCMSModel.tblIMEIRecord">
+        <MappingFragment StoreEntitySet="tblIMEIRecord">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="SubSn" ColumnName="SubSn" />
+          <ScalarProperty Name="Wifi" ColumnName="Wifi" />
+          <ScalarProperty Name="Bt" ColumnName="Bt" />
+          <ScalarProperty Name="Sn" ColumnName="Sn" />
+          <ScalarProperty Name="EanCode" ColumnName="EanCode" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="WO" ColumnName="WO" />
+          <ScalarProperty Name="IMEI2" ColumnName="IMEI2" />
+          <ScalarProperty Name="IMEI1" ColumnName="IMEI1" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRework">
+      <EntityTypeMapping TypeName="WCMSModel.tblRework">
+        <MappingFragment StoreEntitySet="tblRework">
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="FinishedBy" ColumnName="FinishedBy" />
+          <ScalarProperty Name="FinishedDate" ColumnName="FinishedDate" />
+          <ScalarProperty Name="PauseDate" ColumnName="PauseDate" />
+          <ScalarProperty Name="StartedBy" ColumnName="StartedBy" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FailedStation" ColumnName="FailedStation" />
+          <ScalarProperty Name="Issues" ColumnName="Issues" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="MobileCode" ColumnName="MobileCode" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ReworkId" ColumnName="ReworkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLogistics">
+      <EntityTypeMapping TypeName="WCMSModel.tblLogistics">
+        <MappingFragment StoreEntitySet="tblLogistics">
+          <ScalarProperty Name="OracleUploadedBy" ColumnName="OracleUploadedBy" />
+          <ScalarProperty Name="OracleUploadedDate" ColumnName="OracleUploadedDate" />
+          <ScalarProperty Name="OracleTransactionCode" ColumnName="OracleTransactionCode" />
+          <ScalarProperty Name="OracleUploaded" ColumnName="OracleUploaded" />
+          <ScalarProperty Name="UploadedDate" ColumnName="UploadedDate" />
+          <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="BoxCode" ColumnName="BoxCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblScrew">
+      <EntityTypeMapping TypeName="WCMSModel.tblScrew">
+        <MappingFragment StoreEntitySet="tblScrew">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="MobileCode" ColumnName="MobileCode" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWarehouse">
+      <EntityTypeMapping TypeName="WCMSModel.tblWarehouse">
+        <MappingFragment StoreEntitySet="tblWarehouse">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="BoxCode" ColumnName="BoxCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLogisticsSentItems">
+      <EntityTypeMapping TypeName="WCMSModel.tblLogisticsSentItems">
+        <MappingFragment StoreEntitySet="tblLogisticsSentItems">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="BoxCode" ColumnName="BoxCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestIMEIUploadForUpdate">
+      <EntityTypeMapping TypeName="WCMSModel.TestIMEIUploadForUpdate">
+        <MappingFragment StoreEntitySet="TestIMEIUploadForUpdate">
+          <ScalarProperty Name="IMEI2" ColumnName="IMEI2" />
+          <ScalarProperty Name="IMEI1" ColumnName="IMEI1" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGlueMaster">
+      <EntityTypeMapping TypeName="WCMSModel.tblGlueMaster">
+        <MappingFragment StoreEntitySet="tblGlueMaster">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="FinallyPassed" ColumnName="FinallyPassed" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLcdGlueIssuesList">
+      <EntityTypeMapping TypeName="WCMSModel.tblLcdGlueIssuesList">
+        <MappingFragment StoreEntitySet="tblLcdGlueIssuesList">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IssueName" ColumnName="IssueName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTpLcdMaster">
+      <EntityTypeMapping TypeName="WCMSModel.tblTpLcdMaster">
+        <MappingFragment StoreEntitySet="tblTpLcdMaster">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="FinallyPassed" ColumnName="FinallyPassed" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLcdGlueWorkingModels">
+      <EntityTypeMapping TypeName="WCMSModel.tblLcdGlueWorkingModels">
+        <MappingFragment StoreEntitySet="tblLcdGlueWorkingModels">
+          <ScalarProperty Name="Station" ColumnName="Station" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="CurentlyRunning" ColumnName="CurentlyRunning" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLcdGlueRework">
+      <EntityTypeMapping TypeName="WCMSModel.tblLcdGlueRework">
+        <MappingFragment StoreEntitySet="tblLcdGlueRework">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FailedFrom" ColumnName="FailedFrom" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBarCodeInv">
+      <EntityTypeMapping TypeName="WCMSModel.tblBarCodeInv">
+        <MappingFragment StoreEntitySet="tblBarCodeInv">
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="PrintSuccess" ColumnName="PrintSuccess" />
+          <ScalarProperty Name="DelieveredTo" ColumnName="DelieveredTo" />
+          <ScalarProperty Name="BarCode2" ColumnName="BarCode2" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+          <ScalarProperty Name="RecID" ColumnName="RecID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpPackagingLineCount1" FunctionName="WCMSModel.Store.SpPackagingLineCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SpPackagingLineCount1_Result">
+          <ScalarProperty Name="PackagingLineId" ColumnName="PackagingLineId" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="PackagingPass" ColumnName="PackagingPass" />
+          <ScalarProperty Name="PackagingFault" ColumnName="PackagingFault" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpTpLcdReport" FunctionName="WCMSModel.Store.SpTpLcdReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SpTpLcdReport_Result">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Fault" ColumnName="Fault" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpGlueStationReport" FunctionName="WCMSModel.Store.SpGlueStationReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SpGlueStationReport_Result">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Fault" ColumnName="Fault" />
+          <ScalarProperty Name="Fault1" ColumnName="Fault1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPLineWiseReport" FunctionName="WCMSModel.Store.SPLineWiseReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SPLineWiseReport_Result">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="SAddedDate" ColumnName="SAddedDate" />
+          <ScalarProperty Name="ScrewDone" ColumnName="ScrewDone" />
+          <ScalarProperty Name="TodaysPcb" ColumnName="TodaysPcb" />
+          <ScalarProperty Name="FunctionalQc" ColumnName="FunctionalQc" />
+          <ScalarProperty Name="AestheticQc" ColumnName="AestheticQc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpTp_LcdReport" FunctionName="WCMSModel.Store.SpTp_LcdReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SpTp_LcdReport_Result">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Worked" ColumnName="Worked" />
+          <ScalarProperty Name="QcPass" ColumnName="QcPass" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="QcFail" ColumnName="QcFail" />
+          <ScalarProperty Name="Reworked" ColumnName="Reworked" />
+          <ScalarProperty Name="ReworkPending" ColumnName="ReworkPending" />
+          <ScalarProperty Name="NonReparable" ColumnName="NonReparable" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tblRepairStatus">
+      <EntityTypeMapping TypeName="WCMSModel.tblRepairStatus">
+        <MappingFragment StoreEntitySet="tblRepairStatus">
+          <ScalarProperty Name="OthersRemarks" ColumnName="OthersRemarks" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsFaulty" ColumnName="IsFaulty" />
+          <ScalarProperty Name="ProcessFault" ColumnName="ProcessFault" />
+          <ScalarProperty Name="MaterialFault" ColumnName="MaterialFault" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ReworkId" ColumnName="ReworkId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblColors">
+      <EntityTypeMapping TypeName="WCMSModel.tblColors">
+        <MappingFragment StoreEntitySet="tblColors">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRepairComponents">
+      <EntityTypeMapping TypeName="WCMSModel.tblRepairComponents">
+        <MappingFragment StoreEntitySet="tblRepairComponents">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="WasteQuantiy" ColumnName="WasteQuantiy" />
+          <ScalarProperty Name="Waste" ColumnName="Waste" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="UsedQuantity" ColumnName="UsedQuantity" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="BomId" ColumnName="BomId" />
+          <ScalarProperty Name="UsedComponents" ColumnName="UsedComponents" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ReworkId" ColumnName="ReworkId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBtteryScanner">
+      <EntityTypeMapping TypeName="WCMSModel.tblBtteryScanner">
+        <MappingFragment StoreEntitySet="tblBtteryScanner">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCkdMmiMaster">
+      <EntityTypeMapping TypeName="WCMSModel.tblCkdMmiMaster">
+        <MappingFragment StoreEntitySet="tblCkdMmiMaster">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCkdRework">
+      <EntityTypeMapping TypeName="WCMSModel.tblCkdRework">
+        <MappingFragment StoreEntitySet="tblCkdRework">
+          <ScalarProperty Name="FinishedDate" ColumnName="FinishedDate" />
+          <ScalarProperty Name="FinishedBy" ColumnName="FinishedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="FailedStation" ColumnName="FailedStation" />
+          <ScalarProperty Name="Issues" ColumnName="Issues" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCkdRfMaster">
+      <EntityTypeMapping TypeName="WCMSModel.tblCkdRfMaster">
+        <MappingFragment StoreEntitySet="tblCkdRfMaster">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCkdSmtMaster">
+      <EntityTypeMapping TypeName="WCMSModel.tblCkdSmtMaster">
+        <MappingFragment StoreEntitySet="tblCkdSmtMaster">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCkdSoftwareLoadMaster">
+      <EntityTypeMapping TypeName="WCMSModel.tblCkdSoftwareLoadMaster">
+        <MappingFragment StoreEntitySet="tblCkdSoftwareLoadMaster">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SPAssemblylineProductionStatus" FunctionName="WCMSModel.Store.SPAssemblylineProductionStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SPAssemblylineProductionStatus_Result">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="IssuedInLine" ColumnName="IssuedInLine" />
+          <ScalarProperty Name="TotalQcChecked" ColumnName="TotalQcChecked" />
+          <ScalarProperty Name="QcPassed" ColumnName="QcPassed" />
+          <ScalarProperty Name="FunctionalFault" ColumnName="FunctionalFault" />
+          <ScalarProperty Name="AestheticFault" ColumnName="AestheticFault" />
+          <ScalarProperty Name="Reworked" ColumnName="Reworked" />
+          <ScalarProperty Name="ReworkPending" ColumnName="ReworkPending" />
+          <ScalarProperty Name="Nonreparable" ColumnName="Nonreparable" />
+          <ScalarProperty Name="TotalFault" ColumnName="TotalFault" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpDailyProductionFault" FunctionName="WCMSModel.Store.SpDailyProductionFault">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WCMSModel.SpDailyProductionFault_Result">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="TotalChecked" ColumnName="TotalChecked" />
+          <ScalarProperty Name="TotalPassed" ColumnName="TotalPassed" />
+          <ScalarProperty Name="Fault" ColumnName="Fault" />
+          <ScalarProperty Name="TotalFault" ColumnName="TotalFault" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPLineWiseIssueCount" FunctionName="WCMSModel.Store.SPLineWiseIssueCount" />
+    <EntitySetMapping Name="tblBatteryComponentInfo">
+      <EntityTypeMapping TypeName="WCMSModel.tblBatteryComponentInfo">
+        <MappingFragment StoreEntitySet="tblBatteryComponentInfo">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="CellFailed" ColumnName="CellFailed" />
+          <ScalarProperty Name="CellPassed" ColumnName="CellPassed" />
+          <ScalarProperty Name="CellIssued" ColumnName="CellIssued" />
+          <ScalarProperty Name="PcbFailed" ColumnName="PcbFailed" />
+          <ScalarProperty Name="PcbPassed" ColumnName="PcbPassed" />
+          <ScalarProperty Name="PcbIssued" ColumnName="PcbIssued" />
+          <ScalarProperty Name="LineName" ColumnName="LineName" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="PorjectId" ColumnName="PorjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOqcCheckedItems">
+      <EntityTypeMapping TypeName="WCMSModel.tblOqcCheckedItems">
+        <MappingFragment StoreEntitySet="tblOqcCheckedItems">
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Issues" ColumnName="Issues" />
+          <ScalarProperty Name="OqcStatus" ColumnName="OqcStatus" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgingBatch">
+      <EntityTypeMapping TypeName="WCMSModel.AgingBatch">
+        <MappingFragment StoreEntitySet="AgingBatch">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="BatchType" ColumnName="BatchType" />
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgingBatchInfo">
+      <EntityTypeMapping TypeName="WCMSModel.AgingBatchInfo">
+        <MappingFragment StoreEntitySet="AgingBatchInfo">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="ChargingFailed" ColumnName="ChargingFailed" />
+          <ScalarProperty Name="AgingFailed" ColumnName="AgingFailed" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgingMaster">
+      <EntityTypeMapping TypeName="WCMSModel.tblAgingMaster">
+        <MappingFragment StoreEntitySet="tblAgingMaster">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Reworked" ColumnName="Reworked" />
+          <ScalarProperty Name="AgingIssue" ColumnName="AgingIssue" />
+          <ScalarProperty Name="AgingPassed" ColumnName="AgingPassed" />
+          <ScalarProperty Name="AgingBatch" ColumnName="AgingBatch" />
+          <ScalarProperty Name="MobileCode" ColumnName="MobileCode" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblChargerMaster">
+      <EntityTypeMapping TypeName="WCMSModel.tblChargerMaster">
+        <MappingFragment StoreEntitySet="tblChargerMaster">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="Reworked" ColumnName="Reworked" />
+          <ScalarProperty Name="ChargingIssue" ColumnName="ChargingIssue" />
+          <ScalarProperty Name="ChargingPassed" ColumnName="ChargingPassed" />
+          <ScalarProperty Name="ChargingBatch" ColumnName="ChargingBatch" />
+          <ScalarProperty Name="MobileCode" ColumnName="MobileCode" />
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCkdIssues">
+      <EntityTypeMapping TypeName="WCMSModel.tblCkdIssues">
+        <MappingFragment StoreEntitySet="tblCkdIssues">
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Station" ColumnName="Station" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

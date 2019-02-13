@@ -1,0 +1,84 @@
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WcfService2.dll.config
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WcfService2.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WcfService2.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WCMS_BLL.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WCMS_BLL.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\obj\Debug\WCMS_SERVICE.csprojResolveAssemblyReference.cache
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\EntityFramework.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\EntityFramework.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WCMS_DAL.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WcfService2\bin\WCMS_DAL.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.dll.config
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.dll
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_BLL.dll
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.dll
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.dll
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_DAL.dll
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\EntityFramework.dll
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_BLL.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_DAL.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\bin\EntityFramework.xml
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WCMS_SERVICE.csprojResolveAssemblyReference.cache
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.dll
+D:\New Projects\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.dll.config
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\Oracle.ManagedDataAccess.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_BLL.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_DAL.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\EntityFramework.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_BLL.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_DAL.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\bin\EntityFramework.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WCMS_SERVICE.csprojResolveAssemblyReference.cache
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.dll.config
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_BLL.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_DAL.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\EntityFramework.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_BLL.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_DAL.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\EntityFramework.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WCMS_SERVICE.csprojResolveAssemblyReference.cache
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.dll.config
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WcfService2.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\Oracle.ManagedDataAccess.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_BLL.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_DAL.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\EntityFramework.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_BLL.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_COMMON.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_ENTITY.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\WCMS_DAL.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\bin\EntityFramework.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WCMS_SERVICE.csprojResolveAssemblyReference.cache
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WcfService2\obj\Debug\WcfService2.pdb

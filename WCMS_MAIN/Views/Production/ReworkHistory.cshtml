@@ -1,0 +1,392 @@
+﻿
+@{
+    ViewBag.Title = "ReworkHistory";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<section class="forms" id="divForm">
+    <div class="container-fluid">
+        <div class="row">
+           
+
+            <!-- Horizontal Form-->
+            <div class="col-lg-8 offset-2" id="divCard">
+
+                <div class="card" style="height: 300px; border: 1px solid #0c9050;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center" style="background-color:#0c9050;font-weight:normal ;color: white">
+                        <h3 class="h4">Search Fault Phone History</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-horizontal">
+                            
+                            
+                            <div class="form-group row" id="divCheckBox" style="">
+                                <label class="col-sm-4 form-control-label">&nbsp;</label>
+                                <div class="i-checks col-sm-7">
+                                    <input id="chkCode" type="checkbox" value="code" class="checkbox-template">
+                                    <label for="chkCode">Search By Code</label>
+                                    &nbsp; &nbsp;
+                                    <input id="chkImei" type="checkbox" value="imei" class="checkbox-template">
+                                    <label for="chkImei">Search By IMEI</label>
+                                </div>
+                            </div>
+                            
+                            
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Scan Code :</label>
+                                <div class="col-sm-6">
+                                    <input id="txtCode" style="height: 100px;" type="text" placeholder="Scan Code" class="form-control form-control-success">
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="form-group row">
+                                <div class="col-sm-12 offset-sm-4">
+
+                                    <button class="btn btn-primary" id="btnClear" style="width: 150px;margin-left: 2px;"> Clear</button>
+                                    <button class="btn btn-primary" id="btnClearAll" style="width: 150px;margin-left: 2px;" onclick="location.reload()"> Reset All</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-12">
+
+
+        <div class="card" style="border: 2px solid darkcyan;display: none;" id="tblDataDiv">
+            <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                <h3 class="h4" style="font-weight: normal">Report Data </h3>
+            </div>
+            <div class="card-body">
+                @*<button class="btn btn-primary" id="btnPrint" style="width: 150px;margin-left: 2px;"> Clear</button>*@
+                <div class="form-horizontal tblForm" style="overflow: auto">
+
+
+
+                    <table class="table table-bordered table-hover" id="tblData">
+                        <thead class="" style="background-color: #123D6A; color: white; font-size: 18px;text-align: center; border-radius: 50px; ">
+                            <tr>
+                                
+                                <th>
+                                    Line
+                                </th>
+                                <th>
+                                    Project
+                                </th>
+                               
+                                <th style="">
+                                    Code
+                                </th>
+                                
+                                <th>
+                                    Imei1
+                                </th>
+                                <th>
+                                    Imei2
+                                </th>                              
+                                <th>
+                                    Issue
+                                </th>
+                                <th>
+                                    Failed Station
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Added By
+                                </th>
+                                
+                                <th>
+                                    Added Date
+                                </th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody class="tbody"></tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>*@
+<script>    
+
+    $(function () {
+
+        $("#txtCode").focus();
+        $('#txtCode').keydown(function ()
+        {
+            debugger;
+
+
+            var checkedcategory = $('input.checkbox-template:checked').val();
+            if (checkedcategory == "" ||checkedcategory ==undefined) {
+
+
+
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Warning',
+                    message: 'Please Select a Searching Criteria'
+                });
+
+                
+                $("#txtCode").val('');
+            } else {
+
+                var lastTwoDigits = this.value.slice(-2);
+                if (lastTwoDigits.toLowerCase() == '-y' || lastTwoDigits.toLowerCase() == '-n') {
+
+
+                    
+                    GetIssueResult(this.value, checkedcategory);
+                }
+            }
+
+
+        });
+
+        $('#btnClear').click(function() {            
+
+            $("#txtCode").val('');
+            $("#txtCode").focus();
+        });
+        
+        $('input.checkbox-template').on('change', function () {
+
+            debugger;
+            $('input.checkbox-template').not(this).prop('checked', false);
+
+
+        });
+
+
+    });
+    function GetIssueResult(code, checkedcategory) {
+        //this.preventDefault();
+        debugger;
+        var codeValue = code.substring(0, code.length - 2);
+
+        //alert(mobileCode);
+
+
+        $.ajax({
+            url: ' @Url.Action("GetFaultyMobileHistory", "Production")',
+            type: 'Post',
+            data: JSON.stringify({ mobileCode: codeValue, checkedcategory: checkedcategory }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    // $('#divSearchedIssue').empty();
+                    iziToast.warning({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'No Issues Found With This Mobile'
+                    });
+                    // $('#txtMobileCode').val('');
+                    return false;
+
+                } else {
+
+                    $("#tblDataDiv").show();
+                    var html = '';
+                    $.each(data, function (key, item) {
+                        
+                        //html += '<tr style=font-size:18px;height:3px;text-align:center;color:#123D6A;Background-color:#EEF5F9;>';
+                        //html += '<td>' + item.LineName + '</td>';
+                        //html += '<td>' + item.ProjectName + '</td>';
+                        //html += '<td>' + item.MobileCode + '</td>';
+                        //html += '<td>' + item.Imei1 + '</td>';
+                        //html += '<td>' + item.Imei2 + '</td>';
+                        //html += '<td>' + item.Issues + '</td>';
+                        //html += '<td>' + item.FailedStation + '</td>';
+                        //html += '<td>' + item.Status + '</td>';
+                        //html += '<td>' + item.AddedBy + '</td>';
+                        //html += '<td>' + item.AddedDate + '</td>';
+                        
+                        ////html += '<td><a href="#" id="btnDetails">Click For Details</a></td>';
+
+                        ////html += '<td><a href="#"  id="linkClick" target="_new">Click For DataLoader</a></td>';
+
+
+                        //html += '</tr>';
+                        
+
+
+
+                        var row = "<tr class='active' style='font-size=15px;height:3px;'>" +
+                           "<td style='height:5px;' class='text-center'>" + item.LineName + "</td>" +
+                            "<td style='height:3px; class='text-center'>" + item.ProjectName + "</td>" +
+                            "<td style='height:3px'; class='text-center'>" + item.MobileCode + "</td>" +
+                            "<td style='height:3px; class='text-center'>" + item.Imei1 + "</td>" +
+                            "<td style='height:3px'; class='text-center'>" + item.Imei2 + "</td>" +
+                            "<td style='height:3px; class='text-center'>" + item.Issues + "</td>" +
+                            "<td style='height:3px;color:red'; class='text-center'>" + item.FailedStation + "</td>" +
+                             "<td style='height:3px'; class='text-center'>" + item.Status + "</td>" +
+                            "<td style='height:3px'; class='text-center'>" + item.AddedBy + "</td>" +
+                            "<td style='height:3px'; class='text-center'>" + item.AddedDate + "</td>" +
+                           
+                           "</tr>";
+
+                      
+                        $('#tblData tbody').append(row);
+
+
+
+
+                    });
+                    
+                    $("#txtCode").val('');
+                    //$('#tblData .tbody').html(html);
+
+
+                }
+
+            },
+            error: function (data, textStatus, jqXHR) {
+                toastr.error(textStatus + " " + result + " " + jqXHR);
+            }
+        });
+
+
+    }
+
+
+
+
+
+
+
+</script>
+
+
+@*<script>
+    (function () {
+        var
+         form = $('.tblForm'),
+         cacheWidth = form.width(),
+         a4 = [595.28, 841.89]; // for a4 size paper width and height
+
+        $('#btnPrint').on('click', function () {
+            $('body').scrollTop(0);
+            createPDF();
+        });
+        //create pdf
+        function createPDF() {
+            getCanvas().then(function (canvas) {
+                var
+                 img = canvas.toDataURL("image/png"),
+                 doc = new jsPDF({
+                     unit: 'px',
+                     format: 'a4'
+                 });
+                doc.addImage(img, 'JPEG', 20, 20);
+                doc.save('bhavdip-html-to-pdf.pdf');
+                form.width(cacheWidth);
+            });
+        }
+
+        // create canvas object
+        function getCanvas() {
+            form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
+            return html2canvas(form, {
+                imageTimeout: 2000,
+                removeContainer: true
+            });
+        }
+
+    }());
+</script>
+<script>
+    /*
+ * jQuery helper plugin for examples and tests
+ */
+    (function ($) {
+        $.fn.html2canvas = function (options) {
+            var date = new Date(),
+            $message = null,
+            timeoutTimer = false,
+            timer = date.getTime();
+            html2canvas.logging = options && options.logging;
+            html2canvas.Preload(this[0], $.extend({
+                complete: function (images) {
+                    var queue = html2canvas.Parse(this[0], images, options),
+                    $canvas = $(html2canvas.Renderer(queue, options)),
+                    finishTime = new Date();
+
+                    $canvas.css({ position: 'absolute', left: 0, top: 0 }).appendTo(document.body);
+                    $canvas.siblings().toggle();
+
+                    $(window).click(function () {
+                        if (!$canvas.is(':visible')) {
+                            $canvas.toggle().siblings().toggle();
+                            throwMessage("Canvas Render visible");
+                        } else {
+                            $canvas.siblings().toggle();
+                            $canvas.toggle();
+                            throwMessage("Canvas Render hidden");
+                        }
+                    });
+                    throwMessage('Screenshot created in ' + ((finishTime.getTime() - timer) / 1000) + " seconds<br />", 4000);
+                }
+            }, options));
+
+            function throwMessage(msg, duration) {
+                window.clearTimeout(timeoutTimer);
+                timeoutTimer = window.setTimeout(function () {
+                    $message.fadeOut(function () {
+                        $message.remove();
+                    });
+                }, duration || 2000);
+                if ($message)
+                    $message.remove();
+                $message = $('<div ></div>').html(msg).css({
+                    margin: 0,
+                    padding: 10,
+                    background: "#000",
+                    opacity: 0.7,
+                    position: "fixed",
+                    top: 10,
+                    right: 10,
+                    fontFamily: 'Tahoma',
+                    color: '#fff',
+                    fontSize: 12,
+                    borderRadius: 12,
+                    width: 'auto',
+                    height: 'auto',
+                    textAlign: 'center',
+                    textDecoration: 'none'
+                }).hide().fadeIn().appendTo('body');
+            }
+        };
+    })(jQuery);
+
+</script>*@

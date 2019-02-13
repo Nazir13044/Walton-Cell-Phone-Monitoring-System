@@ -1,0 +1,790 @@
+﻿
+@{
+    ViewBag.Title = "ProjectWiseBomList";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+
+    .btn-primary {
+
+        width: 250px;
+
+    }
+    #navBtn {
+
+        text-align: center;
+
+    }
+
+</style>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Project Components </a></li>
+        <li class="breadcrumb-item active">Project Wise BomList</li>
+    </ul>
+</div>
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-lg-12" id="navBtn">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <button type="button" class="btn btn-primary"  onclick="location.href='@Url.Action("ProjectWiseBomLists", "ProjectComponents")';return false;">
+                            View Project Wise Bom List
+                        </button>
+
+                    </div>
+                   
+                    <div class="col-lg-4">
+                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddProjectmaterials", "ProjectComponents")';return false;">
+                            Add New Bom
+                        </button>
+
+                    </div>
+                </div>
+                </div>
+                <br />
+                <br />
+                <br />
+           
+
+                <div class="col-lg-5">
+                    <div class="card" style="height: 450px;">
+                        <div class="card-close">
+
+                        </div>
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4">Project Information</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="form-horizontal">
+                                <div class="form-group row">
+                                    &nbsp;
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label class="col-sm-5 form-control-label">Project Name/Model</label>
+                                    <div class="col-sm-7">
+                                        <select id="txtProjectName" data-placeholder="Choose a Project" class="chosen-select form-control form-control-success" tabindex="1"></select>
+                                    </div>
+                                </div>
+
+                                <div id="divProjectDetails" class="card-body" style="display: none">
+
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 form-control-label">Display</label>
+                                        <div class="col-sm-6">
+                                            <input id="txtDisplay" type="text" disabled="disabled" class="form-control form-control-success">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 form-control-label">Ram</label>
+                                        <div class="col-sm-6">
+                                            <input id="txtRam" type="text" disabled="disabled" class="form-control form-control-success">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 form-control-label">Rom</label>
+                                        <div class="col-sm-6">
+                                            <input id="txtRom" type="text" disabled="disabled" class="form-control form-control-success">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Horizontal Form-->
+                <div class="col-lg-7" style="overflow: auto">
+                    <div class="card" style="overflow: auto">
+                        <div class="card-close">
+
+                        </div>
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4">BOM List Information</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="form-horizontal">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 form-control-label">Material Name</label>
+                                    <div class="col-sm-6">
+                                        @*<input id="txtComponentName" disabled="disabled" type="text" placeholder=" Search material Name" required="" class="form-control form-control-success">*@
+                                        <select id="txtComponentName" data-placeholder="Choose a Component" class="chosen-select form-control" tabindex="1"></select>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 form-control-label">Code</label>
+                                    <div class="col-sm-6">
+                                        <input id="txtComponentNumber" type="text" placeholder="Code" class="form-control form-control-success">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 form-control-label">IC/Vendor Information</label>
+                                    <div class="col-sm-6">
+                                        <input id="txtIcVendor" type="text" placeholder="IC/Vendor Information" class="form-control form-control-success">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 form-control-label">Dosage</label>
+                                    <div class="col-sm-6">
+                                        <input id="txtQuantity" type="text" placeholder="Dosage(required)" required class="form-control form-control-success">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 form-control-label">Remarks</label>
+                                    <div class="col-sm-6">
+                                        <input id="txtRemarks" type="text" placeholder="Remarks" required="" class="form-control form-control-success">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group row">
+                                    <div class="col-sm-9 offset-sm-3">
+                                        <input type="button" id="tstBtn" style="width:280px; " value="Add" class="btn btn-primary">
+                                    </div>
+                                </div>
+
+
+                                <table id="dgBombList" style="width:700px;  overflow: auto" class="easyui-datagrid" title="Production BOM List &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;***minimum 5 list required" data-options="
+                                                    rownumbers:false,
+
+                                                    singleSelect:true,
+                                                    autoRowHeight:false,
+                                                    pagination:false,
+                                                    pageSize:1000">
+                                    <thead>
+                                        <tr>
+
+                                            <th data-options="field:'ProjectId',width:80,hidden:'true'">
+                                                ProjectId
+                                            </th>
+                                            <th data-options="field:'ProjectName',width:150">
+                                                Project Name
+                                            </th>
+                                            <th data-options="field:'ComponentId',width:80,hidden:'true'">
+                                                Component Id
+                                            </th>
+                                            <th data-options="field:'ComponentName',width:150">
+                                                Component Name
+                                            </th>
+                                            <th data-options="field:'ComponentNumber',width:130">
+                                                Component Number
+                                            </th>
+                                            <th data-options="field:'IcVendor',width:90">
+                                                Ic/Vendor
+                                            </th>
+                                            <th data-options="field:'StockQuantity',width:70">
+                                                Stock Quantity
+                                            </th>
+                                            <th data-options="field:'Remarks',width:80,align:'left'">Remarks</th>
+                                            <th data-options="field:'Delete',width:80,align:'left'"></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+
+                </div>
+
+                <!-- Inline Form-->
+                <!-- Modal Form-->
+                <!-- Form Elements -->
+
+            </div>
+
+
+        <div class="card">
+
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="checkbox col-sm-4">
+                        <div class="i-checks">
+                            <input id="chkSure" type="checkbox" value="" class="checkbox-template">
+                            <label for="chkSure">You sure want to save project bom list information?</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="button" id="btnSave" value="Save" style="display: none" class="btn btn-success" onclick="SaveProjectBomList();">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <input type="hidden" name="hdcomponentId" id="hdcomponentId" />
+    <input type="hidden" name="hdprojectId" id="hdprojectId" />
+    <input type="hidden" name="hdprojectName" id="hdprojectName" />
+</section>
+
+
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script>
+
+    $("#txtComponentName").change(function() {
+
+        var componentId = $("#txtComponentName").val();
+
+
+        GetMaterialById(componentId);
+
+    });
+    
+    function GetMaterialById(componentId) {
+
+        debugger;
+        $.ajax({
+            url: '@Url.Action("GetMaterialById", "ProjectComponents")',
+            type: 'Post',
+            data: JSON.stringify({ id: componentId }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+                console.log(result);
+
+                $("#txtComponentNumber").val(result.ComponentCode);
+                
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'No date found'
+                });
+
+                //return false;
+            }
+        });
+
+    }
+
+
+
+
+
+    var rows = [];
+
+
+    function Clear() {
+        $("#hdcomponentId").val('');
+        $("#txtComponentName").val('');
+        $("#txtComponentNumber").val('');
+        $("#txtIcVendor").val('');
+        $("#txtQuantity").val('');
+        $("#txtRemarks").val('');
+
+
+    }
+
+    function DeleteProductData(btn) {
+
+        iziToast.question({
+            timeout: 20000,
+            close: false,
+            overlay: true,
+            toastOnce: true,
+            id: 'question',
+            zindex: 999,
+            title: 'Hey!',
+            message: 'Are you want to delete?',
+            position: 'center',
+            buttons: [
+                ['<button><b>YES</b></button>', function(instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                    var tr = $(btn).closest('tr.datagrid-row');
+                    var index = parseInt(tr.attr('datagrid-row-index'));
+                    var dg = tr.closest('div.datagrid-view').children('table');
+                    var row = dg.datagrid('getRows')[index];
+                    var rowIndex = $('#dgBombList').datagrid('getRowIndex', row);
+                    console.log(row);
+                    // //var selectedrow = $('#dgBombList').datagrid('getSelected');
+                    //var rowIndex = $('#dgBombList').datagrid('getRowIndex', selectedrow);
+                    $('#dgBombList').datagrid('deleteRow', rowIndex);
+
+                }, true],
+                ['<button>NO</button>', function(instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                }],
+            ],
+            onClosing: function(instance, toast, closedBy) {
+                console.info('Closing | closedBy: ' + closedBy);
+            },
+            onClosed: function(instance, toast, closedBy) {
+                console.info('Closed | closedBy: ' + closedBy);
+            }
+        });
+        //var result = confirm("Want to delete?");
+        //if (result) {
+        //    var tr = $(btn).closest('tr.datagrid-row');
+        //    var index = parseInt(tr.attr('datagrid-row-index'));
+        //    var dg = tr.closest('div.datagrid-view').children('table');
+        //    var row = dg.datagrid('getRows')[index];
+        //    var rowIndex = $('#dgBombList').datagrid('getRowIndex', row);
+        //    console.log(row);
+
+        //    // //var selectedrow = $('#dgBombList').datagrid('getSelected');
+        //    //var rowIndex = $('#dgBombList').datagrid('getRowIndex', selectedrow);
+
+        //    $('#dgBombList').datagrid('deleteRow', rowIndex);
+        //}
+    }
+
+    $(document).ready(function() {
+        // GetPassedRate();
+        LoadAllProjects();
+        LoadAllComponents();
+        var flag = 1;
+
+        $('#txtProjectName').change(function() {
+
+            if ($('#txtProjectName').val() == 0)
+                flag = 1;
+
+            if (($('#txtProjectName').val() > 0 || $('#txtProjectName').val() == 0) &&flag!=1) {
+                
+
+                iziToast.question({
+                    timeout: 20000,
+                    close: false,
+                    overlay: true,
+                    toastOnce: true,
+                    id: 'question',
+                    zindex: 999,
+                    title: 'Hey!',
+                    message: 'Are you want to Clear project ,All BOM list will be removed ?',
+                    position: 'center',
+                    buttons: [
+                        ['<button><b>YES</b></button>', function (instance, toast) {
+
+                            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+
+
+                            LoadAllComponents();
+                            $("#divProjectDetails").hide();
+                            $("#hdprojectId").val('');
+                            $("#txtDisplay").val('');
+                            $("#txtRam").val('');
+                            $("#txtRom").val('');
+                            Clear();
+                            rows = [];
+                            $('#dgBombList').datagrid('loadData', { total: 0, rows: [] });
+
+
+
+                        }, true],
+                        ['<button>NO</button>', function (instance, toast) {
+
+                            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                            $('#txtProjectName').val($("#hdprojectName").val());
+
+                        }],
+                    ],
+                    onClosing: function (instance, toast, closedBy) {
+                        console.info('Closing | closedBy: ' + closedBy);
+                    },
+                    onClosed: function (instance, toast, closedBy) {
+                        console.info('Closed | closedBy: ' + closedBy);
+                    }
+                });
+
+            }
+
+
+            flag = flag + 1;
+
+        });
+
+
+
+
+
+
+        //$('#txtProjectName').keyup(function () {
+
+        //    var txtProject = $('#txtProjectName').val();
+
+        //    if (txtProject.length == "") {
+        //        iziToast.question({
+        //            timeout: 20000,
+        //            close: false,
+        //            overlay: true,
+        //            toastOnce: true,
+        //            id: 'question',
+        //            zindex: 999,
+        //            title: 'Hey!',
+        //            message: 'Are you want to Clear project ,All BOM list will be removed ?',
+        //            position: 'center',
+        //            buttons: [
+        //                ['<button><b>YES</b></button>', function (instance, toast) {
+
+        //                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+        //                    s
+        //                    $("#divProjectDetails").hide();
+        //                    $("#hdprojectId").val('');
+        //                    $('#txtComponentName').prop('disabled', true);
+
+        //                    $("#txtDisplay").val('');
+        //                    $("#txtRam").val('');
+        //                    $("#txtRom").val('');
+        //                    Clear();
+        //                    rows = [];
+        //                    $('#dgBombList').datagrid('loadData', { total: 0, rows: [] });
+
+
+        //                }, true],
+        //                ['<button>NO</button>', function (instance, toast) {
+
+        //                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+        //                    $('#txtProjectName').val($("#hdprojectName").val());
+
+        //                }],
+        //            ],
+        //            onClosing: function (instance, toast, closedBy) {
+        //                console.info('Closing | closedBy: ' + closedBy);
+        //            },
+        //            onClosed: function (instance, toast, closedBy) {
+        //                console.info('Closed | closedBy: ' + closedBy);
+        //            }
+        //        });
+
+        //    }
+        //});
+
+        $('#chkSure').change(function () {
+            if (this.checked)
+                $('#btnSave').fadeIn('slow');
+            else
+                $('#btnSave').fadeOut('slow');
+
+        });
+
+        $('#txtQuantity').keydown(function (e) {
+            if (e.shiftKey || e.ctrlKey || e.altKey) {
+                e.preventDefault();
+            } else {
+                var key = e.keyCode;
+                if (!((key == 8) || (key == 46) || (key >= 35 && key <= 40) || (key >= 48 && key <= 57) || (key >= 96 && key <= 105))) {
+                    e.preventDefault();
+                }
+            }
+        });
+
+        //project Name Auto Complete
+        //$('#txtProjectName').autocomplete({
+        //    source: "/Project/GetProjectNameList/",
+        //    minLength: 2,
+        //    select: function (event, ui) {
+        //        $("#divProjectDetails").show();
+        //        $('#txtComponentName').prop('disabled', false);
+        //        $("#hdprojectId").val(ui.item.Id);
+        //        $("#hdprojectName").val(ui.item.value);
+
+        //        $("#txtDisplay").val(ui.item.display);
+        //        $("#txtRam").val(ui.item.ram);
+        //        $("#txtRom").val(ui.item.rom);
+
+        //    }
+        //});
+        
+          
+
+        function LoadAllComponents() {
+            var url = "@Url.Action("GetAllComponentList", "Project")";
+            $.getJSON(url, function (json) {
+                var elem = $("#txtComponentName");
+                $("#txtComponentName").chosen("destroy");
+                elem.empty();
+
+                elem.append("<option value='0'>---Select---</option>");
+
+                $.each(json, function (idx, obj) {
+
+                    elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+                });
+
+                elem.chosen({ width: "100%", height: "10px" });
+
+                //$(".chosen-select").chosen({ height: "10%" });
+
+
+            });
+        }
+
+      
+        //Load Project Names
+        function LoadAllProjects() {
+            var url = "  @Url.Action("GetProjec", "Project")";
+            $.getJSON(url, function (json) {
+                var elem = $("#txtProjectName");
+                $("#txtProjectName").chosen("destroy");
+                elem.empty();
+
+                elem.append("<option value='0'>---Select---</option>");
+
+                $.each(json, function (idx, obj) {
+
+                    elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+                });
+
+                elem.chosen({ width: "100%", height: "10px" });
+
+              
+            });
+        }
+
+        //Component Name Auto Complete
+        //$('#txtComponentName').autocomplete({
+        //    source: "/Project/GetComponentList/",
+        //    minLength: 2,
+        //    select: function (event, ui) {
+        //        $("#hdcomponentId").val(ui.item.Id);
+        //    }
+        //});
+
+        $("#tstBtn").click(function () {
+            debugger;
+            var componentName = $("#txtComponentName").val();
+            var quantity = $("#txtQuantity").val();
+
+
+            var projectName = $('#txtProjectName').val();
+
+            //alert(projectName);
+            if ($('#txtProjectName').val() == 0) {
+
+
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Project name required'
+                });
+                return false;
+            }
+            if (componentName == "" || quantity == "") {
+
+
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Component Name & Quantity required'
+                });
+                return false;
+
+            } else {
+                rows.push({
+                    ProjectName:$("#txtProjectName option:selected").text(), 
+                    ProjectId: $("#txtProjectName").val(),
+                    ComponentId: $("#txtComponentName").val(),
+                    ComponentName: $("#txtComponentName option:selected").text(),
+                    ComponentNumber: $("#txtComponentNumber").val(),
+                    IcVendor: $("#txtIcVendor").val(),
+                    StockQuantity: $("#txtQuantity").val(),
+                    Remarks: $("#txtRemarks").val(),
+                    Delete: "<input type='image' style='width:20px;height:20px;' src='https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/128/Recycle_Bin_Full.png' class = 'btnDelete' id = " + $("#hdcomponentId").val() + "  title = 'Delete' onclick='DeleteProductData(this)'></div>"
+                });
+
+                console.log(rows);
+
+                $('#dgBombList').datagrid('loadData', rows);
+                //LoadAllProjects();
+                LoadAllComponents();
+                Clear();
+            }
+
+
+        });
+
+
+    });
+
+    function SaveProjectBomList() {
+
+        var projectBomListFinal = [];
+        debugger;
+        var projectBomListData = $('#dgBombList').datagrid('getRows');
+        if (projectBomListData.length >= 5) {
+
+
+            //iziToast.success({
+            //    timeout: 2000,
+            //    imageWidth: 150,
+            //    position: 'center',
+            //    title: 'Success',
+            //    message: 'Success'
+            //});
+
+            for (var i = 0; i < projectBomListData.length; i++) {
+
+
+                projectBomListFinal.push({
+                    ProjectMasterId: projectBomListData[i].ProjectId,
+                    ProjectName: projectBomListData[i].ProjectName,
+                    ComponentId: projectBomListData[i].ComponentId,
+                    ComponentName: projectBomListData[i].ComponentName,
+                    ComponentNumber: projectBomListData[i].ComponentNumber,
+                    IcVendor: projectBomListData[i].IcVendor,
+                    Quantity: projectBomListData[i].StockQuantity,
+                    Remarks: projectBomListData[i].Remarks
+                });
+
+            }
+
+            console.log(projectBomListFinal);
+            if (projectBomListFinal.length != 0) {
+                
+                $.ajax({
+                    url: '@Url.Action("CreateProjectBomList", "Project")',
+                    type: 'Post',
+                    data: JSON.stringify({ _projectBomLists: projectBomListFinal }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: 'Result Saved Successfully'
+                            });
+
+                            AllClear();
+                            return true;
+                            //location.reload();
+                        }
+
+                        else if (result.Id == "0") {
+                            window.location = '@Url.Action("LogOut", "Account")';
+
+                        }
+
+
+                        else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: 'Error Occured While Saving'
+                            });
+                        }
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        //toastr.error(result.Message);
+
+                        //return false;
+                    }
+                });
+            }
+
+        } else {
+
+
+            iziToast.error({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Error',
+                message: 'There must be at least 5 items in BOM list'
+            });
+            $('#chkSure').prop('checked', false);
+            $('#btnSave').hide();
+            return false;
+
+        }
+
+
+    }
+
+
+    function AllClear() {
+
+        $("#txtProjectName").val('');
+        $("#hdprojectId").val('');
+        $("#divProjectDetails").hide('');
+        $("#hdprojectId").val('');
+        $('#txtComponentName').prop('disabled', true);
+        $("#txtDisplay").val('');
+        $("#txtRam").val('');
+        $("#txtRom").val('');
+        $('#dgBombList').datagrid('loadData', { total: 0, rows: [] });
+        $("#hdcomponentId").val('');
+        $("#txtComponentName").val('');
+        $("#txtComponentNumber").val('');
+        $("#txtIcVendor").val('');
+        $("#txtQuantity").val('');
+        $("#txtRemarks").val('');
+        $('#chkSure').prop('checked', false);
+        $('#btnSave').hide();
+
+
+    }    
+
+</script>
+
+
+
+
+

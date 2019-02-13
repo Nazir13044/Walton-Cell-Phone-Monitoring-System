@@ -1,0 +1,874 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    .sticky-container {
+        padding: 0px;
+        margin: 0px;
+        position: fixed;
+        right: -130px;
+        top: 120px;
+        width: 210px;
+        z-index: 1100;
+    }
+
+    .sticky li {
+        list-style-type: none;
+        background-color: #123D6A;
+        font-size: 25px;
+        color: #efefef;
+        height: 43px;
+        padding: 0px;
+        margin: 0px 0px 1px 0px;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        cursor: pointer;
+    }
+
+        .sticky li:hover {
+            margin-left: -115px;
+        }
+
+        .sticky li i {
+            float: left;
+            margin: 5px 4px;
+            margin-right: 5px;
+        }
+
+        .sticky li p {
+            padding-top: 5px;
+            margin: 0px;
+           
+            line-height: 16px;
+            font-size: 15px;
+        }
+
+            .sticky li p a {
+                text-decoration: none;
+                color: white;
+            }
+
+                .sticky li p a:hover {
+                    text-decoration: underline;
+                }
+
+
+
+
+
+
+    /*#lineChart {
+       
+        transition: transform .2s; 
+       
+    }
+
+        #lineChart:hover {
+            
+            width: 100%;
+            height: 100%;
+           
+            transform: scale(1.5); 
+        }*/
+
+
+
+
+
+
+
+</style>
+
+<div class="sticky-container">
+    <ul class="sticky">
+        <li>
+            <i class="fa fa-question"></i>
+            <p><a href="#" data-toggle="modal" data-target="#myModal">Find<br>Help</a></p>
+        </li>
+       
+    </ul>
+</div>
+
+
+
+
+<section class="dashboard-counts no-padding-bottom" style="text-align: center">
+    
+    <div class="container-fluid">
+        <h1><span class="badge badge-primary" style="font-size:20px; ">Rework Station Information</span></h1>
+        <div class="row bg-white has-shadow">
+            
+            <!-- Item -->
+            <div class="col-xl-3 col-sm-6">
+                
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-blue"><i class="fa fa-hourglass-1"></i></div>
+                    <div class="title">
+                        <span>Work<br>Pending</span>
+                        
+                    </div>
+                    <div class="number"><strong id="pending"></strong></div>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-red"><i class="fa fa-hourglass-2"></i></div>
+                    <div class="title">
+                        <span>Work<br>Started</span>
+                       
+                    </div>
+                    <div class="number"><strong id="started"></strong></div>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-green"><i class="fa fa-check"></i></div>
+                    <div class="title">
+                        <span>Work<br>Done</span>
+                        @*<div class="progress">
+                                <div role="progressbar" style="width: 40%; height: 4px;" aria-valuenow="{#val.value}" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-green"></div>
+                            </div>*@
+                    </div>
+                    <div class="number"><strong id="done"></strong></div>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-orange"><i class="fa fa-trash"></i></div>
+                    <div class="title">
+                        <span>Wastages</span>
+                        @*<div class="progress">
+                                <div role="progressbar" style="width: 50%; height: 4px;" aria-valuenow="{#val.value}" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-orange"></div>
+                            </div>*@
+                    </div>
+                    <div class="number"><strong id="waste"></strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dashboard-header">
+    @*<h1 style="margin-left: 50px;"><span class="badge badge-warning" style="font-size:20px; ">On Going Projects</span></h1>*@
+    <div class="container-fluid">
+        <div class="row">
+            
+
+            <!-- Statistics -->
+            <div class="statistics col-lg-4 col-12" >
+                <div class="card" >
+                    
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">On Going Projects</h3>
+                    </div>
+                    <div class="card-body" id="lineWiseProject" style="overflow: auto; height: 580px;">
+
+                    </div>
+                </div>
+
+
+                    </div>
+                    <!-- Line Chart            -->
+                    <div class="chart col-lg-8 col-12 " id="lineChart">
+
+                        <div class="card">
+                            <div class="card-close">
+                                @*<div class="dropdown">
+                                    <button type="button" id="closeCard5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                                    <div aria-labelledby="closeCard5" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+                                </div>*@
+                            </div>
+                            <div class="card-header d-flex align-items-center">
+                                <h3 class="h4">Hourly Line Wise Producton</h3>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="line-chart bg-white d-flex align-items-center justify-content-center has-shadow">
+
+                                    <canvas id="lineWiseProductionChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            
+            
+            
+            
+            
+            <div class="col-lg-12 card">
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Hourly Line Wise Fault</h3>
+                </div>
+                <div class="card-body" >
+
+                    <div class="row" id="HourlyLineStatus">
+                        
+                        
+                    </div>
+                </div>
+
+
+            </div>
+            
+            
+            <div class="col-lg-12 card">
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Hourly Line Wise Production Status</h3>
+                </div>
+                <div class="card-body">
+
+                    <div class="row" id="HourlyLineWiseQcStatus">
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+            </div>
+    
+    <div id="spanTimeLeft"></div>
+    
+   
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <div class="modal-body">
+                  
+                    <object data="~/img/WCMS Manual.pdf" type="application/pdf" width="100%" height="400px">
+                        alt : <a href="~/img/WCMS Manual.pdf">user manual.pdf</a>
+                    </object>
+                
+                
+                
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</section>
+
+
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/animate.css" rel="stylesheet" />
+<link href="~/css/demo8.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<script src="~/js/jquery.appear.js"></script>
+<script src="~/js/modernizr-1.5.min.js"></script>
+<script src="~/js/win8.js"></script>
+
+
+<script>
+
+    $('.sticky-container ul li').on('click', function () {
+
+       // alert("sdsds");
+         $('#myModal').show();
+    });
+
+    $(document).ready(function () {
+        debugger;
+
+        
+
+        GetLineWiseProjectInfo();
+       // CountIssues();
+
+        GetFaultyMobileList();       
+        
+        GetLineWiseProduction();
+        
+       
+        //();
+
+    });
+    
+
+    setTimeout(function () {   //calls click event after a certain time
+        HourlyStationineWiseFault();
+    }, 1000);
+
+    setTimeout(function () {   //calls click event after a certain time
+        HourlyLineWiseStationsStatus();
+    }, 3000);
+    
+
+    //window.setInterval(function () {
+    //    GetLineWiseProduction();
+    //}, 4000);
+    function CountIssues() {
+
+        $.ajax({
+            url: '@Url.Action("GetIssuesCount", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+               // console.log(result.length);
+
+                if (result.length == 0) {
+                    $("#pending").text('0');
+                    $("#started").text('0');
+                    $("#done").text('0');
+                    $("#waste").text('0');
+                } else {
+                    $("#pending").text(result[0].pendingListCount);
+                    $("#started").text(result[0].startedListCount);
+                    $("#done").text(result[0].completedListCount);
+                    $("#waste").text(result[0].wastedListCount);
+                }
+              
+
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+    
+
+    function GetFaultyMobileList() {
+
+        $.ajax({
+            url: '@Url.Action("GetFaultyMobileList", "Home")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                console.log(result);
+
+                if (result.length == 0) {
+                   
+                } else {
+                   
+                }
+
+
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    function GetLineWiseProjectInfo() {
+
+        $.ajax({
+            url: '  @Url.Action("GetLineWiseProjectInfo", "Home")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#lineWiseProject').empty();
+                    $('#lineWiseProject').append('<div class="statistic d-flex align-items-center bg-white has-shadow" ><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"><small>No ongoing task available</small></div></div>');
+
+                    return false;
+                } else {
+                    
+                    $('#lineWiseProject').empty();
+                    $.each(data, function (index, itemData) {
+
+
+                        $("#lineWiseProject").append(' <div class="statistic d-flex align-items-center bg-white has-shadow" style="color: #05093C;"><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"style="color: #05093C;"><strong>' + itemData.LineName + '</strong><br><small>Project Name :  ' + itemData.ProjectName + '</small><br><small>Issued Quantity :  ' + itemData.IssuedQuantity + '</small><br><small>Hourly Target Quantity :  ' + itemData.HourlyTarget + '</small><br><small>Total Target Quantity : ' + itemData.TotalTarget + '</small><br><small>Man Power :  ' + itemData.ManPower + '</small></div></div>');
+                    });
+                    
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+
+
+    //window.setInterval(function () {
+    //    CountIssues();
+    //}, 25000);
+    
+</script>
+
+<!-- animation for the icons -->
+<script>
+    function animateIcons() {
+        var a;
+        a = document.getElementById("changeAnim");
+        a.innerHTML = "&#xf0d4;";
+        setTimeout(function () {
+            a.innerHTML = "&#xf0e1;";
+        }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf16c;";
+        }, 2000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf17e;";
+        }, 3000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf09a;";
+        }, 3000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf09b;";
+        }, 3000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf17e;";
+        }, 3000);
+
+       
+
+
+
+    }
+   // animateIcons();
+    //setInterval(animateIcons, 4000);
+    
+    var ctx1 = $("canvas").get(0).getContext("2d");
+    var gradient1 = ctx1.createLinearGradient(150, 0, 150, 300);
+    gradient1.addColorStop(0, 'rgba(133, 180, 242, 0.91)');
+    gradient1.addColorStop(1, 'rgba(255, 119, 119, 0.94)');
+
+    var gradient2 = ctx1.createLinearGradient(146.000, 0.000, 154.000, 300.000);
+    gradient2.addColorStop(0, 'rgba(104, 179, 112, 0.85)');
+    gradient2.addColorStop(1, 'rgba(76, 162, 205, 0.85)');
+
+
+
+    
+    function GetLineWiseProduction() {
+
+        var legendState = true;
+        if ($(window).outerWidth() < 576) {
+            legendState = false;
+        }
+        debugger;
+        
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+        today = dd +'-' + mm +'-'+ yyyy;
+      
+
+        var gridate = today.split('-');
+        var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+
+        var colors = ['#196F3D', '#FFC107', '#4A235A', '#FF5733', '#C0392B'];
+
+
+        $.ajax({
+            url: "@Url.Action("GetLineWiseProduction", "Report")",
+            type: 'POST',
+        data: JSON.stringify({ projectId:0, date: convertDate }),
+        dataType: 'json',
+        async: false,
+        contentType: 'application/json',
+        success: function (result) {
+            console.log(result);
+
+
+
+            var barchartexmple = $('#lineWiseProductionChart');
+                
+            var barChartExample = new Chart(barchartexmple, {
+                    
+                type: 'line',
+                options: {
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            gridLines: {
+                                color: '#eee'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                           
+                            gridLines: {
+                                color: '#eee'
+                            }
+                        }]
+                    },
+                    legend: {
+                        display: legendState
+                    }
+                },
+                data: {
+
+                    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"],
+                    datasets:
+                        []
+
+                }
+
+
+            });
+
+                
+             
+                
+            $.each(result, function (index, itemData) {
+
+                barChartExample.data.datasets.push({
+                    label: itemData.label,
+                    fill: true,
+                    lineTension: 0.2,
+                    backgroundColor: "transparent",
+                    borderColor: colors[index],
+                    pointBorderColor: '#da4c59',
+                    pointHoverBackgroundColor:'#17202A',
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    borderWidth: 1,
+                    pointBackgroundColor: colors[index],
+                    pointBorderWidth: 4,
+                    pointHoverRadius: 5,
+                    pointHoverBorderColor: colors[index],
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: itemData.data,
+                    spanGaps: false
+                        
+                });
+                   
+                barChartExample.update();
+            });
+            barChartExample.update();
+                
+               
+            return true;
+            //location.reload();
+        } ,
+
+
+        error: function (result, textStatus, jqXHR) {
+            //toastr.error(result.Message);
+
+            //return false;
+        }
+    });
+
+    }
+</script>
+<script>
+    //function animateIconsCv() {
+    //    var
+    //    b = document.getElementById("changeAnimCv");
+    //    b.innerHTML = "&#xf1c1;";
+    //    setTimeout(function () {
+    //        b.innerHTML = "&#xf1c2;";
+    //    }, 1000);
+    //    setTimeout(function () {
+    //        b.innerHTML = "&#xf1c9;";
+    //    }, 3000);
+
+
+    //}
+    
+
+
+    //animateIconsCv();
+    //setInterval(animateIconsCv, 5000);
+    function HourlyStationineWiseFault() {
+
+        var legendState = true;
+        if ($(window).outerWidth() < 576) {
+            legendState = false;
+        }
+        debugger;
+
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+        today = dd + '-' + mm + '-' + yyyy;
+
+
+        var gridate = today.split('-');
+        var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+
+        var colors = ['#196F3D', '#FFC107', '#4A235A', '#FF5733', '#C0392B'];
+
+
+        $.ajax({
+            url: "@Url.Action("HourlyStationineWiseFault", "Report")",
+            type: 'POST',
+            data: JSON.stringify({ projectId: 0, date: convertDate }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function(data) {
+
+
+                if (data.length != 0) {
+
+                    console.log(data);
+
+                    $.each(data, function(index, itemData) {
+
+                        $('#HourlyLineStatus').append('<div class="col-sm-6 id="LineWisestatusHourly' + index + '"><div class="card"> <div class="card-header d-flex align-items-center"><h3 class="h4">' + itemData.LineName + '</h3></div> <div class="card-body"> <canvas id="LineWisestatusHourlyChart' + index + '"></canvas></div></div></div>');
+
+                        var barchartexmple = $('#LineWisestatusHourlyChart' + index + '');
+
+                        var barChartExample = new Chart(barchartexmple, {
+                            type: 'bar',
+                            options: {
+                                scales: {
+                                    xAxes: [{
+                                        display: true,
+                                        gridLines: {
+                                            color: '#eee'
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        display: true,
+                                        gridLines: {
+                                            color: '#eee'
+                                        }
+                                    }]
+                                },
+                            },
+                            data: {
+                                labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"],
+                                datasets:
+                                    []
+                            }
+                        });
+
+
+                        $.each(itemData.Details, function(index, v) {
+
+
+                            barChartExample.data.datasets.push({
+                                label: v.label,
+                                fill: true,
+
+                                backgroundColor: colors[index],
+                                borderColor: gradient1,
+                                pointBorderColor: gradient1,
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 2,
+                                pointHoverRadius: 2,
+                                pointHoverBackgroundColor: gradient2,
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                data: v.data,
+                                spanGaps: false
+                            });
+
+                            barChartExample.update();
+
+
+                        });
+
+
+                    });
+                    //barChartExample.update();
+                } else {
+                    $('#HourlyLineStatus').text("No Line Data Available");
+
+                }
+
+            }
+        });
+    }
+
+
+    function HourlyLineWiseStationsStatus() {
+        var legendState = true;
+        if ($(window).outerWidth() < 576) {
+            legendState = false;
+        }
+        debugger;
+
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+        today = dd + '-' + mm + '-' + yyyy;
+
+
+        var gridate = today.split('-');
+        var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+
+        var colors = ['#196F3D', '#FFC107', '#4A235A', '#FF5733', '#C0392B', '#4760BC', '#E829DC', '#881E2E'];
+
+
+        $.ajax({
+            url: "@Url.Action("HourlyLineWiseStationsStatus", "Report")",
+            type: 'POST',
+        data: JSON.stringify({date: convertDate }),
+        dataType: 'json',
+        async: false,
+        contentType: 'application/json',
+        success: function(data) {
+
+
+            if (data.length != 0) {
+
+                console.log(data);
+
+                $.each(data, function(index, itemData) {
+
+                    $('#HourlyLineWiseQcStatus').append('<div class="col-sm-6 id="HourlyLineWiseQcStatus' + index + '"><div class="card"> <div class="card-header d-flex align-items-center"><h3 class="h4">' + itemData.LineName + '</h3></div> <div class="card-body"> <canvas id="HourlyLineWiseQcStatusChart' + index + '"></canvas></div></div></div>');
+
+                    var barchartexmple = $('#HourlyLineWiseQcStatusChart' + index + '');
+
+                    var barChartExample = new Chart(barchartexmple, {
+                        type: 'bar',
+                        options: {
+                            scales: {
+                                xAxes: [{
+                                    display: true,
+                                    gridLines: {
+                                        color: '#eee'
+                                    }
+                                }],
+                                yAxes: [{
+                                    display: true,
+                                    gridLines: {
+                                        color: '#eee'
+                                    }
+                                }]
+                            },
+                        },
+                        data: {
+                            labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"],
+                            datasets:
+                                []
+                        }
+                    });
+
+
+                    $.each(itemData.Details, function(index, v) {
+
+                        
+
+
+                        barChartExample.data.datasets.push({
+                          
+                            label: v.label,
+                            fill: true,
+                            lineTension: 0.8,
+                            borderCapStyle: 'butt',
+                            borderDash: [],
+                            borderDashOffset: 0.0,
+                            borderJoinStyle: 'miter',
+                            backgroundColor: colors[index],
+                            borderColor: gradient1,
+                            pointBorderColor: gradient1,
+                            pointBackgroundColor: "#fff",
+                            pointBorderWidth: 2,
+                            pointHoverRadius: 5,
+                            pointHoverBackgroundColor: gradient2,
+                            pointHoverBorderColor: "rgba(220,220,220,1)",
+                            pointHoverBorderWidth: 2,
+                            data: v.data,
+                            pointHitRadius: 10,
+                            spanGaps: false
+                        });
+
+                        barChartExample.update();
+
+
+                    });
+
+
+                });
+                //barChartExample.update();
+            } else {
+                $('#HourlyLineWiseQcStatus').text("No Line Data Available");
+
+            }
+
+        }
+    });
+        
+
+    }
+
+</script>
+
+ 

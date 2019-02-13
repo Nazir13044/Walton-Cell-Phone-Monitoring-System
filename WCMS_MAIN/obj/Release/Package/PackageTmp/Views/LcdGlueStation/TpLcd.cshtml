@@ -1,0 +1,901 @@
+﻿@{
+    ViewBag.Title = "TpLcd";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    #myIssueModal .modal-dialog {
+        min-width: 100%;
+        margin: 0;
+    }
+     h5 {
+         font-size: 1.28571429em;
+         font-weight: 700;
+         line-height: 1.2857em;
+         margin: 0;
+     }
+
+    .card {
+        font-size: 1em;
+        overflow: hidden;
+        padding: 0;
+        border: none;
+        border-radius: .28571429rem;
+        box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    }
+
+    .card-block {
+        font-size: 1em;
+        position: relative;
+        margin: 0;
+        padding: 1em;
+        border: none;
+        border-top: 1px solid rgba(34, 36, 38, .1);
+        box-shadow: none;
+    }
+
+    .card-img-top {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .card-title {
+        font-size: 1.28571429em;
+        font-weight: 700;
+        line-height: 1.2857em;
+    }
+
+    .card-text {
+        clear: both;
+        margin-top: .5em;
+        color: rgba(0, 0, 0, .68);
+        text-align: center;
+    }
+
+    .card-footer {
+        font-size: 1em;
+        position: static;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        padding: .75em 1em;
+        color: rgba(0, 0, 0, .4);
+        border-top: 1px solid rgba(0, 0, 0, .05) !important;
+        background: #fff;
+    }
+
+    h2 {
+        color: white;
+        font-size: 50px;
+    }
+</style>
+<div class="container" style="margin-bottom: 0;">
+    <div class="row mb-5">
+
+
+        <div class="col-sm-6 col-md-4 col-lg-4 mt-4">
+            <div class="card card-inverse card-info" style="background-color: #23323B">
+
+                <div class="card-block" style="text-align: center;">
+
+                    <h2 class="card-title">Total Checked</h2>
+                    <div class="card-text">
+                        <span id="checked" style="font-size:40px;color:white;font-weight: bold "></span>
+                    </div>
+                </div>
+                @*<div class="card-footer">
+
+                    </div>*@
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4 mt-4">
+            <div class="card card-inverse card-info" style="background-color: #68C19B">
+
+                <div class="card-block" style="text-align: center;">
+
+                    <h2 class=" card-title">
+                        Total Passed
+                    </h2>
+                    <div class="card-text">
+                        <span id="passed" style="font-size: 40px; color: white; font-weight: bold"></span>
+                    </div>
+                </div>
+                @*<div class="card-footer">
+
+                    </div>*@
+            </div>
+        </div>
+
+
+        <div class="col-sm-4 col-md-4 col-lg-4 mt-4">
+            <div class="card card-inverse card-info" style="background-color: #D33A2C; ">
+
+                <div class="card-block" style="text-align: center;">
+
+                    <h2 class=" card-title">
+                        Total Failed
+                    </h2>
+                    <div class="card-text">
+                        <span id="failed" style="font-size: 40px; color: white; font-weight: bold"></span>
+                    </div>
+                </div>
+                @*<div class="card-footer">
+
+                    </div>*@
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-6" style="margin-top: 0;">
+            <div class="card" style="height: 300px; border: 1px solid #431D0B; font-weight: normal; font-style: normal; ">
+
+                <div class="card-header d-flex align-items-center" style="background-color: #431D0B; font-weight: normal; font-style: normal; color: white; text-align: center; ">
+                    <h3 class="h4">Scan Item Code</h3>
+                </div>
+                <div class="card-body">
+
+                    <div class="form-horizontal" style="margin-top: 30px;">
+                        <div class="form-group row" id="divSingleCode">
+                            <label class="col-sm-4 form-control-label">Scan Code</label>
+                            <div class="col-sm-8" id="">
+
+                                <input id="txtCode" type="text" placeholder="Scan  Code" required="" class="form-control form-control-success">
+                            </div>
+
+
+                        </div>
+                        <div class="form-group row" id="divSingleCode">
+                            <div class="col-sm-8 offset-sm-4" id="">
+
+                                <button class="btn btn-primary" id="btnTplcdClear"> Clear All</button>
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6" id="divtblData" style="">
+            <div class="card" style="height: 300px; border: 1px solid #6826AE; font-style: normal; font-weight: normal; ">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center" style="background-color: #6826AE; font-style: normal; font-weight: normal; color: white; text-align: center; ">
+                    <h3 class="h4">Current Working Project/Model <span id="batchCount" style="text-align: center;margin-left: 50px;"></span></h3>
+                </div>
+                <div class="card-body" style="overflow: auto">
+                    <div class="form-group row" id="divBatchFailed">
+
+                        <div class="col-sm-7" id="">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >Add New Project/Model</button><br /><br />
+                        </div>
+
+
+                    </div>
+
+
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th style="display:none">
+                                    Id
+                                </th>
+                                <th>
+                                    Model Name
+                                </th>
+                                <th>
+                                    Currently Running
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody"></tbody>
+                    </table>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@*Modal Popup*@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group" style="display: none;">
+                        <label for="lineId">Line Id</label>
+                        <input type="text" class="form-control" id="lineId" placeholder="" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtProject">Project Name</label>
+                        <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="lineRemarks">Remarks</label>
+                        <input type="text" class="form-control" id="txtRemarks" placeholder="Line Remarks" />
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                @*<button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>*@
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@*//modal*@
+
+
+<div class="modal fade" id="myIssueModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" style="border: 1px solid #922602">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="text-align: center; background-color: #072F4F;color:white ">
+                <h4 class="modal-title" style="text-align: center;">Aesthetic Error List</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <div class="container">
+                    <div class="row" id="modIssues">
+
+
+                    </div>
+                    <div class="form-group row" style="margin-left: 8px;">
+
+                        <div class="i-checks col-sm-10" style="">
+                            <input id="chkOthers" type="checkbox" value="y" class="checkbox-template">
+                            <label for="chkOthers" style="color:#f53e16;font-weight: bold">Others</label> &nbsp;&nbsp;
+                            <input id="txtOthers" type="text" style="display: none;width: 200px;" required="" class="form-control form-control-success">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="btnSave" style="width: 200px;"> Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/black/easyui.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script>
+
+
+
+
+    @*function CallOracleTest() {
+        debugger;
+        var str = "OLVIO MM17-1st Order";
+
+        var a = str.substr(str.indexOf(' ') + 1); // "tocirah sneab"
+
+
+        var c = a.split('-')[0];
+       // alert(c.trim());
+
+        var color = "Full Black";
+      
+
+        $.ajax({
+            url: '@Url.Action("CallOracleTest", "LcdGlueStation")', //changed For Test
+            type: 'POST',
+            data: JSON.stringify({ model: c.trim(), color: color }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                if (result.IsSuccess) {
+
+
+                }
+
+
+                else {
+                   
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: result
+                });
+
+                return false;
+            }
+        });
+    }*@
+
+
+    $(document).ready(function() {
+        //CallOracleTest();
+        $("#txtCode").focus();
+        LoadAllProjects();
+        LoadWorkingModelDataTplcd();
+        CountTpLcdStationinput();
+
+        $("#btnTplcdClear").click(function() {
+            $('#txtCode').val('');
+            $('#txtCode').focus();
+            //location.reload();
+        });
+    });
+
+    $('#txtCode').keydown(function() {
+        debugger;
+        var lastTwoDigits = this.value.slice(-2);
+        if (lastTwoDigits.toLowerCase() == '-y' || lastTwoDigits.toLowerCase() == '-n') {
+
+            var status = (this.value.slice(-1)).toLowerCase();
+            if (status == "y") {
+
+                var code = this.value.slice(0, -2);
+                SaveTpLcdInfo(code, status);
+            }
+
+
+            if (status == "n") {
+
+
+                $('#myIssueModal').modal('show'); //changed by asif 
+                GetAllIssueList();
+            }
+
+
+        }
+    });
+    $("#chkOthers").click(function () {
+
+        if ($(this).is(':checked')) {
+
+            $('#txtOthers').show();
+            $('#txtOthers').focus();
+        }
+
+        else
+            $('#txtOthers').hide();
+        $('#txtOthers').val('');
+
+    });
+
+    function GetAllIssueList() {
+
+        $.ajax({
+            url: '  @Url.Action("GetAllIssueList", "LcdGlueStation")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#modIssues').empty();
+                    $('#modIssues').append('<div class="statistic d-flex align-items-center bg-white has-shadow" ><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"><small>No ongoing task available</small></div></div>');
+
+                    return false;
+                } else {
+
+                    $('#modIssues').empty();
+                    $.each(data, function (index, itemData) {
+
+
+                        $("#modIssues").append('<div class="col-md-4"><form><div class="form-check"><label><input type="checkbox"  name="Errorcheck" value="' + itemData.IssueName + '"> <span class="label-text">' + itemData.IssueName + '</span></label></div></form> </div>');
+                    });
+
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+
+
+    }
+
+    function SaveTpLcdInfo(code, status) {
+
+        debugger;
+
+        if ($("#txtCode").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: ' Code Required'
+            });
+            return false;
+        } else {
+            var tpLcdData = {
+                Code: code,
+                Passed: status,
+            };            
+
+
+            $.ajax({
+                url: '@Url.Action("InsertTpLcdStation", "LcdGlueStation")', //changed For Test
+                type: 'Post',
+                data: JSON.stringify({ tpLcdData: tpLcdData }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function(result) {
+
+                    if (result.IsSuccess) {
+
+
+                       
+                        $("#txtCode").val('');
+                        $("#txtCode").focus();
+                        location.reload();
+                        return true;
+                        //location.reload();
+                    } else if (result.Id == "0") {
+                        window.location = '@Url.Action("LogOut", "Account")';
+
+                    }
+
+
+                    else {
+                        iziToast.warning({
+                            timeout: 1000,
+                            imageWidth: 100,
+                            position: 'center',
+                            title: 'Warning!- ',
+                            message: result.Message,
+                            backgroundColor: '#E70F0F',
+                            theme: 'dark', // dark
+                            zindex: 999,
+                            progressBarColor: '#091B2B',
+                            titleSize: 15,
+                            messageColor: '#FDFEFE',
+                            messageSize: 15,
+
+                        });
+                        $("#txtCode").val('');
+                        $("#txtCode").focus();
+                        return false;
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+                    $("#txtCode").val('');
+                    $("#txtCode").focus();
+                    return false;
+                }
+            });
+        }
+       
+    }
+
+
+    function CountTpLcdStationinput() {
+
+        $.ajax({
+            url: '  @Url.Action("CountTpLcdStationinput", "LcdGlueStation")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                if (result.length == 0) {
+                    $('#checked').text('0');
+                    $('#passed').text('0');
+                    $('#failed').text('0');
+                }
+                else {
+                    $('#checked').text(result[0].totalChecked);
+                    $('#passed').text(result[0].passedCount);
+                    $('#failed').text(result[0].failedCount);
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function LoadAllProjects() {
+
+        var url = "@Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+    //Add Data Function
+    function Add() {
+
+
+        if ($('#txtProject').val() == "" || $("#txtProject").val() == 0) {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 50,
+                position: 'center',
+                message: ' Please  Insert  Project  Name',
+                title: 'warning! -',
+                backgroundColor: '#E22919',
+                theme: 'dark', // dark
+                zindex: 999,
+                progressBarColor: '#091B2B',
+                titleSize: 30,
+                messageColor: '#F4F3F8',
+                messageSize: 30,
+
+            });
+
+            return false;
+        }
+
+
+        else {
+
+            var obj = {
+
+                ProjectId: $('#txtProject').val(),
+                ProjectName: $('#txtProject option:selected').text(),
+                Station:"TPLCD",
+                Remarks: $('#txtRemarks').val(),
+            };
+
+            $.ajax({
+                url: "@Url.Action("AddWorkingProject", "LcdGlueStation")",
+                data: JSON.stringify(obj),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Updated Saved Successfully'
+                        });
+
+                        $('#myModal').modal('hide');
+
+                        LoadWorkingModelDataTplcd();
+                        return true;
+
+                    }
+                    else {
+                        iziToast.error({
+                            timeout: 3000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: 'Error Occured While Saving'
+                        });
+                    }
+                    $('#myModal').modal('hide');
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+
+
+
+        }
+    }
+
+    //Load Data function
+    function LoadWorkingModelDataTplcd() {
+        $.ajax({
+            url: "  @Url.Action("LoadWorkingModelDataTplcd", "LcdGlueStation")",
+            type: "GET",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                var html = '';
+                $.each(result, function (key, item) {
+                    html += '<tr>';
+                    html += '<td style=display:none>' + item.Id + '</td>';
+                    html += '<td>' + item.ProjectName + '</td>';
+                    html += '<td>' + item.CurentlyRunning + '</td>';
+                    html += '<td><a href="#" onclick="return UpdateProject(' + item.Id + ')">Make Current Working Project</a></td>';
+                    html += '</tr>';
+                });
+                $('.tbody').html(html);
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+
+    function UpdateProject(id) {
+        debugger;
+        $.ajax({
+
+
+            url: " @Url.Action("UpdateProject", "LcdGlueStation")?projectId=" + id,
+            typr: "GET",
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (result) {
+
+                //console.log(result);
+                
+                if (result.IsSuccess) {
+                    iziToast.success({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Success',
+                        message: 'Updated Saved Successfully'
+                    });
+
+                    $("#txtCode").focus();
+                    LoadWorkingModelDataTplcd();
+                    return true;
+
+                } else {
+                    iziToast.error({
+                        timeout: 3000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: 'Error Occured While Saving'
+                    });
+                    $("#txtCode").focus();
+                }
+
+               
+
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+        return false;
+    }
+
+
+
+    $("#btnSave").click(function () {
+        debugger;
+        //$('#myModal').modal('hide');
+       // var aestheticQcList = [];
+        var reworkList = [];
+
+        var code = $("#txtCode").val();
+
+
+        var mobleCode = code.slice(0, -2);
+
+        var status = code.slice(-1);       
+        if (status == 'N') {
+            var checkedNum = $('input[name="Errorcheck"]:checked').length;
+
+
+            if (!checkedNum && $('#txtOthers').val() == "") {
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Warning',
+                    message: 'Please Select Issues'
+                });
+                return false;
+            }
+
+        }
+
+        if ($("#txtCode").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: ' Code Required'
+            });
+            return false;
+        }
+
+
+        else {
+
+            var tpLcdData = {
+                Code: mobleCode,
+                Passed: status,
+            };
+            var issues = '';
+
+            $('input[name="Errorcheck"]:checked').each(function () {
+                //console.log(this.value);
+                issues += this.value + ',';
+
+            });
+
+            if ($('#txtOthers').val() != "") {
+
+                issues += $('#txtOthers').val();
+            }
+
+            reworkList.push({
+                Code: mobleCode,
+                FailedFrom: "TPLCD",
+                Issue: issues //$("#txtIssues").val()
+            });
+
+           
+
+
+            $.ajax({
+                url: ' @Url.Action("InsertTpLcdStation", "LcdGlueStation")', //changed For Test
+                type: 'Post',
+                data: JSON.stringify({ tpLcdData: tpLcdData, reworkList: reworkList }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+                       
+                        $("#btnSave").hide();
+                        $("#txtCode").focus();
+                        location.reload();
+                       
+
+                        return true;
+                      
+                    } else {
+                        iziToast.error({
+                            timeout: 1000,
+                            imageWidth: 100,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message,
+                            backgroundColor: '#E70F0F',
+                            theme: 'dark', // dark
+                            zindex: 999,
+                            progressBarColor: '#091B2B',
+                            titleSize: 15,
+                            messageColor: '#FDFEFE',
+                            messageSize: 15,
+                        });
+                        $("#txtMobileCode").val('');
+                        return false;
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+
+                    //return false;
+                }
+            });
+
+
+
+        }
+
+    });
+
+
+
+
+
+
+
+
+</script>

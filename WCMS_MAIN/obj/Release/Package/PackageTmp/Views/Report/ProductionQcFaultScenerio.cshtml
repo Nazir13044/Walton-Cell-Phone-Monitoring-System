@@ -1,0 +1,741 @@
+﻿@{
+    ViewBag.Title = "ProductionQcFaultScenerio";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    body {
+        background: #EEE;
+    }
+
+    #header {
+        background: #666;
+        color: #FFF;
+        height: 100px;
+        padding: 10px;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+
+
+    #sideMenu ul li {
+        list-style: none;
+        padding: 5px;
+        border-bottom: 1px dotted #CCC;
+    }
+
+
+
+
+
+    .note {
+        color: red;
+    }
+
+    #footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 85%;
+        background: #666;
+        color: #FFF;
+    }
+
+    table thead {
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-size: 20px;
+    }
+
+        table thead td {
+            vertical-align: bottom;
+            font-weight: bold;
+            color: black;
+        }
+
+    table tbody td {
+        text-align: center;
+        color: black;
+    }
+
+    table th {
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-size: 15px;
+    }
+
+    h2, h4 {
+        text-align: center;
+    }
+
+    #masterContent h2, h4 {
+        text-align: center;
+    }
+
+    /*table thead tr th {
+        text-align: center;
+
+    }*/
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            &nbsp;
+        </div>
+
+
+
+        <div class="col-lg-8 offset-2">
+            <div class="card" style="border: 2px solid ; height: 250px;">
+                <div class="card-header d-flex align-items-center" style="background-color: darkslateblue; color: white">
+                    <h3 class="h4" style="font-weight: normal">Mobile Qc Daily Report of production Fault Scenerio Report</h3>
+                </div>
+                <div class="card-body text-center">
+                    <div class="form-group row">
+                        <label class="col-sm-2 form-control-label">Date:</label>
+                        <div class="col-sm-4">
+                            <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success txtDate">
+                        </div>
+                        <label class="col-sm-2 form-control-label">Model:</label>
+                        <div class="col-sm-4">
+                            <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" style="" id="btSearch">Search</button>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="col-lg-12">
+
+
+
+
+
+
+
+    <div class="card col-lg-12" style="border: 2px solid darkcyan;display: none;" id="tblDataDiv">
+        <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+            <h3 class="h4" style="font-weight: normal">Report Data </h3>
+        </div>
+        <div class="card-body">
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary" style="" id="btnPrint">Print</button>
+
+            </div>
+            <div id="masterContent">
+
+                <h4></h4>
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-8">
+
+
+                                <table class="table table-bordered" id="QcProductionData">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="9">Production Line Result</th>
+                                        </tr>
+                                        <tr>
+
+                                            <th scope="col">#SN</th>
+                                            <th scope="col">Project</th>
+                                            <th scope="col">Line</th>
+                                            <th scope="col">Total Checked</th>
+                                            <th scope="col">Total pass</th>
+                                            <th scope="col"> Fail</th>
+                                            <th scope="col">Fail Ratio</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12" id="showData">
+
+
+
+
+                        </div>
+                        <br />
+                        <div class="col-lg-12" id="showDataFunctional">
+
+
+
+
+                        </div>
+
+                        @*<div class="col-sm-6">
+
+                <h1>functional Fault</h1>
+                <table class="table table-bordered" id="FunctionalfaultData">
+                    <thead>
+                        <tr>
+                            <th colspan="5">Functional fault</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">#SN</th>
+                            <th scope="col">Fault Name</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Line </th>
+                            <th scope="col">Project</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+
+            </div>
+            <div class="col-sm-6">
+
+
+                <table class="table table-bordered" id="AestheticfaultData">
+                    <thead>
+                        <tr>
+                            <th colspan="5">Aesthetic Fault</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">#SN</th>
+                            <th scope="col">Fault Name</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Line </th>
+                            <th scope="col">Project</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+
+            </div>*@
+
+                    </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.css" rel="stylesheet" />
+<script src="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script src="~/js/printPreview.js"></script>
+<script>
+    $(function () {
+        //GetProductionQcStatus();
+       
+        LoadAllProjects();
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+        $("#btnPrint").printPreview({
+            obj2print: '#masterContent',
+            width: '810',
+            title: 'Mobile Qc Daily Report of production Fault Scenerio'
+        });
+    });
+
+
+    $("#btSearch").click(function () {
+
+
+        GetProductionQcStatus();
+
+    });
+
+    function LoadAllProjects() {
+
+        var url = "@Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function(json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select Project---</option>");
+
+            $.each(json, function(idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+        });
+    }    
+
+
+    var list = [];
+    var funcList = [];
+    function GetProductionQcStatus() {
+        list = [];
+        funcList = [];
+        var gridateFrom = $("#txtReqDate").val().split('-');
+        var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+        var projectId = $('#txtProject').val();
+
+        $.ajax({
+            url: ' @Url.Action("GetProductionQcStatus", "Report")',
+            type: 'Post',
+            data: JSON.stringify({ fromdate: fromdate, projectId: projectId }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+
+
+
+                if (data.length == 0) {
+                    // $('#divSearchedIssue').empty();
+                    iziToast.warning({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'No Data Found'
+                    });
+                    $("#tblDataDiv").hide();
+                    return false;
+
+                } else {
+                    $("#tblDataDiv").show();
+                    $('#QcProductionData tbody').empty();
+                    // $("#tblDataDiv").show();
+                    var html = '';
+                    $.each(data.productionQc, function (key, item) {
+
+                        var serial = parseInt(key) + 1;
+
+
+                        var row = "<tr class='active' style='font-size=15px;height:3px;'>" +
+                            "<td style='height:5px;' class='text-center'>" + serial + "</td>" +
+                            "<td style='height:3px; class='text-center'>" + item.ProjectName + "</td>" +
+                            "<td style='height:5px;' class='text-center'>" + item.LineName + "</td>" +
+                            "<td style='height:3px'; class='text-center'>" + item.TotalChecked + "</td>" +
+                            "<td style='height:3px; class='text-center'>" + item.TotalPassed + "</td>" +
+                            "<td style='height:3px'; class='text-center'>" + item.Fault + "</td>" +
+                            "<td style='height:3px'; class='text-center'> " + item.FaultRatio + "</td>" +
+                            "</tr>";
+
+
+                        $('#QcProductionData tbody').append(row);
+
+
+                    });
+
+                    //$("#txtCode").val('');
+                    //$('#tblData .tbody').html(html);
+                   //;
+                    
+                    $.when(GetAestheticFaultLists()).then(GetFunctionalFaultLists());
+                    $.when(GetFunctionalFaultLists()).then(GenerateFooter());
+                   
+
+                   
+                }
+
+            },
+            error: function (data, textStatus, jqXHR) {
+                toastr.error(textStatus + " " + result + " " + jqXHR);
+            }
+        });
+
+
+    }
+    
+    function GetFooterValues() {
+        debugger;
+        console.log(list);
+        //alert("ore baba ");
+        //debugger;
+        var cell;
+        var cell1;
+        var cell2;
+         
+        var table = document.getElementById("tblAestheticFaults");
+        
+
+        var row = table.insertRow(-1);
+       
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+        cell1.innerHTML = "<b>Total</b>";
+        cell2.innerHTML = "<b></b>";
+
+
+        $.each(list, function (key, item) {
+
+            if (item.index > 1) {
+
+                cell = row.insertCell(item.index);
+                cell.innerHTML = "<b>" + item.total + "</b>";
+            } 
+
+        });
+
+
+        GenerateFunctionalFooter();
+
+    }
+    
+    function GenerateFunctionalFooter() {
+        debugger;
+        var table = document.getElementById("tblFunctinalFaults");
+        var id = table.id;
+
+        $('#' + id + ' tbody tr th').each(function (i) {
+            //if (i > 1)
+            calculateFunctionalColumn(i);
+        });
+        GetFunctionalFooterValues();
+    }
+    
+
+    function GetFunctionalFooterValues() {
+        debugger;
+        console.log(list);
+        //alert("ore baba ");
+        //debugger;
+        var fcell;
+        var fcell1;
+        var fcell2;
+
+        var table = document.getElementById("tblFunctinalFaults");
+
+
+        var row = table.insertRow(-1);
+
+        fcell1 = row.insertCell(0);
+        fcell2 = row.insertCell(1);
+        fcell1.innerHTML = "<b>Total</b>";
+        fcell2.innerHTML = "<b></b>";
+
+
+        $.each(funcList, function (key, item) {
+
+            if (item.index > 1) {
+
+                fcell = row.insertCell(item.index);
+                fcell.innerHTML = "<b>" + item.total + "</b>";
+            }
+
+        });
+
+
+      
+
+    }
+
+
+
+    function calculateFunctionalColumn(index) {
+        debugger;
+        var total = 0;
+        var table = document.getElementById("tblFunctinalFaults");
+        var id = table.id;
+        $('#' + id + '>tbody > tr').each(function () {
+            var value = parseInt($('td', this).eq(index).text());
+            if (!isNaN(value)) {
+                total += value;
+            }
+        });
+
+
+        funcList.push({
+            "index": index,
+            "total": total
+
+        });
+    }
+
+
+   
+    function GenerateFooter() {
+        debugger;
+        var table = document.getElementById("tblAestheticFaults");
+        var id = table.id;
+
+        $('#' + id + ' tbody tr th').each(function (i) {
+            //if (i > 1)
+                calculateColumn(i);
+        });
+            GetFooterValues();   
+    }
+    
+
+    function calculateColumn(index) {
+        debugger;
+        var total = 0;
+        var table = document.getElementById("tblAestheticFaults");
+        var id = table.id;
+        $('#' + id + '>tbody > tr').each(function () {
+            var value = parseInt($('td', this).eq(index).text());
+            if (!isNaN(value)) {
+                total += value;
+            } 
+        });
+
+
+        list.push({
+            "index": index,
+            "total": total
+
+        });   
+    }
+
+    
+
+
+
+
+
+
+    function GetAestheticFaultLists() {
+
+      
+   
+
+        var gridateFrom = $("#txtReqDate").val().split('-');
+        var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+        var projectId = $('#txtProject').val();
+        $("#showData").empty();
+        $.ajax({
+            url: ' @Url.Action("GetFaultsData", "Report")',
+            type: 'Post',
+            data: JSON.stringify({ fromdate: fromdate, todate: fromdate, date: fromdate, projectId: projectId }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function(data) {
+               
+
+                if (data.length == 0) {
+                    // $('#divSearchedIssue').empty();
+                    iziToast.warning({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'No Data Found'
+                    });
+
+                    return false;
+
+                } else {
+
+                
+                    var dataList = JSON.parse(data);
+
+                    var col = [];
+                    for (var i = 0; i < dataList.length; i++) {
+                        for (var key in dataList[i]) {
+                            if (col.indexOf(key) === -1) {
+
+
+                                //alert(key);
+                                col.push(key);                             
+
+
+                            }
+                        }
+                    }
+
+                    //debugger
+                    var table = document.createElement("table");
+                    table.className = "table table-bordered";
+                    table.id = "tblAestheticFaults";
+                    table.setAttribute('padding', '2');
+                    table.style.padding = "2px";
+                    table.style.margin = "2px";
+
+                    var tr = table.insertRow(-1);
+
+                    for (var i = 0; i < col.length; i++) {
+                        var th = document.createElement("th");
+                        th.innerHTML = col[i];
+                        tr.appendChild(th);
+                    }
+
+                   
+                    for (var i = 0; i < dataList.length; i++) {
+
+                        tr = table.insertRow(-1);
+
+                        for (var j = 0; j < col.length; j++) {
+                            var tabCell = tr.insertCell(-1);
+                            tabCell.innerHTML = dataList[i][col[j]];
+                        }
+                    }
+
+
+                    var divContainer = document.getElementById("showData");                    
+                   
+
+                    var e = $('<div style="display:block;border:1px solid black;text-align:center;font-weight:bold;">Aesthetic Fault</div><br/>');
+                    $('#showData').append(e);
+                    //divContainer.innerHTML += 'Extra stuff';
+                    divContainer.appendChild(table);
+                   
+                   // $('#test tr:last').after('<tr>...</tr><tr>...</tr>');
+                    // return false;
+
+                  
+                }
+                return true;
+            },
+            error: function(data, textStatus, jqXHR) {
+                toastr.error(textStatus + " " + result + " " + jqXHR);
+            }
+        });
+
+
+    }
+    
+
+
+
+    function GetFunctionalFaultLists() {
+
+
+        $("#showDataFunctional").empty();
+        var gridateFrom = $("#txtReqDate").val().split('-');
+        var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+        var projectId = $('#txtProject').val();
+
+        $.ajax({
+            url: ' @Url.Action("GetFunctionalFaultsData", "Report")',
+            type: 'Post',
+            data: JSON.stringify({ fromdate: fromdate, todate: fromdate, date: fromdate, projectId: projectId }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function(data) {
+
+
+                if (data.length == 0) {
+                    // $('#divSearchedIssue').empty();
+                    iziToast.warning({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'No Data Found'
+                    });
+
+                    return false;
+
+                } else {
+
+                   
+                    var dataList = JSON.parse(data);
+
+                    var col = [];
+                    for (var i = 0; i < dataList.length; i++) {
+                        for (var key in dataList[i]) {
+                            if (col.indexOf(key) === -1) {
+
+
+                                //alert(key);
+                                col.push(key);
+
+
+                            }
+                        }
+                    }
+
+                    //debugger
+                    var table = document.createElement("table");
+                    table.className = "table table-bordered";
+                    table.id = "tblFunctinalFaults";
+                    table.setAttribute('padding', '5');
+                    table.style.padding = "5px";
+                    table.style.margin = "5px";
+
+                    var tr = table.insertRow(-1);
+
+                    for (var i = 0; i < col.length; i++) {
+                        var th = document.createElement("th");
+                        th.innerHTML = col[i];
+                        tr.appendChild(th);
+                    }
+
+
+                    for (var i = 0; i < dataList.length; i++) {
+
+                        tr = table.insertRow(-1);
+
+                        for (var j = 0; j < col.length; j++) {
+                            var tabCell = tr.insertCell(-1);
+                            tabCell.innerHTML = dataList[i][col[j]];
+                        }
+                    }
+
+
+                    var divContainer = document.getElementById("showDataFunctional");
+
+
+                    var e = $('<br/><div style="display:block;border:1px solid black;text-align:center;font-weight:bold;">Functional Fault</div><br/>');
+                    $('#showDataFunctional').append(e);
+                    //divContainer.innerHTML += 'Extra stuff';
+                    divContainer.appendChild(table);
+
+
+                    // return false;
+
+
+                }
+                return true;
+            },
+            error: function(data, textStatus, jqXHR) {
+                toastr.error(textStatus + " " + result + " " + jqXHR);
+            }
+        });
+
+
+    }
+
+</script>

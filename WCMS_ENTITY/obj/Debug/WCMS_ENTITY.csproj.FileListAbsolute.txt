@@ -1,0 +1,52 @@
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.csprojResolveAssemblyReference.cache
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll.config
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll.config
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll.config
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.csprojResolveAssemblyReference.cache
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll.config
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll.config
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\WCMS_ENTITY.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\bin\Debug\EntityFramework.SqlServer.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.csprojResolveAssemblyReference.cache
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_ENTITY\obj\Debug\WCMS_ENTITY.pdb

@@ -1,0 +1,2489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VsunDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="F_CheckItems_Battery">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_CB">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_Charger">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_GB">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_GBW">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_IMEIC">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_IMEIC2">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_IMEIP">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_IMEIR">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_IMEIW">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_Pallet">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_CheckItems_Relation">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_CK_BT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_FT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_AT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SMTMMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_MMI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWV" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_SWBuilTime" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Reset" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Battery" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Charger" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_RelationCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GiftBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBox" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_CartonBoxW" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Pallet" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_PalletCheck" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IRIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_Tee" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_IMEIC2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CK_GoogleKey" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="F_Project_e">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_E8i">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_E8i_Coffee">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_E8s">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_EF6">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_EF6_100">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_EF6_300">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_EF7">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_F7_S">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_F7s">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_F8">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_GF7">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_GM3">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_H7s">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_HM4i">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_L_6">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_L25">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_MH17">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_ML13">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_MM17">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_MM18">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_NF_3">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_NF3">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_Q37">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_Q39">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_R5">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_RX6">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_S6_Dual">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Project_Sample">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Project_XXX">
+    <Key>
+      <PropertyRef Name="T_IMEI1" />
+    </Key>
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI3" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI4" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BT" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WIFI" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_SWV" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_BatterySN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectBattery_Time" Type="datetime" />
+    <Property Name="T_ChargerSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ConnectCharger_Time" Type="datetime" />
+    <Property Name="T_WriteIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_WriteIMEI_Time" Type="datetime" />
+    <Property Name="T_CheckIMEI_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time" Type="datetime" />
+    <Property Name="T_ResetFactory_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ResetFactory_Time" Type="datetime" />
+    <Property Name="T_GiftPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_GiftPrint_Time" Type="datetime" />
+    <Property Name="T_RelationCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_RelationCheck_Time" Type="datetime" />
+    <Property Name="T_GiftWeight" Type="float" />
+    <Property Name="T_GiftWeight_Time" Type="datetime" />
+    <Property Name="T_BOXID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BOXID_Time" Type="datetime" />
+    <Property Name="T_BoxWeight" Type="float" />
+    <Property Name="T_BoxWeight_Time" Type="datetime" />
+    <Property Name="T_BOXGiftCheck_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BOXGiftCheck_Time" Type="datetime" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID_Time" Type="datetime" />
+    <Property Name="T_ExportFlag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_Export_Time" Type="datetime" />
+    <Property Name="T_BatchIndn" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC2" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SPC3" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletNo_Time" Type="datetime" />
+    <Property Name="T_Vol" Type="int" />
+    <Property Name="T_ReadIMEIPrint_Flag" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_ReadIMEIPrint_Time" Type="datetime" />
+    <Property Name="T_SubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_WriteIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftPrint_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_RelationCheck_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_GiftWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxWeight_Man" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CheckIMEI_Flag2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_CheckIMEI_Time2" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Projects">
+    <Key>
+      <PropertyRef Name="T_Project" />
+    </Key>
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_Close" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_Rework">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Value" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_ReworkType" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_ReworkBattery">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_OldBatterySN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_NewBatterySN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_ReworkCarton">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_ReworkCartonWeight">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_ReworkCharger">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="20" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_OldChargerSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_NewChargerSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_ReworkCheckIMEIset">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="T_Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_ReworkGifBox">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Value" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_ReworkType" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_ReworkGifboxWeight">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="T_Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_ReworkHandset">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="T_Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_ReworkIMEI">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Value" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_ReworkType" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_ReworkIMEIPrint">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Value" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_ReworkType" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="F_ReworkOutPallet">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_ReworkPallet">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="20" />
+    <Property Name="T_PalletID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BoxID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_ReworkReadset">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Reason" Type="nvarchar" MaxLength="200" />
+    <Property Name="T_Datetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_ReworkRelationCheck">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="T_WOID" Type="nvarchar" MaxLength="20" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="20" />
+    <Property Name="T_Model" Type="nvarchar" MaxLength="20" />
+    <Property Name="T_Color" Type="nvarchar" MaxLength="20" />
+    <Property Name="T_IMEI1" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_IMEI2" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_SN" Type="nvarchar" MaxLength="20" />
+    <Property Name="T_Datetime" Type="datetime" />
+    <Property Name="T_Reason" Type="nvarchar" MaxLength="1024" />
+  </EntityType>
+  <EntityType Name="F_UserManagement">
+    <Key>
+      <PropertyRef Name="T_UserName" />
+    </Key>
+    <Property Name="T_UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_UserType" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="F_WOManagement">
+    <Key>
+      <PropertyRef Name="T_WO" />
+    </Key>
+    <Property Name="T_WO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_PO" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_EANCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="T_RefNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_MRP" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SWVersion" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_HWVersion" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_FactoryCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="T_Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_TotalCount" Type="int" />
+    <Property Name="T_AllocateCount" Type="int" />
+    <Property Name="T_DualIMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BeginIMEI" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_CurrentIMEI" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_EndIMEI" Type="nvarchar" MaxLength="15" />
+    <Property Name="T_HaveSN" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BeginSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CurrentSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_EndSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SNFlowLen" Type="int" />
+    <Property Name="T_WriteWiFi" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BeginWiFiMac" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_CurrentWiFiMac" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_EndWiFiMac" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_WriteBT" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BeginBTMac" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_CurrentBTMac" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_EndBTMac" Type="nvarchar" MaxLength="12" />
+    <Property Name="T_MinGiftBoxW" Type="float" />
+    <Property Name="T_MaxGiftBoxW" Type="float" />
+    <Property Name="T_CartonNoFormat" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CartonBoxCap" Type="int" />
+    <Property Name="T_MinCartonBoxW" Type="float" />
+    <Property Name="T_MaxCartonBoxW" Type="float" />
+    <Property Name="T_PalletCap" Type="int" />
+    <Property Name="T_PalletNoFormat" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_BeginPallID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_EndPallID" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_IMEILableFormatDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_GiftBoxLableFormatDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_CartonBoxLableFormatDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_PalletLableFormatDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_BuildDateTime" Type="datetime" />
+    <Property Name="T_BuildIPAddr" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_ModifyDateTime" Type="datetime" />
+    <Property Name="T_ModifyIPAddr" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_Close" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BatteryCheckCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_ChargerCheckCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_2DCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_2DCode_IMEI1" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_2DCode_IMEI2" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_2DCode_SN" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_2DCode_SEP" Type="nvarchar" MaxLength="20" />
+    <Property Name="T_SAPCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_OutPalletNoFormat" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletLableFormatDate" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_SNFormat" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_OutPalletCap" Type="int" />
+    <Property Name="T_CheckVol" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_MinVol" Type="float" />
+    <Property Name="T_MaxVol" Type="float" />
+    <Property Name="T_Confirm" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_MSN" Type="nvarchar" MaxLength="30" />
+    <Property Name="T_CSWVersion" Type="nvarchar" MaxLength="100" />
+    <Property Name="T_PartNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_part" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_SameIMEI" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BeginBoxID" Type="varchar" MaxLength="30" />
+    <Property Name="T_EndBoxID" Type="varchar" MaxLength="30" />
+    <Property Name="T_BeginOutPallID" Type="varchar" MaxLength="30" />
+    <Property Name="T_EndOutPallID" Type="varchar" MaxLength="30" />
+    <Property Name="T_HaveSubSN" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_BeginSubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_CurrentSubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_EndSubSN" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_SubSNFlowLen" Type="int" />
+    <Property Name="T_2DCode_SubSN" Type="nvarchar" MaxLength="2" />
+    <Property Name="T_SubSNFormat" Type="nvarchar" MaxLength="50" />
+    <Property Name="T_MinQuantity" Type="float" />
+    <Property Name="T_MaxQuantity" Type="float" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="VsunDBModelStoreContainer">
+    <EntitySet Name="F_CheckItems_Battery" EntityType="Self.F_CheckItems_Battery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_CB" EntityType="Self.F_CheckItems_CB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_Charger" EntityType="Self.F_CheckItems_Charger" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_GB" EntityType="Self.F_CheckItems_GB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_GBW" EntityType="Self.F_CheckItems_GBW" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_IMEIC" EntityType="Self.F_CheckItems_IMEIC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_IMEIC2" EntityType="Self.F_CheckItems_IMEIC2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_IMEIP" EntityType="Self.F_CheckItems_IMEIP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_IMEIR" EntityType="Self.F_CheckItems_IMEIR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_IMEIW" EntityType="Self.F_CheckItems_IMEIW" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_Pallet" EntityType="Self.F_CheckItems_Pallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_CheckItems_Relation" EntityType="Self.F_CheckItems_Relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_e" EntityType="Self.F_Project_e" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_E8i" EntityType="Self.F_Project_E8i" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_E8i_Coffee" EntityType="Self.F_Project_E8i_Coffee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_E8s" EntityType="Self.F_Project_E8s" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_EF6" EntityType="Self.F_Project_EF6" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_EF6_100" EntityType="Self.F_Project_EF6_100" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_EF6_300" EntityType="Self.F_Project_EF6_300" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_EF7" EntityType="Self.F_Project_EF7" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_F7_S" EntityType="Self.F_Project_F7_S" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_F7s" EntityType="Self.F_Project_F7s" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_F8" EntityType="Self.F_Project_F8" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_GF7" EntityType="Self.F_Project_GF7" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_GM3" EntityType="Self.F_Project_GM3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_H7s" EntityType="Self.F_Project_H7s" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_HM4i" EntityType="Self.F_Project_HM4i" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_L_6" EntityType="Self.F_Project_L_6" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_L25" EntityType="Self.F_Project_L25" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_MH17" EntityType="Self.F_Project_MH17" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_ML13" EntityType="Self.F_Project_ML13" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_MM17" EntityType="Self.F_Project_MM17" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_MM18" EntityType="Self.F_Project_MM18" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_NF_3" EntityType="Self.F_Project_NF_3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_NF3" EntityType="Self.F_Project_NF3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_Q37" EntityType="Self.F_Project_Q37" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_Q39" EntityType="Self.F_Project_Q39" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_R5" EntityType="Self.F_Project_R5" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_RX6" EntityType="Self.F_Project_RX6" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_S6_Dual" EntityType="Self.F_Project_S6_Dual" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_Sample" EntityType="Self.F_Project_Sample" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Project_XXX" EntityType="Self.F_Project_XXX" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Projects" EntityType="Self.F_Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Rework" EntityType="Self.F_Rework" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkBattery" EntityType="Self.F_ReworkBattery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkCarton" EntityType="Self.F_ReworkCarton" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkCartonWeight" EntityType="Self.F_ReworkCartonWeight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkCharger" EntityType="Self.F_ReworkCharger" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkCheckIMEIset" EntityType="Self.F_ReworkCheckIMEIset" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkGifBox" EntityType="Self.F_ReworkGifBox" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkGifboxWeight" EntityType="Self.F_ReworkGifboxWeight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkHandset" EntityType="Self.F_ReworkHandset" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkIMEI" EntityType="Self.F_ReworkIMEI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkIMEIPrint" EntityType="Self.F_ReworkIMEIPrint" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkOutPallet" EntityType="Self.F_ReworkOutPallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkPallet" EntityType="Self.F_ReworkPallet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkReadset" EntityType="Self.F_ReworkReadset" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_ReworkRelationCheck" EntityType="Self.F_ReworkRelationCheck" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_UserManagement" EntityType="Self.F_UserManagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_WOManagement" EntityType="Self.F_WOManagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

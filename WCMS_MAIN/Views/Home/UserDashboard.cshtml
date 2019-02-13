@@ -1,0 +1,532 @@
+﻿
+@{
+    ViewBag.Title = "UserDashboard";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+<style>
+    .sticky-container {
+        /*background-color: #333;*/
+        padding: 0px;
+        margin: 0px;
+        position: fixed;
+        right: -119px;
+        top: 130px;
+        width: 200px;
+    }
+
+    .sticky li {
+        list-style-type: none;
+        background-color: #333;
+        color: #efefef;
+        height: 43px;
+        padding: 0px;
+        margin: 0px 0px 1px 0px;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        cursor: pointer;
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+        filter: gray;
+        -webkit-filter: grayscale(100%);
+    }
+
+    .sticky li:hover {
+        margin-left: -115px;
+        /*-webkit-transform: translateX(-115px);
+        -moz-transform: translateX(-115px);
+        -o-transform: translateX(-115px);
+        -ms-transform: translateX(-115px);
+        transform:translateX(-115px);*/
+        /*background-color: #8e44ad;*/
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+        -webkit-filter: grayscale(0%);
+    }
+
+    .sticky li img {
+        float: left;
+        margin: 5px 5px;
+        margin-right: 10px;
+    }
+
+    .sticky li p {
+        padding: 0px;
+        margin: 0px;
+        text-transform: uppercase;
+        line-height: 43px;
+    }
+
+
+
+
+
+    .sticky-container {
+        padding: 0px;
+        margin: 0px;
+        position: fixed;
+        right: -130px;
+        top: 120px;
+        width: 210px;
+        z-index: 1100;
+    }
+
+    .sticky li {
+        list-style-type: none;
+        background-color: #123D6A;
+        font-size: 25px;
+        color: #efefef;
+        height: 43px;
+        padding: 0px;
+        margin: 0px 0px 1px 0px;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        cursor: pointer;
+    }
+
+        .sticky li:hover {
+            margin-left: -115px;
+        }
+
+        .sticky li i {
+            float: left;
+            margin: 5px 4px;
+            margin-right: 5px;
+        }
+
+        .sticky li p {
+            padding-top: 5px;
+            margin: 0px;
+            line-height: 16px;
+            font-size: 15px;
+        }
+
+            .sticky li p a {
+                text-decoration: none;
+                color: white;
+            }
+
+                .sticky li p a:hover {
+                    text-decoration: underline;
+                }
+
+
+
+
+
+
+</style>
+
+<div class="sticky-container">
+    <ul class="sticky">
+        <li>
+            <i class="fa fa-question"></i>
+            <p><a href="#" data-toggle="modal" data-target="#myModal">Find<br>Help</a></p>
+        </li>
+
+    </ul>
+</div>
+<section class="dashboard-counts no-padding-bottom" style="text-align: center">
+
+    
+
+    <div class="row bg-white has-shadow" style="text-align: center">
+
+        <!-- Item -->
+        <div class="col-xl-12" style="text-align: center">
+
+            Welcome to WCMS Project
+
+        </div>
+
+
+
+    </div>
+   
+</section>
+
+
+<section class="dashboard-counts no-padding-bottom" style="text-align: center">
+
+    <div class="container-fluid">
+      
+        <div class="row bg-white has-shadow">
+
+            <!-- Item -->
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-blue"><i class="fa fa-hourglass-1"></i></div>
+                    <div class="title">
+                        <span>Work<br>Pending</span>
+
+                    </div>
+                    <div class="number"><strong id="pending"></strong></div>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-red"><i class="fa fa-hourglass-2"></i></div>
+                    <div class="title">
+                        <span>Work<br>Started</span>
+                        @*<div class="progress">
+                                <div role="progressbar" style="width: 70%; height: 4px;" aria-valuenow="{#val.value}" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-red"></div>
+                            </div>*@
+                    </div>
+                    <div class="number"><strong id="started"></strong></div>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-green"><i class="fa fa-check"></i></div>
+                    <div class="title">
+                        <span>Work<br>Done</span>
+                        @*<div class="progress">
+                                <div role="progressbar" style="width: 40%; height: 4px;" aria-valuenow="{#val.value}" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-green"></div>
+                            </div>*@
+                    </div>
+                    <div class="number"><strong id="done"></strong></div>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="col-xl-3 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-orange"><i class="fa fa-trash"></i></div>
+                    <div class="title">
+                        <span>Wastages</span>
+                        @*<div class="progress">
+                                <div role="progressbar" style="width: 50%; height: 4px;" aria-valuenow="{#val.value}" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-orange"></div>
+                            </div>*@
+                    </div>
+                    <div class="number"><strong id="waste"></strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="dashboard-header">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Statistics -->
+            
+            <!-- Line Chart            -->
+            <div class="chart col-lg-12 col-12">
+                <div class="line-chart bg-white d-flex align-items-center justify-content-center has-shadow">
+
+                    <div class="mainbody-section text-center dashboard clearfix">
+                        <div class="container">
+                            <div class="row">
+
+
+
+                                <div class="col-md-4">
+                                    <div class="tile tile-big tile-6 fig-tile" style=" background-color:rgb(0,147,0)">
+                                        <a href="#myModal" data-toggle="modal">
+                                            <div class="front"><span class="fa fa-question-circle"></span></div>
+                                            <figure id="fig">
+
+                                                <figcaption style="color:white;font-weight:bold;background-color:rgb(211,159,4)" class="tile-caption caption-left">Help manual</figcaption>
+                                            </figure>
+                                        </a>
+                                    </div>
+
+                                   
+
+                                </div>
+                                <div class="col-md-4">
+
+
+
+
+                                    <div class="tile tile-big tile-6 fig-tile" style=" background-color:rgb(0,147,0)">
+                                        <a href="#feature-modal" data-toggle="modal">
+                                            <div class="front"><span class="fa fa-cogs"></span></div>
+                                            <figure id="fig">
+
+                                                <figcaption style="color:white;font-weight:bold;background-color:rgb(211,159,4)" class="tile-caption caption-left">Test</figcaption>
+                                            </figure>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="tile tile-big tile-6 slideTextRight" style="background-color:  rgb(186,30,70)">
+                                        <a href="#team-modal" data-toggle="modal">
+                                            <!-- <i class="fa fa-users"></i>  -->
+                                            <div><p id="animateText" style="color:white;font-weight:bold">test</p></div>
+                                            <div class="front"><span id="changeAnim" class="fa"></span></div>
+                                            <!-- class="fa fa-google-plus-square" -->
+
+                                        </a>
+                                    </div>
+
+                                   
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="spanTimeLeft"></div>
+
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <object data="~/img/WCMS Manual.pdf" type="application/pdf" width="100%" height="400px">
+                        alt : <a href="~/img/WCMS Manual.pdf">test.pdf</a>
+                    </object>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <object data="~/img/WCMS Manual.pdf" type="application/pdf" width="100%" height="400px">
+                        alt : <a href="~/img/WCMS Manual.pdf">test.pdf</a>
+                    </object>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</section>
+
+
+
+
+
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/animate.css" rel="stylesheet" />
+<link href="~/css/demo8.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+<script src="~/js/jquery.appear.js"></script>
+<script src="~/js/modernizr-1.5.min.js"></script>
+<script src="~/js/win8.js"></script>
+
+
+<script>
+
+
+
+
+
+    $('.sticky-container ul li').on('click', function () {
+
+       // alert("sdsds");
+         $('#myModal').show();
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $(document).ready(function () {
+
+        //CountIssues();
+        GetLineWiseProjectInfo();
+
+    });
+
+    function CountIssues() {
+
+        $.ajax({
+            url: '  @Url.Action("GetIssuesCount", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+
+                $("#pending").text(result[0].pendingListCount);
+                $("#started").text(result[0].startedListCount);
+                $("#done").text(result[0].completedListCount);
+                $("#waste").text(result[0].wastedListCount);
+
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+
+
+    function GetLineWiseProjectInfo() {
+
+        $.ajax({
+            url: '  @Url.Action("GetLineWiseProjectInfo", "Home")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#lineWiseProject').empty();
+
+
+
+                    $('#lineWiseProject').append('<div class="statistic d-flex align-items-center bg-white has-shadow"><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"><small>No ongoing task available</small></div></div>');
+
+                    return false;
+                } else {
+
+                    $('#lineWiseProject').empty();
+                    $.each(data, function (index, itemData) {
+
+
+                        $("#lineWiseProject").append(' <div class="statistic d-flex align-items-center bg-white has-shadow"><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"><strong>' + itemData.LineName + '</strong><br><small>Project Name : ' + itemData.ProjectName + '</small><br><small>Issued Quantity : ' + itemData.IssuedQuantity + '</small></div></div>');
+                    });
+
+                }
+
+
+
+
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+
+
+
+
+
+    window.setInterval(function () {
+        CountIssues();
+    }, 25000);
+    $(window).on('load', function() { // makes sure the whole site is loaded
+        $('#status').fadeOut('slow'); // will first fade out the loading animation
+        $('#preloader').delay(100).fadeOut('slow'); // will fade out the white DIV that covers the website.
+        $('body').delay(400).css({'overflow':'visible'});
+    })
+</script>
+
+<!-- animation for the icons -->
+<script>
+    function animateIcons() {
+        var a;
+        a = document.getElementById("changeAnim");
+        a.innerHTML = "&#xf0d4;"
+        setTimeout(function () {
+            a.innerHTML = "&#xf0e1;";
+        }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf16c;";
+        }, 2000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf17e;";
+        }, 3000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf09a;";
+        }, 3000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf09b;";
+        }, 3000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf17e;";
+        }, 3000);
+
+
+
+
+
+    }
+    animateIcons();
+    setInterval(animateIcons, 4000);
+</script>
+<script>
+    function animateIconsCv() {
+        b = document.getElementById("changeAnimCv");
+        b.innerHTML = "&#xf1c1;"
+        setTimeout(function () {
+            b.innerHTML = "&#xf1c2;";
+        }, 1000);
+        setTimeout(function () {
+            b.innerHTML = "&#xf1c9;";
+        }, 3000);
+
+
+    }
+    animateIconsCv();
+    setInterval(animateIconsCv, 5000);
+
+</script>
+
+<script>
+
+
+
+
+
+</script>	 

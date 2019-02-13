@@ -1,0 +1,143 @@
+﻿@model WCMS_MAIN.Models.LoginModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WCMS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="~/js/loginvendors/loginimages/icons/favicon.ico" />
+
+    <link href="~/js/loginvendors/loginvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/js/loginvendors/loginfonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/js/loginvendors/loginfonts/Linearicons-Free-v1.0.0/icon-font.min.css" rel="stylesheet" />
+    <link href="~/js/loginvendors/loginvendor/animate/animate.css" rel="stylesheet" />
+    <link href="~/js/loginvendors/loginvendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <link href="~/js/loginvendors/loginvendor/select2/select2.css" rel="stylesheet" />
+    <link href="~/js/loginvendors/logincss/util.css" rel="stylesheet" />
+    <link href="~/js/loginvendors/logincss/main.css" rel="stylesheet" /> 
+    <link href="~/css/iziToast.min.css" rel="stylesheet" />
+    
+    <style>     
+
+        
+
+
+    </style>
+    
+
+</head>
+<body>
+    @using (Html.BeginForm("LogIn", "Account", FormMethod.Post, new { @id = "login-form", autocomplete = "off" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="limiter">
+		<div class="container-login100" style="background-image: url('https://www.ooitech.com/upload/201410/20141025105121372.jpg'); ">
+			<div class="wrap-login100 p-t-190 p-b-30">
+				<form class="login100-form validate-form" >
+                    @*<div class=" login100-form-avatar" style="width: 205px;height:85px;">
+                        <img src="~/js/loginvendors/loginimages/icons/lg1.png" style="width:150px;height:115px;" alt="AVATAR">
+                    </div>*@
+                    
+					<span class="login100-form-title p-t-20 p-b-45">
+						Walton Cell Phone Manufacturing System (WCMS)
+					</span>
+
+                    <div class="form-group wrap-input100 validate-input m-b-10" data-validate="Username is required">
+                        <input class="input-material input100" type="text" id="UserName" placeholder="User Name" name="UserName" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+
+				    <div class="form-group wrap-input100 validate-input m-b-10" data-validate="Password is required">
+				        <input class="input100" type="password" id="Password" name="Password" placeholder="Password" required>
+				        <span class="focus-input100"></span>
+				        <span class="symbol-input100">
+				            <i class="fa fa-lock"></i>
+				        </span>
+				    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="chkShow" value="">&nbsp;<small style="margin-bottom: 5px; color: white;font-size: 18px;">Show Password </small></label>
+                    </div>
+
+				    <div class="container-login100-form-btn p-t-10">
+                        <button type="submit" id="login" class="login100-form-btn" value=" login">
+                            Login
+                        </button>
+				      
+				    </div>
+
+				 
+				</form>
+			</div>
+		</div>
+	</div>
+   
+
+    }
+    <!-- Javascript files-->
+    <script src="~/js/loginvendors/loginvendor/jquery/jquery-3.2.1.min.js"></script>
+
+    <script src="~/js/loginvendors/loginvendor/bootstrap/js/popper.min.js"></script>
+    <script src="~/js/loginvendors/loginvendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/js/loginvendors/loginvendor/select2/select2.min.js"></script>
+    <script src="~/js/loginvendors/loginjs/main.js"></script>
+    <script src="~/js/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/js/iziToast.min.js"></script>
+    <!-- Main File-->
+   
+
+    <script>
+
+        $(document).ready(function() {
+            debugger;
+            $('#UserName').focus();
+            var loginError = '@ViewBag.ErrorMsg';
+            
+            if (loginError != "") {
+                
+
+                iziToast.error({
+                    timeout: 3000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: loginError
+                   
+                    
+                   
+                });
+            }
+
+            $("#chkShow").click(function () {
+                if ($(this).is(":checked")) {
+                    $('#Password').attr('type', 'text');
+                } else {
+                    $("#Password").attr('type', 'password');
+                }
+            });
+
+            @*$('#login').click(function () {
+
+
+                //if ($('#login-username').val()=='') {
+                //      alert("Please Inser User Name");
+                //  }
+                // else {
+                document.location = '@Url.Action("Index", "Home")';
+                // }
+
+            });*@
+        });
+
+
+
+
+    </script>
+
+</body>
+</html>

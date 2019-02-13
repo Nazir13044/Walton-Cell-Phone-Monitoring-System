@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="12a60c3bd4394004b31aa081659f92a3" Name="Diagram1">
+        <EntityTypeShape EntityType="WCMSModel.tblMainMenu" Width="1.5" PointX="1.375" PointY="0.5" />
+        <EntityTypeShape EntityType="WCMSModel.tblSubMenu" Width="1.5" PointX="3.625" PointY="0.5" />
+        <AssociationConnector Association="WCMSModel.FK_tblSubMenu_tblRoles" />
+        <EntityTypeShape EntityType="WCMSModel.AssemblyAttendance" Width="1.5" PointX="7.25" PointY="0.5" />
+        <EntityTypeShape EntityType="WCMSModel.tblProductionLine" Width="1.5" PointX="1.25" PointY="2.25" />
+        <EntityTypeShape EntityType="WCMSModel.tblSolderingOthers" Width="1.5" PointX="11.375" PointY="3.25" />
+        <EntityTypeShape EntityType="WCMSModel.tblComponentRequisition" Width="1.5" PointX="3.25" PointY="3.375" />
+        <EntityTypeShape EntityType="WCMSModel.tblAssemblyLineSetup" Width="1.5" PointX="5.5" PointY="0.5" />
+        <EntityTypeShape EntityType="WCMSModel.tblTimeRange" Width="1.5" PointX="5.25" PointY="9.125" />
+        <EntityTypeShape EntityType="WCMSModel.OQcBatchInfo" Width="1.5" PointX="7.25" PointY="6.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblAssemblyLineSetupDetails" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="WCMSModel.Issues" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="WCMSModel.BomList" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="WCMSModel.EmpAttendences" Width="1.5" PointX="9.375" PointY="12.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblLogin" Width="1.5" PointX="13.625" PointY="9" />
+        <EntityTypeShape EntityType="WCMSModel.tblRoles" Width="1.5" PointX="11.25" PointY="8.625" />
+        <AssociationConnector Association="WCMSModel.FK_tblLogin_tblRoles" />
+        <AssociationConnector Association="WCMSModel.FK_tblRoles_tblRoles" />
+        <EntityTypeShape EntityType="WCMSModel.ProjectBomList" Width="1.5" PointX="3.375" PointY="12.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblDailyIssuedComponents" Width="1.5" PointX="11.375" PointY="12.75" />
+        <EntityTypeShape EntityType="WCMSModel.EmployeeInfo" Width="1.5" PointX="5.375" PointY="13.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblDailyPacking" Width="1.5" PointX="6.875" PointY="3.375" />
+        <EntityTypeShape EntityType="WCMSModel.tblLineStatus" Width="1.5" PointX="8.75" PointY="4.125" />
+        <EntityTypeShape EntityType="WCMSModel.ProductionMaster" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblPackagingBatch" Width="1.5" PointX="15.375" PointY="13.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblDeletdPackagingBatchData" Width="1.5" PointX="16.375" PointY="5.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblIMEIRecord" Width="1.5" PointX="11.375" PointY="17.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblRework" Width="1.5" PointX="17.375" PointY="14.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblLogistics" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblScrew" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblWarehouse" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblLogisticsSentItems" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WCMSModel.TestIMEIUploadForUpdate" Width="1.5" PointX="16.375" PointY="10.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblGlueMaster" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblLcdGlueIssuesList" Width="1.5" PointX="7.375" PointY="17.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblTpLcdMaster" Width="1.5" PointX="18.375" PointY="9.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblLcdGlueWorkingModels" Width="1.5" PointX="18.375" PointY="5.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblLcdGlueRework" Width="1.5" PointX="3.375" PointY="18.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblBarCodeInv" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblRepairStatus" Width="1.5" PointX="19.375" PointY="14.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblColors" Width="1.5" PointX="13.375" PointY="4.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblRepairComponents" Width="1.5" PointX="13.375" PointY="19.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblBtteryScanner" Width="1.5" PointX="20.375" PointY="5.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblCkdMmiMaster" Width="1.5" PointX="5.375" PointY="20.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblCkdRework" Width="1.5" PointX="7.375" PointY="20.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblCkdRfMaster" Width="1.5" PointX="20.375" PointY="8.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblCkdSmtMaster" Width="1.5" PointX="15.375" PointY="20.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblCkdSoftwareLoadMaster" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblBatteryComponentInfo" Width="1.5" PointX="21.75" PointY="19.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblOqcCheckedItems" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="WCMSModel.AgingBatch" Width="1.5" PointX="22.375" PointY="5.75" />
+        <EntityTypeShape EntityType="WCMSModel.AgingBatchInfo" Width="1.5" PointX="17.375" PointY="20.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblAgingMaster" Width="1.5" PointX="21.375" PointY="13.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblChargerMaster" Width="1.5" PointX="22.375" PointY="8.75" />
+        <EntityTypeShape EntityType="WCMSModel.tblCkdIssues" Width="1.5" PointX="9.375" PointY="22.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CellPhoneProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ProjectMasters">
+    <Key>
+      <PropertyRef Name="ProjectMasterId" />
+    </Key>
+    <Property Name="ProjectMasterId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectTypeId" Type="bigint" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar(max)" />
+    <Property Name="SupplierId" Type="bigint" />
+    <Property Name="SupplierName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SupplierModelName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumberOfSample" Type="int" />
+    <Property Name="ApproxProjectFinishDate" Type="datetime" />
+    <Property Name="SupplierTrustLevel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsScreenTestComplete" Type="bit" />
+    <Property Name="IsApproved" Type="bit" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ApproxProjectOrderDate" Type="datetime2" Precision="7" />
+    <Property Name="ApproxShipmentDate" Type="datetime2" Precision="7" />
+    <Property Name="IsNew" Type="bit" />
+    <Property Name="IsProjectManagerAssigned" Type="bit" />
+    <Property Name="ProjectType" Type="nvarchar(max)" />
+    <Property Name="IsReorder" Type="bit" />
+    <Property Name="OsName" Type="nvarchar(max)" />
+    <Property Name="OsVersion" Type="nvarchar(max)" />
+    <Property Name="DisplaySize" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DisplayName" Type="nvarchar(max)" />
+    <Property Name="ProcessorName" Type="nvarchar(max)" />
+    <Property Name="ProcessorClock" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Chipset" Type="nvarchar(max)" />
+    <Property Name="FrontCamera" Type="nvarchar(max)" />
+    <Property Name="BackCamera" Type="nvarchar(max)" />
+    <Property Name="Ram" Type="nvarchar(max)" />
+    <Property Name="Rom" Type="nvarchar(max)" />
+    <Property Name="Battery" Type="nvarchar(max)" />
+    <Property Name="SimSlotNumber" Type="int" />
+    <Property Name="SlotType" Type="nvarchar(max)" />
+    <Property Name="ProjectStatus" Type="nvarchar(max)" />
+    <Property Name="RevisedStatus" Type="nvarchar(max)" />
+    <Property Name="ManagentComment" Type="nvarchar(max)" />
+    <Property Name="ApproximatePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GivenSampleToScreening" Type="bigint" />
+    <Property Name="FinalPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Added" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime2" Precision="7" />
+    <Property Name="Updated" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+    <Property Name="ProjectNameForScreening" Type="nvarchar(max)" />
+    <Property Name="SourcingType" Type="nvarchar(max)" />
+    <Property Name="ScreeningCommentFromCommercial" Type="nvarchar(max)" />
+    <Property Name="PcbaVendorName" Type="nvarchar(max)" />
+    <Property Name="PcbaFinalVendor" Type="nvarchar(max)" />
+    <Property Name="DisplayResulution" Type="nvarchar(max)" />
+    <Property Name="DisplaySpeciality" Type="nvarchar(max)" />
+    <Property Name="TpVendor" Type="nvarchar(max)" />
+    <Property Name="TpFinalVendor" Type="nvarchar(max)" />
+    <Property Name="LcdVendor" Type="nvarchar(max)" />
+    <Property Name="LcdFinalVendor" Type="nvarchar(max)" />
+    <Property Name="HousingVendorName" Type="nvarchar(max)" />
+    <Property Name="HousingFinalVendorName" Type="nvarchar(max)" />
+    <Property Name="BackCam" Type="nvarchar(max)" />
+    <Property Name="BackCamAutoFocus" Type="nvarchar(max)" />
+    <Property Name="BackCamSensor" Type="nvarchar(max)" />
+    <Property Name="BackCamBsi" Type="nvarchar(max)" />
+    <Property Name="FrontCam" Type="nvarchar(max)" />
+    <Property Name="FrontCamAutoFocus" Type="nvarchar(max)" />
+    <Property Name="FrontCamSensor" Type="nvarchar(max)" />
+    <Property Name="FrontCamBsi" Type="nvarchar(max)" />
+    <Property Name="CpuName" Type="nvarchar(max)" />
+    <Property Name="ChipsetName" Type="nvarchar(max)" />
+    <Property Name="ChipsetFrequency" Type="nvarchar(max)" />
+    <Property Name="ChipsetBit" Type="int" />
+    <Property Name="ChipsetCore" Type="nvarchar(max)" />
+    <Property Name="MemoryBrandName" Type="nvarchar(max)" />
+    <Property Name="Gsensor" Type="bit" />
+    <Property Name="Psensor" Type="bit" />
+    <Property Name="Lsensor" Type="bit" />
+    <Property Name="Compass" Type="bit" />
+    <Property Name="Gyroscope" Type="bit" />
+    <Property Name="HallSensor" Type="bit" />
+    <Property Name="Otg" Type="bit" />
+    <Property Name="Gps" Type="bit" />
+    <Property Name="SpecialSensor" Type="nvarchar(max)" />
+    <Property Name="EarphoneConfirmPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="EarphoneSupplierName" Type="nvarchar(max)" />
+    <Property Name="ChargerRating" Type="nvarchar(max)" />
+    <Property Name="ChargerSupplierName" Type="nvarchar(max)" />
+    <Property Name="ThreeLayerScreenProtector" Type="bit" />
+    <Property Name="BatteryCoverFinishingType" Type="nvarchar(max)" />
+    <Property Name="BatteryCoverLogoType" Type="nvarchar(max)" />
+    <Property Name="OtgCable" Type="bit" />
+    <Property Name="FlashLight" Type="bit" />
+    <Property Name="SecondGen" Type="nvarchar(max)" />
+    <Property Name="ThirdGen" Type="nvarchar(max)" />
+    <Property Name="FourthGenFdd" Type="nvarchar(max)" />
+    <Property Name="FourthGenTdd" Type="nvarchar(max)" />
+    <Property Name="Cdma" Type="nvarchar(max)" />
+    <Property Name="BatteryRating" Type="nvarchar(max)" />
+    <Property Name="BatteryType" Type="nvarchar(max)" />
+    <Property Name="BatterySupplierName" Type="nvarchar(max)" />
+    <Property Name="BateeryPossibleSupplierNames" Type="nvarchar(max)" />
+    <Property Name="OrderQuantity" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Color" Type="nvarchar(max)" />
+    <Property Name="OrderNuber" Type="int" />
+    <Property Name="ApprovalReviewRemarks" Type="nvarchar(max)" />
+    <Property Name="InitialApprovalDate" Type="datetime2" Precision="7" />
+    <Property Name="FinalApprovalDate" Type="datetime2" Precision="7" />
+    <Property Name="ScreeningIssueReviewDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityContainer Name="CellPhoneProjectModelStoreContainer">
+    <EntitySet Name="ProjectMasters" EntityType="Self.ProjectMasters" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

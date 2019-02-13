@@ -1,0 +1,97 @@
+﻿@using Microsoft.Ajax.Utilities
+<!-- Sidebar Header-->
+
+
+<style>
+    
+</style>
+
+
+@if (Session["MenuMaster"] != null)
+{ 
+    @*<div class="sidebar-header d-flex align-items-center" style="display: inline-block;text-align: center;" >
+        <div class="avatar" style=" display: table;"><img src="~/img/onlylogo.png" alt="..." class="img-fluid rounded-circle">
+        </div>
+        <div class="title">
+            <h1 class="h4" style="color: white">@Session["WCMSUserRoleName"]</h1>
+            <p style="color: white">
+                @Session["WCMSLoginUserName"]
+            
+            </p>
+            
+        </div>
+    </div>*@   
+    
+   
+    
+    
+    <div class="title"style="text-align: center">
+        @*<a href="@Url.Action("LogOut", "Account")" class="nav-link logout"><i class="fa fa-user-circle"></i> View Profile</a>*@
+        
+       @*<ul class="list-unstyled" style="font-size: 15px;">
+                <li style="font-size: 12px; text-align: center">
+                    <a href="#exampledropdownDropdown" style="font-size: 15px; text-align: center" aria-expanded="false" data-toggle="collapse">@Session["WCMSLoginUserName"] </a>
+                    <ul id="exampledropdownDropdown" style="font-size: 12px;" class="collapse list-unstyled ">
+                        <li><a href="#">Page</a></li>
+                    </ul>
+                </li>
+            </ul>*@
+    </div>
+   
+    <br/>
+    <div class="title"style="margin-top: 5px;text-align: center;">
+        <i class="fa fa-bars" style="text-align: center;"></i> &nbsp;<a class="heading" style="color: white;font-size: 15px;margin-right: 90px;" href="@Url.Action("Dashboard", "Home")"><span>Dashboard</span></a>
+</div>
+    <br/>
+    <br/>
+  
+    
+}   <ul class="list-unstyled">
+
+        @if (Session["MenuMaster"] != null)
+        {
+
+            var menuMaster = (List<WCMS_MAIN.Models.MenuModel>)Session["MenuMaster"];
+            var groupByMenu = menuMaster.GroupBy(x => x.MainMenuName).ToList();
+
+
+            foreach (var MenuList in groupByMenu)
+            {
+
+                var urlLink = (MenuList.Key).Replace(" ", "");
+        
+
+        
+                <li>
+            
+          
+            
+                    <a href="#@urlLink" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-share"></i>@MenuList.Key </a>
+
+                    @*<a href="#">@MenuList.Key<span class="caret"></span></a>*@
+                    <ul id="@urlLink" class="collapse list-unstyled ">
+                        @foreach (var subMenuList in MenuList)
+                        {
+
+                            <li style=""><a href="@Url.Action(subMenuList.ActionName, subMenuList.ControllerName)"><i class="fa fa-sign-out"></i>@subMenuList.SubMenuName</a></li>
+
+                    @*<li>@Html.ActionLink(@SubMenuList.ActionName,@SubMenuList.ControllerName)@SubMenuList.SubMenuName</li>*@
+
+                        }
+                    </ul>
+                    <div class="bottom" style="border-bottom: 1px solid #ccc;"><div class="box-content" style=" display: inline-block; width: 200px; padding: 1px; "></div></div>
+                </li>
+
+            }
+
+        }
+    </ul>
+<script>
+    
+    //$(".collapse  li a").click(function () {
+    //    alert("sdsd");
+    //    $(this).css("background-color", "yellow");
+    //    $(".collapse li a").removeClass('selected');
+    //    $(this).parent().addClass('selected');
+    //});
+</script>

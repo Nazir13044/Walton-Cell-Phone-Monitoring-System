@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "LoadImeiDetails";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="container-fluid">
+
+
+    <div class="col-lg-12">
+
+
+        <div class="card" style="border: 2px solid darkcyan;display: none;" id="tblDataDiv">
+            <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                <h3 class="h4" style="font-weight: normal">Report Data </h3>
+            </div>
+            <div class="card-body">
+
+                <div class="form-horizontal" style="overflow: auto">
+
+
+
+                    <table class="table table-bordered table-hover" id="tblData">
+                        <thead class="" style="background-color: #123D6A; color: white; font-size: 18px;text-align: center; border-radius: 50px; ">
+                            <tr>
+                                
+                                <th>
+                                    Model
+                                </th>
+
+                                <th>
+                                    Color
+                                </th>
+                                <th>
+                                    BarCode
+                                </th>
+                                <th>
+                                    BarCode2
+                                </th>
+                               
+                                <th>
+                                    Updated By
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody class="tbody"></tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.min.css" rel="stylesheet" />
+
+
+
+<script src="~/js/vendor/jquery/jquery-1.9.1.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/chart.js/Chart.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+
+<script src="~/js/vendor/jquery/jquery-1.9.1.min.js"></script>
+
+
+<script src="~/js/iziToast.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        var fromdate = '@ViewBag.fromdate';
+        var todate = '@ViewBag.todate';
+        var model = '@ViewBag.model';
+        var color = '@ViewBag.color';
+
+
+        GetDetails(fromdate, todate, model, color);
+
+    });
+
+
+    function GetDetails(fromdate, todate, model, color) {
+        
+        $.ajax({
+
+
+            url: " @Url.Action("GetDetailsImeiData", "Report")", //?id=+ model,
+            type: "Post",
+        data: JSON.stringify({ fromdate: fromdate, todate: todate, model: model, color: color }),
+        contentType: "application/json;charset=UTF-8",
+        dataType: "json",
+        success: function (result) {
+            console.log(result);
+            //$('table tbody').empty();
+            //$('#tblData tbody').empty();
+           
+
+            $.each(result, function (key, item) {
+
+
+                var row = "<tr style=display: table-row;vertical-align: inherit;border-color: inherit;>" +
+                    "<td style=vertical-align: inherit;>" + item.Model + "</td>" +
+                     "<td style=vertical-align: inherit;>" + item.Color + "</td>" +
+                     "<td style=vertical-align: inherit;>" + item.Barcode + "</td>" +
+                     "<td style=vertical-align: inherit;>" + item.Barcode2 + "</td>" +
+                     "<td style=vertical-align: inherit;>" + item.UpdatedBy + "</td>" +
+                    "</tr>";
+                $('#tblData tbody').append(row);
+
+
+
+
+                //$("body").append('<p>'+item.Imei1+'\t*DN'+ '</p>');
+                //$("#divImei2").append('<p>' + item.Imei2 + '</p>');
+            });
+            //console.log(result);
+
+            // $('#myModal').modal('show');
+
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+
+       
+
+
+    }
+</script>

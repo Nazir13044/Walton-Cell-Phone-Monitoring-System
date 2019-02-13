@@ -1,0 +1,575 @@
+﻿
+@{
+    ViewBag.Title = "AddProjectmaterials";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+</style>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Packaging </a></li>
+        <li class="breadcrumb-item active">Daily Packaging</li>
+    </ul>
+</div>
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-lg-2">
+                &nbsp;
+            </div>
+
+                <!-- Horizontal Form-->
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-close">
+
+                        </div>
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4">Daily Packaging List Information</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="form-horizontal">
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 form-control-label">Material Name</label>
+                                    <div class="col-sm-6">
+                                        <input id="txtMaterialName" type="text" placeholder="Material Name" class="form-control form-control-success">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 form-control-label">Matrerial Code</label>
+                                    <div class="col-sm-6">
+                                        <input id="txtMaterialCode" type="text" placeholder="Matrerial Code" class="form-control form-control-success">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    &nbsp;
+                                </div>
+                                <div class="form-group row"style="overflow: auto">
+
+                                    <label class="col-sm-2 form-control-label">&nbsp;</label>
+                                    <div class="col-sm-6">
+                                        <table id="dgBombList" class="easyui-datagrid" style="width:500px ;height: 250px;" title="Production BOM List" data-options="
+                                                    rownumbers:false,
+                                                    singleSelect:true,
+                                                    autoRowHeight:false,
+                                                    pagination:false,
+                                                    pageSize:100">
+                                            <thead>
+                                                <tr>
+
+                                                    <th data-options="field:'MaterialName',width:200">
+                                                        Material Name
+                                                    </th>
+                                                    <th data-options="field:'MaterialCode',width:200">
+                                                        Material Cde
+                                                    </th>
+                                                    <th data-options="field:'Delete',width:80,align:'left'"></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="form-group row">
+                                    &nbsp;
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label">&nbsp;</label>
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-primary" id="btnSave" style="width: 300px;" onclick="addBoms();"> Save</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            <div class="col-lg-2">
+                &nbsp;
+            </div>
+
+            </div>
+
+
+    
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+
+<script>
+
+    var rows = [];
+
+    function Clear() {
+        $("#txtMaterialName").val('');
+        $("#txtMaterialCode").val('');
+        $("#txtMaterialName").focus();
+    }
+
+    function DeleteProductData(btn) {
+
+        iziToast.question({
+            timeout: 20000,
+            close: false,
+            overlay: true,
+            toastOnce: true,
+            id: 'question',
+            zindex: 999,
+            title: 'Hey!',
+            message: 'Are you want to delete?',
+            position: 'center',
+            buttons: [
+                ['<button><b>YES</b></button>', function (instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                    var tr = $(btn).closest('tr.datagrid-row');
+                    var index = parseInt(tr.attr('datagrid-row-index'));
+                    var dg = tr.closest('div.datagrid-view').children('table');
+                    var row = dg.datagrid('getRows')[index];
+                    var rowIndex = $('#dgBombList').datagrid('getRowIndex', row);
+                    console.log(row);
+                    // //var selectedrow = $('#dgBombList').datagrid('getSelected');
+                    //var rowIndex = $('#dgBombList').datagrid('getRowIndex', selectedrow);
+                    $('#dgBombList').datagrid('deleteRow', rowIndex);
+                    Clear();
+
+                }, true],
+                ['<button>NO</button>', function (instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                }],
+            ],
+            onClosing: function (instance, toast, closedBy) {
+                console.info('Closing | closedBy: ' + closedBy);
+            },
+            onClosed: function (instance, toast, closedBy) {
+                console.info('Closed | closedBy: ' + closedBy);
+            }
+        });
+
+    }
+
+    $(document).ready(function () {
+       
+
+      
+        $("#txtMaterialName").focus();
+
+        $('#chkSure').change(function () {
+            if (this.checked)
+                $('#btnSave').fadeIn('slow');
+            else
+                $('#btnSave').fadeOut('slow');
+
+        });
+
+        $('#txtQuantity').keydown(function (e) {
+            if (e.shiftKey || e.ctrlKey || e.altKey) {
+                e.preventDefault();
+            } else {
+                var key = e.keyCode;
+                if (!((key == 8) || (key == 46) || (key >= 35 && key <= 40) || (key >= 48 && key <= 57) || (key >= 96 && key <= 105))) {
+                    e.preventDefault();
+                }
+            }
+        });
+
+
+        //$("#txtMaterialCode").live('keypress',function(event){
+        //    if(event.which == 13) {
+        //        alert("adasds");
+        //    }
+        //    addBoms();
+        //});
+    });
+
+
+    $(document).keypress(function (event) {
+
+
+        if (event.which == 13) {
+            
+            var componentName = $("#txtMaterialName").val();
+            var componentCode = $("#txtMaterialCode").val();
+
+            if (componentName == "") {
+
+
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Material name required'
+                });
+                return false;
+
+            }
+
+            if (componentCode == "") {
+
+
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Material Code required'
+                });
+                return false;
+
+            } else {
+                rows.push({
+                    MaterialName: componentName,
+                    MaterialCode: componentCode,
+
+                    Delete: "<input type='image' style='width:20px;height:20px;' src='https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/128/Recycle_Bin_Full.png' class = 'btnDelete' id = " + $("#hdcomponentId").val() + "  title = 'Delete' onclick='DeleteProductData(this)'></div>"
+                });
+
+                console.log(rows);
+
+                $('#dgBombList').datagrid('loadData', rows);
+            }
+
+
+
+
+
+
+            
+        }
+       
+
+    });
+    
+
+
+    function saveDailyPacking() {
+
+        var bomList = [];
+        debugger;
+        var gridData = $('#dgBombList').datagrid('getRows');
+        if (gridData.length >=1) {
+
+
+            for (var i = 0; i < gridData.length; i++) {
+
+
+                bomList.push({
+                    ComponentName: gridData[i].MaterialName,
+                    ComponentCode: gridData[i].MaterialCode,
+                   
+                });
+
+            }
+
+            console.log(bomList);
+            if (bomList.length != 0) {
+
+                $.ajax({
+                    url: '  @Url.Action("InsertBomList", "ProjectComponents")',
+                    type: 'Post',
+                    data: JSON.stringify({ bomList: bomList }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: ' Saved Successfully'
+                            });
+
+                            AllClear();
+                            $('#dgBombList').datagrid('loadData', { total: 0, rows: [] });
+                            return true;
+                            //location.reload();
+                        }
+
+                        else if (result.Id == "0") {
+                            window.location = '@Url.Action("LogOut", "Account")';
+                            
+                        }
+
+                        else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: 'Error Occured While Saving'
+                            });
+                        }
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        //toastr.error(result.Message);
+
+                        //return false;
+                    }
+                });
+            }
+
+        } else {
+
+
+            iziToast.error({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Error',
+                message: 'There must be at least 1 items in packing list'
+            });
+           
+            return false;
+
+        }
+
+
+    }
+
+        function addBoms () {
+            debugger;
+          
+           
+            var bomList = [];
+            debugger;
+            var gridData = $('#dgBombList').datagrid('getRows');
+            if (gridData.length >= 1) {
+
+
+                for (var i = 0; i < gridData.length; i++) {
+
+
+                    bomList.push({
+                        ComponentName: gridData[i].MaterialName,
+                        ComponentCode: gridData[i].MaterialCode,
+
+                    });
+
+                }
+
+                console.log(bomList);
+                if (bomList.length != 0) {
+
+                    $.ajax({
+                        url: '  @Url.Action("InsertBomList", "ProjectComponents")',
+                        type: 'Post',
+                        data: JSON.stringify({ bomList: bomList }),
+                        dataType: 'json',
+                        async: false,
+                        contentType: 'application/json',
+                        success: function (result) {
+
+                            if (result.IsSuccess) {
+                                iziToast.success({
+                                    timeout: 2000,
+                                    imageWidth: 150,
+                                    position: 'center',
+                                    title: 'Success',
+                                    message: ' Saved Successfully'
+                                });
+
+                                Clear();
+                                AllClear();
+                                return true;
+                                //location.reload();
+                            } else {
+                                iziToast.error({
+                                    timeout: 2000,
+                                    imageWidth: 150,
+                                    position: 'center',
+                                    title: 'Error',
+                                    message: 'Error Occured While Saving'
+                                });
+                            }
+
+                        },
+                        error: function (result, textStatus, jqXHR) {
+                            //toastr.error(result.Message);
+
+                            //return false;
+                        }
+                    });
+                }
+
+            } else {
+
+
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'There must be at least 1 items in packing list'
+                });
+                $('#chkSure').prop('checked', false);
+                $('#btnSave').hide();
+                return false;
+
+            }
+           
+            
+
+
+        }
+
+
+    function saveDailyPacking() {
+
+        var dailyPackingList = [];
+        debugger;
+        var dailyPackingData = $('#dgBombList').datagrid('getRows');
+        if (dailyPackingData.length >= 5) {
+
+
+            for (var i = 0; i < dailyPackingData.length; i++) {
+
+
+                dailyPackingList.push({
+                    ProjectMasterId: dailyPackingData[i].ProjectId,
+                    ProjectName: dailyPackingData[i].ProjectName,
+                    ComponentId: dailyPackingData[i].ComponentId,
+                    ComponentName: dailyPackingData[i].ComponentName,
+                    ComponentNumber: dailyPackingData[i].ComponentNumber,
+                    IcVendor: dailyPackingData[i].IcVendor,
+                    Quantity: dailyPackingData[i].StockQuantity,
+                    Remarks: dailyPackingData[i].Remarks
+                });
+
+            }
+
+            console.log(dailyPackingList);
+            if (dailyPackingList.length != 0) {
+
+                $.ajax({
+                    url: '  @Url.Action("CreateDailyPackagingList", "Project")',
+                    type: 'Post',
+                    data: JSON.stringify({ dailyPackings: dailyPackingList }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: ' Saved Successfully'
+                            });
+
+                            AllClear();
+                            return true;
+                            //location.reload();
+                        } else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: 'Error Occured While Saving'
+                            });
+                        }
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        //toastr.error(result.Message);
+
+                        //return false;
+                    }
+                });
+            }
+
+        } else {
+
+
+            iziToast.error({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Error',
+                message: 'There must be at least 5 items in packing list'
+            });
+            $('#chkSure').prop('checked', false);
+            $('#btnSave').hide();
+            return false;
+
+        }
+
+
+    }
+
+
+    function AllClear() {
+
+        $("#txtProjectName").val('');
+        $("#hdprojectId").val('');
+        $("#divProjectDetails").hide('');
+        $("#hdprojectId").val('');
+        $('#txtComponentName').prop('disabled', true);
+        $("#txtDisplay").val('');
+        $("#txtRam").val('');
+        $("#txtRom").val('');
+        $('#dgBombList').datagrid('loadData', { total: 0, rows: [] });
+        $("#hdcomponentId").val('');
+        $("#txtComponentName").val('');
+        $("#txtComponentNumber").val('');
+        $("#txtIcVendor").val('');
+        $("#txtQuantity").val('');
+        $("#txtRemarks").val('');
+        $('#chkSure').prop('checked', false);
+        $('#btnSave').hide();
+
+
+    }
+
+</script>
+
+
+

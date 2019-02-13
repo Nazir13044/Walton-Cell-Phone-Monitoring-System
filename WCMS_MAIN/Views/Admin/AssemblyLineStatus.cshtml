@@ -1,0 +1,418 @@
+﻿
+@{
+    ViewBag.Title = "AssemblyLineStatus";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Packaging QC </a></li>
+        <li class="breadcrumb-item active">Packaging Asthetic Qc</li>
+    </ul>
+</div>
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+           
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Add Line Status</h3>
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="form-horizontal" style="margin-top: 30px;">
+
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+                            
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Line Name</label>
+                                <div class="col-sm-5" id="">
+                                    <select id="txtLine" data-placeholder="Choose a Line" class="chosen-select form-control" tabindex="1"></select>
+
+                                </div>
+                                <label class="col-sm-2 form-control-label" style="color: red">*</label>
+                            </div>
+                            <br/>
+                            
+                            
+                           
+                            <div class="form-group row" >
+                                <label class="col-sm-3 form-control-label">Project Name</label>
+                                <div class="col-sm-5" id="">
+                                    <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                                </div>
+                                <label class="col-sm-2 form-control-label" style="color: red">*</label>
+                            </div>
+                            <br />
+
+                            <div class="form-group row" id="divRemarks" style="display: none">
+                                <label class="col-sm-3 form-control-label">Remarks</label>
+                                <div class="col-sm-5" id="">
+                                    <input id="txtRemarks" type="text" placeholder="Add Remarks" required="" class="form-control form-control-success">
+                                </div>
+                                <label class="col-sm-2 form-control-label" style="color: red">*</label>
+                            </div>
+                            <br />
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">&nbsp;</label>
+                                <div class="i-checks col-sm-6">
+                                    <input id="chkStart" type="checkbox" value="S" class="checkbox-template">
+                                    <label for="chkStart">Start</label>
+                                    &nbsp; &nbsp;
+                                    <input id="chkPause" type="checkbox" value="P" class="checkbox-template">
+                                    <label for="chkPause">Pause</label>
+                                    
+                                    
+                                    &nbsp; &nbsp;
+                                    <input id="chkStop" type="checkbox" value="C" class="checkbox-template">
+                                    <label for="chkStop">Stop</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-9 offset-sm-3">
+
+                                    <button class="btn btn-primary" id="btnSave" style="width: 300px;" onclick="SaveLineStatus();"> Save</button>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">All Lines Latest Status</h3>
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="form-horizontal" style="overflow: auto">
+
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Line Name
+                                        </th>
+                                        <th>
+                                            Project Name
+                                           
+                                        </th>
+                                        <th>
+                                            Status
+                                        </th>
+                                        <th>
+                                            Remarks
+                                        </th>
+
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody class="tbody"></tbody>
+                            </table>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/black/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script>    
+
+    $(document).ready(function () {
+        LoadAllLines();
+        LoadAllProjects();
+        loadLineStatus();
+    });
+
+
+
+    $('input.checkbox-template').on('change', function () {
+        debugger;
+        $('input.checkbox-template').not(this).prop('checked', false);
+        var checkedValue = $('input.checkbox-template:checked').val();
+        if (checkedValue == 'S') {
+
+            $("#divRemarks").hide();
+
+
+        } if (checkedValue == 'P') {
+            $("#divRemarks").show();
+
+        }
+        
+        if (checkedValue == 'C') {
+            $("#divRemarks").show();
+
+        }
+
+    });
+    
+
+
+
+    function LoadAllLines() {
+       
+
+        var url = " @Url.Action("GetLineList", "Admin")";
+        $.getJSON(url, function(json) {
+            var elem = $("#txtLine");
+            $("#txtLine").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function(idx, obj) {
+
+                elem.append('<option value="' + obj.LineId + '">' + obj.LineName + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+    function LoadAllProjects() {
+
+        var url = "@Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function(json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function(idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+    function SaveLineStatus() {
+
+
+        debugger;
+
+        if ($('#txtLine').val() == "" || $("#txtLine").val() == 0) {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Line Name Required'
+            });
+
+            return false;
+        } else if ($('#txtProject').val() == "" || $('#txtProject').val() == 0) {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Project Name Required'
+            });
+
+            return false;
+        }
+        else if ($('input.checkbox-template:checked').val() == 'P' || $('input.checkbox-template:checked').val() == 'C') {
+
+            if ($("#txtRemarks").val() == '') {
+
+
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Warning',
+                    message: 'Remarks required !'
+                });
+                return false;
+
+
+            }
+        }
+        
+        else if ($('input.checkbox-template:checked').val() != 'S' && $('input.checkbox-template:checked').val() != 'P' && $('input.checkbox-template:checked').val() != 'C') {
+
+           
+
+
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Warning',
+                    message: 'Please Check Start,Pause or Close  !'
+                });
+                return false;
+
+        }
+
+      
+
+
+            var lineStatus = {};
+
+            lineStatus.LineId = $('#txtLine').val();
+            lineStatus.LineName = $('#txtLine option:selected').text();
+            lineStatus.ProjectId = $('#txtProject').val();
+            lineStatus.ProjectName = $('#txtProject option:selected').text();
+            lineStatus.Status = $('input.checkbox-template:checked').val();
+            lineStatus.Remarks = $('#txtRemarks').val();
+            console.log(lineStatus);
+            
+
+            $.ajax({
+                url: '@Url.Action("InsertLineStatus", "Admin")',
+                type: 'Post',
+                data: JSON.stringify({ lineStatus: lineStatus }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Saved Successfully'
+                        });
+                        $("#txtRemarks").val('');
+                        LoadAllLines();
+                        LoadAllProjects();
+                        loadLineStatus();
+
+                        $("#divRemarks").hide();
+                        $('input.checkbox-template:checked').prop('checked', false);
+                        return true;
+
+                        //location.reload();
+                    } else {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message
+                        });
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+
+                    //return false;
+                }
+            });
+
+
+
+        }
+
+
+    function loadLineStatus() {
+        $.ajax({
+            url: "  @Url.Action("GetLinesStausList", "Admin")",
+            type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            var html = '';
+            $.each(result, function (key, item) {
+
+                var stat = "";
+               
+                if (item.Status == "S")
+                    {
+                     stat = "Started";
+                }
+                if (item.Status == "P") {
+                    stat = "Paused";
+                }
+                if (item.Status == "C") {
+                    stat = "Canceled";
+                }
+                
+
+                html += '<tr>';
+                html += '<td>' + item.LineName + '</td>';
+                html += '<td>' + item.ProjectName + '</td>';
+                html += '<td>' + stat + '</td>';
+                html += '<td>' + item.Remarks + '</td>';
+               
+                html += '</tr>';
+            });
+            $('.tbody').html(html);
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+    }
+
+</script>

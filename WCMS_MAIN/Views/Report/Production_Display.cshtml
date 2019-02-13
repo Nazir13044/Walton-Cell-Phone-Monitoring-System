@@ -1,0 +1,294 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>ProductionDisplay</title>
+    <link href="~/css/style.default.css" rel="stylesheet" />
+    <link href="~/js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"*@>
+
+    
+    <style>
+        .clock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #17D4FE;
+            font-size: 35px;
+            font-family: Orbitron;
+            letter-spacing: 4px;
+            -webkit-animation-duration: 1s;
+            
+            -webkit-animation-direction: alternate;
+            -webkit-animation-iteration-count: infinite;
+            animation-duration: 1s;
+          
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+
+
+
+        #divGlow {
+           
+            -webkit-transition: border 0.1s linear, box-shadow 0.1s linear;
+            -moz-transition: border 0.1s linear, box-shadow 0.1s linear;
+            transition: border 0.1s linear, box-shadow 0.1s linear;
+            
+        }
+
+            #divGlow.active {
+                border-color: #FAD7A0;
+                -webkit-box-shadow: 0 0 100px #FAD7A0;
+                -moz-box-shadow: 0 0 15px #FAD7A0;
+                box-shadow: 0 0 40px #FAD7A0;
+            }
+
+
+        
+         #display tbody tr {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        table.table-bordered {
+            border: 2px solid #FA660B;
+            margin-top: 20px;
+        }
+
+            table.table-bordered > thead > tr > th {
+                border: 2px solid #FA660B;
+            }
+
+            table.table-bordered > tbody > tr > td {
+                border: 2px solid #FA660B;
+            }
+
+
+        </style>
+    
+   
+</head>
+    <body style="background-color: #400F4E">
+        <div class="container-fluid" style="margin-top: 0px; " >
+
+            <div class="row">
+                
+                    <div class="col-lg-12">
+                        <div class="card" id="divGlow" style="background-color: #440E16; color: white; border: 2px solid white; ">
+
+                            <div class="card-body">
+                                <h5 class="card-title" id="divDate" style=" color: white; font-size: 30px; font-family: Orbitron;"></h5>
+
+                            </div>
+                            <div class="clock" id="MyClockDispla" style="margin-right: 300px; color: #10D328; "> Production</div>
+                            <div class="clock pull-right" id="MyClockDisplay" style="margin-left: 380px;"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+        </div>
+        <div class="container col-12" id="divProductionLineData" style="font-size: 60px; font-weight: bold; background-color: white; margin-top: 0; border: 10px solid #154360; ">
+
+            <div class="table " id="disp" style=" ">
+
+                <table class="table table-bordered" id="display" style="margin-left: 1px;">
+                    <thead>
+                        <tr>
+                            <th style="background-color: #132876;color: white;text-align: center">LINE</th>
+                            <th style="background-color: #941AB5; color: white; text-align: center">PCB</th>
+                            <th style="background-color: #881128; color: white; text-align: center">SCREW</th>
+                            <th style="background-color: #097A17; color: white; text-align: center">DONE</th>
+                            <th style="background-color: red; color: white; text-align: center">FAILED</th>
+                            <th style="background-color: #fa660b; color: white; text-align: center">Fault</th>
+                            <th style="background-color: #0E6251; color: white; text-align: center; ">Av/Hr</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody class="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="~/js/vendor/jquery/jquery-1.9.1.min.js"></script>
+        <script src="~/js/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/js/vendor/chart.js/Chart.min.js"></script>
+        
+        <script src="~/js/jquery.appear.js"></script>
+        <script src="~/js/modernizr-1.5.min.js"></script>
+        <script src="~/js/win8.js"></script>
+        <script>
+            var serverDate = '@(TempData["date"])';
+            var serverTime = '@(TempData["time"])';
+           // alert(serverDate);
+            var glower = $('#divGlow');
+            window.setInterval(function () {
+                glower.toggleClass('active');
+            }, 1000);
+
+            window.setInterval(function () {
+                //$('#divProductionLineData').empty();
+                ProductionLineCountForDisplay();
+            }, 10000);
+
+            setTimeout(function () {
+               
+                location.reload();
+            }, 600000);
+            
+            //window.setInterval(function () {
+            //    $('#HourlyLineWiseQcStatus').empty();
+                
+            //    HourlyLineWiseStationsStatus();
+            //}, 40000);
+
+
+            $(document).ready(function () {
+                ProductionLineCountForDisplay();
+                showTime();
+                // ProductionLineCount();
+               
+            });
+   
+   
+            //setTimeout(function () {   //calls click event after a certain time
+            //    HourlyLineWiseStationsStatus();
+            //}, 3000);
+
+
+           
+
+            function showTime() {
+                debugger;
+              
+                //fir date
+                var dateonly = new Date(serverDate);
+                var n = dateonly.toDateString();
+                document.getElementById("divDate").innerText = n;
+                document.getElementById("divDate").textContent = n;
+                //
+
+
+
+                var date = new Date(serverTime);
+                var h = date.getHours(); // 0 - 23
+                var m = date.getMinutes(); // 0 - 59
+                var s = date.getSeconds(); // 0 - 59
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+
+                if (h >= 12) {
+                    //h = h - 12;
+                    session = "PM";
+                }
+
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+
+                h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+
+                var time = h + ":" + m + ":" + session;
+                document.getElementById("MyClockDisplay").innerText = time;
+                document.getElementById("MyClockDisplay").textContent = time;
+
+                setTimeout(showTime, 1000);
+
+            }
+
+           
+
+
+
+
+            function ProductionLineCountForDisplay() {
+
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; //January is 0!
+                var yyyy = today.getFullYear();
+
+                if (dd < 10) {
+                    dd = '0' + dd;
+                }
+
+                if (mm < 10) {
+                    mm = '0' + mm;
+                }
+
+                today = dd + '-' + mm + '-' + yyyy;
+
+
+                var gridate = today.split('-');
+                var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+                $.ajax({
+                    url: '@Url.Action("DisplayProductionCount", "Report")',
+                    type: 'POST',
+                    data: JSON.stringify({ date: serverDate }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+                        var html = '';
+
+
+                        if (result.length == 0) {
+                            $('#divProductionLineData').empty();
+                            $('#divProductionLineData').text('No Production Data available');
+                        } else {
+
+                            $.each(result, function (index, itemData) {
+
+                                var line = itemData.LineName.slice(-1);
+
+                                html += '<tr>';
+                                html += '<td style="color: #132876;text-align:left;">' + line + '-('+ itemData.ProjectName +')'+ '</td>';
+                                html += '<td style="color: #941AB5;">' + itemData.IssuedComponent + '</td>';
+                                html += '<td style="color: #881128;">' + itemData.ScrewDone + '</td>';
+                                html += '<td style="color: #097A17;">' + itemData.AssemblyPassed + '</td>';
+                                html += '<td style="color:red;">' + itemData.Fault + '</td>';
+                                html += '<td style="color:#fa660b;">' + itemData.FaultRate +'%'+ '</td>';
+                                html += '<td style="color:#0E6251;">' + itemData.AverageSpeed + '</td>';
+                                html += '</tr>';
+                            
+                                
+
+                            });
+                            
+                            $('.tbody').html(html);
+                        }
+
+
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        //toastr.error(result.Message);
+                        // alert("Error");
+                        return false;
+                    }
+                });
+            }
+
+        </script>
+    </body>
+
+</html>

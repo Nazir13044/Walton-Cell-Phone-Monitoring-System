@@ -1,0 +1,535 @@
+﻿
+<style>
+    .sticky-container {
+        padding: 0px;
+        margin: 0px;
+        position: fixed;
+        right: -130px;
+        top: 200px;
+        width: 310px;
+        z-index: 1100;
+    }
+
+    .sticky li {
+        list-style-type: none;
+        background-color: #1e2631;
+        font-size: 25px;
+        color: #efefef;
+        height: 43px;
+        padding: 0px;
+        margin: 0px 0px 1px 0px;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        cursor: pointer;
+    }
+
+        .sticky li:hover {
+            margin-left: -120px;
+        }
+
+        .sticky li i {
+            float: left;
+            margin: 6px 5px;
+            margin-right: 15px;
+        }
+
+        .sticky li p {
+            padding-top: 5px;
+            margin: 0px;
+            line-height: 16px;
+            font-size: 18px;
+        }
+
+            .sticky li p a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+
+                .sticky li p a:hover {
+                    text-decoration: underline;
+                }
+</style>
+
+
+
+
+
+
+
+<div class="container">
+
+    <!-- Trigger the modal with a button -->
+    <div class="sticky-container">
+        <ul class="sticky">
+            <li>
+                <i class="fa fa-bookmark"></i>
+                <p><a href="#" data-toggle="modal" data-target="#myAgingModal">View Aging<br>Report</a></p>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myAgingModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #123d6a ;color: white;">
+                    <h4 class="modal-title">Aging Report panel</h4>
+
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="col-lg-12 ">
+                        <div class="card" style="border: 2px solid ; height: 250px;">
+                            <div class="card-header d-flex align-items-center" style="background-color: darkslateblue; color: white">
+                                <h3 class="h4" style="font-weight: normal">Assembly Line production Status Report</h3>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 form-control-label">From Date:</label>
+                                    <div class="col-sm-2">
+                                        <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success txtDate">
+                                    </div>
+                                    <label class="col-sm-1 form-control-label">To Date:</label>
+                                    <div class="col-sm-2">
+                                        <input id="txtToDate" type="text" placeholder="" class="form-control form-control-success txtDate">
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <label class="col-sm-1 form-control-label">Model:</label>
+                                    <div class="col-sm-2">
+                                        <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        <button type="button" class="btn btn-primary" style="" id="btSearch">Search</button>
+
+                                    </div>
+                                </div>
+                                <div class="form-group row" id="divCheckBox" style="">
+                                    <label class="col-sm-4 form-control-label">&nbsp;</label>
+                                    <div class="i-checks col-sm-8">
+                                        <input id="chkPassed" type="checkbox" value="AG" class="checkbox-template">
+                                        <label for="chkPassed">Only Aging</label>
+                                        &nbsp; &nbsp;
+                                        <input id="chkFailed" type="checkbox" value="CRG" class="checkbox-template">
+                                        <label for="chkFailed">Only Charging</label>
+
+                                        &nbsp; &nbsp;
+                                        <input id="chkFailed" type="checkbox" value="ALL" class="checkbox-template">
+                                        <label for="chkFailed">All</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                &nbsp; &nbsp;
+                <div class="col-sm-6" >
+                    <button type="button" class="btn btn-primary" style="display: none;" id="btnPrint">Print</button>
+
+                </div>
+                &nbsp; &nbsp;
+                <div class="col-lg-12" id="masterContent" style="text-align: center">
+                    
+                    <div style="display: none;">
+                        <h3 style="text-align: center; text-decoration:underline">Aging Qc Report</h3>
+
+                    </div>
+                   
+                    &nbsp; &nbsp;
+                    <div class="card" style="border: 2px solid ;display: none;" id="divAgingReport">
+                        <div class="card-header d-flex align-items-center" style="background-color: darkcyan; color: white">
+                            <h3 class="h4" style="font-weight: normal">Aging QC Status Report</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="card-body">
+                                <table class="table table-bordered" id="tblAgingReport" style="display: none;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="7" style="color: #ce0606">Aging Batch Status</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">#SN</th>
+                                            <th scope="col">Batch</th>
+                                            <th scope="col">Project</th>
+                                            <th scope="col">Batch Status</th>
+                                            <th scope="col">Batch Count</th>
+                                            <th scope="col">Passed</th>
+                                            <th scope="col">Failed</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+                                <table class="table table-bordered" id="tblAgingDetailsReport" style="display: none;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="7" style="color: #ce0606">Aging Details Rport</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">#SN</th>
+                                            <th scope="col">Project</th>
+                                            <th scope="col">Mobile Code</th>
+                                            <th scope="col">Batch</th>
+                                            <th scope="col">Passed</th>
+                                            <th scope="col">Issue</th>
+                                            <th scope="col">Reworked</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    @*For Charger*@
+                    <div class="card" style="border: 2px solid ;display: none;" id="divChargerReport">
+                        <div class="card-header d-flex align-items-center" style="background-color: #1e2631; color: white">
+                            <h3 class="h4" style="font-weight: normal">Charging (Aging) Status Report</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="card-body">
+                                <table class="table table-bordered" id="tblChargingReport" style="display: none;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="7" style="color: #ce0606">Charger Batch Status</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">#SN</th>
+                                            <th scope="col">Batch</th>
+                                            <th scope="col">Project</th>
+                                            <th scope="col">Batch Status</th>
+                                            <th scope="col">Batch Count</th>
+                                            <th scope="col">Passed</th>
+                                            <th scope="col">Failed</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+                                <table class="table table-bordered" id="tblChargingDetailsReport" style="display: none;">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="7" style="color: #ce0606">Charger Details Rport</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">#SN</th>
+                                            <th scope="col">Project</th>
+                                            <th scope="col">Mobile Code</th>
+                                            <th scope="col">Batch</th>
+                                            <th scope="col">Passed</th>
+                                            <th scope="col">Issues</th>
+                                            <th scope="col">Reworked</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.css" rel="stylesheet" />
+<script src="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script src="~/js/printPreview.js"></script>
+<script>
+    $(function () {
+
+        LoadAllProjects();
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+        $("#txtToDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+        $("#btnPrint").printPreview({
+            obj2print: '#masterContent',
+            width: '810',
+            title: 'Aging Qc Report'
+        });
+        
+    });
+    
+    function LoadAllProjects() {
+
+        var url = "@Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function(json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select Project---</option>");
+
+            $.each(json, function(idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+        });
+    }
+    
+
+    $("#btSearch").click(function () {
+        debugger;
+        var gridateFrom = $("#txtReqDate").val().split('-');
+        var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+
+        var gridateTo = $("#txtToDate").val().split('-');
+        var todate = gridateTo[2] + "-" + gridateTo[1] + "-" + gridateTo[0];
+        var projectId = $('#txtProject').val();
+        var reportType = $('input.checkbox-template:checked').val();
+        if (reportType == null) {
+
+           iziToast.warning({
+               timeout: 2000,
+               imageWidth: 150,
+               position: 'center',
+               title: 'warning',
+               message: 'Please Select Report Type!!'
+           });
+           return false;
+
+        } else {
+            
+            GetAgingQcReport(fromdate, todate, projectId, reportType);
+       }
+    });
+    
+
+    function GetAgingQcReport(fromdate, todate, projectId, reportType) {
+        $('#btnPrint').show();
+        debugger;
+        $.ajax({
+            url: ' @Url.Action("GetAgingQcReport", "Report")',
+            type: 'POST',
+            data: JSON.stringify({ fromdate: fromdate, todate: todate, project: projectId, reportType: reportType }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function(data) {
+                debugger;
+                console.log(data);
+                if (data.length == 0) {
+                    // $('#divSearchedIssue').empty();
+                    iziToast.warning({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'No Data Found'
+                    });
+                    $("#tblDataDiv").hide();
+                    return false;
+
+                } else {
+
+                    if (reportType =="AG") {
+                        ClearChargingReportData();
+                        GenerateAgingReportData(data);
+                       
+                    }
+
+                    //for charger report 
+                    if (reportType =="CRG") {
+                        ClearAgingReportData();
+                        GenerateChargingReportData(data);
+                      
+                        
+                    }
+
+                    if (reportType == "ALL") {
+                        debugger;
+                        //console.log(data.agingReportdata)
+                        ClearAgingReportData();
+                        ClearChargingReportData();
+                        GenerateAgingReportData(data.agingReportdata);
+                        
+                       
+                        GenerateChargingReportData(data.chargerReportdata);
+                        
+                       
+                        //console.log(data.chargingReportdata);
+
+                    }
+
+
+                }
+
+            },
+            error: function(data, textStatus, jqXHR) {
+                toastr.error(textStatus + " " + result + " " + jqXHR);
+            }
+        });
+
+    }
+
+    $('input.checkbox-template').on('change', function() {
+
+        debugger;
+        $('input.checkbox-template').not(this).prop('checked', false);
+
+
+    });
+
+    function ClearAgingReportData() {
+
+        $('#tblAgingReport tbody').empty();
+        $('#tblAgingDetailsReport tbody').empty();
+        $("#divAgingReport").hide();
+        $("#tblAgingReport").hide();
+        $("#tblAgingDetailsReport").hide();
+
+    }
+
+    function ClearChargingReportData() {
+
+        $('#tblChargingReport tbody').empty();
+        $('#tblChargingDetailsReport tbody').empty();
+
+        $("#divChargerReport").hide();
+        $("#tblChargingReport").hide();
+        $("#tblChargingDetailsReport").hide();
+
+    }
+
+    function ClearAllReportData() {
+
+
+    }    
+
+
+    function GenerateAgingReportData(data) {
+        debugger;
+        //ClearChargingReportData();
+        $('#tblAgingReport tbody').empty();
+        $('#tblAgingDetailsReport tbody').empty();
+
+        $("#divAgingReport").show();
+        $("#tblAgingReport").show();
+        $("#tblAgingDetailsReport").show();
+
+
+        $.each(data.batchStatus, function (key, item) {
+            var serial = parseInt(key) + 1;
+            var row = "<tr class='active' style='font-size=15px;height:3px;'>" +
+                "<td style='height:5px;' class='text-center'>" + serial + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.AgingBatch + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.BatchProjectName + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.BatchStatus + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.BatchCount + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.AgingPassedCount + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.AgingFailedCount + "</td>" +
+                "</tr>";
+            $('#tblAgingReport tbody').append(row);
+
+
+        });
+
+
+        $.each(data.agingReportlists, function (key, item) {
+            var serial = parseInt(key) + 1;
+            var row = "<tr class='active' style='font-size=15px;height:3px;'>" +
+                "<td style='height:5px;' class='text-center'>" + serial + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.ProjectName + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.MobileCode + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.AgingBatch + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.AgingPass + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.AgingIssue + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.AgingReworked + "</td>" +
+                "</tr>";
+            $('#tblAgingDetailsReport tbody').append(row);
+
+
+        });
+
+
+    }
+
+
+    function GenerateChargingReportData(data) {
+
+        debugger;
+       // ClearAgingReportData();
+        $('#tblChargingReport tbody').empty();
+        $('#tblChargingDetailsReport tbody').empty();
+
+        $("#divChargerReport").show();
+        $("#tblChargingReport").show();
+        $("#tblChargingDetailsReport").show();
+
+        $.each(data.chargerReportlists, function (key, item) {
+            var serial = parseInt(key) + 1;
+            var row = "<tr class='active' style='font-size=15px;height:3px;'>" +
+                "<td style='height:5px;' class='text-center'>" + serial + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.ProjectName + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.MobileCode + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.ChargerBatch + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.ChargingPass + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.ChargingIssue + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.ChargingReworked + "</td>" +
+                "</tr>";
+            $('#tblChargingDetailsReport tbody').append(row);
+
+
+        });
+        
+
+        $.each(data.crgbatchStatus, function (key, item) {
+            var serial = parseInt(key) + 1;
+            var row1 = "<tr class='active' style='font-size=15px;height:3px;'>" +
+                "<td style='height:5px;' class='text-center'>" + serial + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.ChargerBatch + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.BatchProjectName + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.BatchStatus + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.BatchCount + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.ChargerPassedCount + "</td>" +
+                "<td style='height:5px;' class='text-center'>" + item.ChargerFailedCount + "</td>" +
+                "</tr>";
+            $('#tblChargingReport tbody').append(row1);
+
+
+        });
+
+    }
+
+    //function GenerateFullReportData(data) {
+    //}
+
+</script>

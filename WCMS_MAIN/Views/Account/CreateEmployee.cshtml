@@ -1,0 +1,491 @@
+﻿
+
+@{
+    ViewBag.Title = "CreateEmployee";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+</style>
+@*<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Account </a></li>
+        <li class="breadcrumb-item active">CreateEmployee</li>
+    </ul>
+</div>*@
+
+@*Main Dashboard*@
+@*Main Dashboard*@
+@*Main Dashboard*@
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-8">
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("EmployeeList", "Account")';return false;">
+                    View Added Employee List
+                </button>
+
+            </div>
+            <br />
+
+
+            &nbsp;
+            
+            
+            
+
+            <div class="col-lg-6">
+                <div class="card" style="height: 490px;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Add New Employee</h3>
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="form-horizontal" style="margin-top: 30px;">
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Employee</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtEmployee" type="text" maxlength="11" placeholder="Search Employee" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">User Name</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtUserName" type="text"  maxlength="11" placeholder="User Name" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Password</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtPassword" type="text"  maxlength="11" placeholder="Password" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+                            
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Role Name</label>
+                                <div class="col-sm-7" id="">
+                                    <select id="txtRole" data-placeholder="Choose a Line" class="chosen-select form-control" tabindex="1"></select>
+
+                                </div>
+                               
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Line Name</label>
+                                <div class="col-sm-7" id="">
+                                    <select id="txtLine" data-placeholder="Choose a Line" class="chosen-select form-control" tabindex="1"></select>
+
+                                </div>
+                               
+                            </div>
+
+                            
+
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">&nbsp;</label>
+                            <div class="col-sm-8 ">
+
+                                <button class="btn btn-primary" style="width: 200px;" id="btnSave">Save</button>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Horizontal Form-->
+
+            <div class="col-lg-6" style="overflow:auto;">
+
+                <div class="card" style="height: 490px; overflow:auto;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Employee Info</h3>
+                    </div>
+                    <div class="card-body">
+
+
+                        <div class="form-horizontal" id="divEmployeeDetails" style="margin-top: 30px;display: none">
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Designation</label>
+                                <div class="col-sm-6" id="">
+                                    <input id="txtDesignation" type="text" readonly="readonly" maxlength="11" placeholder="" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Mobile Number</label>
+                                <div class="col-sm-6" id="">
+                                    <input id="txtMobile" type="text" readonly="readonly" maxlength="11" placeholder="" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Department</label>
+                                <div class="col-sm-6" id="">
+                                    <input id="txtDepartment" type="text" readonly="readonly" maxlength="11" placeholder="" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">DepartmentId</label>
+                                <div class="col-sm-6" id="">
+                                    <input id="txtDepartmentId" type="text" readonly="readonly" maxlength="11" placeholder="" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">SectionId</label>
+                                <div class="col-sm-6" id="">
+                                    <input id="txtSectionId" type="text" readonly="readonly" maxlength="11" placeholder="" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+                            
+
+                        </div> 
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- Inline Form-->
+            <!-- Modal Form-->
+            <!-- Form Elements -->
+
+        </div>
+
+
+        @*<div class="card">
+
+            <div class="card-body">
+                <div class="form-group row">
+
+                </div>
+
+            </div>
+        </div>*@
+    </div>
+
+    <input type="hidden" name="hdemployeeId" id="hdemployeeId" />
+</section>
+
+
+@*Scripts and Styles*@
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/black/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+@*Scripts and Styles*@
+
+@*Main Script*@
+@*Main Script*@
+@*Main Script*@
+
+<script>    
+
+    $(document).ready(function() {
+
+        LoadAllRoles();
+        LoadAllLines();
+    });
+
+
+
+    function LoadAllLines() {
+       
+
+        var url = " @Url.Action("GetLineList", "Admin")";
+        $.getJSON(url, function(json) {
+            var elem = $("#txtLine");
+            $("#txtLine").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function(idx, obj) {
+
+                elem.append('<option value="' + obj.LineId + '">' + obj.LineName + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+
+
+    function EmployeeInfoClear() {
+
+        $("#txtDesignation").val('');
+        $("#txtMobile").val('');
+        $("#txtDepartment").val('');
+        $("#txtDepartmentId").val('');
+        $("#txtSectionId").val('');
+        $("#hdemployeeId").val('');
+    }
+   
+   
+    $('#txtEmployee').autocomplete({
+        source: " @Url.Action("GetEmployeeList", "Account")",
+        minLength: 2,
+        select: function (event, ui) {
+            $("#divEmployeeDetails").show();
+            $("#hdemployeeId").val(ui.item.Id);
+            $("#txtDesignation").val(ui.item.designation);
+            $("#txtMobile").val(ui.item.moble);
+            $("#txtDepartment").val(ui.item.department);
+            $("#txtDepartmentId").val(ui.item.departmentId);
+            $("#txtSectionId").val(ui.item.sectionId);
+            $("#txtUserName").val(ui.item.Id);
+            $("#txtPassword").val(ui.item.Id);
+        }
+    });
+
+
+    $('#txtEmployee').on('input', function (e) {
+        EmployeeInfoClear();
+        $("#divEmployeeDetails").hide();
+    });   
+
+
+    $("#btnSave").click(function() {
+
+        if ($("#txtEmployee").val() == "") {
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Employee Name Required'
+            });
+            return false;
+
+        }
+        
+
+        else if ($("#txtUserName").val() == "") {
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'User Name Required'
+            });
+            return false;
+
+        }
+        
+       
+        
+        else if ($("#txtPassword").val() == "") {
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'User Password Required'
+            });
+            return false;
+
+        }
+        else if ($("#txtRole").val() ==0) {
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Role Name Required'
+            });
+            return false;
+
+        }
+
+        //else if ($("#txtLine").val() ==0) {
+
+        //    iziToast.warning({
+        //        timeout: 1000,
+        //        imageWidth: 150,
+        //        position: 'center',
+        //        title: 'Warning',
+        //        message: 'Line Name Required'
+        //    });
+        //    return false;
+
+        //}
+
+
+
+
+        else {
+
+            var employeeList = {};
+            employeeList.EmployeeId = $("#hdemployeeId").val();
+            employeeList.Name = $("#txtEmployee").val();
+            employeeList.Designation = $("#txtDesignation").val();
+            employeeList.Mobile = $("#txtMobile").val();
+            employeeList.Department = $("#txtDepartment").val();
+            employeeList.DepartmentId = $("#txtDepartmentId").val();
+            employeeList.SectionId = $("#txtSectionId").val();
+
+            console.log(employeeList);
+
+            var employeeCredential = {};
+            
+            employeeCredential.UserName = $("#txtUserName").val();
+            employeeCredential.Password = $("#txtPassword").val();
+            employeeCredential.EmployeeId = $("#hdemployeeId").val();
+            employeeCredential.EmployeeName = $("#txtEmployee").val();
+            employeeCredential.RoleId = $("#txtRole").val();
+            employeeCredential.RoleName = $("#txtRole option:selected").text();
+            employeeCredential.LineId = $("#txtLine").val();
+            employeeCredential.LineName = $("#txtLine option:selected").text();
+
+            $.ajax({
+                url:"@Url.Action("CreateEmployee","Account")",
+                type: 'Post',
+                data: JSON.stringify({ employee: employeeList, login: employeeCredential }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                   
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Information Saved Successfully'
+                        });
+
+
+                        EmployeeInfoClear();
+                        $("#txtUserName").val('');
+                        $("#txtPassword").val('');
+                        $("#txtEmployee").val('');
+                        $("#divEmployeeDetails").hide();
+                        LoadAllRoles();
+                        LoadAllLines();
+                        return true;
+                        //location.reload();
+                    } else {
+
+                    
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Warning',
+                            message: result.Message
+                    });
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+
+                    //return false;
+                }
+            });
+
+
+
+            //console.log(employeeCredential);
+            //save employee information here//
+
+            //alert("success");
+        }
+
+
+
+    });
+
+
+
+    function LoadAllRoles() {
+       
+
+        var url = " @Url.Action("GetAllUserRoleNames", "Account")";
+        $.getJSON(url, function(json) {
+            var elem = $("#txtRole");
+            $("#txtRole").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function(idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+</script>

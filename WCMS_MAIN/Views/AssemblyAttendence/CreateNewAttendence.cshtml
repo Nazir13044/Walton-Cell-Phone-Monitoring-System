@@ -1,0 +1,361 @@
+﻿
+@{
+    ViewBag.Title = "CreateNewAttendence";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+
+
+
+</style>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Attendence </a></li>
+        <li class="breadcrumb-item active">New Attendence </li>
+    </ul>
+</div>
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card" style="height: 490px;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Add Assembly Attendence</h3>
+                    </div>
+                  
+                    
+                    <div class="card-body">
+
+                        <div class="form-horizontal">
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Project Name</label>
+                                <div class="col-sm-6">
+                                    <input id="txtProjectName" type="text" placeholder=" Search Project Name" required="" class="form-control form-control-success">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Employee Id</label>
+                                <div class="col-sm-6">
+                                    <input id="txtEmloyeeId" type="text" placeholder="Employee Id" class="form-control form-control-success">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Employee Name</label>
+                                <div class="col-sm-6">
+                                    <input id="txtEmloyeeName" type="text" disabled="disabled" placeholder="EmployeeName" class="form-control form-control-success">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Shift</label>
+                                <div class="col-sm-6">
+                                    <select id="ddlShift" class="form-control">
+                                        <option value="0">--Select--</option>
+                                        <option value="">Shift-1</option>
+                                        <option value="">Shift-2</option>
+                                        <option value="">Shift-3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Functional Dept.</label>
+                                <div class="col-sm-6">
+                                    <select id="ddlfunctionalDept" class="form-control" style="">
+                                        <option value="0">--Select--</option>
+                                        <option value="">Rework</option>
+                                        <option value="">Aging Line</option>
+                                        <option value="">Asthetic Check</option>
+                                        <option value="">Asthetic Qc</option>
+                                        <option value="">Assembly Line</option>
+                                        <option value="">Spare Line</option>
+                                        <option value="">Touch Lcd Panel Glue</option>
+                                        <option value="">Qc Check</option>
+                                        <option value="">Function Qc</option>
+                                        <option value="">Packing Line</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group row">
+                                <div class="col-sm-8 offset-sm-4">
+                                    
+                                    <button class="btn btn-primary" id="btnAdd"><i class="fa fa-plus"></i> Add</button>
+                                    
+
+                                    @*<input type="button"  value="Add" class="btn btn-primary">*@
+                                </div>
+                            </div>
+                           
+
+                        </div>
+                        
+                   
+                    </div>
+                </div>
+            </div>
+            <!-- Horizontal Form-->
+          
+            <div class="col-lg-6">
+
+                <div class="card" style="height: 490px;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Assembly Attendence List</h3>
+                    </div>
+
+
+                    <div class="card-body">
+                        <table id="dgAttendenceList" class="easyui-datagrid" style="width:650px;" title="Assembly Attendence List" data-options="
+                                                    rownumbers:false,
+                                                    singleSelect:true,
+                                                    autoRowHeight:false,
+                                                    pagination:false,
+                                                    pageSize:1000">
+                            <thead>
+                                <tr>
+
+                                    <th data-options="field:'ProjectId',width:80">
+                                        ProjectId
+                                    </th>
+                                    <th data-options="field:'ProjectName',width:100">
+                                        Project Name
+                                    </th>
+                                    <th data-options="field:'EmployeeId',width:80">
+                                        Employee Id
+                                    </th>
+                                    <th data-options="field:'EmployeeName',width:150">
+                                        Employee Name
+                                    </th>
+                                    <th data-options="field:'Shift',width:70">
+                                        Shift
+                                    </th>
+                                    <th data-options="field:'Department',width:90">
+                                        Department
+                                    </th>
+                                    <th data-options="field:'Delete',width:30,align:'left'"></th>
+
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- Inline Form-->
+            <!-- Modal Form-->
+            <!-- Form Elements -->
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="checkbox col-sm-4">
+                        <div class="i-checks">
+                            <input id="chkSure" type="checkbox" value="" class="checkbox-template">
+                            <label for="chkSure">You sure want to save assembly attendence list?</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="button" id="btnSave" value="Save" style="display: none" class="btn btn-success" onclick="SaveProjectBomList();">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="hdprojectId" id="hdprojectId" />
+    <input type="hidden" name="hdprojectName" id="hdprojectName" />
+    <input type="hidden" name="hdemployeeId" id="hdprojectId" />
+    <input type="hidden" name="hdemployeeName" id="hdprojectName" />
+</section>
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/black/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script>
+    var rows = [];
+    
+    function ClearInputs() {
+        
+
+        $("#hdemployeeId").val('');
+        $("#hdemployeeName").val('');
+        $("#txtEmloyeeName").val('');
+        $("#ddlShift").val(0);
+        $("#ddlfunctionalDept").val(0);
+        $("#hdprojectId").val('');
+        $("#hdprojectName").val('');
+        $("#txtProjectName").val('');
+        $("#txtEmloyeeId").val('');
+    } 
+  
+    function DeleteAttendenceList(btn) {
+
+        iziToast.question({
+            timeout: 20000,
+            close: false,
+            overlay: true,
+            toastOnce: true,
+            id: 'question',
+            zindex: 999,
+            title: 'Hey!',
+            message: 'Are you want to delete?',
+            position: 'center',
+            buttons: [
+                ['<button><b>YES</b></button>', function (instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                    var tr = $(btn).closest('tr.datagrid-row');
+                    var index = parseInt(tr.attr('datagrid-row-index'));
+                    var dg = tr.closest('div.datagrid-view').children('table');
+                    var row = dg.datagrid('getRows')[index];
+                    var rowIndex = $('#dgAttendenceList').datagrid('getRowIndex', row);
+                    console.log(row);
+                    // //var selectedrow = $('#dgBombList').datagrid('getSelected');
+                    //var rowIndex = $('#dgBombList').datagrid('getRowIndex', selectedrow);
+                    $('#dgAttendenceList').datagrid('deleteRow', rowIndex);
+
+                }, true],
+                ['<button>NO</button>', function (instance, toast) {
+
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                }],
+            ],
+            onClosing: function (instance, toast, closedBy) {
+                console.info('Closing | closedBy: ' + closedBy);
+            },
+            onClosed: function (instance, toast, closedBy) {
+                console.info('Closed | closedBy: ' + closedBy);
+            }
+        });
+       
+    }
+
+    $(document).ready(function () {
+        
+
+        $('#chkSure').change(function () {
+            if (this.checked)
+                $('#btnSave').fadeIn('slow');
+            else
+                $('#btnSave').fadeOut('slow');
+
+        });
+
+
+        //project Name Auto Complete
+        $('#txtProjectName').autocomplete({
+            source: "/Project/GetProjectNameList/",
+            minLength: 2,
+            select: function (event, ui) {
+                $("#hdprojectId").val(ui.item.Id);
+                $("#hdprojectName").val(ui.item.value);
+
+            }
+        });
+        
+
+
+        //project Name Auto Complete
+        $('#txtEmloyeeId').autocomplete({
+            source: "/AssemblyAttendence/GetEmployeeList/",
+            minLength: 2,
+            select: function (event, ui) {
+                $("#hdemployeeId").val(ui.item.Id);
+                $("#hdemployeeName").val(ui.item.value);
+                $("#txtEmloyeeName").val(ui.item.name);
+                
+
+            }
+        });
+
+        $('#txtEmloyeeId').keyup(function() {
+
+            var txtEmployeeId = $('#txtEmloyeeId').val();
+            //alert(txtEmployeeId.length);
+            if (txtEmployeeId.length =="") {
+                $("#txtEmloyeeName").val('');
+            }
+        });        
+
+
+
+        //add click function
+        
+
+        $("#btnAdd").click(function () {
+            debugger;
+            var projectName = $("#txtProjectName").val();
+            var employeeId = $("#txtEmloyeeId").val();
+            var employeeName = $("#txtEmloyeeName").val();
+
+            if (projectName == "" || employeeId == "" || employeeName=="") {
+
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: 'Project Name & Employee Id & Employee Name required'
+                });
+                return false;
+
+            } else {
+                rows.push({
+                    ProjectId: $("#hdprojectId").val(),
+                    ProjectName: $("#txtProjectName").val(),
+                    
+                    EmployeeId: $("#txtEmloyeeId").val(),
+                    EmployeeName: $("#txtEmloyeeName").val(),
+                   
+                    Shift:  $("#ddlShift option:selected").text(),
+                    Department: $("#ddlfunctionalDept option:selected").text(),
+                  
+                    Delete: "<input type='image' style='width:20px;height:20px;' src='https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/128/Recycle_Bin_Full.png' class = 'btnDelete' id = " + $("#hdprojectId").val() + "  title = 'Delete' onclick='DeleteAttendenceList(this)'></div>"
+                });
+
+                console.log(rows);
+
+                $('#dgAttendenceList').datagrid('loadData', rows);
+
+                ClearInputs();
+
+            }
+
+
+        });
+  
+    });
+
+</script>

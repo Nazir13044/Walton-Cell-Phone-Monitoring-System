@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WCMS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS-->
+    @Styles.Render("~/bundles/BootstrapCss")
+    @*<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">*@ 
+    @Styles.Render("~/bundles/FontPlugins")     
+    @*@Styles.Render("~/bundles/EasyUiPlugins")*@  
+    @*@Styles.Render("~/bundles/JqueryUiPlugins")*@
+    @Styles.Render("~/bundles/CustomCss")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/plugins")
+
+    @Scripts.Render("~/bundles/jqueryval")
+    
+    @*<link rel="shortcut icon" href="~/img/download.jpg">*@
+
+    
+    @*<img src="~/img/download.jpg" />*@
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    
+    
+    <style>
+
+        #logOutLink {
+            background-color: #D95D12;
+            box-shadow: 0 5px 0 darkred;
+            color: white;
+            padding: 10px 10px;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+            #logOutLink:hover {
+                background-color: #ce0606;
+                cursor: pointer;
+            }
+
+            #logOutLink:active {
+                box-shadow: none;
+                top: 3px;
+            }
+        
+         
+    </style>
+
+</head>
+<body>
+    <div class="page">
+        <!-- Main Navbar-->
+        <header class="header">
+            <nav class="navbar">
+                <!-- Search Box-->
+                <div class="search-box">
+                    <button class="dismiss"><i class="icon-close"></i></button>
+                    <form id="searchForm" action="#" role="search">
+                        <input type="search" placeholder="What are you looking for..." class="form-control">
+                    </form>
+                </div>
+                <div class="container-fluid">
+                    <div class="navbar-holder d-flex align-items-center justify-content-between">
+                        <!-- Navbar Header-->
+                        <div class="navbar-header">
+                            <!-- Navbar Brand --><a href="#" class="navbar-brand">
+                                                     <div class="brand-text brand-big"><span style="padding-right:3px; padding-top: 3px; display:inline-block;"><img style="width:50px;height: 50px; " src="~/img/onlylogo.png" /></span><strong>WCMS</strong></div>
+                                                     <div class="brand-text brand-small"><strong>WCMS</strong></div>
+                                                 </a>
+                            <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                        </div>
+                        
+                        
+                        <div class="nav-menu d-flex flex-md-row align-items-md-center">
+                            <!-- Navbar Brand --><p class="navbar-brand ">
+
+                                <div class="brand-text " style="color: coral; border-radius: 50px">
+                                    <strong style="font-size: 20px;border-radius:50px;text-align: center">( Name: @Session["EmpName"]  , Employee Id: @Session["WCMSLoginUserName"] )</strong>
+
+                                </div>
+                            </p>
+
+                        </div>
+                        <!-- Navbar Menu -->
+                        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center" >
+                            <!-- Search-->
+                            @*<li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>*@
+                            <!-- Notifications-->
+                            @*<li class="nav-item dropdown">
+                                <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red">12</span></a>
+                                <ul aria-labelledby="notifications" class="dropdown-menu">
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item">
+                                            <div class="notification">
+                                                <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
+                                                <div class="notification-time"><small>4 minutes ago</small></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item">
+                                            <div class="notification">
+                                                <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                                                <div class="notification-time"><small>4 minutes ago</small></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item">
+                                            <div class="notification">
+                                                <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
+                                                <div class="notification-time"><small>4 minutes ago</small></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item">
+                                            <div class="notification">
+                                                <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                                                <div class="notification-time"><small>10 minutes ago</small></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+                                </ul>
+                            </li>*@
+                            <!-- Messages                        -->
+                            @*<li class="nav-item dropdown">
+                                <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange">10</span></a>
+                                <ul aria-labelledby="notifications" class="dropdown-menu">
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages    </strong></a></li>
+                                </ul>
+                            </li>*@
+                            <!-- Logout    -->
+                           
+                            @*<li class="nav-item" style="content: ' ';display: block;float: left;background: #ADADAD;margin: 0 10px;height: 34px;width: 2px;"></li>*@
+                            @*<li class="nav-item" style="cursor: pointer;">
+
+                                <div class="dropdown" style="width: 20px; ">
+                                    <i class="fa fa-user-circle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+
+                                    <ul class="dropdown-menu" style="font-size: 14px;">
+                                        <h6 class="dropdown-header">User : @Session["WCMSLoginUserName"] </h6>
+                                        <h6 class="dropdown-header">Role : @Session["WCMSUserRoleName"] </h6>
+                                        
+                                        @if ((string) Session["WCMSProjectName"]!="")
+                                        {
+                                            <h6 class="dropdown-header">Project : @Session["WCMSProjectName"] </h6>
+                                        }
+                                        
+                                      
+                                        
+                                      
+                                       
+    <div class="bottom" style="border-bottom: 0.5px solid #ccc;"><div class="box-content" style="display: inline-block;width: 200px;padding: 10px;"></div></div>
+                                        
+                                        <li class="nav-item">
+                                            <a href="@Url.Action("LogOut", "Account")" class="nav-link logout">Logout<i class="fa fa-sign-out" style="color: brown"></i></a>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </li>*@
+                            @*<li class="nav-item" style="content: ' ';display: block;float: left;background: #ADADAD;margin: 0 10px;height: 34px;width: 2px;"></li>*@
+
+                            @*<li class="nav-item" style="cursor: pointer;">
+                                
+                                <div class="dropdown"style="width: 20px; ">
+                                    <i class="fa fa-cog " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>
+
+                                    <ul class="dropdown-menu" style="font-size: 14px;">
+
+                                        <li class="nav-item"><a href="@Url.Action("ChangePassword", "Account")" class="nav-link forgot-pass">Change Password<i class=" fa fa-key" style="color: brown"></i></a></li>
+                                        <li class="nav-item">
+                                           
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </li>*@
+                        </ul>
+                        <div class="nav-menu ">
+                            <a id="logOutLink" href="@Url.Action("LogOut", "Account")" class="nav-link logout">Logout</a> 
+
+                        </div>
+                        
+                        
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content d-flex align-items-stretch">
+            <!-- Side Navbar -->
+            <nav class="side-navbar">
+                @Html.Partial("_PartialSidebar")
+            </nav>
+            <div class="content-inner">
+                @*<header class="page-header">
+                <div class="container-fluid">
+                    <h2 id="date" class="no-margin-bottom pull-right"></h2><i class="fa fa-calendar pull-right">&nbsp;</i>
+                    <h2 class="no-margin-bottom">Dashboard</h2>
+                </div>
+
+
+            </header>*@
+
+                @*<header class="page-header">
+                <div class="container-fluid">
+                    <h2 class="no-margin-bottom">Tables</h2>
+                </div>
+            </header>*@
+                <!-- Breadcrumb-->
+                <div class="breadcrumb-holder container-fluid">
+                    @*<ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Tables            </li>
+                </ul>*@
+                </div>
+
+                <div id="body">
+                    @RenderSection("featured", required: false)
+
+                    @RenderBody()
+
+                </div>
+            </div>
+                <!-- Page Header-->
+                <!-- Page Footer-->
+                <footer class="main-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-5">
+                               &nbsp;
+                            </div>
+                            <div class="col-sm-6">
+                                
+
+                                <p>Walton Group&copy; 2017-2019</p>
+                                <p>Design by <a href="http://www.waltonbd.com/" class="external">Walton Group</a></p>
+                            </div>
+                            @*<div class="col-sm-6 text-right">
+                                <p>Design by <a href="http://www.waltonbd.com/" class="external">Walton Group</a></p>
+                               
+                            </div>*@
+                        </div>
+                    </div>
+                </footer>
+           
+           
+           
+           
+        </div>
+        
+        
+    </div>
+
+    <!-- Javascript files-->
+  
+          
+    @*@Scripts.Render("~/bundles/jqueryUI")*@
+    @*@Scripts.Render("~/bundles/jqueryEasyUI")*@
+   
+    @*@RenderSection("scripts", required: false)*@
+  
+   
+</body>
+</html>

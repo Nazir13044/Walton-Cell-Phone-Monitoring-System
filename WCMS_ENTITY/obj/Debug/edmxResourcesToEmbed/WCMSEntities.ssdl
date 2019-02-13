@@ -1,0 +1,985 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WCMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AgingBatch">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="BatchType" Type="nvarchar" MaxLength="20" />
+    <Property Name="Passed" Type="nvarchar" MaxLength="20" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AgingBatchInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="Status" Type="nvarchar" MaxLength="10" />
+    <Property Name="AgingFailed" Type="bit" />
+    <Property Name="ChargingFailed" Type="bit" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AssemblyAttendance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmployeeId" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Shift" Type="nvarchar" MaxLength="50" />
+    <Property Name="AssemblyLineStage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BomList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponentName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ComponentCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EmpAttendences">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="RoleId" Type="bigint" />
+    <Property Name="InTime" Type="datetime" />
+    <Property Name="OutTime" Type="datetime" />
+    <Property Name="TotalWorkingHour" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="AddedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmployeeInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+    <Property Name="DepartmentId" Type="bigint" />
+    <Property Name="SectionId" Type="bigint" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Shifting" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Issues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="100" />
+    <Property Name="FaultType" Type="varchar" MaxLength="5" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Priority" Type="int" />
+  </EntityType>
+  <EntityType Name="OQcBatchInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MobileCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="Imei1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imei2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passed" Type="varchar" MaxLength="50" />
+    <Property Name="IsSample" Type="nchar" MaxLength="10" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductionMaster">
+    <Key>
+      <PropertyRef Name="ProductionId" />
+    </Key>
+    <Property Name="ProductionId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="PackagingLineId" Type="bigint" />
+    <Property Name="MobileCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imei1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imei2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passed" Type="varchar" MaxLength="1" />
+    <Property Name="QcStation" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgingBatchNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="OQCBatchNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="FinallyPassed" Type="varchar" MaxLength="1" />
+    <Property Name="FinallyPassedTime" Type="datetime" />
+    <Property Name="FinallyPassedBy" Type="bigint" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+    <Property Name="FunctionalBy" Type="bigint" />
+    <Property Name="FunctionalAD" Type="datetime" />
+    <Property Name="AestheticBy" Type="bigint" />
+    <Property Name="AestheticAD" Type="datetime" />
+    <Property Name="AgingBy" Type="bigint" />
+    <Property Name="AgingAD" Type="datetime" />
+    <Property Name="PackagingBy" Type="bigint" />
+    <Property Name="PackagingAD" Type="datetime" />
+    <Property Name="PackagingAstheticBy" Type="bigint" />
+    <Property Name="PackagingAstheticAD" Type="datetime" />
+    <Property Name="PackagingOQCBy" Type="bigint" />
+    <Property Name="PackagingOQCAD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProjectBomList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectMasterId" Type="bigint" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ComponentId" Type="bigint" Nullable="false" />
+    <Property Name="ComponentName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ComponentNumber" Type="nvarchar" MaxLength="200" />
+    <Property Name="IcVendor" Type="nvarchar" MaxLength="200" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblAgingMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="MobileCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgingBatch" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgingPassed" Type="nvarchar" MaxLength="5" />
+    <Property Name="AgingIssue" Type="nvarchar(max)" />
+    <Property Name="Reworked" Type="bit" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblAssemblyLineSetup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AssemblyLineId" Type="int" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="200" />
+    <Property Name="IssuedQuantity" Type="int" />
+    <Property Name="HourlyTargetQuantity" Type="int" />
+    <Property Name="TotalTargetQuantity" Type="int" />
+    <Property Name="ManPower" Type="int" />
+    <Property Name="PreviousQuantity" Type="int" />
+    <Property Name="AddedBy" Type="int" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblAssemblyLineSetupDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ComponentId" Type="bigint" />
+    <Property Name="ComponentName" Type="nvarchar" MaxLength="50" />
+    <Property Name="RequisitionQuantity" Type="int" />
+    <Property Name="SubmitQuantity" Type="int" />
+    <Property Name="AddedBy" Type="int" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblBarCodeInv">
+    <Key>
+      <PropertyRef Name="RecID" />
+    </Key>
+    <Property Name="RecID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrintDate" Type="datetime" Nullable="false" />
+    <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="varchar" MaxLength="50" />
+    <Property Name="BarCode" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="BarCode2" Type="varchar" MaxLength="500" />
+    <Property Name="DelieveredTo" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="PrintSuccess" Type="bit" Nullable="false" />
+    <Property Name="AddedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="Updatedby" Type="varchar" MaxLength="50" />
+    <Property Name="DateUpdated" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblBatteryComponentInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PorjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineId" Type="int" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PcbIssued" Type="int" />
+    <Property Name="PcbPassed" Type="int" />
+    <Property Name="PcbFailed" Type="int" />
+    <Property Name="CellIssued" Type="int" />
+    <Property Name="CellPassed" Type="int" />
+    <Property Name="CellFailed" Type="int" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="bigint" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblBtteryScanner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="bigint" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblChargerMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="MobileCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChargingBatch" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChargingPassed" Type="nvarchar" MaxLength="5" />
+    <Property Name="ChargingIssue" Type="nvarchar(max)" />
+    <Property Name="Reworked" Type="bit" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCkdIssues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Station" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Details" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblCkdMmiMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BarCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passed" Type="nvarchar" MaxLength="2" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="LotNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supplier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCkdRework">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BarCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Issues" Type="nvarchar(max)" />
+    <Property Name="FailedStation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="LotNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supplier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="FinishedBy" Type="bigint" />
+    <Property Name="FinishedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCkdRfMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BarCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passed" Type="nvarchar" MaxLength="2" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="LotNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supplier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCkdSmtMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BarCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passed" Type="nvarchar" MaxLength="2" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="LotNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supplier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCkdSoftwareLoadMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BarCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passed" Type="nvarchar" MaxLength="2" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="LotNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supplier" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblColors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblComponentRequisition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponentId" Type="bigint" />
+    <Property Name="ComponentName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ReqQuantity" Type="int" />
+    <Property Name="OracleReqNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="OracleReqDate" Type="datetime" />
+    <Property Name="UsedQuantity" Type="int" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblDailyIssuedComponents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponentName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ComponentCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="200" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblDailyPacking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ComponentId" Type="bigint" />
+    <Property Name="ComponentName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ComponentNumber" Type="nvarchar" MaxLength="200" />
+    <Property Name="IcVendor" Type="nvarchar" MaxLength="200" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblDeletdPackagingBatchData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="MobileCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Imei1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Imei2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sample" Type="nvarchar" MaxLength="100" />
+    <Property Name="SystemBatch" Type="nvarchar" MaxLength="100" />
+    <Property Name="MasterBatch" Type="nvarchar" MaxLength="100" />
+    <Property Name="Passed" Type="nvarchar" MaxLength="10" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblGlueMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passed" Type="nvarchar" MaxLength="5" />
+    <Property Name="FinallyPassed" Type="nvarchar" MaxLength="5" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblIMEIRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="100" />
+    <Property Name="IMEI1" Type="nvarchar" MaxLength="100" />
+    <Property Name="IMEI2" Type="nvarchar" MaxLength="100" />
+    <Property Name="WO" Type="nvarchar" MaxLength="200" />
+    <Property Name="Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="EanCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sn" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Wifi" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSn" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblLcdGlueIssuesList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IssueName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Priority" Type="nvarchar" MaxLength="10" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblLcdGlueRework">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Issue" Type="nvarchar" MaxLength="100" />
+    <Property Name="FailedFrom" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblLcdGlueWorkingModels">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Station" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="100" />
+    <Property Name="CurentlyRunning" Type="nvarchar" MaxLength="5" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblLineStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="200" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleId" Type="bigint" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmployeeId" Type="nvarchar" MaxLength="20" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="200" />
+    <Property Name="LineId" Type="int" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="Shifting" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblLogistics">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BoxCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Imei1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imei2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="Uploaded" Type="nvarchar" MaxLength="50" />
+    <Property Name="UploadedDate" Type="datetime" />
+    <Property Name="OracleUploaded" Type="nvarchar" MaxLength="50" />
+    <Property Name="OracleTransactionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="OracleUploadedDate" Type="datetime" />
+    <Property Name="OracleUploadedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tblLogisticsSentItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BoxCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Imei1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imei2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblMainMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainMenu" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblOqcCheckedItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="Imei1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imei2" Type="nvarchar" MaxLength="50" />
+    <Property Name="OqcStatus" Type="nchar" MaxLength="10" />
+    <Property Name="Issues" Type="nvarchar" MaxLength="150" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="150" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="AddedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tblPackagingBatch">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="MobileCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Imei1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Imei2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sample" Type="nvarchar" MaxLength="100" />
+    <Property Name="SystemBatch" Type="nvarchar" MaxLength="100" />
+    <Property Name="MasterBatch" Type="nvarchar" MaxLength="100" />
+    <Property Name="Passed" Type="nvarchar" MaxLength="10" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="Delivered" Type="nvarchar" MaxLength="10" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="BatchCreatedBy" Type="bigint" />
+    <Property Name="BatchCreatedDate" Type="datetime" />
+    <Property Name="ReceivedBy" Type="bigint" />
+    <Property Name="ReceivedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblProductionLine">
+    <Key>
+      <PropertyRef Name="LineId" />
+    </Key>
+    <Property Name="LineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="20" />
+    <Property Name="LineCriteria" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="bigint" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblRepairComponents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReworkId" Type="bigint" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="UsedComponents" Type="nvarchar" MaxLength="100" />
+    <Property Name="BomId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="UsedQuantity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Used" Type="bit" />
+    <Property Name="Waste" Type="bit" />
+    <Property Name="WasteQuantiy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblRepairStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReworkId" Type="bigint" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="Issue" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaterialFault" Type="bit" />
+    <Property Name="ProcessFault" Type="bit" />
+    <Property Name="IsFaulty" Type="bit" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="OthersRemarks" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblRework">
+    <Key>
+      <PropertyRef Name="ReworkId" />
+    </Key>
+    <Property Name="ReworkId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="MobileCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imei1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imei2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Issues" Type="nvarchar(max)" />
+    <Property Name="FailedStation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="1" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="StartedBy" Type="bigint" />
+    <Property Name="PauseDate" Type="datetime" />
+    <Property Name="FinishedDate" Type="datetime" />
+    <Property Name="FinishedBy" Type="bigint" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Roles" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblScrew">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblSolderingOthers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReworkId" Type="bigint" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="ComponentId" Type="bigint" />
+    <Property Name="ComponentName" Type="nvarchar" MaxLength="100" />
+    <Property Name="RequsitionQuantity" Type="int" />
+    <Property Name="UsedQuantity" Type="int" />
+    <Property Name="WastedQuantity" Type="int" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblSubMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubMenu" Type="varchar" MaxLength="50" />
+    <Property Name="Controller" Type="varchar" MaxLength="100" />
+    <Property Name="Action" Type="varchar" MaxLength="100" />
+    <Property Name="MainMenuId" Type="bigint" />
+    <Property Name="RoleId" Type="bigint" />
+    <Property Name="IsMenue" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblTimeRange">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HourCount" Type="int" />
+    <Property Name="TimeRange" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblTpLcdMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="LineId" Type="bigint" />
+    <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passed" Type="nvarchar" MaxLength="5" />
+    <Property Name="FinallyPassed" Type="nvarchar" MaxLength="5" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblWarehouse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BoxCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Imei1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imei2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="bigint" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TestIMEIUploadForUpdate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="IMEI1" Type="nvarchar" MaxLength="50" />
+    <Property Name="IMEI2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_tblLogin_tblRoles">
+    <End Role="tblRoles" Type="Self.tblRoles" Multiplicity="0..1" />
+    <End Role="tblLogin" Type="Self.tblLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblLogin">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblRoles_tblRoles">
+    <End Role="tblRoles" Type="Self.tblRoles" Multiplicity="1" />
+    <End Role="tblRoles1" Type="Self.tblRoles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblRoles1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSubMenu_tblRoles">
+    <End Role="tblMainMenu" Type="Self.tblMainMenu" Multiplicity="0..1" />
+    <End Role="tblSubMenu" Type="Self.tblSubMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMainMenu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSubMenu">
+        <PropertyRef Name="MainMenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SPAssemblylineProductionStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+    <Parameter Name="fromdate" Type="varchar" Mode="In" />
+    <Parameter Name="todate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SpDailyProductionFault" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SPGetProductCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SpGlueStationReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateFrom" Type="varchar" Mode="In" />
+    <Parameter Name="dateTo" Type="varchar" Mode="In" />
+    <Parameter Name="project" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpHourlyTargetEfficiency" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+    <Parameter Name="lineId" Type="bigint" Mode="In" />
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SpLineWiseHourlyTargetEfficiency" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SPLineWiseIssueCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="nvarchar" Mode="In" />
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SPLineWiseReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LineId" Type="bigint" Mode="In" />
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SpLineWiseStationsHourlyStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SPOQcStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SpPackagingLineCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SpProductionLineCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SpTpLcdReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateFrom" Type="varchar" Mode="In" />
+    <Parameter Name="dateTo" Type="varchar" Mode="In" />
+    <Parameter Name="project" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SpTp_LcdReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SpTp-LcdReport">
+    <Parameter Name="projectId" Type="bigint" Mode="In" />
+    <Parameter Name="fromDate" Type="varchar" Mode="In" />
+    <Parameter Name="toDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Testo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="WCMSModelStoreContainer">
+    <EntitySet Name="AgingBatch" EntityType="Self.AgingBatch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AgingBatchInfo" EntityType="Self.AgingBatchInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AssemblyAttendance" EntityType="Self.AssemblyAttendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BomList" EntityType="Self.BomList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpAttendences" EntityType="Self.EmpAttendences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeInfo" EntityType="Self.EmployeeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Issues" EntityType="Self.Issues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OQcBatchInfo" EntityType="Self.OQcBatchInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductionMaster" EntityType="Self.ProductionMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectBomList" EntityType="Self.ProjectBomList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgingMaster" EntityType="Self.tblAgingMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAssemblyLineSetup" EntityType="Self.tblAssemblyLineSetup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAssemblyLineSetupDetails" EntityType="Self.tblAssemblyLineSetupDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBarCodeInv" EntityType="Self.tblBarCodeInv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBatteryComponentInfo" EntityType="Self.tblBatteryComponentInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBtteryScanner" EntityType="Self.tblBtteryScanner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblChargerMaster" EntityType="Self.tblChargerMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCkdIssues" EntityType="Self.tblCkdIssues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCkdMmiMaster" EntityType="Self.tblCkdMmiMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCkdRework" EntityType="Self.tblCkdRework" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCkdRfMaster" EntityType="Self.tblCkdRfMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCkdSmtMaster" EntityType="Self.tblCkdSmtMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCkdSoftwareLoadMaster" EntityType="Self.tblCkdSoftwareLoadMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblColors" EntityType="Self.tblColors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblComponentRequisition" EntityType="Self.tblComponentRequisition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDailyIssuedComponents" EntityType="Self.tblDailyIssuedComponents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDailyPacking" EntityType="Self.tblDailyPacking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDeletdPackagingBatchData" EntityType="Self.tblDeletdPackagingBatchData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblGlueMaster" EntityType="Self.tblGlueMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblIMEIRecord" EntityType="Self.tblIMEIRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLcdGlueIssuesList" EntityType="Self.tblLcdGlueIssuesList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLcdGlueRework" EntityType="Self.tblLcdGlueRework" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLcdGlueWorkingModels" EntityType="Self.tblLcdGlueWorkingModels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLineStatus" EntityType="Self.tblLineStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLogin" EntityType="Self.tblLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLogistics" EntityType="Self.tblLogistics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLogisticsSentItems" EntityType="Self.tblLogisticsSentItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMainMenu" EntityType="Self.tblMainMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOqcCheckedItems" EntityType="Self.tblOqcCheckedItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPackagingBatch" EntityType="Self.tblPackagingBatch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProductionLine" EntityType="Self.tblProductionLine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRepairComponents" EntityType="Self.tblRepairComponents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRepairStatus" EntityType="Self.tblRepairStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRework" EntityType="Self.tblRework" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRoles" EntityType="Self.tblRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblScrew" EntityType="Self.tblScrew" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSolderingOthers" EntityType="Self.tblSolderingOthers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSubMenu" EntityType="Self.tblSubMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTimeRange" EntityType="Self.tblTimeRange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTpLcdMaster" EntityType="Self.tblTpLcdMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblWarehouse" EntityType="Self.tblWarehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestIMEIUploadForUpdate" EntityType="Self.TestIMEIUploadForUpdate" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblLogin_tblRoles" Association="Self.FK_tblLogin_tblRoles">
+      <End Role="tblRoles" EntitySet="tblRoles" />
+      <End Role="tblLogin" EntitySet="tblLogin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblRoles_tblRoles" Association="Self.FK_tblRoles_tblRoles">
+      <End Role="tblRoles" EntitySet="tblRoles" />
+      <End Role="tblRoles1" EntitySet="tblRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSubMenu_tblRoles" Association="Self.FK_tblSubMenu_tblRoles">
+      <End Role="tblMainMenu" EntitySet="tblMainMenu" />
+      <End Role="tblSubMenu" EntitySet="tblSubMenu" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

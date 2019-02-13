@@ -1,0 +1,364 @@
+﻿
+@{
+    ViewBag.Title = "OQcReport";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    
+</style>
+<div class="breadcrumb-holder container-fluid" style=" background-color: #C46154; ">
+    <ul class="breadcrumb" style="padding: 8px; ">
+        <li class="breadcrumb-item"><a href="#">Reports </a></li>
+        <li class="breadcrumb-item active">Hourly Target Efficiency report</li>
+    </ul>
+</div>
+<section class="forms">
+
+    <div class="container-fluid">
+
+        <div class="col-lg-8 offset-2">
+            <div class="card" style="height: 300px;">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Add Component</h3>
+                </div>
+                <div class="card-body">
+
+                    <div class="form-horizontal">
+                        <div class="form-group row">
+                            <label class="col-sm-4 form-control-label">Model Name</label>
+                            <div class="col-sm-4">
+                                @*<input id="txtComponentName" disabled="disabled" type="text" placeholder=" Search material Name" required="" class="form-control form-control-success">*@
+                                <select id="txtProject" data-placeholder="Choose a Line" class="chosen-select form-control"> </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 form-control-label">Oracle Req. Date</label>
+                            <div class="col-sm-4">
+                                <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-8 offset-sm-4">
+
+                                <button class="btn btn-primary" id="btn" style="width: 250px;"><i class="fa fa-plus"></i> Search</button>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-12">
+            <div class="bar-chart-example card" id="divCard" style="overflow: auto">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Result</h3>
+                </div>
+                <div class="card-body" style="overflow: auto">
+                    <table id="datatable" class="table  table-bordered " width="900" cellspacing="0">
+
+                        <thead class="">
+                            <tr>
+                                <th>Dates</th>
+                                <th>Batch Quantity</th>
+                                <th>SampleQuantity</th>
+                                <th>TotalFault</th>
+                                <th>FaultPercentage</th>
+                                <th>GiftBoxCheck</th>
+                                <th>ImeiCheck</th>
+                                <th>SoftwareCheck</th>
+                                <th>PictureCheck</th>
+                                <th>VideoCheck</th>
+                                <th>VideoRecordingCheck</th>
+                                <th>Mp3Check</th>
+                                <th>Mp4Check</th>
+                                <th>FmCheck</th>
+                                <th>InternetCheck</th>
+                                <th>BluetoothCheck</th>
+                                <th>WifiCheck</th>
+                                <th>SmsCheck</th>
+                                <th>PhoneCallingCheck</th>
+                                <th>SensorCheck</th>
+                                <th>MemoryCheck</th>
+                                <th>LockScreenCheck</th>
+                                <th>LcdCheck</th>
+                                <th>Reset</th>
+                                <th>ShareitCheck</th>
+                                <th>AppearanceCheck</th>
+                                <th>FaultyhandsetImeiNo</th>
+                                <th>Remarks</th>
+                                <th>Solution</th>
+
+
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.min.css" rel="stylesheet" />
+
+
+
+
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/chart.js/Chart.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.foundation.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+        GetLogistics();
+        LoadAllProjects();
+    });
+
+    function GetLogistics() {
+
+        var date = '2018-08-16';
+        var project =null;
+
+        $.ajax({
+            url: '@Url.Action("GetLogisticsReport", "Report")',
+            type: 'Post',
+            data: JSON.stringify({ date: date, project: project }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                
+            }
+        });
+    }
+    $("#btn").click(function() {
+
+        GetOQCReport();
+
+    });
+
+
+    function GetOQCReport() {
+        // $("#divCard").show();
+
+        var printCounter = 0;
+        var buttonCommon = {
+            //exportOptions: {
+            //    format: {
+            //        body: function (data, row, column, node) {
+            //            // Strip $ from salary column to make it numeric
+            //            return column === 5 ?
+            //                data.replace(/[$,]/g, '') :
+            //                data;
+            //        }
+            //    }
+            //}
+        };
+
+        var gridate = $("#txtReqDate").val().split('-');
+        var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+        //var reqDate = new Date(convertDate); 
+
+
+
+        var table = $('#datatable').DataTable({
+            "ajax": {
+                "url":"@Url.Action("OQcReport", "Report")",
+                "type": "POST",
+                "data": function (d) {
+
+                    d.projectId = $('#txtProject').val();
+                    d.date = convertDate;
+
+                },
+                "datatype": "json"
+            },
+            "destroy": true,
+            "columnDefs":
+            [{
+
+                "searchable": true,
+
+                visible: false
+
+            },
+                {
+                    "targets": [0],
+                    "visible": false
+                },
+                 { "width": "10%", "targets": 1 }
+
+            ],
+            "pageLength": 50,
+
+            "scrollY": "500px",
+            "scrollX": true,
+            "dom": 'Bfrtip',
+            "buttons": [
+                {
+                    extend: 'copyHtml5',
+                    exportOptions: { orthogonal: 'export' }
+                },
+
+                $.extend(true, {}, buttonCommon, {
+                    extend: 'excelHtml5',
+                    title: 'O Qc Report',
+                    messageTop: "Date: " + $("#txtReqDate").val() + "   Model: " + $('#txtProject option:selected').text() + "",
+                    header: true,
+                }),
+
+                {
+                    extend: 'csvHtml5',
+                    exportOptions: { orthogonal: 'export' },
+                    title: 'Data export'
+                },
+                'colvis'
+            ],
+
+            "columns": [
+                 { "data": "Dates", "autoWidth": true, "searchable": true },
+                 { "data": "BatchQuantity", "autoWidth": true, "searchable": false },
+                 { "data": "SampleQuantity", "autoWidth": true, "searchable": false },
+                 { "data": "TotalFault", "autoWidth": true, "searchable": false },
+                 { "data": "FaultPercentage", "autoWidth": true, "searchable": false },
+                 { "data": "GiftBoxCheck", "autoWidth": true, "searchable": false },
+                 { "data": "ImeiCheck", "autoWidth": true, "searchable": false },
+                 { "data": "SoftwareCheck", "autoWidth": true, "searchable": false },
+                 { "data": "PictureCheck", "autoWidth": true, "searchable": false },
+                 { "data": "VideoCheck", "autoWidth": true, "searchable": false },
+                 { "data": "VideoRecordingCheck", "autoWidth": true, "searchable": false },
+                 { "data": "Mp3Check", "autoWidth": true, "searchable": false },
+                 { "data": "Mp4Check", "autoWidth": true, "searchable": false },
+                 { "data": "FmCheck", "autoWidth": true, "searchable": false },
+                 { "data": "InternetCheck", "autoWidth": true, "searchable": false },
+                 { "data": "BluetoothCheck", "autoWidth": true, "searchable": false },
+                 { "data": "WifiCheck", "autoWidth": true, "searchable": false },
+                 { "data": "SmsCheck", "autoWidth": true, "searchable": false },
+                  { "data": "PhoneCallingCheck", "autoWidth": true, "searchable": false },
+                 { "data": "SensorCheck", "autoWidth": true, "searchable": false },
+                 { "data": "MemoryCheck", "autoWidth": true, "searchable": false },
+                { "data": "LockScreenCheck", "autoWidth": true, "searchable": false },
+                { "data": "LcdCheck", "autoWidth": true, "searchable": false },
+                 { "data": "Reset", "autoWidth": true, "searchable": false },
+                 { "data": "ShareitCheck", "autoWidth": true, "searchable": false },
+                 { "data": "AppearanceCheck", "autoWidth": true, "searchable": false },
+                 { "data": "FaultyhandsetImeiNo", "autoWidth": true, "searchable": false },
+                { "data": "Remarks", "autoWidth": true, "searchable": false },
+                 { "data": "Solution", "autoWidth": true, "searchable": false },
+            ]
+
+        });
+
+
+
+
+            table.buttons().container()
+                .appendTo('#datatable_wrapper .small-4.columns:eq(0)');
+
+
+
+        }
+
+
+
+
+
+
+
+
+        $(function () {
+            $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+        });
+
+
+        function LoadAllLines() {
+
+
+            var url = " @Url.Action("GetLineList", "Admin")";
+            $.getJSON(url, function (json) {
+                var elem = $("#txtLine");
+                $("#txtLine").chosen("destroy");
+                elem.empty();
+
+                elem.append("<option value='0'>---Select---</option>");
+
+                $.each(json, function (idx, obj) {
+
+                    elem.append('<option value="' + obj.LineId + '">' + obj.LineName + '</option>');
+                });
+
+                elem.chosen({ width: "100%", height: "10px" });
+
+                //$(".chosen-select").chosen({ height: "10%" });
+
+
+            });
+        }
+
+        function LoadAllProjects() {
+
+            var url = "@Url.Action("GetProjec", "Project")";
+            $.getJSON(url, function (json) {
+                var elem = $("#txtProject");
+                $("#txtProject").chosen("destroy");
+                elem.empty();
+
+                elem.append("<option value='0'>---Select---</option>");
+
+                $.each(json, function (idx, obj) {
+
+                    elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+                });
+
+                elem.chosen({ width: "100%", height: "10px" });
+
+                //$(".chosen-select").chosen({ height: "10%" });
+
+
+            });
+        }
+
+
+</script>

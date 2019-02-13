@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="WCMSEntities-Web.config Connection String" description="WCMSEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/WCMSEntities.csdl|res://*/WCMSEntities.ssdl|res://*/WCMSEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.200.102;initial catalog=WCMS;user id=sa;password=Barrett.50;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\New\ Projects\\WCMS-GITLAB\\WCMS\\WCMS_MAIN\\WCMS_MAIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WCMSEntities']/@connectionString" />
+  </parameter>
+  <parameter name="WCMSCellPhoneProjectEntities-Web.config Connection String" description="WCMSCellPhoneProjectEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/WCMSCellPhoneProjectEntity.csdl|res://*/WCMSCellPhoneProjectEntity.ssdl|res://*/WCMSCellPhoneProjectEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.100.97;initial catalog=CellPhoneProject;user id=sa;password=Adios82amigo;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\New\ Projects\\WCMS-GITLAB\\WCMS\\WCMS_MAIN\\WCMS_MAIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WCMSCellPhoneProjectEntities']/@connectionString" />
+  </parameter>
+  <parameter name="WCMSConnectionString-Web.config Connection String" description="WCMSConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=192.168.200.102;Initial Catalog=WCMS;User ID=sa;Password=Barrett.50;MultipleActiveResultSets=True;Application Name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\New\ Projects\\WCMS-GITLAB\\WCMS\\WCMS_MAIN\\WCMS_MAIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WCMSConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="WKPIEntities-Web.config Connection String" description="WKPIEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/EmployeeEntity.csdl|res://*/EmployeeEntity.ssdl|res://*/EmployeeEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.100.97;initial catalog=WKPI;user id=sa;password=Adios82amigo;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\New\ Projects\\WCMS-GITLAB\\WCMS\\WCMS_MAIN\\WCMS_MAIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WKPIEntities']/@connectionString" />
+  </parameter>
+  <parameter name="VsunDBEntities-Web.config Connection String" description="VsunDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/vsun.csdl|res://*/vsun.ssdl|res://*/vsun.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.139.44;initial catalog=VsunDB;user id=sa;password=vsun123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\New\ Projects\\WCMS-GITLAB\\WCMS\\WCMS_MAIN\\WCMS_MAIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='VsunDBEntities']/@connectionString" />
+  </parameter>
+  <parameter name="VsunAdoDBEntities-Web.config Connection String" description="VsunAdoDBEntities Connection String used in web.config by the application to access the database." defaultValue="Data Source=192.168.139.44;initial catalog=VsunDB;user id=sa;password=vsun123" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\New\ Projects\\WCMS-GITLAB\\WCMS\\WCMS_MAIN\\WCMS_MAIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='VsunAdoDBEntities']/@connectionString" />
+  </parameter>
+  <parameter name="adoWcmsfactoryserver-Web.config Connection String" description="adoWcmsfactoryserver Connection String used in web.config by the application to access the database." defaultValue="Data Source=192.168.200.102;initial catalog=WCMS;user id=sa;password=Barrett.50" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\New\ Projects\\WCMS-GITLAB\\WCMS\\WCMS_MAIN\\WCMS_MAIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='adoWcmsfactoryserver']/@connectionString" />
+  </parameter>
+  <parameter name="adoWcms-Web.config Connection String" description="adoWcms Connection String used in web.config by the application to access the database." defaultValue="Data Source=192.168.100.97;initial catalog=RBSYNERGY;user id=sa;password=Adios82amigo" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\New\ Projects\\WCMS-GITLAB\\WCMS\\WCMS_MAIN\\WCMS_MAIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='adoWcms']/@connectionString" />
+  </parameter>
+</parameters>

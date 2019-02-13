@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WKPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="nvarchar" MaxLength="20" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="500" />
+    <Property Name="DesignationId" Type="bigint" />
+    <Property Name="Education" Type="nvarchar" MaxLength="500" />
+    <Property Name="Responsibility" Type="nvarchar" MaxLength="2000" />
+    <Property Name="JoiningDate" Type="date" />
+    <Property Name="MobileNumber" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="nvarchar" MaxLength="500" />
+    <Property Name="OperatingUnit" Type="nvarchar" MaxLength="500" />
+    <Property Name="OperatingUnitId" Type="bigint" />
+    <Property Name="Product" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProductId" Type="bigint" />
+    <Property Name="Department" Type="nvarchar" MaxLength="500" />
+    <Property Name="DepartmentId" Type="bigint" />
+    <Property Name="Section" Type="nvarchar" MaxLength="500" />
+    <Property Name="SectionId" Type="bigint" />
+    <Property Name="SubSection" Type="nvarchar" MaxLength="500" />
+    <Property Name="SubSectionId" Type="bigint" />
+    <Property Name="AddedBy" Type="bigint" />
+    <Property Name="AddedDate" Type="datetime2" Precision="7" />
+    <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+    <Property Name="UpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityContainer Name="WKPIModelStoreContainer">
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

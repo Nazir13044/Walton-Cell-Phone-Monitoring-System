@@ -1,0 +1,1298 @@
+﻿@{
+    ViewBag.Title = "MMI";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+
+<style>
+    .modal-dialog {
+        min-width: 100%;
+        margin: 0;
+    }
+
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+
+
+    /*//////*/
+
+
+    /*  bhoechie tab */
+    div.bhoechie-tab-container {
+        z-index: -2;
+        background-color: #ffffff;
+        padding: 0 !important;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+        margin-left: 50px;
+        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        background-clip: padding-box;
+        opacity: 0.97;
+        filter: alpha(opacity=97);
+        display: inline-block;
+    }
+
+    div.bhoechie-tab-menu {
+        padding-right: 0;
+        padding-left: 10px;
+        padding-bottom: 0;
+    }
+
+        div.bhoechie-tab-menu div.list-group {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+
+            div.bhoechie-tab-menu div.list-group > a {
+                margin-bottom: 0;
+            }
+
+                div.bhoechie-tab-menu div.list-group > a .glyphicon,
+                div.bhoechie-tab-menu div.list-group > a .fa {
+                    color: #5A55A3;
+                }
+
+                div.bhoechie-tab-menu div.list-group > a:first-child {
+                    border-top-right-radius: 0;
+                    -moz-border-top-right-radius: 0;
+                }
+
+                div.bhoechie-tab-menu div.list-group > a:last-child {
+                    border-bottom-right-radius: 0;
+                    -moz-border-bottom-right-radius: 0;
+                }
+
+                div.bhoechie-tab-menu div.list-group > a.active,
+                div.bhoechie-tab-menu div.list-group > a.active .glyphicon,
+                div.bhoechie-tab-menu div.list-group > a.active .fa {
+                    background-color: #5A55A3;
+                    background-image: #5A55A3;
+                    color: #ffffff;
+                }
+
+                    div.bhoechie-tab-menu div.list-group > a.active:after {
+                        content: '';
+                        position: absolute;
+                        left: 100%;
+                        top: 50%;
+                        margin-top: -13px;
+                        border-left: 0;
+                        border-bottom: 13px solid transparent;
+                        border-top: 13px solid transparent;
+                        border-left: 10px solid #5A55A3;
+                    }
+
+    div.bhoechie-tab-content {
+        background-color: #ffffff;
+        /* border: 1px solid #eeeeee; */
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
+        display: none;
+    }
+
+
+
+
+
+    /* Track */
+
+
+
+    body::-webkit-scrollbar {
+        width: 1em;
+    }
+
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: #5A55A3;
+        outline: 1px solid #5A55A3;
+    }
+
+
+
+
+    #card::-webkit-scrollbar {
+        width: 1em;
+    }
+
+    #card::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    }
+
+    #card::-webkit-scrollbar-thumb {
+        background-color: #5A55A3;
+        outline: 1px solid #5A55A3;
+    }
+
+
+    section {
+        padding: 60px 0;
+    }
+
+        section .section-title {
+            text-align: center;
+            color: #007b5e;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+    #tabs {
+        background: #007b5e;
+        color: #eee;
+    }
+
+        #tabs h6.section-title {
+            color: #eee;
+        }
+
+        #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            color: #f3f3f3;
+            background-color: #5A55A3;
+            border-color: transparent transparent #f3f3f3;
+            border-bottom: 4px solid !important;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #tabs .nav-tabs .nav-link {
+            border: 1px solid transparent;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+            color: #eee;
+            font-size: 20px;
+        }
+
+
+
+    .circle {
+        margin: 26px;
+        display: inline-block;
+        padding: 16px;
+        text-align: center;
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        border: 2px solid #1d2087;
+    }
+
+        .circle::before,
+        .circle::after {
+            position: absolute;
+            z-index: -1;
+            display: block;
+            content: '';
+        }
+
+        .circle,
+        .circle::before,
+        .circle::after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+
+    .circle {
+        position: relative;
+        z-index: 2;
+        background-color: #fff;
+        border: 2px solid #5c5eae;
+        color: #5c5eae;
+        line-height: 50px;
+        overflow: hidden;
+    }
+
+
+
+        .circle::after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+        }
+
+        .circle:hover::after {
+            border-radius: 50%;
+            -webkit-transform: scale(.9);
+            transform: scale(.9);
+        }
+
+    .circle1 {
+        opacity: 0.4;
+    }
+
+    .circle2 {
+        opacity: 0.6;
+    }
+
+    .circle3 {
+        opacity: 0.8;
+    }
+
+    .circle a {
+        text-decoration: none;
+        color: #1d2087;
+    }
+
+    .circle h2 {
+        font-size: 60px;
+    }
+
+        .circle h2 small {
+            color: #1d2087;
+        }
+
+    .circle p {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+/*Report*/
+
+    .ui-datepicker-today {
+        background: #f00 !important;
+        border: #fff !important;
+    }
+
+        .ui-datepicker-today a {
+            border: #fff !important;
+            color: #fff !important;
+            font-weight: bold !important;
+            background: #f00 !important;
+        }
+
+    .ui-datepicker {
+        width: 17em;
+        padding: .2em .2em 0;
+        display: none;
+        background: #846733;
+    }
+
+        .ui-datepicker .ui-datepicker-title {
+            margin: 0 2.3em;
+            line-height: 1.8em;
+            text-align: center;
+            color: #FFFFFF;
+            background: #846733;
+        }
+
+        .ui-datepicker table {
+            width: 100%;
+            font-size: .7em;
+            border-collapse: collapse;
+            font-family: verdana;
+            margin: 0 0 .4em;
+            color: #000000;
+            background: #FDF8E4;
+        }
+
+        .ui-datepicker td {
+            border: 0;
+            padding: 1px;
+        }
+
+            .ui-datepicker td span,
+            .ui-datepicker td a {
+                display: block;
+                padding: .8em;
+                text-align: right;
+                text-decoration: none;
+            }
+
+    .card-headerr {
+        padding: 1rem 1.25rem;
+        background-color: #123D6A;
+        border-bottom: 5px solid #123D6A;
+        border-style: solid;
+        border-color: #123D6A;
+        color: white;
+        font-size: 20px;
+    }
+
+
+    .table-bordered {
+        border: 1px solid #dee2e6;
+        background: #123D6A;
+        color: white;
+    }
+
+
+
+    .card-bodyy {
+        padding: 1.25rem;
+        border-style: solid;
+        border-color: #123D6A;
+        font-size: 20px;
+    }
+
+    h4 {
+        background: #123D6A;
+        color: white;
+        font-size: 20px;
+    }
+    .modal-header {
+        background: #123D6A;
+        color: white;
+        font-size: 20px;
+    }
+
+    .close {
+        float: right;
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1;
+        color: red;
+        font-size: 20px;
+        filter: alpha(opacity=20);
+    }
+
+    .card-headeer {
+        padding: 1rem 1.25rem;
+        background-color: #123D6A;
+        border-bottom: 1px solid #eee;
+        color: white;
+        font-size: 30px;
+    }
+    table.dataTable tbody tr.even {
+       
+        color: black;
+        font-size: 20px;
+    }
+    table.dataTable tbody tr.odd {
+        
+        color: black;
+        font-size: 20px;
+    }
+
+    #divCard {
+        
+        border-style: solid;
+        border-color: #123D6A;
+        font-size: 20px;
+    }
+
+
+            /*Report*/
+</style>
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-7">
+            <div class="card" id="card" style="height: 600px; width: 100%; overflow-y: scroll; ">
+
+                <div class="card-header d-flex align-items-center" style="background-color: #057EB3;color: wheat">
+                    <h3 class="h4">Insert MMI Information </h3>
+                </div>
+
+
+                <div class="card-body">
+                    <nav>
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"> Scan QR Code</a>
+
+                        </div>
+                    </nav>
+
+
+
+                    <div class="form-group row">
+                        &nbsp;
+                    </div>
+                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                        <!-- flight section -->
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Barcode</label>
+                                <div class="col-sm-6" id="mbCode">
+                                    <input id="txtMobileCode" type="text" placeholder=" Scan Barcode" required="" class="form-control form-control-success">
+                                </div>
+                                <input class="btn btn-warning" type="submit" id="btnClearCode" value="clear" />
+
+                            </div>
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+                            <div class="form-group row" id="divIssue" style="display: none">
+                                <label class="col-sm-3 form-control-label">Issues</label>
+                                <div class="col-sm-6">
+                                    <textarea id="txtIssues" name="txtIssues" placeholder="type issues" required="" style="height: 150px;" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+
+
+                        </div>
+                        <!-- train section -->
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+
+
+
+                            <div class="form-group row" id="divImeiIssue" style="display: none">
+                                <label class="col-sm-3 form-control-label">Issues</label>
+                                <div class="col-sm-7">
+
+                                    <textarea id="txtImeiIssues" name="txtIssues" placeholder="Scan Mobile Code" required="" style="height: 150px;" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+          
+
+
+           
+
+        </div>
+        
+        
+        
+        
+
+
+        <div class="col-lg-5" id="cirDiv">
+            <div class="card" style="border: 2px solid darkcyan">
+                <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                    <h3 class="h4" style="font-weight: normal">MMI Station Count</h3>
+                </div>
+                <div class="card-body text-center">
+                    <div class="form-group row" style="font-size: 15px;">
+                        <label class="col-sm-6 form-control-label" style="font-size: 20px; color: #3D2C78; ">Total Checked:</label>
+                        <div class="col-sm-4" id="mbCode">
+                            <h2 id="idCountAll" style="font-size: 25px; color: #3D2C78; "></h2>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group row" style="font-size: 15px;">
+                        <label class="col-sm-6 form-control-label" style="font-size: 20px; color: #0C9050; ">Passed:</label>
+                        <div class="col-sm-4" id="mbCode">
+                            <h2 id="idCountPass" style="font-size: 25px; color: #0C9050;"></h2>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <div class="form-group row" style="font-size: 15px;">
+                        <label class="col-sm-6 form-control-label" style="font-size: 20px; color: #F53E16; ">Failed:</label>
+                        <div class="col-sm-4" id="mbCode">
+                            <h2 id="idCountFail" style="font-size: 25px; color: #F53E16;"></h2>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-13" id="cirDiv">
+                <div class="card" style="border: 2px solid darkcyan">
+                    <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                        <h3 class="h4" style="font-weight: normal">View Report </h3>
+                    </div>
+                    <div class="card-body text-center">
+
+                        <div class="form-group row" style="font-size: 15px;">
+
+                            <div class="col-md-11 text-center">
+                            
+                                
+                                @*Report*@
+                                
+                                @Html.Partial("~/Views/CkdReport/PartialView/_MmiReport.cshtml")
+                                
+                               
+                                @*<div class="container">
+                                    
+                                    <!-- Trigger the modal with a button -->
+                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Click To View Report</button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal" role="dialog">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">MMI Report View</h4>
+
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  
+                                                </div>
+                                                <div class="modal-body">
+                                                   
+                                                    <section class="forms">
+
+                                                        <div class="container-fluid">
+
+                                                            <div class="col-lg-8 offset-2">
+                                                                <div class="card" style="height: 300px;">
+                                                                    <div class="card-close">
+
+                                                                    </div>
+                                                                    <div class="card-headerr d-flex align-items-center">
+                                                                        <h3 class="h4">Search</h3>
+                                                                    </div>
+                                                                    <div class="card-bodyy">
+
+                                                                        <div class="form-horizontal">
+
+                                                                            <div class="form-group row">
+                                                                                <label class="col-sm-3 form-control-label">Model Name</label>
+                                                                                <div class="col-sm-7" id="">
+                                                                                    <input id="txtProject" type="text" maxlength="6" placeholder="Model Name" required="" class="form-control form-control-success">
+
+
+                                                                                </div>
+                                                                            </div>
+
+
+
+                                                                            <div class="form-group row">
+                                                                                <label class="col-sm-3  form-control-label"> Date</label>
+                                                                                <div class="col-sm-7">
+                                                                                    <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <div class="col-sm-4 offset-sm-4">
+
+                                                                                    <button class="btn btn-primary" id="btn" style="width: 200px;"><i class="fa fa-plus"></i> Search</button>
+
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div class="col-lg-12" >
+                                                                <div class="card" id="divCard">
+                                                           <div class="card-headeer d-flex align-items-center">
+                                                                        <h3 class="h4">Report View</h3>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <table id="datatable" class="table  table-bordered " width="900" cellspacing="0">
+
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Model</th>
+                                                                                    <th>Line Id</th>
+                                                                                    <th>MMI Passed</th>
+                                                                                    <th>MMI Failed</th>
+
+
+
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+
+                                
+                                @*report*@
+
+                            </div>
+                            <div class="col-sm-4" id="mbCode">
+                                <h2 id="idCountFail" style="font-size: 25px; color: #F53E16;"></h2>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+        
+      
+
+
+        </div>
+   
+
+</div>
+
+
+<div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" style="border: 1px solid #922602">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="text-align: center; background-color: #072F4F;color:white ">
+                <h4 class="modal-title" style="text-align: center;">Functional Error List</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <div class="container">
+                    <div class="row" id="modIssues">
+
+
+                    </div>
+                    <div class="form-group row" style="margin-left: 8px;">
+
+
+                        <div class="i-checks col-sm-10" style="">
+                            <input id="chkOthers" type="checkbox" value="y" class="checkbox-template">
+                            <label for="chkOthers" style="color:#f53e16;font-weight: bold">Others</label> &nbsp;&nbsp;
+                            <input id="txtOthers" type="text" style="display: none;width: 200px;" required="" class="form-control form-control-success">
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="btnSave" style="width: 200px;"> Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<script src="~/js/iziToast.min.js"></script>
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/black/easyui.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.min.css" rel="stylesheet" />
+
+
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/chart.js/Chart.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.foundation.min.js"></script>
+
+<script>
+
+    $(function () {
+
+        CountMmiQr();
+        $("#txtMobileCode").focus();
+
+    });
+    
+   
+
+
+    $("#btnClearCode").click(function () {
+        $('#txtMobileCode').val('');
+        $('#txtMobileCode').focus();
+    });
+
+    $('#txtMobileCode').keydown(function () {
+        debugger;
+        // alert("adaedd");
+        var mmItabltestComponent = {};
+        var lastTwoDigits = this.value.slice(-2);
+        if (lastTwoDigits.toLowerCase() == '-y' || lastTwoDigits.toLowerCase() == '-n') {
+
+
+            if (lastTwoDigits.toLowerCase() == '-y') {
+
+
+                var codeValue = this.value.substring(0, this.value.length - 2);
+                var status = (this.value.slice(-1)).toLowerCase();
+
+                var types = codeValue.substring(0, 1);
+                var model = codeValue.substring(1, 6);
+                var lot = codeValue.substring(6, 7);
+                var supplier = codeValue.substring(7, 9);
+                var code = codeValue.substring(9, 15);
+
+
+                mmItabltestComponent.BarCode = codeValue;
+                mmItabltestComponent.Type = types;
+                mmItabltestComponent.Model = model;
+                mmItabltestComponent.LotNumber = lot;
+                mmItabltestComponent.Supplier = supplier;
+                mmItabltestComponent.Code = code;
+                mmItabltestComponent.Passed = status.toUpperCase();
+                console.log(mmItabltestComponent);
+
+
+                $.ajax({
+                    url: '@Url.Action("InsertCkdMmiStationInformation", "CKD")', //changed For Test
+                    type: 'Post',
+                    data: JSON.stringify({ mmItabltestComponent: mmItabltestComponent }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        if (result.IsSuccess) {
+
+                            location.reload();
+                            $('#txtMobileCode').val('');
+                            $('#txtMobileCode').focus();
+                            return true;
+
+
+                        }
+
+                        else {
+                            iziToast.warning({
+                                timeout: 1000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Warning',
+                                message: 'Error Occured'
+                            });
+                            return false;
+                        }
+                    },
+
+                    error: function (result, textStatus, jqXHR) {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result
+                        });
+
+                        //return false;
+                    }
+
+                });
+
+            }
+
+
+
+
+            if (lastTwoDigits.toLowerCase() == '-n') {
+
+
+                $("#myModal").modal('show');
+                LoadFunctionalIssues();
+
+            }
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+    });
+
+
+
+    function CountMmiQr() {
+
+        $.ajax({
+            url: '  @Url.Action("GetMmiQrCount", "CKD")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                if (result.length == 0) {
+                    $('#idCountAll').text('0');
+                    $('#idCountPass').text('0');
+                    $('#idCountFail').text('0');
+                }
+                else {
+                    $('#idCountAll').text(result[0].totalQr);
+                    $('#idCountPass').text(result[0].passedCount);
+                    $('#idCountFail').text(result[0].failedCount);
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+
+
+    }
+
+
+
+
+    function LoadFunctionalIssues() {
+
+        $.ajax({
+            url: '  @Url.Action("GetAllIssueList", "CKD")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#modIssues').empty();
+                    $('#modIssues').append('<div class="statistic d-flex align-items-center bg-white has-shadow" ><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"><small>No ongoing task available</small></div></div>');
+
+                    return false;
+                } else {
+
+                    $('#modIssues').empty();
+                    $.each(data, function (index, itemData) {
+
+
+                        $("#modIssues").append('<div class="col-md-4"><form><div class="form-check"><label><input type="checkbox"  name="Errorcheck" value="' + itemData.Name + '"> <span class="label-text">' + itemData.Name + '</span></label></div></form> </div>');
+                    });
+
+                }
+              
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+    $("#chkOthers").click(function () {
+
+        if ($(this).is(':checked')) {
+
+            $('#txtOthers').show();
+            $('#txtOthers').focus();
+        }
+
+        else
+            $('#txtOthers').hide();
+        $('#txtOthers').val('');
+
+    });
+
+
+    //Save
+
+
+    $("#btnSave").click(function () {
+        debugger;
+        var mmItabltestComponent = {};
+        var mmiReworkList = [];
+
+        var code = $("#txtMobileCode").val();
+
+
+        var mobleCode = code.slice(0, -2);
+
+        var status = code.slice(-1);
+
+
+        if (status == 'N') {
+            var checkedNum = $('input[name="Errorcheck"]:checked').length;
+
+
+            if (!checkedNum && $('#txtOthers').val() == "") {
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Warning',
+                    message: 'Please Select Issues'
+                });
+                return false;
+            }
+
+        }
+
+        if ($("#txtMobileCode").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Mobile Code Required'
+            });
+            return false;
+        }
+
+
+
+        else {
+
+            var issues = '';
+
+            $('input[name="Errorcheck"]:checked').each(function () {
+                //console.log(this.value);
+                issues += this.value + ',';
+
+            });
+            if ($('#txtOthers').val() != "") {
+
+                issues += $('#txtOthers').val();
+            }
+
+            var codeValue = code.substring(0, code.length - 2);
+            var passed = (code.slice(-1)).toLowerCase();
+
+
+            var types = codeValue.substring(0, 1);
+            var model = codeValue.substring(1, 6);
+            var lot = codeValue.substring(6, 7);
+            var supplier = codeValue.substring(7, 9);
+            var componentCode = codeValue.substring(9, 15);
+
+
+            mmItabltestComponent.BarCode = codeValue;
+            mmItabltestComponent.Type = types;
+            mmItabltestComponent.Model = model;
+            mmItabltestComponent.LotNumber = lot;
+            mmItabltestComponent.Supplier = supplier;
+            mmItabltestComponent.Code = componentCode;
+            mmItabltestComponent.Passed = passed.toUpperCase();
+            console.log(mmItabltestComponent);
+
+
+            mmiReworkList.push({
+                MobileCode: mobleCode,
+                FailedStation: "MMIQR",
+                Issues: issues,
+                BarCode: codeValue,
+                Type: types,
+                Model: model,
+                LotNumber: lot,
+                Supplier: supplier,
+                Code: componentCode,
+                Passed: passed.toUpperCase()
+
+            });
+
+            console.log(mmiReworkList);
+            //return false;
+
+            $.ajax({
+                url: '@Url.Action("InsertCkdMmiStationInformation", "CKD")', //changed For Test
+                type: 'Post',
+                data: JSON.stringify({ mmItabltestComponent: mmItabltestComponent, reworkList: mmiReworkList }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+
+                        location.reload();
+                        $('#txtMobileCode').val('');
+                        $('#txtMobileCode').focus();
+                        return true;
+
+                    } else {
+                        iziToast.warning({
+                            timeout: 1000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Warning',
+                            message: message.result
+                    });
+                        return false;
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+
+                    //return false;
+                }
+            });
+
+
+
+        }
+
+    });
+
+    function AllClear() {
+
+        $("#txtIssues").val('');
+        $("#txtMobileCode").val('');
+        $('.radio-template').prop('checked', false);
+        $('#divIssue').hide();
+
+    }
+    
+ 
+  
+      
+        $(document).ready(function () {
+            $("#divCard").hide();
+            $("#btn").click(function () {
+             
+                $("#divCard").show();
+        debugger;
+        GetCkdReport();
+            });
+        });
+
+    var rows = [];
+    var d = new Date();
+    $(document).ready(function() {
+
+
+    });
+
+    $(function() {
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+    });
+
+
+    function GetCkdReport() {
+
+        debugger;
+
+        var buttonCommon = {
+
+        };
+
+        var gridate = $("#txtReqDate").val().split('-');
+        var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+
+        var table = $('#datatable').DataTable({
+            "ajax": {
+                "url": "@Url.Action("GetCkdMmiReportInfo", "CkdReport")",
+            "type": "POST",
+            "data": function ( d ) {
+                d.date = convertDate;
+                d.Model = $('#txtProject').val();
+            },
+            "datatype": "json"
+        },
+            "destroy": true,
+            "columnDefs":
+            [{
+
+                    "searchable": true,
+
+            visible: false
+
+    },
+    {
+                    "targets": [0],
+                    "visible": true
+    },
+    { "width": "10%", "targets": 1 }
+
+    ],
+            "pageLength": 50,
+
+            "scrollY": "500px",
+            "dom": 'Bfrtip',
+            "buttons": [
+                {
+                    extend: 'copyHtml5',
+                    text: '<i class=" fa fa-files-o"></i> Copy',
+
+
+                    exportOptions: { orthogonal: 'export' }
+                },
+
+
+
+                $.extend(true, {}, buttonCommon, {
+                    extend: 'excelHtml5',
+                    text: '<i class="fa fa-file-excel-o"></i> Excel',
+                    title:'Ckd Report',
+                    messageTop: "Date: " + $("#txtReqDate").val() + "  Model:" + $('#txtProject').text() + "  ",
+                }),
+
+                {
+                    extend: 'csvHtml5',
+                    text: '<i class="fa fa-files-o"></i> Csv',
+                    exportOptions: { orthogonal: 'export' },
+                    title: 'Ckd Report'
+                },
+
+                 {
+
+                     extend: 'pdf',
+                     text: '<i class="fa fa-file-pdf-o"></i> pdf',
+                     title: 'Ckd Report',
+                     orientation: 'landscape',
+                     pageSize: 'LEGAL',
+                     exportOptions: {
+                         columns: ':not(.no-print)'
+                     },
+
+                     footer: false,
+                     autoPrint: true
+
+                 },
+
+
+
+                {
+
+                    extend: 'print',
+                    text: '<i class="fa fa-print"></i> Print',
+                    title: 'Ckd Report',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL',
+                    exportOptions: {
+                        columns: ':not(.no-print)'
+                    },
+
+                    footer: false,
+                    autoPrint: true
+
+                },
+
+
+
+                'colvis'
+            ],
+
+
+
+
+            "columns": [
+                { "data": "Model", "autoWidth": true },
+                { "data": "LineId", "autoWidth": true },
+             
+                { "data": "MMIPassed", "autoWidth": true },
+                { "data": "MMIPFailed", "autoWidth": true }
+            
+
+
+
+
+    ]
+
+
+    });
+
+
+
+
+    table.buttons().container()
+        .appendTo('#datatable_wrapper .small-4.columns:eq(0)');
+
+
+
+    }
+
+
+
+
+</script>
+
+

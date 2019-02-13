@@ -1,0 +1,1669 @@
+﻿@{
+    ViewBag.Title = "ReworkStation";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+
+    .modal-dialog {
+        min-width: 100%;
+        margin: 0;
+    }
+
+    #tabs {
+        background: #007b5e;
+        color: #eee;
+    }
+
+        #tabs h6.section-title {
+            color: #eee;
+        }
+
+        #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            color: #f3f3f3;
+            background-color: #5A55A3;
+            border-color: transparent transparent #f3f3f3;
+            border-bottom: 4px solid !important;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #tabs .nav-tabs .nav-link {
+            border: 1px solid transparent;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+            color: #eee;
+            font-size: 20px;
+        }
+
+    .table {
+        border: 0.5px solid #000000;
+    }
+
+    .table-bordered > thead > tr > th,
+    .table-bordered > tbody > tr > th,
+    .table-bordered > tfoot > tr > th,
+    .table-bordered > thead > tr > td,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tfoot > tr > td {
+        border: 0.5px solid #000000;
+    }
+
+    #doneCard {
+        font-size: 1em;
+        overflow: hidden;
+        padding: 0;
+        border: none;
+        border-radius: .28571429rem;
+        box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    }
+
+        #doneCard .card-block {
+            font-size: 1em;
+            position: relative;
+            margin: 0;
+            padding: 1em;
+            border: none;
+            border-top: 1px solid rgba(34, 36, 38, .1);
+            box-shadow: none;
+        }
+
+        #doneCard  .card-img-top {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        #doneCard .card-title {
+            font-size: 1.28571429em;
+            font-weight: 700;
+            line-height: 1.2857em;
+        }
+
+        #doneCard .card-text {
+            clear: both;
+            margin-top: .5em;
+            color: rgba(0, 0, 0, .68);
+            text-align: center;
+        }
+
+        #doneCard  .card-footer {
+            font-size: 1em;
+            position: static;
+            top: 0;
+            left: 0;
+            max-width: 100%;
+            padding: .75em 1em;
+            color: rgba(0, 0, 0, .4);
+            border-top: 1px solid rgba(0, 0, 0, .05) !important;
+            background: #fff;
+        }
+    h5 {
+        font-size: 1.28571429em;
+        font-weight: 700;
+        line-height: 1.2857em;
+        margin: 0;
+    }
+    h2 {
+        color: white;
+        font-size: 50px;
+    }
+
+    .remarks {
+        color:black !important;
+    }
+</style>
+
+<div class="container" style="margin-bottom: 0;">
+    <div class="row mb-5">
+
+
+        <div class="col-sm-3 col-md-3 col-lg-3 mt-3">
+            &nbsp;
+        </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-6 mt-6">
+            <div class="card card-inverse card-info" id="doneCard" style="background-color: #23323B">
+
+                <div class="card-block" style="text-align: center;">
+
+                    <h2 class=" card-title">
+                       Today's Total Repair Done
+                    </h2>
+                    <div class="card-text">
+                        <span id="done" style="font-size: 40px; color: white; font-weight: bold"></span>
+                    </div>
+                </div>
+                @*<div class="card-footer">
+
+                    </div>*@
+            </div>
+        </div>
+
+
+        <div class="col-sm-3 col-md-3 col-lg-3 mt-3">
+            <div class="container">
+                <div class="row">
+                  
+                
+                            <button class="btn btn-lg btn-danger" id="myReport"> 
+                               # <span>Report <br><small>My Working Report</small></span>
+                            </button>
+
+                     
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@*Main Dashboard*@
+@*Main Dashboard*@
+@*Main Dashboard*@
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" style="height: 550px; border: 1px solid #431D0B; font-weight: normal; font-style: normal;">
+                    
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center" style="background-color: #431D0B; font-weight: normal; font-style: normal; color: white; text-align: center; ">
+                        <h3 class="h4">Search Mobile Issue</h3>
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <nav>
+                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"> Scan Mobile Code</a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Scan With IMEI</a>
+
+                            </div>
+                        </nav>
+
+                        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                            <!-- flight section -->
+
+
+
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <div class="form-group row">
+                                    &nbsp; &nbsp;
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 form-control-label">Scan BarCode</label>
+                                    <div class="col-sm-4" id="mbCode">
+                                        <input id="txtMobileCode" type="text" placeholder=" Scan Bar Code" required="" class="form-control form-control-success">
+
+
+                                    </div>
+                                    @*<input type="submit" id="b" value="bb"/>*@
+                                    <input class="btn btn-warning" type="submit" id="btnClearMob" value="clear" />
+                                </div>
+                                <br />
+                                <br />
+                                <div id="divSearchedIssue" class="col-sm-8 form-group row" style=" text-align:center;margin-left: 50px;">
+
+                                </div>
+
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <div class="form-group row">
+                                    &nbsp; &nbsp;
+                                </div>
+                                <div class="form-group row" id="divImei1" style="">
+                                    <label class="col-sm-3 form-control-label">Imei </label>
+                                    <div class="col-sm-7">
+                                        <input id="txtImei" type="text" maxlength="15" placeholder=" Scan Imei" required="" class="form-control form-control-success">
+
+
+                                    </div>
+
+                                    <input class="btn btn-warning" type="submit" id="btnImeiClear" value="clear" />
+                                </div>
+                                <div class="form-group row" id="divImei1" style="">
+                                    <label class="col-sm-3 form-control-label">Imei 1</label>
+                                    <div class="col-sm-7">
+                                        <input id="txtImei1" type="text" readonly="readonly" placeholder=" Scan Imei 1" required="" class="form-control form-control-success">
+
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="form-group row" id="divImei2" style="">
+                                    <label class="col-sm-3 form-control-label">Imei 2</label>
+                                    <div class="col-sm-7">
+                                        <input id="txtImei2" type="text" readonly="readonly" placeholder=" Scan Imei 2" required="" class="form-control form-control-success">
+
+
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="form-group row">
+                                    <div class="col-sm-8 offset-sm-4">
+
+                                        @*<button class="btn btn-primary" id="btnImeiSearch" style="width: 200px;"><i class="fa fa-plus"></i> Search</button>*@
+
+                                    </div>
+                                </div>
+
+                                <div id="divSearchedIssueImei" class="col-sm-8 form-group row" style=" text-align:center;margin-left: 50px;">
+
+                                </div>
+
+                                <div class="form-group row">
+                                    &nbsp; &nbsp;
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Horizontal Form-->
+
+            @*<div class="col-lg-6" style="overflow:auto;">
+
+                <div class="card" style="height: 490px; overflow:auto;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Work In Progress</h3>
+                    </div>
+                    <div class="card-body">
+
+
+                        <div id="onGoingTask" class="form-horizontal">
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+            </div>*@
+
+
+        </div>
+    </div>
+</section>
+
+@*Modal Popup For Reworkstation*@
+
+<div class="modal fade" id="modalRework" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+
+                @*<div class="col-sm-6">
+                        <label class="col-sm-2 form-control-label">Rework Id</label>
+                        <div class="col-sm-4">
+                            <input id="txtreworkId" type="text" required="" class="form-control form-control-success">
+                        </div>
+                    </div>*@
+
+
+
+
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body" style="display: inline">
+
+
+
+                <div class="container-fluid">
+                    <div class="row">
+
+
+
+
+
+                        <div class="col-lg-6">
+                            <div class="card" style="">@*height: 950px;*@
+                                <div class="card-close">
+
+                                </div>
+                                <div class="card-header d-flex align-items-center">
+                                    <h3 class="h4">Issue Panel</h3>
+                                </div>
+
+
+                                <div class="card-body">
+
+
+                                    <div class="card" style=""> @*height: 500px; overflow: auto*@
+                                        <div class="card-close">
+
+                                        </div>
+                                        <div class="card-header d-flex align-items-center">
+                                            <h3 class="h4">Issue List</h3>
+                                        </div>
+
+
+                                        <div class="card-body">
+
+
+                                            <div class="row" id="modIssues" style="font-size:12px;">
+
+
+                                            </div>
+
+                                            <button class="btn btn-primary" id="btnAdd" style="width: 150px;">Add Issues</button>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    @*Another card*@
+
+                                    <div class="card-body">
+
+
+                                        <div class="card" style="">  @*height: 300px; overflow: auto*@
+                                            <div class="card-close">
+
+                                            </div>
+                                            <div class="card-header d-flex align-items-center">
+                                                <h3 class="h4">Issue List</h3>
+                                            </div>
+
+
+                                            <div class="card-body">
+                                                <table class="table table-bordered table-hover" id="tblAddedItems">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                Issue
+                                                            </th>
+                                                            <th>
+                                                                Fault
+                                                            </th>
+                                                            <th>
+                                                                Ma.Fault
+                                                            </th>
+                                                            <th>
+                                                                Pro.Fault
+                                                            </th>
+                                                           
+                                                            <th>
+                                                                Remarks
+                                                            </th>
+                                                            <th>
+                                                                Others
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="tbody"></tbody>
+                                                </table>
+
+                                                <button class="btn btn-primary" id="btnClear" style="width: 150px; display: none">Clear</button>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- Horizontal Form-->
+
+                        <div class="col-lg-6">
+                            <div class="card" style=""> @*height: 950px;overflow: auto*@
+                                <div class="card-close">
+
+                                </div>
+                                <div class="card-header d-flex align-items-center">
+                                    <h3 class="h4">Used Component Panel</h3>
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="col-lg-12">
+                                        <div class="card" style="border: 2px solid ; height: 200px;">
+                                            <div class="card-header d-flex align-items-center" style="background-color: darkslateblue; color: white">
+                                                <h3 class="h4" style="font-weight: normal"> Search Criteria</h3>
+                                            </div>
+                                            <div class="card-body text-center">
+                                                
+
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 form-control-label">Color</label>
+                                                    <div class="col-sm-4" id="divColor">
+                                                        <select id="txtColor" data-placeholder="Choose a Color" class="chosen-select form-control" tabindex="1"></select>
+                                                    </div>
+                                                    
+                                                    @*<label class="col-sm-2 form-control-label">Project</label>*@
+                                                    <div class="col-sm-4" id="divProj">
+                                                        <input type="text" id="txtProjectselect" style="font-size: 12px;" disabled="disabled"  class=" form-control" tabindex="1"/>
+                                                    </div>
+                                                   
+                                                    @*<label class="col-sm-2 form-control-label">Project</label>                                                 
+                                                    <div class="col-sm-4" id="divProj">
+                                                        <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                                                    </div>*@
+                                                    @*<label class="col-sm-12 form-control-label">&nbsp;</label>*@
+                                                    <div class="col-sm-2">
+                                                        <button type="button" class="btn btn-primary" style="" id="btSearchComponents">Search</button>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card" style=" display: none" id="divComponent">
+                                        <div class="card-close">
+
+                                        </div>
+                                        <div class="card-header d-flex align-items-center">
+                                            <h3 class="h4">Component List</h3>
+                                        </div>
+
+
+                                        <div class="card-body">
+
+
+                                            <div class="row" id="components" style="font-size:12px;">
+
+
+                                            </div>
+                                            
+                                            <button class="btn btn-primary" id="btnComponentAdd" style="width: 200px;">Add Bom/Components</button>
+                                        </div>
+                                    </div>
+                                    @*Another card*@
+
+                                    <div class="card-body">
+
+
+                                        <div class="card" style=" ">
+                                            <div class="card-close">
+
+                                            </div>
+                                            <div class="card-header d-flex align-items-center">
+                                                <h3 class="h4">Component List</h3>
+                                            </div>
+
+
+                                            <div class="card-body">
+                                                <table class="table table-bordered table-hover" id="tblAddedComponents">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="display: none">
+                                                                Code
+                                                            </th>
+                                                            <th>
+                                                                Name
+                                                            </th>
+                                                            <th>
+                                                                Used
+                                                            </th>
+                                                            <th>
+                                                                Quantity
+                                                            </th>
+                                                            <th>
+                                                                Waste
+                                                            </th>
+                                                            <th>
+                                                                Quantity
+                                                            </th>
+                                                            <th>
+                                                                Remarks
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="tbody"></tbody>
+                                                </table>
+
+                                                <button class="btn btn-primary" id="btnComponentClear" style="width: 150px; display: none">Clear</button>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" id="btnCompleteTask" class="btn btn-primary">
+                    Complete Task
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="reworkId"/>
+
+<input type="hidden" id="hidProjectName" />
+<input type="hidden" id="mobileCode" />
+
+<div class="modal fade" id="myReportModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="text-align: center; background-color: #DB3641; color: white;">
+                <h4 class="modal-title" style="text-align: center;">My Repair Report</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            &nbsp;
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="card" style="border: 2px solid ; height: 200px;">
+                                <div class="card-header d-flex align-items-center" style="background-color: darkslateblue; color: white">
+                                    <h3 class="h4" style="font-weight: normal"> Search Criteria</h3>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 form-control-label">From:</label>
+                                        <div class="col-sm-3">
+                                            <input id="dtFromDate" type="text" placeholder="Requisition Date" class="form-control form-control-success txtDate">
+                                        </div>
+
+                                        <label class="col-sm-2 form-control-label">To:</label>
+                                        <div class="col-sm-3">
+                                            <input id="dtToDate" type="text" placeholder="Requisition Date" class="form-control form-control-success txtDate">
+                                        </div>
+                                        
+                                        <div class="col-sm-2">
+                                            <button type="button" class="btn btn-primary" style="" id="btnReportSearch">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                 
+                        
+                        
+                        
+                        
+
+                    </div>
+                   
+                </div>
+                
+                
+                <div class="container-fluid">
+                    <div class="col-lg-12" id="divMyRepairStationData" style="display: none">
+                        <div class="bar-chart-example card" id="divCard">
+                            <div class="card-close">
+
+                            </div>
+                            <div class="card-header d-flex align-items-center">
+                                <h3 class="h4">My Working Report</h3>
+                            </div>
+                            <div class="card-body">
+                                <table id="datatableMyRepairStationData" class="table  table-bordered " width="900" cellspacing="0">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Project</th>
+                                            <th>Line</th>
+                                            <th>Qc Issue</th>
+                                            <th>Failed Station</th>
+                                            <th> Faulty</th>
+                                            <th>Repair Issue</th>
+                                            <th>Material fault</th>
+                                            <th>Process Fault</th>
+                                            <th>Remarks(Rep.)</th>
+                                            <th>Used Comp.</th>
+                                            <th>Used</th>
+                                            <th>Waste</th>
+                                            <th>Comp.Remarks</th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+             
+            </div>
+        </div>
+    </div>
+</div>
+@*Scripts and Styles*@
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/black/easyui.css" rel="stylesheet" />
+<link href="~/css/jquery-ui-1.12.css" rel="stylesheet" />
+
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/jquery-ui-1.12.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+
+
+
+
+<link href="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.css" rel="stylesheet" />
+<link href="~/js/vendor/DatatablePrint/jquery.dataTables-1.10.9.css" rel="stylesheet" />
+<link href="~/js/vendor/DatatablePrint/dataTables-2.2.4.tableTools.min.css" rel="stylesheet" />
+<script src="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.js"></script>
+<script src="~/js/vendor/DatatablePrint/jquery.dataTable-1.10.9.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.colVis.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.flash.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.html5.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.print.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.buttons.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.foundation.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/vfs_fonts.js"></script>
+<script src="~/js/vendor/DatatablePrint/pdfmake.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/jszip.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.buttons.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.foundation.min.js"></script>
+@*Scripts and Styles*@
+
+@*Main Script*@
+@*Main Script*@
+@*Main Script*@
+
+<script>
+
+    $("#btnClear").click(function () {
+        $('#tblAddedItems tbody').empty();
+        $('input[name="Errorcheck"]').prop('checked', false);
+    });
+
+    $("#btnComponentClear").click(function () {
+        $('#tblAddedComponents tbody').empty();
+        $('input[name="ComponentCheck"]').prop('checked', false);
+    });
+
+    $("#btnAdd").click(function () {
+
+        var checkedNum = $('input[name="Errorcheck"]:checked').length;
+
+
+        if (!checkedNum) {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Please Select Issues'
+            });
+            return false;
+        } else {
+
+
+            $.each($("input[name='Errorcheck']:checked"), function () {
+                var row = "<tr class='active' style='font-size=5px;height:3px;color:black;'>" +
+ "<td style='height:5px;' class='text-center'>" + $(this).val() + "</td>" +
+"<td style='width:10px;height:2px;' class='text-center'><input type='checkbox' style='width:30px;height:30px;'class='faulty' value=''></td>" +
+ "<td style='width:10px;height:3px;' class='text-center'><input type='checkbox' style='width:30px;height:30px;' class='material' value=''></td>" +
+ "<td style='width:10px;height:3px;' class='text-center'><input type='checkbox' style='width:30px;height:30px;'class='process' value=''></td>" +
+
+ "<td style='height:3px;' class='text-center'>" +
+                    "" +
+                    "<select id='remarks' class='remarks form-control' name='remarks' style='color:black;'><option value=None>None</option><option value=Service>Service</option><option value=Resolder>Resolder</option><option value=Dust>Dust</option><option value=Gap>Gap</option><option value=Software>Software</option><option value=Setup>Setup</option><option value=Clean>Clean</option></select>" +
+                    "<td style='height:3px;' class='text-center'><input style='width:110px;' type='text'class='others' name='others' value='' ></td>" +
+                             "</tr>";
+
+
+                $('#tblAddedItems tbody').append(row);
+
+            });
+            $('#btnClear').show();
+
+            $('input[name="Errorcheck"]').prop('checked', false);
+        }
+
+
+    });
+    $("#btnComponentAdd").click(function () {
+
+        var checkedNum = $('input[name="ComponentCheck"]:checked').length;
+
+
+        if (!checkedNum) {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Please Select Components'
+            });
+            return false;
+        } else {
+            //wquantity
+
+            $.each($("input[name='ComponentCheck']:checked"), function () {
+                var row = "<tr class='active' style='font-size=5px;height:3px;'>" +
+
+ "<td style='height:5px;display: none' class='text-center'>" + $(this).val() + "</td>" +
+ "<td style='height:5px;' class='text-center'>" + $(this).next("span").text() + "</td>" +
+                    
+ "<td style='height:3px;' class='text-center'><input type='checkbox' class='used' value='' checked></td>" +
+"<td style='height:3px;width:20px;' class='text-center'><input type='number' min='0' style='width:40px;'class='uquantity' name='uquantity' value='1'></td>" +
+ "<td style='height:3px;width:20px;' class='text-center'><input type='checkbox'class='waste' style='width:40px; value='' checked></td>" +
+ "<td style='height:3px;width:20px;' class='text-center'><input type='number' min='0' style='width:40px;'class='wquantity' name='wquantity' value='1'></td>" +
+"<td style='height:3px;width:50px;' class='text-center'><input type='text'class='compRemarks' name='compRemarks' value='' ></td>" +
+
+                             "</tr>";
+
+
+                $('#tblAddedComponents tbody').append(row);
+
+            });
+
+            $('#btnComponentClear').show();
+            $('input[name="ComponentCheck"]').prop('checked', false);
+        }
+
+
+    });
+
+
+
+
+
+
+    function GetAllIssueListAesthetic() {
+
+
+        $.ajax({
+            url: '  @Url.Action("GetAllIssueListAesthetic", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#modIssues').empty();
+                    $('#modIssues').append('<div class="statistic d-flex align-items-center bg-white has-shadow" ><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"><small>No ongoing task available</small></div></div>');
+
+                    return false;
+                } else {
+
+                    $('#modIssues').empty();
+                    $.each(data, function (index, itemData) {
+
+
+                        $("#modIssues").append('<div class="col-md-4" style="font-size:12px;><form><div class="form-check"><label><input type="checkbox" style="font-size:12px;"  name="Errorcheck" value="' + itemData.Name + '"> <span class="label-text">' + itemData.Name + '</span></label></div></form> </div>');
+                    });
+
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+
+
+    function LoadFunctionalIssues() {
+
+        $.ajax({
+            url: '  @Url.Action("GetAllIssueListFunctional", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#modIssues').empty();
+                    $('#modIssues').append('<div class="statistic d-flex align-items-center bg-white has-shadow" ><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"><small>No ongoing task available</small></div></div>');
+
+                    return false;
+                } else {
+
+                    $('#modIssues').empty();
+                    $.each(data, function (index, itemData) {
+
+
+                        $("#modIssues").append('<div class="col-md-4"><form><div class="form-check"><label><input type="checkbox"  name="Errorcheck" value="' + itemData.Name + '"> <span class="label-text">' + itemData.Name + '</span></label></div></form> </div>');
+                    });
+
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+
+    function ClearModal() {
+        $('#txtRequisition').val('');
+        $('#txtUsedQuantity').val('');
+        $('#txtWastedQuantity').val('');
+        $('#txtRemarks').val('');
+
+    }
+    $("#btnClearMob").click(function () {
+        location.reload();
+        $("#txtMobileCode").val('');
+        $("#txtMobileCode").focus();
+
+    });
+
+
+    $("#btnImeiSearch").click(function () {
+
+        if ($("#txtImei1").val() == '' || $("#txtImei2").val() == '') {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'IMEI numbers required !'
+            });
+            return false;
+
+
+        } else {
+
+
+            var imei1 = $("#txtImei1").val();
+            var imei2 = $("#txtImei2").val();
+
+
+            $.ajax({
+                url: ' @Url.Action("GetIssueResultByImei", "Production")',
+                type: 'Post',
+                data: JSON.stringify({ imei1: imei1, imei2: imei2 }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.length == 0) {
+                        $('#divSearchedIssueImei').empty();
+                        iziToast.warning({
+                            timeout: 1000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Warning',
+                            message: 'No Issues Found With This Mobile'
+                        });
+
+                        return false;
+                    } else {
+
+                        $('#divSearchedIssueImei').empty();
+
+                        $("#divSearchedIssueImei").append('<div class="col-sm-8 offset-sm-4 statistic d-flex align-items- center bg-white has-shadow"><div class="icon bg-red"><i class="fa fa-tasks"></i></div><div class="text"><small id="mbId">' + data[0].ReworkId + '</small><br>Mobile Code :<small id="mbCode">' + data[0].MobileCode + '</small><br>Failed From: <small id="Station"> ' + data[0].FailedStation + '</small><br>Issues :<small> ' + data[0].Issues + '</small></div><div class="text"><strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong></div><div class="text"><button type="button" id="S" class="btn btn-warning pull-right">Start</button></div><div class="text"><br></div></div>');
+
+                    }
+
+                },
+                error: function (data, textStatus, jqXHR) {
+                    toastr.error(textStatus + " " + result + " " + jqXHR);
+                }
+            });
+
+
+        }
+
+
+    });
+
+
+    function GetIssueResult(code) {
+
+        debugger;
+        var parameter = code;
+
+        var codeValue = code.substring(0, code.length - 2);
+        $.ajax({
+            url: ' @Url.Action("GetIssueResult", "Production")',
+            type: 'Post',
+            data: JSON.stringify({ mobileCode: codeValue }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#divSearchedIssue').empty();
+                    iziToast.warning({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'No Issues Found With This Mobile'
+                    });
+                    $('#txtMobileCode').val('');
+                    return false;
+
+                } else {
+
+                    $('#divSearchedIssue').empty();
+
+                    $("#divSearchedIssue").append('<div class="col-sm-8 offset-sm-4 statistic d-flex align-items- center bg-white has-shadow" style="font-size:25px;"><div class="icon bg-red"><i class="fa fa-tasks"></i></div><div class="text"><small id="mbId">' + data[0].ReworkId + '</small><br>Project:- <small id="projNm" style="color:#920621;">' + data[0].ProjectName + '</small><br>Mobile Code:- <small id="mbCode" style="color:#920621;">' + data[0].MobileCode + '</small><br>Failed from:- <small id="station" style="color:#060F4F;"> ' + data[0].FailedStation + '</small><br>Issues :<small style="color:#E41804;"> ' + data[0].Issues + '</small></div><div class="text"><strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong></div><div class="text"><button type="button" id="D" class="btn btn-primary pull-right">Done</button></div><div class="text"><br></div></div>');
+
+                }
+
+            },
+            error: function (data, textStatus, jqXHR) {
+                toastr.error(textStatus + " " + result + " " + jqXHR);
+            }
+        });
+
+
+    }
+
+
+
+    $(function () {
+        
+
+        $("#dtFromDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+        $("#dtToDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+        LoadAllProjects();
+        LoadAllColor();
+        GetCompletedRepairCountIndvidual();
+        debugger;
+        $('#txtMobileCode').keydown(function () {
+            //debugger;
+            var lastTwoDigits = this.value.slice(-2);
+            if (lastTwoDigits.toLowerCase() == '-y' || lastTwoDigits.toLowerCase() == '-n') {
+
+                GetIssueResult((this.value));
+            }
+        });
+    });
+
+
+    $(document).ready(function () {
+
+        $('#txtMobileCode').focus();
+        $('#txtImei').focus();
+
+    });
+
+    var taskeId;
+    var flag;
+    var projName;
+
+    $(document).on('click', '#D', function () {
+        debugger;
+        //alert("Okat");
+        taskeId = $(this).closest('.statistic').find('#mbId').html();
+        projName = $(this).closest('.statistic').find('#projNm').html();
+        flag = this.id;
+        var station = $(this).closest('.statistic').find('#station').html();
+
+
+        $("#reworkId").val(taskeId);
+        $("#hidProjectName").val(taskeId);
+        
+
+        if (station.trim() == "ASTQC") {
+            GetAllIssueListAesthetic();
+            //LoadFunctionalIssues();
+        } if (station.trim() == "FUQC") {
+
+              LoadFunctionalIssues();
+          }
+
+        $("#txtProjectselect").val(projName);
+        $('#modalRework').modal('show');
+        
+
+        $('#txtreworkId').val(taskeId);
+
+
+    });
+
+
+    $(document).on('click', '#W', function () {
+        taskeId = $(this).closest('.statistic').find('#mobId').html();
+        flag = this.id;
+        $('#modalRework').modal('show');
+    });
+
+
+
+
+    function LoadComponetsById() {
+        var url = "@Url.Action("GetComponentsByProjectId", "Production")";
+        $.getJSON(url, function (json) {
+            var elem = $("#ddlComponent");
+            $("#ddlComponent").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+
+        });
+    }
+
+
+
+
+    $("#btnImeiClear").click(function () {
+        $("#txtImei1").val('');
+        $("#txtImei2").val('');
+        $("#txtImei").val('');
+        $("#txtImei1").focus();
+
+    });
+
+    $("#txtImei").keydown(function () {
+
+        var imei = $("#txtImei").val();
+
+        if (imei.length == 15) {
+            ///call ajax
+
+
+            $.ajax({
+                url: '@Url.Action("GetDetailsByImei", "Production")',
+                type: 'Post',
+                data: JSON.stringify({ imei: imei }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.length == 0) {
+                        iziToast.warning({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Warning',
+                            message: 'No date found'
+                        });
+
+                        return true;
+                        //location.reload();
+                    } else {
+
+                        $("#txtImei1").val(result[0].Imei1);
+                        $("#txtImei2").val(result[0].Imei2);
+
+                        GetQcStatusHistoryByImei(imei);
+
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: 'No date found'
+                    });
+
+                    //return false;
+                }
+            });
+
+        }
+
+    });
+
+
+    function GetQcStatusHistoryByImei(imei) {
+        debugger;
+
+
+        $.ajax({
+            url: "@Url.Action("GetReworkDetailsByImei", "Production")",
+            type: 'Post',
+            data: JSON.stringify({ imei: imei }),
+            dataType: 'json',
+            async: true,
+            contentType: 'application/json',
+            success: function (data) {
+
+                if (data.length == 0) {
+                    $('#divSearchedIssueImei').empty();
+                    iziToast.warning({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'No Issues Found With This Mobile'
+                    });
+
+                    return false;
+                } else {
+
+                    $('#divSearchedIssueImei').empty();
+
+                    $("#divSearchedIssueImei").append('<div class="col-sm-8 offset-sm-4 statistic d-flex align-items- center bg-white has-shadow"><div class="icon bg-red"><i class="fa fa-tasks"></i></div><div class="text"><small id="mbId">' + data[0].ReworkId + '</small><br>Mobile Code :<small id="mbCode">' + data[0].MobileCode + '</small><br>Failed From: <small> ' + data[0].FailedStation + '</small><br>Issues :<small> ' + data[0].Issues + '</small></div><div class="text"><strong>&nbsp;&nbsp;&nbsp;&nbsp;</strong></div><div class="text"><button type="button" id="S" class="btn btn-warning pull-right">Start</button></div><div class="text"><br></div></div>');
+
+                }
+                console.log(issues);
+            },
+            error: function (data, textStatus, jqXHR) {
+
+            }
+        });
+    }
+
+    $("#btnCompleteTask").click(function () {
+
+        InsertReworkStationInfo();
+    });
+
+
+
+    function InsertReworkStationInfo() {
+        debugger;
+        var rework = {};
+        var repairIssues = [];
+        var usedComponents = [];
+
+
+        rework.ReworkId = $("#reworkId").val();
+
+        var issueRowCount = $('#tblAddedItems >tbody >tr').length;
+        var componentRowCount = $('#tblAddedComponents >tbody >tr').length;
+
+
+
+
+
+        if (issueRowCount == 0 && componentRowCount == 0) {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Please Select Any Issue Or Component'
+            });
+
+        } else {
+            
+            if (issueRowCount > 0) {
+                var faulty;
+                var materialFault;
+                var processfault;
+
+                $('#tblAddedItems  tbody').find("tr").each(function (row, tr) {
+
+                    if ($(tr).find('input[class="faulty"]').is(':checked')) {
+                        faulty = true;
+
+                    } else {
+
+                        faulty = false;
+
+                    }
+                    if ($(tr).find('input[class="material"]').is(':checked')) {
+                        materialFault = true;
+
+                    } else {
+
+                        materialFault = false;
+
+                    }
+                    if ($(tr).find('input[class="process"]').is(':checked')) {
+                        processfault = true;
+
+                    } else {
+
+                        processfault = false;
+
+                    }
+
+                    repairIssues.push({
+                        ReworkId: $("#reworkId").val(),
+                        Issue: $(tr).find('td:eq(0)').text(),
+                        MaterialFault: materialFault,
+                        ProcessFault: processfault,
+                        IsFaulty: faulty,
+                        Remarks: $(tr).find('select[name="remarks"]').val(),
+                        OthersRemarks: $(tr).find('input[name="others"]').val()
+
+                    });
+
+
+                });
+
+
+            }
+
+            if (componentRowCount > 0) {
+                var used;
+                var waste;
+               
+                $('#tblAddedComponents  tbody').find("tr").each(function (row, tr) {
+
+                    if ($(tr).find('input[class="used"]').is(':checked')) {
+                        used = true;
+
+                    } else {
+
+                        used = false;
+
+                    }
+                    if ($(tr).find('input[class="waste"]').is(':checked')) {
+                        waste = true;
+
+                    } else {
+
+                        waste = false;
+
+                    }
+
+
+                    usedComponents.push({
+                        ReworkId: $("#reworkId").val(),
+                        ProjectId: $("#txtProjectselect").val(),
+                        Color: $("#txtColor").val(),
+                        UsedComponents: $(tr).find('td:eq(1)').text(),
+                        BomId: $(tr).find('td:eq(0)').text(),
+                        Used: used,
+                        UsedQuantity: $(tr).find('input[name="uquantity"]').val(),
+                        Waste: waste,
+                        WasteQuantiy: $(tr).find('input[name="wquantity"]').val(),
+                        Remarks: $(tr).find('input[name="compRemarks"]').val()
+
+                    });
+
+
+                });
+
+
+            }
+
+            $.ajax({
+                url: ' @Url.Action("InsertreworkStationInfo", "Production")',
+                type: 'Post',
+                data: JSON.stringify({ reworks: rework, repairStatus: repairIssues, repairComponents: usedComponents }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+                    if (result.IsSuccess ) {
+                        
+                        iziToast.success({
+                            timeout: 1000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Warning',
+                            message: 'Saved Successfully'
+                        });
+                        $('#txtMobileCode').val('');
+
+                        location.reload();
+
+                    } else {
+
+                        iziToast.warning({
+                            timeout: 1000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Warning',
+                            message: 'Error Occured While Saving information'
+                        });
+
+                    }
+
+                },
+                error: function (data, textStatus, jqXHR) {
+                    toastr.error(textStatus + " " + result + " " + jqXHR);
+                }
+            });
+
+
+            //console.log(repairIssues);
+            console.log(usedComponents);
+
+
+
+        }
+
+    }
+
+    function LoadAllProjects() {
+
+        var url = "@Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+
+
+
+        });
+    }
+
+    function LoadAllColor() {
+
+        var url = "@Url.Action("GetColors", "Project")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtColor");
+            $("#txtColor").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+
+
+
+        });
+    }
+    function CallOracleTest() {
+        debugger;
+        //var str = $("#txtProject option:selected").text(); //"OLVIO MM17-1st Order";
+        var str = $("#txtProjectselect").val(); //"OLVIO MM17-1st Order";
+
+        var a = str.substr(str.indexOf(' ') + 1); // "tocirah sneab"
+
+
+        var c = a.split('-')[0];
+       
+
+        var color = $("#txtColor option:selected").text();// "Full Black";
+
+
+        $.ajax({
+            url: '@Url.Action("CallOracleTest", "LcdGlueStation")', //changed For Test
+            type: 'POST',
+            data: JSON.stringify({ model: c.trim(), color: color }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#components').empty();
+                    $("#divComponent").hide();
+                    iziToast.warning({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: 'No item found'
+                    });
+                    $('#components').empty();
+                    $('#tblAddedComponents tbody').empty();
+                    return false;
+                } else {
+                    var component;
+                    $("#divComponent").show();
+
+                    $('#components').empty();
+                    $.each(data, function (index, itemData) {
+
+                        component = itemData.SPARE_DESCRIPTION.split('-')[0];
+                       
+
+                        $("#components").append('<div class="col-md-4"><form><div class="form-check"><label><input type="checkbox"  name="ComponentCheck" value="' + itemData.SPARE_ITEM_CODE + '"> <span class="label-text">' + component + '</span></label></div></form> </div>');
+                    });
+
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+
+
+    }
+
+    $("#btSearchComponents").click(function() {
+
+        CallOracleTest();
+    });
+    function GetCompletedRepairCountIndvidual() {
+
+        $.ajax({
+            url: '  @Url.Action("GetCompletedRepairCountIndvidual", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                console.log(result);
+                if (result.length == 0) {
+                    $('#done').text('0');
+                   
+                }
+                else {
+                    $('#done').text(result);
+                   
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+
+
+    }
+
+    $("#myReport").click(function() {
+
+        $("#myReportModal").modal("show");
+    });
+    
+
+    $("#btnReportSearch").click(function () {
+        $("#divMyRepairStationData").show();
+        debugger;
+        // $("#divCard").show();
+
+        var printCounter = 0;
+        var buttonCommon = {
+            
+        };
+
+        var gridateFrom = $("#dtFromDate").val().split('-');
+        var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+
+        var gridateTo = $("#dtToDate").val().split('-');
+        var todate = gridateTo[2] + "-" + gridateTo[1] + "-" + gridateTo[0];
+
+        //var project = null;
+
+
+        var table = $('#datatableMyRepairStationData').DataTable({
+            "ajax": {
+             "url": "@Url.Action("IndividualRepairReport", "Report")",
+            "type": "GET",
+            "data": function(d) {
+
+                d.project = 0;
+                d.fromdate = fromdate;
+                d.todate = todate;
+            },
+            "datatype": "json"
+        },
+            "destroy": true,
+            "columnDefs":
+            [{
+                    "searchable": true,
+
+            visible: false
+    },                
+            { "width": "10%", "targets": 1 }
+    ],
+            "pageLength": 50,
+
+            "scrollY": "500px",
+            "dom": 'Bfrtip',
+            "buttons": [           
+                $.extend(true, {}, buttonCommon, {
+                    extend: 'excelHtml5',
+                    text: '<i class="fa fa-file-excel-o"></i> Excel',
+                    title: 'My Repair Station Report'
+                }),
+                {
+                    extend: 'csvHtml5',
+                    text: '<i class="fa fa-files-o"></i> Csv',
+                    exportOptions: { orthogonal: 'export' },
+                    title: 'My Repair Station Report'
+                },               
+                {
+                    extend: 'print',
+                    text: '<i class="fa fa-print"></i> Print',
+                    title: 'My Repair Station Report',
+                    messageTop: 'My Repair Station Report',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL',
+                    exportOptions: {
+                        columns: ':not(.no-print)'
+                    },
+                    footer: false,
+                    autoPrint: true
+                },
+                'colvis'
+            ],
+
+            "columns": [
+                { "data": "ProjectName", "autoWidth": true, "searchable": true },
+                { "data": "LineName", "autoWidth": true, "searchable": true },
+                { "data": "QcIssue", "autoWidth": true, "searchable": true },
+                { "data": "FailedStation", "autoWidth": true },
+                { "data": "IsFaulty", "autoWidth": true },
+                { "data": "RepairIssue", "autoWidth": true },
+                { "data": "MaterialFault", "autoWidth": true },
+                { "data": "ProcessFault", "autoWidth": true },
+                { "data": "RepairRemarks", "autoWidth": true },
+                { "data": "UsedComponents", "autoWidth": true },
+                { "data": "UsedQuantity", "autoWidth": true },
+                { "data": "WasteQuantity", "autoWidth": true },
+                { "data": "ComponentsRemarks", "autoWidth": true }
+            ]
+            ,
+           
+    });
+
+
+    table.buttons().container()
+        .appendTo('#datatable_wrapper .small-4.columns:eq(0)');
+
+
+    });
+    
+
+
+
+
+</script>

@@ -1,0 +1,338 @@
+﻿
+@{
+    ViewBag.Title = "TplcdProduction";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+</style>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">TPLCD </a></li>
+        <li class="breadcrumb-item active">TPLCD PRODUCTION</li>
+    </ul>
+</div>
+
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">Project Information</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-horizontal">
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Preparation name</label>
+                                <div class="col-sm-6">
+                                    <input id="txtPreparationName" type="text" placeholder="Preparation Name" class="form-control form-control-success">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Preparation Type</label>
+                                <div class="col-sm-6">
+                                    <input id="txtPreparationType" type="text" placeholder="Preparation Type" class="form-control form-control-success">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Targeted Quantity</label>
+                                <div class="col-sm-6">
+                                    <input id="txtTotalQuantaty" type="text" placeholder="Quantity" class="form-control form-control-success">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Applicable Project</label>
+                                <div class="col-sm-6">
+                                    <select id="txtProjectName" data-placeholder="Choose a Project" class="chosen-select form-control form-control-success" tabindex="1"></select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Task</label>
+                                <div class="col-sm-6">
+                                    <input id="txtTask" type="text" placeholder="Task" class="form-control form-control-success">
+                                </div>
+                            </div>
+                            
+                           
+                            
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Color</label>
+                                <div class="col-sm-6">
+                                    <input id="txtColors" type="text" placeholder="Colors" class="form-control form-control-success">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 form-control-label">Colors Quantity</label>
+                                <div class="col-sm-6">
+                                    <input id="txtColorsQuantity" type="text" placeholder="Colors Quantity" class="form-control form-control-success">
+                                </div>
+                            </div>
+                            
+                            @*<div class="form-group row">
+                                <div class="col-sm-12 offset-sm-2">
+                                    
+                                </div>
+                            </div>*@
+                            
+                            
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">&nbsp;</label>
+
+                                <label class="col-sm-2 form-control-label"><input type="button" id="btnAdd" value="Add" class="btn btn-primary"></label>
+                                <label class="col-sm-2 form-control-label"><input type="button" id="btnSave" value="Save" class="btn btn-primary"></label>
+                                <div class="col-sm-3">
+                                    <input type="button" id="btnAllClear" value="Clear All" class="btn btn-primary">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Horizontal Form-->
+            <div class="col-lg-7" style="overflow: auto">
+                <div class="card" style="overflow: auto">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">BOM List Information</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-horizontal">       
+                            <table id="dgTpLcdList" style="width:800px;  overflow: auto" class="easyui-datagrid" title="TPLCD Preparation" data-options="
+                                                    rownumbers:false,
+
+                                                    singleSelect:true,
+                                                    autoRowHeight:false,
+                                                    pagination:false,
+                                                    pageSize:1000">
+                                <thead>
+                                    <tr>
+
+                                        <th data-options="field:'PreparationName',width:80">
+                                            Preparation Name
+                                        </th>
+                                        <th data-options="field:'PreparationType',width:100">
+                                            Preparation Type
+                                        </th>
+                                        <th data-options="field:'TotalQuantity',width:90">
+                                            Total Quantity
+                                        </th>
+
+                                        <th data-options="field:'ProjectId',width:80">
+                                            Project Id
+                                        </th>
+                                        <th data-options="field:'ProjectName',width:100">
+                                            Project Name
+                                        </th>
+                                        <th data-options="field:'Task',width:80">
+                                            Task
+                                        </th>
+                                       
+                                        <th data-options="field:'Color',width:70">
+                                            Color
+                                        </th>
+                                        <th data-options="field:'ColorQuantity',width:80,align:'left'">Color Quantity</th>
+                                        <th data-options="field:'Delete',width:80,align:'left'"></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            
+                            
+                           
+                            
+
+                            
+
+                        </div>
+                        
+                       
+                    </div>
+                    
+                   
+                </div>
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+
+            <!-- Inline Form-->
+            <!-- Modal Form-->
+            <!-- Form Elements -->
+
+        </div>
+
+
+        @*<div class="card">
+
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="checkbox col-sm-4">
+                        <div class="i-checks">
+                            <input id="chkSure" type="checkbox" value="" class="checkbox-template">
+                            <label for="chkSure">You sure want to save project bom list information?</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="button" id="btnSave" value="Save" style="display: none" class="btn btn-success" onclick="SaveProjectBomList();">
+                    </div>
+                </div>
+
+            </div>
+        </div>*@
+
+
+
+    </div>
+
+
+    <input type="hidden" name="hdcomponentId" id="hdcomponentId" />
+    <input type="hidden" name="hdprojectId" id="hdprojectId" />
+    <input type="hidden" name="hdprojectName" id="hdprojectName" />
+</section>
+
+
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+<script>
+
+    var preparationData = [];    
+    var rows = [];
+    $(document).ready(function() {
+
+        LoadAllProjects();
+    });
+
+    //All Clear Function
+    
+    function AllClear() {
+
+        $("#txtPreparationName").val('');
+        $("#txtTotalQuantaty").val('');
+        $("#txtPreparationType").val('');
+        $("#txtTask").val('');
+        LoadAllProjects();
+        $("#txtColors").val('');
+        $("#txtColorsQuantity").val('');
+        $('#dgTpLcdList').datagrid('loadData', { total: 0, rows: [] });
+        
+    }
+
+
+
+    //Load Project Names
+    function LoadAllProjects() {
+        var url = "  @Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtProjectName");
+            $("#txtProjectName").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+              
+        });
+    }
+
+    $("#btnAdd").click(function() {
+
+
+        if ($("#txtPreparationName").val() == "") {
+            
+            iziToast.error({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Error',
+                message: 'Preparation name required'
+            });
+            return false;
+
+        }
+        
+        
+        
+        else if ($("#txtTotalQuantaty").val() == "") {
+
+            iziToast.error({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Error',
+                message: 'Preparation quantity required'
+            });
+            return false;
+
+        }
+        
+        else if ($("#txtProjectName").val() == 0) {
+
+            iziToast.error({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Error',
+                message: 'Project name required'
+            });
+            return false;
+
+        } else {
+
+
+            rows.push({
+                
+                PreparationName:
+                PreparationType:
+                TotalQuantity:
+                ProjectId:
+                ProjectName:
+                Task:
+                Color:
+
+
+
+            });
+
+
+            $('#dgTpLcdList').datagrid('loadData', rows);
+        }
+
+
+
+    });
+
+</script>

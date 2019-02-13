@@ -1,0 +1,769 @@
+﻿@{
+    ViewBag.Title = "TpLcdReport";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    .credit-card-div span {
+        padding-top: 10px;
+    }
+
+    .credit-card-div img {
+        padding-top: 30px;
+    }
+
+    .credit-card-div .small-font {
+        font-size: 9px;
+    }
+
+    .credit-card-div .pad-adjust {
+        padding-top: 10px;
+    }
+
+    #txtReqDate {
+        font-size: 18px;
+    }
+    #txtToDate {
+        font-size: 18px;
+    }
+    .form-control-label {
+        font-size: 18px;
+    }
+
+</style>
+<div class="breadcrumb-holder container-fluid" style=" background-color: #C46154; ">
+    <ul class="breadcrumb" style="padding: 4px; ">
+        <li class="breadcrumb-item"><a href=" #">Report </a></li>
+        <li class="breadcrumb-item active">TP LCD Report</li>
+    </ul>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            &nbsp;
+        </div>
+
+        <div class="col-lg-6" style="">
+
+            <div class="card" style="border: 2px solid darkcyan; height: 200px;">
+                <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                    <h3 class="h4" style="font-weight: normal"> Select Report Type</h3>
+                </div>
+                <div class="card-body text-center">
+
+                    <label class="col-sm-4 checkbox-inline">
+                        <input type="checkbox" id="P" value="P" name="chkReportType" class="checkbox-template">&nbsp; Over All  
+                    </label>
+                    <label class="checkbox-inline">
+                        &nbsp;
+                    </label>
+                    <label class="col-sm-4 checkbox-inline">
+                        <input type="checkbox" id="I" value="I" name="chkReportType" class="checkbox-template">&nbsp;  Issues 
+                    </label>
+                       
+                    <label class="col-sm-4 checkbox-inline">
+                        <input type="checkbox" id="BO" value="BO" name="chkReportType" class="checkbox-template">&nbsp; Both
+                    </label>
+                    @*<label class="checkbox-inline">
+                            &nbsp;
+                        </label>
+                        <label class="col-sm-4 checkbox-inline">
+                            <input type="checkbox" id="Check1" value="PHP" class="checkbox-template">&nbsp;  Hourly Report 
+                        </label>
+                        <label class="checkbox-inline">
+                            &nbsp;
+                        </label>
+                        <label class="col-sm-4 checkbox-inline">
+                            <input type="checkbox" id="Check2" value="CSS" class="checkbox-template">&nbsp;  CSS
+                        </label>
+                        <label class="checkbox-inline">
+                            &nbsp;
+                        </label>*@
+                      
+                       
+                        
+                        
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card" style="border: 2px solid ; height: 200px;">
+                <div class="card-header d-flex align-items-center" style="background-color: darkslateblue; color: white">
+                    <h3 class="h4" style="font-weight: normal"> Search Criteria</h3>
+                </div>
+                <div class="card-body text-center">
+                    <div class="form-group row">
+                        <label class="col-sm-2 form-control-label">From:</label>
+                        <div class="col-sm-4">
+                            <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success txtDate">
+                        </div>
+
+                        <label class="col-sm-2 form-control-label">To:</label>
+                        <div class="col-sm-4">
+                            <input id="txtToDate" type="text" placeholder="Requisition Date" class="form-control form-control-success txtDate">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Project Wise</label>
+                        @*<div class="col-sm-1">
+                            <input type="checkbox" id="chkProject" name="chkProject" class="checkbox-templates">
+                        </div>*@
+
+                        
+                        <div class="col-sm-5" id="divProj">
+                            <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" style="" id="btSearch">Search</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="col-lg-12" id="divProduction" style="display: none">
+    <div class="bar-chart-example card" id="divCard">
+        <div class="card-close">
+
+        </div>
+        <div class="card-header d-flex align-items-center">
+            <h3 class="h4">Production Report</h3>
+        </div>
+        <div class="card-body">
+            <table id="datatableProduction" class="table  table-bordered " width="900" cellspacing="0">
+
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Model</th>
+                        <th>Worked</th>
+                        <th>Qc Pass</th>
+                        <th>Qc Fail</th>
+                        <th>% Of Fault</th>
+                        <th>Reworked</th>
+                        <th>Rework Pending</th>
+                        <th>Non Repairable</th>
+                        <th>% Of Non Repairable</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12" id="divIssues" style="display: none">
+    <div class="bar-chart-example card" id="divCard">
+        <div class="card-close">
+
+        </div>
+        <div class="card-header d-flex align-items-center">
+            <h3 class="h4">Issue report</h3>
+        </div>
+        <div class="card-body">
+            <table id="datatableIssue" class="table  table-bordered " width="900" cellspacing="0">
+
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Issues</th>
+                        <th>Status</th>
+                        <th>Added By</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12" id="divBoth" style="display: none">
+    <div class="bar-chart-example card" id="divCard">
+        <div class="card-close">
+
+        </div>
+        <div class="card-header d-flex align-items-center">
+            <h3 class="h4">Issue report</h3>
+        </div>
+        <div class="card-body">
+            <table id="datatableBoth" class="table  table-bordered " width="900" cellspacing="0">
+
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Passed</th>
+                        <th>Fault</th>
+                        @*<th>Added By</th>*@
+
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+<link href="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.css" rel="stylesheet" />
+<link href="~/js/vendor/DatatablePrint/jquery.dataTables-1.10.9.css" rel="stylesheet" />
+<link href="~/js/vendor/DatatablePrint/dataTables-2.2.4.tableTools.min.css" rel="stylesheet" />
+<script src="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.js"></script>
+
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/chart.js/Chart.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+<script src="~/js/vendor/DatatablePrint/jquery.dataTable-1.10.9.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.colVis.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.flash.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.html5.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.print.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.buttons.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.foundation.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/vfs_fonts.js"></script>
+<script src="~/js/vendor/DatatablePrint/pdfmake.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/jszip.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.buttons.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.foundation.min.js"></script>
+
+@*<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.foundation.min.js"></script>*@
+<script>
+    $('input.checkbox-template').on('change', function () {
+
+        debugger;
+        $('input.checkbox-template').not(this).prop('checked', false);
+
+
+    });    
+
+
+    $("#chkProject").click(function() {
+
+        if ($(this).is(":checked")) {
+            $("#divProj").show();
+
+        } else {
+            $("#divProj").hide();
+            LoadAllProjects();
+        }
+    });
+
+    $(function () {
+
+        LoadAllProjects();
+
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+        $("#txtToDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+
+    });
+    function LoadAllProjects() {
+
+        var url = "@Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select Project---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+    
+
+    //TPLCD REPORT 
+
+
+    $("#btSearch").click(function() {
+
+
+        var checkedNum = $('input[name="chkReportType"]:checked').length;
+        var chkReportType = $('input[name="chkReportType"]:checked').val();
+
+        if (!checkedNum) {
+
+            iziToast.error({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Error',
+                message: 'Please Select Report Type'
+            });
+        } else {
+            
+            var isProject = $('input[name="chkProject"]:checked').length;
+            
+
+            if (!isProject) {
+                
+
+                if (chkReportType == "P") {
+                    $("#divProduction").show();
+                    $("#divIssues").hide();
+                    $("#divBoth").hide();
+                    
+                    getTpLcdReportProduction();
+
+                }
+                if (chkReportType == "I") {
+                    $("#divProduction").hide();
+                    $("#divIssues").show();
+                    $("#divBoth").hide();
+                    getTpLcdReportIssues();
+                 
+
+                }
+                if (chkReportType == "BO") {
+                    $("#divProduction").hide();
+                    $("#divIssues").hide();
+                    $("#divBoth").show();
+                    
+                    getTpLcdReportTotal();
+                   
+
+                }
+
+               
+
+            } else {
+                
+                if ($('#txtProject').val() == "" || $("#txtProject").val() == 0) {
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 50,
+                        position: 'center',
+                        message: ' Please  Insert  Project  Name',
+                        title: 'warning! -',
+                        backgroundColor: '#E22919',
+                        theme: 'dark', // dark                      
+                        progressBarColor: '#091B2B',
+                        titleSize: 20,
+                        messageColor: '#F4F3F8',
+                        messageSize: 20,
+
+                    });
+
+                    return false;
+                } else {
+
+
+
+                    if (chkReportType == "P") {
+                        $("#divProduction").show();
+                        $("#divIssues").hide();
+                        getTpLcdReportProduction();
+
+                    }
+                    if (chkReportType == "I") {
+                        $("#divProduction").hide();
+                        $("#divIssues").show();
+
+                        getTpLcdReportIssues();
+                       
+
+                    }
+                    if (chkReportType == "BO") {
+                        $("#divProduction").hide();
+                        $("#divIssues").hide();
+                        getTpLcdReportTotal();
+
+                    }
+
+                }
+
+
+            }
+
+        }
+
+       
+    });
+
+    function getTpLcdReportProduction() {
+        // $("#divCard").show();
+
+        var printCounter = 0;
+        var buttonCommon = {
+            //exportOptions: {
+            //    format: {
+            //        body: function (data, row, column, node) {
+            //            // Strip $ from salary column to make it numeric
+            //            return column === 5 ?
+            //                data.replace(/[$,]/g, '') :
+            //                data;
+            //        }
+            //    }
+            //}
+        };
+
+        var gridateFrom = $("#txtReqDate").val().split('-');
+        var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+
+        var gridateTo = $("#txtToDate").val().split('-');
+        var todate = gridateTo[2] + "-" + gridateTo[1] + "-" + gridateTo[0];
+
+        //var project = null;
+
+
+        var table = $('#datatableProduction').DataTable({
+            "ajax": {
+                "url": "@Url.Action("GetTpLcdOverAllReport", "Report")",
+                "type": "GET",
+                "data": function(d) {
+
+                    d.project = $('#txtProject').val();
+                    d.fromdate = fromdate;
+                    d.todate = todate;
+                },
+                "datatype": "json"
+            },
+            "destroy": true,
+            "columnDefs":
+            [{
+                    "searchable": true,
+
+                    visible: false
+                },
+                
+                { "width": "10%", "targets": 1 }
+            ],
+            "pageLength": 50,
+
+            "scrollY": "500px",
+            "dom": 'Bfrtip',
+            "buttons": [
+           
+                $.extend(true, {}, buttonCommon, {
+                    extend: 'excelHtml5',
+                    text: '<i class="fa fa-file-excel-o"></i> Excel',
+                    title: 'Tp-Lcd Production'                   
+                }),
+            {
+                extend: 'csvHtml5',
+                text: '<i class="fa fa-files-o"></i> Csv',
+                exportOptions: { orthogonal: 'export' },
+                title: 'Tp-Lcd Production'
+            },
+               
+                {
+
+                    extend: 'print',
+                    text: '<i class="fa fa-print"></i> Print',
+                    title: 'Tp-Lcd Production ',
+                    messageTop: "Tp-Lcd Production </br> ",
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL',
+                    exportOptions: {
+                        columns: ':not(.no-print)'
+                    },
+                    footer: false,
+                    autoPrint: true
+
+                },
+
+
+                'colvis'
+            ],
+
+            "columns": [
+                { "data": "Date", "autoWidth": true, "searchable": true },
+                { "data": "ProjectName", "autoWidth": true, "searchable": true },
+                { "data": "Worked", "autoWidth": true, "searchable": true },
+                { "data": "QcPass", "autoWidth": true },
+                 { "data": "QcFail", "autoWidth": true },
+                 { "data": "FaultPercent", "autoWidth": true },
+                 { "data": "Reworked", "autoWidth": true },
+                { "data": "ReworkPending", "autoWidth": true },
+                { "data": "NonReparable", "autoWidth": true },
+                 { "data": "NonReparablePercent", "autoWidth": true },
+               
+            ]
+            
+
+
+    });
+
+
+
+
+    table.buttons().container()
+        .appendTo('#datatable_wrapper .small-4.columns:eq(0)');
+
+
+
+    }
+    
+
+
+
+    function getTpLcdReportIssues() {
+        // $("#divCard").show();
+
+        var printCounter = 0;
+        var buttonCommon = {
+            //exportOptions: {
+            //    format: {
+            //        body: function (data, row, column, node) {
+            //            // Strip $ from salary column to make it numeric
+            //            return column === 5 ?
+            //                data.replace(/[$,]/g, '') :
+            //                data;
+            //        }
+            //    }
+            //}
+        };
+
+        var gridateFrom = $("#txtReqDate").val().split('-');
+        var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+
+        var gridateTo = $("#txtToDate").val().split('-');
+        var todate = gridateTo[2] + "-" + gridateTo[1] + "-" + gridateTo[0];
+
+        //var project = null;
+
+
+        var table = $('#datatableIssue').DataTable({
+            "ajax": {
+                "url": "@Url.Action("GetTpLcdIssuesReport", "Report")",
+            "type": "GET",
+            "data": function(d) {
+
+                d.project = $('#txtProject').val();
+                d.fromdate = fromdate;
+                d.todate = todate;
+            },
+            "datatype": "json"
+        },
+            "destroy": true,
+            "columnDefs":
+            [{
+                    "searchable": true,
+
+            visible: false
+    },
+                
+    { "width": "10%", "targets": 1 }
+    ],
+    "pageLength": 50,
+
+    "scrollY": "500px",
+    "dom": 'Bfrtip',
+    "buttons": [
+           
+        $.extend(true, {}, buttonCommon, {
+            extend: 'excelHtml5',
+            text: '<i class="fa fa-file-excel-o"></i> Excel',
+            title: 'Tp-Lcd Production'                   
+        }),
+    {
+        extend: 'csvHtml5',
+        text: '<i class="fa fa-files-o"></i> Csv',
+        exportOptions: { orthogonal: 'export' },
+        title: 'Tp-Lcd Production'
+    },
+               
+        {
+
+            extend: 'print',
+            text: '<i class="fa fa-print"></i> Print',
+            title: 'Tp-Lcd Production ',
+            messageTop: "Tp-Lcd Production </br> ",
+            orientation: 'landscape',
+            pageSize: 'LEGAL',
+            exportOptions: {
+                columns: ':not(.no-print)'
+            },
+            footer: false,
+            autoPrint: true
+
+        },
+
+
+        'colvis'
+    ],
+
+    "columns": [
+        { "data": "ProjectName", "autoWidth": true, "searchable": true },
+        { "data": "Issues", "autoWidth": true, "searchable": true },
+          { "data": "Status", "autoWidth": true },
+        { "data": "AddedName", "autoWidth": true },
+      
+               
+    ]
+            
+
+
+    });
+
+
+
+
+    table.buttons().container()
+        .appendTo('#datatable_wrapper .small-4.columns:eq(0)');
+
+
+
+    }
+
+    function getTpLcdReportTotal() {
+        // $("#divCard").show();
+
+        var printCounter = 0;
+        var buttonCommon = {
+            //exportOptions: {
+            //    format: {
+            //        body: function (data, row, column, node) {
+            //            // Strip $ from salary column to make it numeric
+            //            return column === 5 ?
+            //                data.replace(/[$,]/g, '') :
+            //                data;
+            //        }
+            //    }
+            //}
+        };
+
+        var gridateFrom = $("#txtReqDate").val().split('-');
+        var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+
+        var gridateTo = $("#txtToDate").val().split('-');
+        var todate = gridateTo[2] + "-" + gridateTo[1] + "-" + gridateTo[0];
+        var project ;
+        if ($('#txtProject').val() == "" || $("#txtProject").val() == 0) {
+            project = null;
+
+
+        } else {
+            project = $('#txtProject').val();
+
+        }
+        //
+
+
+        var table = $('#datatableBoth').DataTable({
+            "ajax": {
+                "url": "@Url.Action("GetTpLcdAllReport", "Report")",
+            "type": "GET",
+            "data": function(d) {
+
+                d.project = project;
+                d.dateFrom = fromdate;
+                d.dateTo = todate;
+            },
+            "datatype": "json"
+        },
+            "destroy": true,
+            "columnDefs":
+            [{
+                    "searchable": true,
+
+            visible: false
+    },
+                
+    { "width": "10%", "targets": 1 }
+    ],
+    "pageLength": 50,
+
+    "scrollY": "500px",
+    "dom": 'Bfrtip',
+    "buttons": [
+           
+
+        $.extend(true, {}, buttonCommon, {
+            extend: 'excelHtml5',
+            text: '<i class="fa fa-file-excel-o"></i> Excel',
+            title: 'Tp-Lcd Production'                   
+        }),
+    {
+        extend: 'csvHtml5',
+        text: '<i class="fa fa-files-o"></i> Csv',
+        exportOptions: { orthogonal: 'export' },
+        title: 'Tp-Lcd Production'
+    },
+               
+        {
+
+            extend: 'print',
+            text: '<i class="fa fa-print"></i> Print',
+            title: 'Tp-Lcd Production ',
+            messageTop: "Tp-Lcd Production All Report </br> ",
+            orientation: 'landscape',
+            pageSize: 'LEGAL',
+            exportOptions: {
+                columns: ':not(.no-print)'
+            },
+            footer: false,
+            autoPrint: true
+
+        },
+
+
+        'colvis'
+    ],
+
+    "columns": [
+        { "data": "ProjectName", "autoWidth": true, "searchable": true },
+        { "data": "Passed", "autoWidth": true, "searchable": true },
+        { "data": "Fault", "autoWidth": true },
+        //{ "data": "AddedName", "autoWidth": true },
+      
+               
+    ]
+            
+
+
+    });
+
+
+
+
+    table.buttons().container()
+        .appendTo('#datatable_wrapper .small-4.columns:eq(0)');
+
+
+
+    }
+
+
+
+
+
+
+</script>

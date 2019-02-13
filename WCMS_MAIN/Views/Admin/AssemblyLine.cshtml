@@ -1,0 +1,1410 @@
+﻿@{
+    ViewBag.Title = "AssemblyLine";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    .ui-autocomplete {
+        max-height: 250px;
+        overflow: auto;
+        float: left;
+        z-index: 2147483647 !important;
+    }
+
+
+    .stylish-panel {
+        padding: 20px 0;
+        text-align: center;
+    }
+
+        .stylish-panel > div > div {
+            padding: 10px;
+            border: 4px solid #123D6A;
+            border-radius: 4px;
+            transition: 0.2s;
+            background: #1E2631;
+            color: white;
+            cursor: pointer;
+        }
+
+            .stylish-panel > div > div p {
+                color: white;
+            }
+
+        .stylish-panel > div:hover > div {
+            margin-top: -10px;
+            border: 1px solid rgb(200, 200, 200);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+            background: #123D68;
+            transition: 0.5s;
+        }
+
+
+    .modal-body .form-horizontal .col-sm-2,
+    .modal-body .form-horizontal .col-sm-10 {
+        width: 100%;
+    }
+
+    .modal-body .form-horizontal .control-label {
+        text-align: left;
+    }
+
+    .modal-body .form-horizontal .col-sm-offset-2 {
+        margin-left: 15px;
+    }
+
+
+    #tblComponent tbody {
+        display: block;
+        height: 300px;
+        overflow: auto;
+    }
+
+        #tblComponent thead, #tblComponent tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+    #tblComponent thead {
+        /*width: calc( 100% - 1em );*/
+    }
+</style>
+@*<div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Assembly Line </a></li>
+            <li class="breadcrumb-item active">Assembly Line Setup</li>
+        </ul>
+    </div>*@
+
+
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card" style="height: 415px;overflow: auto">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">(1) Line Information</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-horizontal" style="overflow: auto">
+
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New Line</button><br /><br />
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="display:none">
+                                            Id
+                                        </th>
+                                        <th>
+                                            Line Name
+                                        </th>
+                                        <th>
+                                            Remarks
+                                        </th>
+
+                                        <th>
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbody"></tbody>
+                            </table>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card" style="height: 415px;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4">(3) Save/Update Employee In Assembly Line</h3>
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="form-horizontal" style="margin-top: 30px;">
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Employee</label>
+                                <div class="col-sm-6" id="">
+                                    @*<input id="txtEmployee" type="text" maxlength="11" placeholder="Search Employee" required="" class="form-control form-control-success">*@
+
+                                    @*<select id="txtEmp" data-placeholder="Choose a Line" class="chosen-select form-control" tabindex="1"></select>*@
+                                    <input id="txtEmployee" type="text" maxlength="11" placeholder="Search Employee" required="" class="form-control form-control-success">
+                                </div>
+                            </div>
+
+                            <div class="form-group row" id="EmpDetailsRole" style="display: none">
+                                <label class="col-sm-3 form-control-label">Role Name</label>
+                                <div class="col-sm-6" id="">
+                                    <input id="txtEmpRoleName" type="text" readonly="readonly" maxlength="11" placeholder="Search Employee" required="" class="form-control form-control-success">
+
+                                </div>
+                            </div>
+                            <div class="form-group row" id="EmpDetailsLine" style="display: none">
+                                <label class="col-sm-3 form-control-label">Current Line</label>
+                                <div class="col-sm-6" id="">
+                                    <input id="txtEmpLineName" type="text" readonly="readonly" maxlength="11" placeholder="Search Employee" required="" class="form-control form-control-success">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Line Name</label>
+                                <div class="col-sm-6" id="">
+                                    <select id="txtLine1" data-placeholder="Choose a Line" class="chosen-select form-control" tabindex="1"></select>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="form-group row">
+
+                            <div class="col-sm-8 offset-sm-4">
+
+                                <button class="btn btn-primary" id="btnSaveEmployeeLine" onclick="SaveEmployeeLineAssign();"><i class="fa fa-plus"></i> Save/Update</button>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Horizontal Form-->
+
+            <div class="col-lg-1">
+                &nbsp;
+            </div>
+
+
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                        <h3 class="h4"> (2) Set Assembly Line</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Line Name</label>
+                            <div class="col-sm-5" id="">
+                                <select id="txtLine" data-placeholder="Choose a Line" class="chosen-select form-control" tabindex="1"></select>
+
+                            </div>
+                            <label class="col-sm-2 form-control-label" style="color: red">*</label>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Project Name</label>
+                            <div class="col-sm-5" id="">
+                                <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                            </div>
+                            <label class="col-sm-2 form-control-label" style="color: red">*</label>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Man Power</label>
+                            <div class="col-sm-5" id="">
+
+
+                                <input type="number" id="txtManPower" min="0" class="form-control" id="txtIssued" placeholder="" />
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Issued Quantity</label>
+                            <div class="col-sm-5" id="">
+                                <input type="number" min="0" class="form-control" id="txtIssued" placeholder="" />
+                            </div>
+
+                            <label class="col-sm-2 form-control-label" style="color: red">*</label>
+
+
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Hourly Target Quantity</label>
+                            <div class="col-sm-5" id="">
+                                <input type="number" min="0" class="form-control" id="txtHQuantity" placeholder="" />
+                            </div>
+
+                            <label class="col-sm-2 form-control-label" style="color: red">*</label>
+
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Total Target Quantity</label>
+                            <div class="col-sm-5" id="">
+                                <input type="number" min="0" class="form-control" id="txtTQuantity" placeholder="" />
+                            </div>
+
+                            <label class="col-sm-2 form-control-label" style="color: red">*</label>
+
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Previous Day Quantity</label>
+                            <div class="col-sm-5" id="">
+                                <input type="number" min="0" class="form-control" id="txtPDQuantity" placeholder="" />
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="card-body" id="tblComList" style="height: 500px; overflow: auto;display: none">
+                            @*<table id="dglineList" style="overflow: auto;width: 500px" class="easyui-datagrid" title="Production Line List " data-options="
+                                                        rownumbers:false,
+                                                        singleSelect:true,
+                                                        autoRowHeight:false,
+                                                        pagination:false,
+                                                        nowrap: true,
+                                                        pageSize:1000">
+                                    <thead>
+                                        <tr>
+
+
+                                            <th data-options="field:'LineId',width:80,hidden:'true'">
+                                                Line Id
+                                            </th>
+                                            <th data-options="field:'LineName',width:150">
+                                                Line Name
+                                            </th>
+                                            <th data-options="field:'ProjectId',width:80,hidden:'true'">
+                                                project Id
+                                            </th>
+                                            <th data-options="field:'ProjectName',width:150,">
+                                                Project Name
+                                            </th>
+                                            <th data-options="field:'Quantity',width:150">
+                                                Issued Quantity
+                                            </th>
+                                            <th data-options="field:'Delete',width:80,align:'left'"></th>
+
+                                        </tr>
+                                    </thead>
+                                </table>*@
+
+
+                            <table class="table table-responsive-lg header-fixed table-striped table-bordered table-condensed table-hover dataTable no-footer " id="tblComponent">
+                                <thead class="" style="background-color: #B7472A; color: white;font-size: 13px; ">
+                                    <tr>
+                                        <th class="text-center">Component Id</th>
+                                        <th class="text-center">Component Name</th>
+                                        <th class="text-center">Available Quantity</th>
+                                        <th class="text-center">Submit Quantity</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody style=""></tbody>
+                            </table>
+
+
+
+                            <div class="form-group row">
+                                &nbsp;
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-4" id="">
+                                    &nbsp;
+                                </div>
+
+                                <div class="col-sm-10" id="">
+
+
+                                    <div class="form-group row">
+                                        <div class="checkbox col-md-8">
+                                            <div class="i-checks">
+                                                <input id="chkSure" type="checkbox" value="" class="checkbox-template">
+                                                <label for="chkSure">You sure want to save ?</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="button" id="btnSave" style="display: none" value="Save" class="btn  btn-success" onclick="SaveData();">
+                                        </div>
+                                    </div>
+
+                                    @*<input type="button" id="btnSave" value="Save" class="btn  btn-success" onclick="SaveAssemblyLineSetup();">*@
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                &nbsp;
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="button" id="btnSave" value="Save" class="btn btn-success" onclick="SaveDataManually();">
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+
+                </div>
+                <div class="modal-body">
+                    <form>
+
+                        <div class="form-group" style="display: none;">
+                            <label for="lineId">Line Id</label>
+                            <input type="text" class="form-control" id="lineId" placeholder="" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lineName">Line Name</label>
+                            <input type="text" class="form-control" id="lineName" placeholder="Line Name" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lineName">Line Type</label>
+                            <select class="form-control" id="ddlType">
+                                <option value="AssemblyLine">Assembly Line</option>
+                                <option value="PackagingLine">Packaging Line</option>
+                                <option value="ReworkStation">Rework Station</option>
+                                <option value="CkdStation">CKD Station</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lineRemarks">Remarks</label>
+                            <input type="text" class="form-control" id="lineRemarks" placeholder="Line Remarks" />
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <input type="hidden" name="hdemployeeId" id="hdemployeeId" />
+</section>
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+
+<script>
+
+    $('#txtEmployee').autocomplete({
+        source: "@Url.Action("GetRegEmployee", "Admin")",
+
+        minLength: 2,
+        select: function (event, ui) {
+            $("#EmpDetailsLine").show();
+            $("#EmpDetailsRole").show();
+            $("#txtEmpLineName").val(ui.item.Line);
+            $("#txtEmpRoleName").val(ui.item.Role);
+            $("#hdemployeeId").val(ui.item.Id);
+
+        }
+    });
+
+    function clearTextBox() {
+        $('#lineId').val('');
+        $('#lineName').val('');
+        $('#lineRemarks').val('');
+        $("#txtIssued").val('');
+        $("#txtLine").val(0);
+        $("#txtProject").val(0);
+        $("#txtHQuantity").val('');
+        $("#txtTQuantity").val('');
+        $("#txtManPower").val('');
+        LoadAllLines();
+        LoadAllLines1();
+        LoadAllProjects();
+    }
+
+    $(document).ready(function () {
+        loadData();
+        LoadAllLines();
+        LoadAllLines1();
+        //LoadAllEmployee();
+        LoadAllProjects();
+
+        $('#chkSure').change(function () {
+            if (this.checked)
+                $('#btnSave').fadeIn('slow');
+            else
+                $('#btnSave').fadeOut('slow');
+
+        });
+        var rows = [];
+
+
+
+
+    });
+
+
+
+    function SaveData() {
+        var rowCount = $('#tblComponent >tbody >tr').length;
+        var datacount = 0;
+        //alert(rowCount);
+        var flag = 1;
+        debugger;
+        //alert("started");
+        var assemblyLineDetails = new Array();
+        var assemblyLine = {};
+
+        if ($('#txtLine').val() == "" || $("#txtLine").val() == 0) {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Line Name Required'
+            });
+
+            return false;
+        }
+
+        else if ($('#txtProject').val() == "") {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Project Name Required'
+            });
+
+            return false;
+        }
+
+            //else if ($('#txtManPower').val() == "") {
+            //    iziToast.warning({
+            //        timeout: 2000,
+            //        imageWidth: 150,
+            //        position: 'center',
+            //        title: 'warning',
+            //        message: 'Man Power Required'
+            //    });
+
+            //    return false;
+            //}
+
+        else if ($('#txtIssued').val() == "") {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Issued Quantity Required'
+            });
+
+            return false;
+        }
+
+        else if ($('#txtHQuantity').val() == "") {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Hously Quantity Required'
+            });
+
+            return false;
+        }
+
+            //else if ($('#txtTQuantity').val() == "") {
+            //    iziToast.warning({
+            //        timeout: 2000,
+            //        imageWidth: 150,
+            //        position: 'center',
+            //        title: 'warning',
+            //        message: 'Total Quantity Required'
+            //    });
+
+            //    return false;
+            //}
+
+
+
+
+
+
+        else {
+
+
+
+            $('#tblComponent  tbody').find("tr").each(function (row, tr) {
+                //tableData.shift();
+                var a = $(tr).find('td:eq(2)').text();
+
+                var b = $(tr).find('input[name="txtQuantity"]').val();
+
+
+                // alert(a);
+                // alert(b);
+
+                if ($(this).find('input[name="txtQuantity"]').val() == "") {
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: 'Submit quantity can not be null'
+                    });
+                    $('#chkSure').prop('checked', false);
+                    $('#btnSave').hide();
+                    return false;
+                }
+
+
+                else if (parseInt($(this).find('td:eq(2)').text()) < $(this).find('input[name="txtQuantity"]').val()) {
+
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: 'Stock quantity can quantity can not be less'
+                    });
+                    $('#chkSure').prop('checked', false);
+                    $('#btnSave').hide();
+                    return false;
+                }
+
+
+                else {
+                    assemblyLineDetails[row] = {
+                        "ProjectId": $('#txtProject').val(),
+                        "ComponentId": $(tr).find('td:eq(0)').text(),
+                        "ComponentName": $(tr).find('td:eq(1)').text(),
+                        "RequisitionQuantity": $(tr).find('td:eq(2)').text(),
+                        "SubmitQuantity": $(tr).find('input[name="txtQuantity"]').val()
+
+                    };
+
+                    datacount++;
+
+                }
+
+            });
+
+            if (datacount == rowCount) {
+
+                assemblyLine.AssemblyLineId = $('#txtLine').val();
+                assemblyLine.ProjectId = $('#txtProject').val();
+                assemblyLine.ProjectName = $('#txtProject option:selected').text();
+                assemblyLine.IssuedQuantity = $('#txtIssued').val();
+                assemblyLine.HourlyTargetQuantity = $('#txtHQuantity').val();
+                assemblyLine.TotalTargetQuantity = $('#txtTQuantity').val();
+                assemblyLine.ManPower = $('#txtManPower').val();
+
+
+
+                $.ajax({
+                    url: ' @Url.Action("InsertProductionLineSetup", "Admin")',
+                    type: 'Post',
+                    data: JSON.stringify({ assemblyLine: assemblyLine, assemblyLineSetupDetails: assemblyLineDetails }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: 'Result Saved Successfully'
+                            });
+
+                            clearTextBox();
+                            $('#tblComList').hide();
+                            $('#tblComponent tbody').empty();
+                            $('#chkSure').prop('checked', false);
+                            $('#btnSave').hide();
+
+
+
+                            return true;
+
+                        }
+                        else if (result.Id == "0") {
+                            window.location = '@Url.Action("LogOut", "Account")';
+
+                        }
+
+                        else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: 'Error Occured While Saving'
+                            });
+                        }
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        //toastr.error(result.Message);
+
+                        //return false;
+                    }
+                });
+            }
+
+        }
+    }
+
+
+
+    //Load Data function
+    function loadData() {
+        $.ajax({
+            url: "  @Url.Action("GetLineList", "Admin")",
+            type: "GET",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                var html = '';
+                $.each(result, function (key, item) {
+                    html += '<tr>';
+                    html += '<td style=display:none>' + item.LineId + '</td>';
+                    html += '<td>' + item.LineName + '</td>';
+                    html += '<td>' + item.Remarks + '</td>';
+                    html += '<td><a href="#" onclick="return getbyID(' + item.LineId + ')">Edit</a></td>'; //| <a href="#" onclick="Delele(' + item.LineId + ')">Delete</a>
+                    html += '</tr>';
+                });
+                $('.tbody').html(html);
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+
+
+    //Add Data Function
+    function Add() {
+
+
+        if ($('#lineName').val() == "") {
+            iziToast.warning({
+                timeout: 3000,
+                imageWidth: 550,
+                position: 'center',
+                title: 'warning',
+                backgroundColor: 'blue',
+                theme: 'dark', // dark
+                color: 'yellow', // blue, red, green, yellow
+                message: 'Line Name Required'
+            });
+
+            return false;
+        } else {
+
+            var obj = {
+
+                LineName: $('#lineName').val(),
+                Remarks: $('#lineRemarks').val(),
+                LineCriteria: $('#ddlType').val(),
+            };
+
+            $.ajax({
+                url: "@Url.Action("InsertProductionLine", "Admin")",
+                data: JSON.stringify(obj),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    loadData();
+                    LoadAllLines();
+                    LoadAllLines1();
+                    clearTextBox();
+                    $('#myModal').modal('hide');
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+
+
+
+        }
+    }
+
+    function getbyID(lineId) {
+
+        $.ajax({
+
+
+            url: " @Url.Action("GetLineListById", "Admin")?id=" + lineId,
+            typr: "GET",
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (result) {
+
+                console.log(result);
+
+                $('#lineId').val(result[0].LineId);
+                $('#lineName').val(result[0].LineName);
+                $('#lineRemarks').val(result[0].Remarks);
+
+                $('#myModal').modal('show');
+                $('#btnUpdate').show();
+                $('#btnAdd').hide();
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+        return false;
+    }
+    //function for updating employee's record
+    function Update() {
+
+        var obj = {
+            LineId: $('#lineId').val(),
+            LineName: $('#lineName').val(),
+            Remarks: $('#lineRemarks').val(),
+
+        };
+        $.ajax({
+
+
+            url: "  @Url.Action("UpdateProductionLine", "Admin")",
+            data: JSON.stringify(obj),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                loadData();
+                LoadAllLines();
+                LoadAllLines1();
+                $('#myModal').modal('hide');
+                clearTextBox();
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+    function Delele(id) {
+        var ans = confirm("Are you sure you want to delete this Record?");
+        if (ans) {
+            $.ajax({
+
+
+                url: " @Url.Action("DeleteProductionLine", "Admin")?id=" + id,
+                type: "POST",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    loadData();
+                    LoadAllLines();
+                    LoadAllLines1();
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+    }
+
+
+
+
+
+    function LoadAllLines() {
+
+
+        var url = " @Url.Action("GetLineList", "Admin")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtLine");
+            $("#txtLine").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.LineId + '">' + obj.LineName + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+    @*function LoadAllEmployee() {
+
+
+        var url = " @Url.Action("GetRegEmployee", "Admin")";
+        $.getJSON(url, function (json) {
+            console.log(json);
+            var elem = $("#txtEmp");
+            $("#txtEmp").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+            console.log(json);
+            $.each(json, function(idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value +'</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }*@
+
+
+
+    function LoadAllLines1() {
+
+
+        var url = " @Url.Action("GetLineList", "Admin")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtLine1");
+            $("#txtLine1").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.LineId + '">' + obj.LineName + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+
+
+
+    function LoadAllProjects() {
+
+        var url = "@Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+
+
+
+
+
+
+    function SaveAssemblyLineSetup() {
+
+        var assemblyLineList = [];
+        debugger;
+        var assemblyLineData = $('#dglineList').datagrid('getRows');
+        if (assemblyLineData.length > 0) {
+
+
+
+            for (var i = 0; i < assemblyLineData.length; i++) {
+
+
+                assemblyLineList.push({
+                    AssemblyLineId: assemblyLineData[i].LineId,
+                    ProjectId: assemblyLineData[i].ProjectId,
+                    ProjectName: assemblyLineData[i].ProjectName,
+                    IssuedQuantity: assemblyLineData[i].Quantity,
+
+                });
+
+            }
+
+            console.log(assemblyLineList);
+            if (assemblyLineList.length != 0) {
+
+                $.ajax({
+                    url: ' @Url.Action("InsertProductionLineSetup", "Admin")',
+                    type: 'Post',
+                    data: JSON.stringify({ assemblyLine: assemblyLineList }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 3000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: 'Result Saved Successfully'
+                            });
+
+                            clearTextBox();
+
+                            return true;
+
+                        } else {
+                            iziToast.error({
+                                timeout: 3000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: 'Error Occured While Saving'
+                            });
+                        }
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        //toastr.error(result.Message);
+
+                        //return false;
+                    }
+                });
+            }
+
+        } else {
+
+
+            iziToast.error({
+                timeout: 3000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Error',
+                message: 'TPlease Insert Assembly Line Informaton'
+            });
+
+            return false;
+
+        }
+
+
+    }
+
+    @*$("#txtProject").change(function() {
+        debugger;
+        var item = $(this);
+        //alert(item.val());
+
+
+        $.ajax({
+            url: '@Url.Action("GetComponentsByProject", "Admin")',
+            type: 'Post',
+            data: JSON.stringify({ projectId: item.val() }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function(data) {
+
+                if (data.length == 0) {
+
+                    $('#tblComList').hide();
+                    $('#tblComponent tbody').empty();
+
+                    iziToast.warning({
+                        timeout: 5000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: ' No component found for this product Please Make a requisition'
+                    });
+                    return false;
+                } else {
+                    $('#tblComList').show();
+                    $.each(data, function(index, itemData) {
+
+                        var row = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                            "<td style='height:3px;' class='text-center'>" + itemData.ComponentId + "</td>" +
+                            "<td style='height:3px;' class='text-center'>" + itemData.ComponentName + "</td>" +
+                            "<td style='height:3px;' class='text-center'>" + itemData.ReqQuantity + "</td>" +
+                            "<td style='height:3px;' class='text-center'><input type='text' name='txtQuantity' class='form-control' /></td>" +
+                            "</tr>";
+                        $('#tblComponent tbody').append(row);
+
+                    });
+
+                }
+            },
+            error: function(data, textStatus, jqXHR) {
+                return false;
+            }
+        });
+
+    });*@
+
+
+    function SaveEmployeeLineAssign() {
+
+
+        if ($('#txtEmployee').val() == "") {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Employee Name Required'
+            });
+
+            return false;
+        } else if ($('#txtLine1').val() == "") {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Line Name Required'
+            });
+
+            return false;
+        } else {
+
+            var assemblyLine = {
+                Id: $('#hdemployeeId').val(),
+                LineId: $('#txtLine1').val(),
+                LineName: $('#txtLine1 option:selected').text(),
+            };
+
+
+
+
+            $.ajax({
+                url: ' @Url.Action("UpdateUserLineInfo", "Admin")',
+                type: 'Post',
+                data: JSON.stringify({ assemblyLine: assemblyLine }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Result Saved Successfully'
+                        });
+                        $('#hdemployeeId').val('');
+                        $('#txtEmployee').val('');
+                        $("#EmpDetailsLine").hide();
+                        $("#EmpDetailsRole").hide();
+                        $("#txtEmpLineName").val('');
+                        $("#txtEmpRoleName").val('');
+                        LoadAllLines1();
+                        // window.location.reload();
+
+                        return true;
+
+                    }
+
+                    else if (result.Id == "0") {
+                        window.location = '@Url.Action("LogOut", "Account")';
+
+                    }
+
+
+                    else {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: 'Error Occured While Saving'
+                        });
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    //toastr.error(result.Message);
+
+                    //return false;
+                }
+            });
+
+
+
+
+        }
+    }
+
+
+    function SaveDataManually() {
+        var rowCount = $('#tblComponent >tbody >tr').length;
+        var datacount = 0;
+        //alert(rowCount);
+        var flag = 1;
+        debugger;
+        //alert("started");
+        var assemblyLineDetails = new Array();
+        var assemblyLine = {};
+
+        if ($('#txtLine').val() == "" || $("#txtLine").val() == 0) {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 50,
+                position: 'center',
+                title: 'warning! -',
+                backgroundColor: '#E22919',
+                theme: 'dark', // dark
+                zindex: 999,
+                progressBarColor: '#091B2B',
+                titleSize: 30,
+                messageColor: '#F4F3F8',
+                messageSize: 30,
+                message: ' Please  Insert  Line  Name'
+            });
+
+            return false;
+        }
+
+        else if ($('#txtProject').val() == "" || $("#txtProject").val() == 0) {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 50,
+                position: 'center',
+
+                message: ' Please  Insert  Project  Name',
+                title: 'warning! -',
+                backgroundColor: '#E22919',
+                theme: 'dark', // dark
+                zindex: 999,
+                progressBarColor: '#091B2B',
+                titleSize: 30,
+                messageColor: '#F4F3F8',
+                messageSize: 30,
+
+            });
+
+            return false;
+        }
+
+        else if ($('#txtManPower').val() == "") {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                message: 'Man Power Required',
+                title: 'warning! -',
+                backgroundColor: '#E22919',
+                theme: 'dark', // dark
+                zindex: 999,
+                progressBarColor: '#091B2B',
+                titleSize: 30,
+                messageColor: '#F4F3F8',
+                messageSize: 30,
+
+            });
+
+            return false;
+        }
+
+        else if ($('#txtIssued').val() == "") {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                message: 'Issued Quantity Required',
+                title: 'warning! -',
+                backgroundColor: '#E22919',
+                theme: 'dark', // dark
+                zindex: 999,
+                progressBarColor: '#091B2B',
+                titleSize: 30,
+                messageColor: '#F4F3F8',
+                messageSize: 30,
+            });
+
+            return false;
+        }
+
+        else if ($('#txtHQuantity').val() == "") {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning! -',
+                message: 'Hourly Quantity Required',
+                backgroundColor: '#E22919',
+                theme: 'dark', // dark
+                zindex: 999,
+                progressBarColor: '#091B2B',
+                titleSize: 30,
+                messageColor: '#F4F3F8',
+                messageSize: 30,
+            });
+
+            return false;
+        }
+
+        else if ($('#txtTQuantity').val() == "") {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning! -',
+                message: 'Total Quantity Required',
+                backgroundColor: '#E22919',
+                theme: 'dark', // dark
+                zindex: 999,
+                progressBarColor: '#091B2B',
+                titleSize: 30,
+                messageColor: '#F4F3F8',
+                messageSize: 30,
+            });
+
+            return false;
+        }
+
+
+        else {
+
+            assemblyLine.AssemblyLineId = $('#txtLine').val();
+            assemblyLine.ProjectId = $('#txtProject').val();
+            assemblyLine.ProjectName = $('#txtProject option:selected').text();
+            assemblyLine.IssuedQuantity = $('#txtIssued').val();
+            assemblyLine.HourlyTargetQuantity = $('#txtHQuantity').val();
+            assemblyLine.TotalTargetQuantity = $('#txtTQuantity').val();
+            assemblyLine.ManPower = $('#txtManPower').val();
+            assemblyLine.PreviousQuantity = $('#txtPDQuantity').val();
+
+
+
+            $.ajax({
+                url: ' @Url.Action("InsertManualProductionLineSetup", "Admin")',
+                type: 'Post',
+                data: JSON.stringify({ assemblyLine: assemblyLine }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Result Saved Successfully'
+                        });
+
+                        clearTextBox();
+                        return true;
+
+                    }
+                    else if (result.Id == "0") {
+                        window.location = '@Url.Action("LogOut", "Account")';
+
+                    }
+
+                    else {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: 'Error Occured While Saving',
+                            messageSize: 30,
+                        });
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    //toastr.error(result.Message);
+
+                    //return false;
+                }
+            });
+        }
+    }
+
+</script>

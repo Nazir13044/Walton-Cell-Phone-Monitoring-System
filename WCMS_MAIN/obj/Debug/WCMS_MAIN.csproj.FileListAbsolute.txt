@@ -1,0 +1,341 @@
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll.config
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Web.Infrastructure.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Owin.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WebGrease.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.csprojResolveAssemblyReference.cache
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll.config
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Web.Infrastructure.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Owin.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WebActivator.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WebGrease.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.csprojResolveAssemblyReference.cache
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\RdlCompile.cache
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\RdlCompile.compiled
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll.config
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Web.Infrastructure.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Oracle.ManagedDataAccess.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Owin.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WebActivator.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WebGrease.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.pdb
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.csprojResolveAssemblyReference.cache
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\RdlCompile.cache
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\RdlCompile.compiled
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.dll
+D:\WALTON PROJECTS\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll.config
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Web.Infrastructure.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Owin.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WebActivator.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WebGrease.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.csprojResolveAssemblyReference.cache
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\RdlCompile.cache
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\RdlCompile.compiled
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll.config
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_MAIN.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Web.Infrastructure.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Oracle.ManagedDataAccess.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Owin.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WebActivator.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WebGrease.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WcfService2.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_BLL.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_COMMON.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_DAL.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\WCMS_ENTITY.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\EntityFramework.SqlServer.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Helpers.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Mvc.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Optimization.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.Razor.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Deployment.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\System.Web.WebPages.Razor.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Newtonsoft.Json.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Antlr3.Runtime.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Google.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.csprojResolveAssemblyReference.cache
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\RdlCompile.cache
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\RdlCompile.compiled
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_MAIN\obj\Debug\WCMS_MAIN.pdb

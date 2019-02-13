@@ -1,0 +1,268 @@
+﻿@{
+    ViewBag.Title = "AssemblylineProductionStatus";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            &nbsp;
+        </div>
+
+
+
+        <div class="col-lg-12 ">
+            <div class="card" style="border: 2px solid ; height: 250px;">
+                <div class="card-header d-flex align-items-center" style="background-color: darkslateblue; color: white">
+                    <h3 class="h4" style="font-weight: normal">Assembly Line production Status Report</h3>
+                </div>
+                <div class="card-body text-center">
+                    <div class="form-group row">
+                        <label class="col-sm-2 form-control-label">Date:</label>
+                        <div class="col-sm-4">
+                            <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success txtDate">
+                        </div>
+                        <label class="col-sm-2 form-control-label">To Date:</label>
+                        <div class="col-sm-4">
+                            <input id="txtToDate" type="text" placeholder="" class="form-control form-control-success txtDate">
+                        </div>
+                        <br/>
+                        <br />
+                        <br />
+                        <label class="col-sm-2 form-control-label">Model:</label>
+                        <div class="col-sm-4">
+                            <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" style="" id="btSearch">Search</button>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<div class="col-lg-12" id="divAssemblyProductionData" style="">
+    <div class="bar-chart-example card" id="divCard">
+        <div class="card-close">
+
+        </div>
+        <div class="card-header d-flex align-items-center">
+            <h3 class="h4">Production Report</h3>
+        </div>
+        <div class="card-body">
+            <table id="datatableAssemblyProductionData" class="table  table-bordered " width="900" cellspacing="0">
+
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Line Issued</th>
+                        <th>Waiting Before Qc</th>
+                        <th>Qc Checked</th>
+                        <th>Qc Pass</th>
+                        <th>Functional Fail</th>
+                        <th>Aesthetic Fail</th>
+                        <th>Functional Fault(%)</th>
+                        <th>Aesthetic Fault(%)</th>
+                        <th>Reworked</th>
+                        <th>Rework Pending</th>
+                        <th>Non Reparable</th>
+                        <th>Non Reparable(%)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+<link href="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.css" rel="stylesheet" />
+<link href="~/js/vendor/DatatablePrint/jquery.dataTables-1.10.9.css" rel="stylesheet" />
+<link href="~/js/vendor/DatatablePrint/dataTables-2.2.4.tableTools.min.css" rel="stylesheet" />
+<script src="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.js"></script>
+
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/chart.js/Chart.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+<script src="~/js/vendor/DatatablePrint/jquery.dataTable-1.10.9.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.colVis.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.flash.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.html5.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/buttons.print.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.buttons.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.foundation.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/vfs_fonts.js"></script>
+<script src="~/js/vendor/DatatablePrint/pdfmake.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/jszip.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.buttons.min.js"></script>
+<script src="~/js/vendor/DatatablePrint/dataTables.foundation.min.js"></script>
+
+
+
+<script>
+
+    $(function () {
+        LoadAllProjects();
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+        $("#txtToDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+
+    });
+
+    function LoadAllProjects() {
+
+        var url = "@Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select Project---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+        });
+    }
+
+
+    $("#btSearch").click(function () {
+
+        debugger;
+        GetAssemblylineProductionStatus();
+
+
+    });
+
+
+    function GetAssemblylineProductionStatus() {
+
+
+        debugger;
+        var printCounter = 0;
+        var buttonCommon = {
+
+        };
+
+        var gridateFrom = $("#txtReqDate").val().split('-');
+        var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+
+        var gridateTo = $("#txtToDate").val().split('-');
+        var todate = gridateTo[2] + "-" + gridateTo[1] + "-" + gridateTo[0];
+
+        //var project = null;
+
+
+        var table = $('#datatableAssemblyProductionData').DataTable({
+            "ajax": {
+                "url": "@Url.Action("GetAssemblylineProductionStatusReport", "Report")",
+                "type": "GET",
+                "data": function (d) {
+
+                    d.project = $('#txtProject').val();
+                    d.fromdate = fromdate;
+                    d.todate = todate;
+                },
+                "datatype": "json"
+            },
+            "destroy": true,
+            "columnDefs":
+            [{
+                "searchable": true,
+
+                visible: false
+            },
+
+    { "width": "10%", "targets": 1 }
+            ],
+            "pageLength": 50,
+
+            "scrollY": "500px",
+            "dom": 'Bfrtip',
+            "buttons": [
+
+                $.extend(true, {}, buttonCommon, {
+                    extend: 'excelHtml5',
+                    text: '<i class="fa fa-file-excel-o"></i> Excel',
+                    title: 'Tp-Lcd Production'
+                }),
+            {
+                extend: 'csvHtml5',
+                text: '<i class="fa fa-files-o"></i> Csv',
+                exportOptions: { orthogonal: 'export' },
+                title: 'Tp-Lcd Production'
+            },
+
+                {
+
+                    extend: 'print',
+                    text: '<i class="fa fa-print"></i> Print',
+                    title: 'Tp-Lcd Production ',
+                    messageTop: "Tp-Lcd Production </br> ",
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL',
+                    exportOptions: {
+                        columns: ':not(.no-print)'
+                    },
+                    footer: false,
+                    autoPrint: true
+
+                },
+
+
+                'colvis'
+            ],
+
+            "columns": [
+                { "data": "AddedDate", "autoWidth": true, "searchable": true },
+                { "data": "IssuedInLine", "autoWidth": true, "searchable": true },
+                { "data": "WaitingBeforeQc", "autoWidth": true, "searchable": true },
+                { "data": "TotalQcChecked", "autoWidth": true },
+                { "data": "QcPassed", "autoWidth": true },
+                { "data": "FunctionalFault", "autoWidth": true },
+                { "data": "AestheticFault", "autoWidth": true },
+                { "data": "FunctionalFaultPercentage", "autoWidth": true },
+                { "data": "AestheticFaultFaultPercentage", "autoWidth": true },
+                { "data": "Reworked", "autoWidth": true },
+                { "data": "ReworkPending", "autoWidth": true },
+                { "data": "Nonreparable", "autoWidth": true },
+                { "data": "NonReparablePercentage", "autoWidth": true }
+
+            ]
+
+
+
+        });
+
+
+
+
+        table.buttons().container()
+            .appendTo('#datatable_wrapper .small-4.columns:eq(0)');
+
+
+    }
+
+</script>

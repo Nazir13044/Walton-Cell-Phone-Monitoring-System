@@ -1,0 +1,918 @@
+﻿
+@{
+    ViewBag.Title = "AdminPanel";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+
+    .amcharts-chart-div {
+        width: 200px;
+        height: 200px;
+        text-align: center;
+    }
+    .testchart {
+        width: 200px;
+        height: 200px;
+        text-align: center;
+    }
+    
+    
+    
+    
+     .ui-autocomplete {
+        max-height: 250px;
+        overflow: auto;
+        float: left;
+        z-index: 2147483647 !important;
+    }
+
+
+    .stylish-panel {
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .stylish-panel > div > div {
+        padding: 10px;
+        border: 4px solid #123D6A;
+        border-radius: 4px;
+        transition: 0.2s;
+        background: #1E2631;
+        color: white;
+        cursor: pointer;
+    }
+
+    .stylish-panel > div > div p {
+        color: white;
+    }
+
+    .stylish-panel > div:hover > div {
+        margin-top: -10px;
+        border: 1px solid rgb(200, 200, 200);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+        background: #123D68;
+        transition: 0.5s;
+    }
+
+
+    .modal-body .form-horizontal .col-sm-2,
+    .modal-body .form-horizontal .col-sm-10 {
+        width: 100%;
+    }
+
+    .modal-body .form-horizontal .control-label {
+        text-align: left;
+    }
+
+    .modal-body .form-horizontal .col-sm-offset-2 {
+        margin-left: 15px;
+    }
+</style>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Admin </a></li>
+        <li class="breadcrumb-item active">Admin Panel</li>
+    </ul>
+</div>
+
+<section class="forms">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-3">
+                &nbsp;
+            </div>
+
+            <div class="col-lg-12">
+
+                        <div class="row stylish-panel">
+                            <div class="col-md-3" id="divBomList">
+                                <div>
+                                    
+                                    <h2> Bom List</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                       
+                                    </p>
+                                    @*<a href="#" class="btn btn-warning " title="See more">Add »</a>*@
+                                    <button class="btn btn-warning" data-toggle="modal" data-target="#modalBom" id="btnBomSave"> Add »</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3" id="divRoles">
+                                <div>
+
+                                    <h2> User Roles</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                       
+                                    </p>
+                                    <button class="btn btn-warning" data-toggle="modal" data-target="#modalUserRole" id="btnRoleSave"> Add »</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3" id="divMainMenu">
+                                <div>
+
+                                    <h2> Main Menu</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                       
+                                    </p>
+                                    <button class="btn btn-warning" data-toggle="modal" data-target="#modalMenu" id="btnMainMenuSave"> Add »</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3" id="divSubMenu">
+                                <div>
+
+                                    <h2> Sub Menu</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                       
+                                    </p>
+                                    <button class="btn btn-warning" data-toggle="modal" data-target="#modalSubMenu" id="btnSubMenuSave"> Add »</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+    @*<input type="hidden" name="hdemployeeName" id="hdprojectName" />*@
+</section>
+
+@*ALL MODALS*@
+
+@*Bom List Modal*@
+
+<div class="modal fade" id="modalBom" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <small>Add Bom Components</small>
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label"
+                               for="inputEmail3">Bom Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"id="txtBom" placeholder="Add Bom Name" />
+                        </div>
+                    </div>
+                   
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" id="btnSaveBom" class="btn btn-primary">
+                   Add Bom
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+@*Bom List Modal*@
+
+ @*User Role Modal*@
+
+<div class="modal fade" id="modalUserRole" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <small>USer Role</small>
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label"
+                               for="inputEmail3">RoleName</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtRole" placeholder="Add Role Name" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" id="btnSaveRole" class="btn btn-primary">
+                    Add Role
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*Menu Modal*@
+
+<div class="modal fade" id="modalMenu" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <small>Main Menu Modal</small>
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-8 control-label"
+                               for="inputEmail3">Main Menu Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtMainMenu" placeholder="Add Menu Name" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" id="btnMenuSave" class="btn btn-primary">
+                    Add Bom
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Sub Menu Modal*@
+
+<div class="modal fade" id="modalSubMenu" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <small>Modal Sub Menue</small>
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-8 control-label"
+                               for="inputEmail3">Sub Menu Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtSubMenuName" placeholder="Add Sub Menu Name" />
+                        </div>
+                    </div>
+
+                </form>
+                
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-8 control-label"
+                               for="inputEmail3">Controller Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtControllerName" placeholder="Add Controller Name" />
+                        </div>
+                    </div>
+
+                </form>
+                
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-8 control-label"
+                               for="inputEmail3">Action Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtActionName" placeholder="Add Action Name" />
+                        </div>
+                    </div>
+
+                </form>
+                
+                <form class="form-horizontal eventinsform" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-8 control-label"
+                               for="inputEmail3">Main Menu Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtMainMenuName" placeholder="Add Main Menu Name" />
+                        </div>
+                    </div>
+
+                </form>
+                
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-8 control-label"
+                               for="">Role Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="txtRoleName" placeholder="Add Roll Name" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" id="btnSaveSub" class="btn btn-primary">
+                    Add Bom
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" name="hdmainMenuId" id="hdmainMenuId" />
+<input type="hidden" name="hdRoleNameId" id="hdRoleNameId" />
+<table class="table table-bordered" id="QcProductionFaultData">
+    <thead>
+        <tr>
+            <th colspan="3">Assembly Qc Report</th>
+        </tr>
+        <tr>
+            <th scope="col">#Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Atestge</th>
+            <th scope="col">Atestge</th>
+            <th scope="col">Atestge</th>
+            <th scope="col">Atestge</th>
+            <th scope="col">Atestge</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+@*<div id="chartdiv">adasdasdasd</div>*@
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/js/vendor/JQueryEasyUI/themes/black/easyui.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+
+
+<script src="~/js/amChart/amChart.js"></script>
+<script src="https://www.amcharts.com/lib/3/gauge.js"></script>
+<script src="~/js/amChart/pie.js"></script>
+<script>
+
+    $("#btnSaveBom").click(function () {
+        alert("sdsd");
+
+        debugger;
+        
+        if ($("#txtBom").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Bom Name Required'
+            });
+            return false;
+        } else {
+
+
+            var bomName = {};
+
+            bomName.ComponentName = $("#txtBom").val();
+     
+
+            $.ajax({
+                url: '@Url.Action("InsertBomList", "Production")',
+                type: 'Post',
+                data: JSON.stringify({ bomList: bomName }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Saved Successfully'
+                        });
+                        $("#txtBom").val('');
+                        //$('#modalBom').modal('toggle');
+                        return true;
+
+                        //location.reload();
+                    } else {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message
+                        });
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+
+                    //return false;
+                }
+            });
+
+
+
+        }
+
+
+    });
+
+    //For Role Save
+    $("#btnSaveRole").click(function () {
+
+        if ($("#txtRole").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Role Name Required'
+            });
+            return false;
+        } else {
+
+
+            var roleName = {};
+
+            roleName.Roles = $("#txtRole").val();
+
+          
+            $.ajax({
+                url: ' @Url.Action("InsertRoles", "Admin")',
+                type: 'Post',
+                data: JSON.stringify({ roles: roleName }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Saved Successfully'
+                        });
+                        $("#txtRole").val('');
+                        //$('#modalBom').modal('toggle');
+                        return true;
+
+                        //location.reload();
+                    } else {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message
+                        });
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+
+                    //return false;
+                }
+            });
+
+
+
+        }
+
+
+    });
+    
+    //For Main Menu Save
+    $("#btnMenuSave").click(function () {
+
+        if ($("#txtMainMenu").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Menu Name Required'
+            });
+            return false;
+        } else {
+
+
+            var menuName = {};
+
+            menuName.MainMenu = $("#txtMainMenu").val();
+
+
+            $.ajax({
+                
+                url: '@Url.Action("InsertMainMenu", "Admin")',
+                type: 'Post',
+                data: JSON.stringify({ tblMainMenu: menuName }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Saved Successfully'
+                        });
+                        $("#txtMainMenu").val('');
+                        //$('#modalBom').modal('toggle');
+                        return true;
+
+                        //location.reload();
+                    } else {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message
+                        });
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+
+                    //return false;
+                }
+            });
+
+
+
+        }
+
+
+    });
+    
+    //Sub Menu 
+    $("#btnSaveSub").click(function () {
+
+        if ($("#txtSubMenuName").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Sub Menu Name Required'
+            });
+            return false;
+        }
+
+        else if ($("#txtControllerName").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Controller Name Required'
+            });
+            return false;
+        }
+        else if ($("#txtActionName").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Action Name Required'
+            });
+            return false;
+        }
+        else if ($("#txtMainMenuName").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Main Menu Name Required'
+            });
+            return false;
+        }
+        else if ($("#txtRoleName").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Role Name Required'
+            });
+            return false;
+        }
+
+        else {
+
+
+            var subMenuList = {};
+
+            subMenuList.SubMenu = $("#txtSubMenuName").val();
+            subMenuList.Controller = $("#txtControllerName").val();
+            subMenuList.Action = $("#txtActionName").val();
+            subMenuList.MainMenuId = $("#hdmainMenuId").val();
+            subMenuList.RoleId = $("#hdRoleNameId").val();
+
+            
+            $.ajax({
+                url: '@Url.Action("InsertSubMenu", "Admin")',
+                type: 'Post',
+                data: JSON.stringify({ tblSubMenu: subMenuList }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Saved Successfully'
+                        });
+                        $("#txtSubMenuName").val('');
+                        $("#txtControllerName").val('');
+                        $("#txtActionName").val('');
+                        $("#txtMainMenuName").val('');
+                        $("#txtRoleName").val('');
+                        
+                        return true;
+
+                        //location.reload();
+                    } else {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message
+                        });
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+
+                    //return false;
+                }
+            });
+
+
+
+        }
+
+
+    });
+
+
+
+    //Main Menu Auto Search
+    
+    //project Name Auto Complete
+    $('#txtMainMenuName').autocomplete({
+        
+        
+
+        source: "@Url.Action("GetMainMenusNames", "Admin")",
+        minLength: 2,
+        select: function (event, ui) {           
+
+            $("#hdmainMenuId").val(ui.item.Id);
+
+
+            alert($("#hdmainMenuId").val());
+
+        }
+    });
+    
+    //Role Name Auto Complete
+    $('#txtRoleName').autocomplete({
+        source: " @Url.Action("GetUserRoleNames", "Admin")",
+        minLength: 2,
+        select: function (event, ui) {
+
+            $("#hdRoleNameId").val(ui.item.Id);
+
+
+            alert($("#hdRoleNameId").val());
+
+        }
+    });
+
+   
+
+   // console.log(testData);
+
+    function test() {
+
+
+        var someData = [
+   { firstName: "Max", lastName: "Mustermann", age: 20 },
+   { firstName: "Hagbard", lastName: "Celine", age: 64 },
+   { firstName: "Karl", lastName: "Koch", age: 82 }
+        ];
+
+        var employees = [];
+
+        for (var i in someData) {
+
+            var item = someData[i];
+
+            employees.push({
+                "firstName": item.firstName,
+                "lastName": item.lastName,
+                "age": item.age
+            });
+        }
+        //console.log(employees);
+        Boss(employees);
+
+    }
+    
+
+
+    function Boss(data) {
+        debugger;
+
+        $.each(data, function (key, item) {
+
+
+
+
+            var row = '<tr class="active"><td >' + item.firstName + '</td> <td ><div id="chartdiv"> <div class="testchart" id="chartdiv' + key + '" ></div></div> </td><td >' + item.firstName + '</td><td >' + item.firstName + '</td> <td >' + item.firstName + '</td> <td >' + item.firstName + '</td> <td >' + item.firstName + '</td>  </tr>';
+
+           
+            $('#QcProductionFaultData tbody').append(row);
+            Chart(data[key], key);
+
+        });
+
+    }
+   
+   
+
+    function Chart(data,key) {
+
+        debugger;
+        //chart
+        var chart = AmCharts.makeChart("chartdiv" + key, {
+
+            "type": "gauge",
+            "theme": "light",
+            "axes": [{
+                "axisThickness": 1,
+                "axisAlpha": 0.2,
+                "tickAlpha": 0.2,
+                "valueInterval": 25,
+                "bands": [{
+                    "color": "#cc4748",
+                    "endValue": 40,
+                    "startValue": 0
+                }, {
+                    "color": "#fdd400",
+                    "endValue": 80,
+                    "startValue": 40
+                }, {
+                    "color": "#84b761",
+                    "endValue": 100,
+                    "innerRadius": "95%",
+                    "startValue": 80
+                }],
+                
+                "bottomTextYOffset": -20,
+                "endValue": 100
+            }],
+            "arrows": generateChartData(data),
+            "export": {
+                "enabled": true
+            }
+        });
+    }
+
+
+
+    function generateChartData(data) {
+        debugger;
+
+        var chartData = [];
+
+
+        //$.each(data, function (index, itemData) {
+
+            chartData.push({
+                "value": data.age
+            });
+            //chart.validateData();
+        //});
+
+        console.log(chartData);
+        return chartData;
+    }
+
+    $(function() {
+
+        test();
+    });
+    
+</script>

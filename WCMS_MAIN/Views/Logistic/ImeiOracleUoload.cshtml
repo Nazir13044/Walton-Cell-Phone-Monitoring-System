@@ -1,0 +1,598 @@
+﻿
+@{
+    ViewBag.Title = "ImeiOracleUoload";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+@*<div class="breadcrumb-holder container-fluid" style=" background-color: #C46154; ">
+        <ul class="breadcrumb" style="padding: 8px; ">
+            <li class="breadcrumb-item"><a href="#">Reports </a></li>
+            <li class="breadcrumb-item active">Hourly Target Efficiency report</li>
+        </ul>
+    </div>*@
+
+<style>
+    table th tr td {
+        font-size: 13px;
+    }
+
+    #myOracleModal .modal-dialog {
+        -webkit-transform: translate(0,-50%);
+        -o-transform: translate(0,-50%);
+        transform: translate(0,-50%);
+        top: 50%;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="container-fluid">
+
+    <div class="col-lg-8 offset-2">
+        <div class="card" style="border: 2px solid darkcyan;height: 300px;">
+            <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                <h3 class="h4" style="font-weight: normal">Search Report </h3>
+            </div>
+            <div class="card-body">
+
+                <div class="form-horizontal">
+                    @*<div class="form-group row">
+                            <label class="col-sm-4 form-control-label">Model Name</label>
+                            <div class="col-sm-4">
+
+                                <select id="txtProject" data-placeholder="Choose a Line" class="chosen-select form-control"> </select>
+
+                            </div>
+                        </div>*@
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 form-control-label">From Date</label>
+                        <div class="col-sm-5">
+                            <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 form-control-label">To Date</label>
+                        <div class="col-sm-5">
+                            <input id="txtToDate" type="text" placeholder="Requisition Date" class="form-control form-control-success">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12 offset-sm-4">
+
+                            <button class="btn btn-primary" id="btn" style="width: 150px;margin-left: 2px;"> Search</button>
+
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12 offset-sm-4" id="img" style="display:none;">
+                            <img src="~/img/Filling.gif" style="margin-left: 50px;width: 40px;height: 40px;" />..Loading Please Wait
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-lg-12">
+
+
+        <div class="card" style="border: 2px solid darkcyan;display: none;" id="tblDataDiv">
+            <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                <h3 class="h4" style="font-weight: normal">Report Data </h3>
+            </div>
+            <div class="card-body">
+
+                <div class="form-horizontal" style="overflow: auto">
+
+
+
+                    <table class="table table-bordered table-hover" id="tblData">
+                        <thead class="" style="background-color: #123D6A; color: white; font-size: 18px;text-align: center; border-radius: 50px; ">
+                            <tr>
+                                <th style="">
+                                    Model
+                                </th>
+
+                                <th>
+                                    Color
+                                </th>
+                                <th style="">
+                                    Category
+                                </th>
+                                <th>
+                                    Production Count
+                                </th>
+                                <th>
+                                   Oracle Uploaded Count
+                                </th>
+
+                                @*<th>
+                                    Action
+                                </th>*@
+
+                                <th>
+                                    Upload To Oracle
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody"></tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="row">
+                        <div class="col-lg-6" id="divImei1">
+                            <h1>IMEI1</h1>
+                        </div>
+
+
+                        <div class="col-lg-6" id="divImei2">
+
+                            <h1>IMEI2</h1>
+
+                        </div>
+
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myOracleModal" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="form-group row">
+                    <div class="col-sm-12 offset-sm-4" id="img">
+                        <img src="~/img/Filling.gif" style="margin-left: 25px;width: 40px;height: 40px;" />..Uploading Please Wait
+
+
+                    </div>
+
+                </div>
+            </div>
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>*@
+        </div>
+    </div>
+</div>
+    <link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+    <link href="~/css/iziToast.min.css" rel="stylesheet" />
+    <link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+
+    <link href="~/css/jquery-ui-1.12.css" rel="stylesheet" />
+    @*<link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+    <script src="~/js/iziToast.min.js"></script>
+    <script src="~/js/jquery-ui-1.12.js"></script>
+    <script src="~/js/vendor/chart.js/Chart.min.js"></script>
+    <script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+    <script>
+        $(function () {
+
+
+
+            $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+            $("#txtToDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+
+        });
+
+
+        function getLogistics() {
+            debugger;
+            //var date = '2018-08-16';
+            var gridateFrom = $("#txtReqDate").val().split('-');
+            var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+
+            var gridateTo = $("#txtToDate").val().split('-');
+            var todate = gridateTo[2] + "-" + gridateTo[1] + "-" + gridateTo[0];
+
+            var project = null;
+
+
+            $.ajax({
+                url: '@Url.Action("GetLogisticsReportFroOracleUpload", "Logistic")',
+                type: 'Post',
+                data: JSON.stringify({ fromdate: fromdate, todate: todate, project: project }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+
+
+
+
+                success: function (result) {
+
+                    if (result.length > 0) {
+
+                        //setTimeout(function () {
+                        //    $('#img').hide();
+                        //}, 2000);
+
+
+                        $('#tblDataDiv').show();
+
+                        var html = '';
+                        $.each(result, function (key, item) {
+                            html += '<tr style=font-size:18px;height:3px;text-align:center;color:#123D6A;Background-color:#EEF5F9;>';
+                            html += '<td>' + item.Model + '</td>';
+                            html += '<td>' + item.Color + '</td>';
+                            html += '<td>' + item.ProjectName + '</td>';
+                            html += '<td>' + item.ProductionCount + '</td>';
+                            html += '<td>' + item.OracleUploadedCount + '</td>';
+                            //html += '<td><a href="#" id="btnDetails">Click For Details</a></td>';
+
+                            //html += '<td><a href="#"  id="linkClick" target="_new">Click For DataLoader</a></td>';
+                            //html += '<td><button type="button" id="linkCheckStock" class="btn btn-danger CheckStock"><i class="glyphicon glyphicon-remove-sign"></i>Stock Check</button></td>';
+                            html += '<td><button type="button" id="btnUploadToOracle" class="btn btn-success UploadToOracle"><i class="glyphicon glyphicon-remove-sign"></i>Upload To Oracle</button></td>';
+
+                            html += '</tr>';
+                        });
+                        $('.tbody').html(html);
+                        $('#img').hide();
+                    } else {
+
+                        iziToast.warning({
+                            timeout: 1000,
+                            imageWidth: 100,
+                            position: 'center',
+                            title: 'Warning!- ',
+                            message: 'No Data Found !',
+                            backgroundColor: '#E70F0F',
+                            theme: 'dark', // dark
+                            zindex: 999,
+                            progressBarColor: '#091B2B',
+                            titleSize: 15,
+                            messageColor: '#FDFEFE',
+                            messageSize: 15,
+
+                        });
+                        $('#img').hide();
+                    }
+
+                    // $('#img').hide();
+                },
+
+
+
+
+                error: function (result, textStatus, jqXHR) {
+
+                }
+
+            });
+        }
+        $(document).on("click", "#linkClick", function () {
+            debugger;
+            var target = "@Url.Action("LogisticsDataLoader", "Report")";
+            var $row = $(this).closest("tr").find('td:eq(0)').text();    // Find the row
+
+            var model = $row.replace(/\+/g, '%2B');  // Find the row
+
+
+            var color = $(this).closest("tr").find('td:eq(1)').text();    // Find the row
+            var x = color.replace(/\+/g, '%2B');
+            var gridateFrom = $("#txtReqDate").val().split('-');
+            var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+
+            var gridateTo = $("#txtToDate").val().split('-');
+            var todate = gridateTo[2] + "-" + gridateTo[1] + "-" + gridateTo[0];
+
+
+
+            window.open(target + '?fromdate=' + fromdate + '&todate=' + todate + '&model=' + model + '&color=' + x);
+            //getbyID($row);
+
+
+        });
+
+
+        $("#btn").click(function () {
+            $('#img').show();
+
+
+            setTimeout(function () {
+                getLogistics();;
+            }, 1000);
+
+        });
+
+
+        function navigate(target) {
+            //Grab your values
+            var gridate = $("#txtReqDate").val().split('-');
+            var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+            var $row = $(this).closest("tr").find('td:eq(0)').text();
+
+            //Perform your navigation
+            window.location.href = target + '?date=' + convertDate + '&model=' + $row;
+        }
+
+
+
+        $(document).on("click", "#btnDetails", function () {
+
+            var $row = $(this).closest("tr").find('td:eq(0)').text();    // Find the row
+
+
+            getbyID($row);
+
+
+        });
+
+
+
+
+        function getbyID(model) {
+            //debugger;
+            //alert(model);
+            var gridate = $("#txtReqDate").val().split('-');
+            var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+
+            $.ajax({
+
+
+                url: " @Url.Action("GetLogisticsReportWithDateModel", "Report")", //?id=+ model,
+                type: "Post",
+                data: JSON.stringify({ date: convertDate, model: model }),
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result);
+
+                    $.each(result, function (key, item) {
+                        $("#divImei1").append('<p>' + item.Imei1 + '</p>');
+                        $("#divImei2").append('<p>' + item.Imei2 + '</p>');
+                    });
+                    //console.log(result);
+
+                    $('#myModal').modal('show');
+
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+
+            $('#myModal').modal('show');
+
+        }
+
+
+        //new module for daa push to oracle
+
+
+        $(document).on("click", ".UploadToOracle", function () {
+            var model = $(this).closest("tr").find('td:eq(0)').text();    // Find the row
+
+            //var model = $row.replace(/\+/g, '%2B');  // Find the row
+            var color = $(this).closest("tr").find('td:eq(1)').text();
+            var quantity = parseInt($(this).closest("tr").find('td:eq(3)').text());
+            var uploadquantity = parseInt($(this).closest("tr").find('td:eq(4)').text());
+
+
+            //alert(model + " " + color + " " + quantity);
+
+            if (quantity == uploadquantity) {
+
+
+                iziToast.show({
+                    theme: 'dark',
+                    icon: 'icon-person',
+                    timeout: 2000,
+                    title: 'Wait!!',
+                    imageWidth: 150,
+                    message: 'Already Uploaded All Quantity !!!!! Upload Again????',
+                    position: 'center',
+                    layout: 1,
+                    messageSize: 15,
+                    progressBarColor: 'rgb(0, 255, 184)',
+                    buttons: [
+                        ['<button>Ok</button>', function (instance, toast) {
+                            iziToast.info({
+                                title: 'Uploading',
+                                message: 'Uploading Started!',
+                            });
+                            CheckOracleStockANdUpload(model, color, quantity);
+                        }, true], // true to focus
+                        ['<button>Close</button>', function (instance, toast) {
+                            instance.hide({
+                                transitionOut: 'fadeOutUp',
+                                onClosing: function (instance, toast, closedBy) {
+                                    console.info('closedBy: ' + closedBy); // The return will be: 'closedBy: buttonName'
+                                }
+                            }, toast, 'buttonName');
+                        }]
+                    ],
+                    onOpening: function (instance, toast) {
+                        console.info('callback abriu!');
+                    },
+                    onClosing: function (instance, toast, closedBy) {
+                        console.info('closedBy: ' + closedBy); // tells if it was closed by 'drag' or 'button'
+                    }
+                });
+
+
+
+
+            } else {
+                
+
+                iziToast.show({
+                    theme: 'dark',
+                    icon: 'icon-person',
+                    title: 'Wait!!',
+                    timeout: 2000,
+                    imageWidth: 150,
+                    message: 'Are You Sure to Upload',
+                    position: 'center',
+                    layout: 1,
+                    messageSize: 15,
+                    progressBarColor: 'rgb(0, 255, 184)',
+                    buttons: [
+                        ['<button>Ok</button>', function (instance, toast) {
+                            
+                            CheckOracleStockANdUpload(model, color, quantity);
+                            
+                            
+                            iziToast.info({
+                                title: 'Uploading',
+                                message: 'Uploading Started!',
+                            });
+
+
+                        }, true], // true to focus
+                        ['<button>Close</button>', function (instance, toast) {
+                            instance.hide({
+                                transitionOut: 'fadeOutUp',
+                                onClosing: function (instance, toast, closedBy) {
+                                    console.info('closedBy: ' + closedBy); // The return will be: 'closedBy: buttonName'
+                                }
+                            }, toast, 'buttonName');
+                        }]
+                    ],
+                    onOpening: function (instance, toast) {
+                        console.info('callback abriu!');
+                    },
+                    onClosing: function (instance, toast, closedBy) {
+                        console.info('closedBy: ' + closedBy); // tells if it was closed by 'drag' or 'button'
+                    }
+                });
+
+
+            }
+
+
+
+
+            //var row = $(this).closest('tr');
+            //$(row).find('.UploadToOracle').prop("disabled", false);
+
+
+        });
+
+
+        function CheckOracleStockANdUpload(model, color, quantity) {
+            $("#myOracleModal").modal("show");
+            var gridateFrom = $("#txtReqDate").val().split('-');
+            var fromdate = gridateFrom[2] + "-" + gridateFrom[1] + "-" + gridateFrom[0];
+
+            var gridateTo = $("#txtToDate").val().split('-');
+            var todate = gridateTo[2] + "-" + gridateTo[1] + "-" + gridateTo[0];
+
+
+
+            $.ajax({
+
+
+                url: " @Url.Action("CheckAndUploadImeiToOracle", "Report")", //?id=+ model,
+                type: "Post",
+                data: JSON.stringify({ fromdate: fromdate, todate: todate, model: model, color: color, quantity: quantity }),
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    
+
+                   
+                    if (result.IsSuccess && result.Id == "1") {
+                        $("#myOracleModal").modal("hide");
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Information Saved Successfully',
+                            backgroundColor: '#45B39D',
+                            theme: 'dark', // dark
+                            zindex: 999,
+                            progressBarColor: '#091B2B',
+                            titleSize: 20,
+                            messageColor: '#FDFEFE',
+                            messageSize: 20,
+
+                        });
+
+                        getLogistics();
+                    }
+
+                    if (result.IsSuccess && result.Id == "0") {
+                        $("#myOracleModal").modal("hide");
+                        iziToast.success({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'All Items Are Uploaded Upto Date',
+                            backgroundColor: '#45B39D',
+                            theme: 'dark', // dark
+                            zindex: 999,
+                            progressBarColor: '#091B2B',
+                            titleSize: 20,
+                            messageColor: '#FDFEFE',
+                            messageSize: 20,
+
+                        });
+
+                        getLogistics();
+                    }
+
+
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+
+
+
+        }
+
+    </script>

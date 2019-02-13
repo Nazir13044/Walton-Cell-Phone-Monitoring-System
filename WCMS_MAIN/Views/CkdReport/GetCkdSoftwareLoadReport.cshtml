@@ -1,0 +1,372 @@
+﻿
+@{
+    ViewBag.Title = "GetCkdSoftwareLoadReport";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+<style>
+    .ui-widget-content,
+    .ui-widget-content,
+    .ui-datepicker .ui-datepicker-header,
+    .ui-datepicker .ui-datepicker-title,
+    .ui-datepicker .ui-datepicker-title,
+    .ui-datepicker .ui-datepicker-prev,
+    .ui-datepicker .ui-datepicker-next,
+    .ui-datepicker table,
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default,
+    .ui-state-default {
+        background: #484848 url('none');
+    }
+
+
+
+    .ui-datepicker-inline {
+        padding: 0;
+    }
+
+    .ui-widget-header {
+        border: none;
+    }
+
+    .ui-datepicker .ui-datepicker-header {
+        padding: 1.2em 0;
+    }
+
+    .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+        top: 23px;
+    }
+
+    .ui-icon,
+    .ui-datepicker-month,
+    .ui-datepicker-year {
+        color: Black;
+    }
+
+    a.ui-state-default,
+    .ui-datepicker th {
+        color: Black !important;
+        border: none !important;
+        text-align: center !important;
+    }
+
+    .ui-datepicker {
+        width: 24.4em;
+        font-family: "Noto Sans", san-serif !important;
+        text-transform: uppercase;
+    }
+
+        .ui-datepicker td {
+            padding: 15px;
+            border: 1px solid transparent;
+        }
+
+    .ui-state-active,
+    .ui-widget-content .ui-state-active,
+    .ui-widget-header .ui-state-active {
+        color: #f5f5f5 !important;
+    }
+
+    .ui-state-highlight,
+    .ui-widget-content .ui-state-highlight,
+    .ui-widget-header .ui-state-highlight {
+        background-color: red;
+        color: #484848 !important;
+        padding: 15px;
+        border-top-left-radius: 1.5em;
+        border-bottom-right-radius: 1.5em;
+    }
+</style>
+
+
+
+
+<div class="breadcrumb-holder container-fluid" style=" background-color: #C46154; ">
+    <ul class="breadcrumb" style="padding: 8px; ">
+        <li class="breadcrumb-item"><a href="#">Reports </a></li>
+        <li class="breadcrumb-item active">Ckd SoftwareLoad Report</li>
+    </ul>
+</div>
+<section class="forms">
+
+    <div class="container-fluid">
+
+        <div class="col-lg-8 offset-2">
+            <div class="card" style="height: 300px;">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Search</h3>
+                </div>
+                <div class="card-body">
+
+                    <div class="form-horizontal">
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Model Name</label>
+                            <div class="col-sm-7" id="">
+                                <input id="txtProject" type="text" maxlength="10" placeholder="Model Name" required="" class="form-control form-control-success">
+
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label class="col-sm-4 form-control-label"> Date</label>
+                            <div class="col-sm-4">
+                                <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-8 offset-sm-4">
+
+                                <button class="btn btn-primary" id="btn" style="width: 200px;"><i class="fa fa-plus"></i> Search</button>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-12">
+            <div class="bar-chart-example card" id="divCard">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Result</h3>
+                </div>
+                <div class="card-body">
+                    <table id="datatable" class="table  table-bordered " width="900" cellspacing="0">
+
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Line Id</th>
+                                <th>Software Load Passed</th>
+                                <th>Softare load Failed</th>
+
+
+
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.min.css" rel="stylesheet" />
+
+
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/chart.js/Chart.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.foundation.min.js"></script>
+
+
+<script>
+
+        $("#btn").click(function () {
+            debugger;
+            GetCkdSoftwareloadReport();
+        });
+
+        var rows = [];
+        var d = new Date();
+        $(document).ready(function () {
+
+
+        });
+
+        $(function () {
+            $("#txtReqDate").datepicker({
+                dateFormat: "dd-mm-yy", changeMonth: true, changeYear: true,
+
+            }).datepicker("setDate", new Date());
+        });
+
+
+        function GetCkdSoftwareloadReport() {
+
+            debugger;
+
+            var buttonCommon = {
+
+            };
+
+            var gridate = $("#txtReqDate").val().split('-');
+            var convertDate = gridate[2] + "-" + gridate[1] + "-" + gridate[0];
+
+
+            var table = $('#datatable').DataTable({
+                "ajax": {
+                    "url": "@Url.Action("GetCkdSoftwareLoadReportInfo", "CkdReport")",
+                    "type": "POST",
+                    "data": function (d) {
+                        d.date = convertDate;
+                        d.Model = $('#txtProject').val();
+                    },
+                    "datatype": "json"
+                },
+                "destroy": true,
+                "columnDefs":
+                [{
+
+                    "searchable": true,
+
+                    visible: false
+
+                },
+                    {
+                        "targets": [0],
+                        "visible": true
+                    },
+                    { "width": "10%", "targets": 1 }
+
+                ],
+                "pageLength": 50,
+
+                "scrollY": "500px",
+                "dom": 'Bfrtip',
+                "buttons": [
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class=" fa fa-files-o"></i> Copy',
+
+
+                        exportOptions: { orthogonal: 'export' }
+                    },
+
+
+
+                    $.extend(true, {}, buttonCommon, {
+                        extend: 'excelHtml5',
+                        text: '<i class="fa fa-file-excel-o"></i> Excel',
+                        title: 'Ckd Report',
+                        messageTop: "Date: " + $("#txtReqDate").val() + "  Model:" + $('#txtProject').text() + "  ",
+                    }),
+
+                    {
+                        extend: 'csvHtml5',
+                        text: '<i class="fa fa-files-o"></i> Csv',
+                        exportOptions: { orthogonal: 'export' },
+                        title: 'Ckd Report'
+                    },
+
+                     {
+
+                         extend: 'pdf',
+                         text: '<i class="fa fa-file-pdf-o"></i> pdf',
+                         title: 'Ckd Report',
+                         orientation: 'landscape',
+                         pageSize: 'LEGAL',
+                         exportOptions: {
+                             columns: ':not(.no-print)'
+                         },
+
+                         footer: false,
+                         autoPrint: true
+
+                     },
+
+
+
+                    {
+
+                        extend: 'print',
+                        text: '<i class="fa fa-print"></i> Print',
+                        title: 'Ckd Report',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        exportOptions: {
+                            columns: ':not(.no-print)'
+                        },
+
+                        footer: false,
+                        autoPrint: true
+
+                    },
+
+
+
+                    'colvis'
+                ],
+
+
+
+
+                "columns": [
+                    { "data": "Model", "autoWidth": true },
+                    { "data": "LineId", "autoWidth": true },
+
+                    { "data": "SoftwareLoadPassed", "autoWidth": true },
+                    { "data": "SoftwareLoadPFailed", "autoWidth": true }
+
+
+
+
+
+                ]
+
+
+            });
+
+
+
+
+            table.buttons().container()
+                .appendTo('#datatable_wrapper .small-4.columns:eq(0)');
+
+
+
+        }
+
+</script>
+
+
+
+
+
+
+
+
+
+

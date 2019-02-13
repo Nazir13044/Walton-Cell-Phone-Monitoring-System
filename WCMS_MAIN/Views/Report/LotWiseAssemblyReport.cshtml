@@ -1,0 +1,428 @@
+﻿
+@{
+    ViewBag.Title = "LotWiseAssemblyReport";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 700px;
+        text-align: center;
+    }		
+    
+    										
+     body {
+         background: #EEE;
+     }
+
+    #header {
+        background: #666;
+        color: #FFF;
+        height: 100px;
+        padding: 10px;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+
+
+    #sideMenu ul li {
+        list-style: none;
+        padding: 5px;
+        border-bottom: 1px dotted #CCC;
+    }
+
+
+
+
+
+    .note {
+        color: red;
+    }
+
+    #footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 85%;
+        background: #666;
+        color: #FFF;
+    }
+
+    table thead {
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-size: 20px;
+    }
+
+    table thead td {
+        vertical-align: bottom;
+        font-weight: bold;
+        color: black;
+    }
+
+    table tbody td {
+        text-align: center;
+        color: black;
+    }
+
+    table th {
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-size: 15px;
+    }
+
+    h2, h4 {
+        text-align: center;
+    }
+
+    #masterContent h2, h4 {
+        text-align: center;
+    }
+
+/*table thead tr th {
+        text-align: center;
+
+    }*/
+    .footer {
+        position: absolute;
+        width: 100%;
+        height: auto;
+       
+        bottom: 0;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            &nbsp;
+        </div>
+
+
+
+        <div class="col-lg-8 offset-2">
+            <div class="card" style="border: 2px solid ; height: 250px;">
+                <div class="card-header d-flex align-items-center" style="background-color: darkslateblue; color: white">
+                    <h3 class="h4" style="font-weight: normal">Mobile Qc Daily Report of production Fault Scenerio Report</h3>
+                </div>
+                <div class="card-body text-center">
+                    <div class="form-group row">
+                     
+                        <label class="col-sm-2 form-control-label">Model:</label>
+                        <div class="col-sm-4">
+                            <select id="txtProject" data-placeholder="Choose a Project" class="chosen-select form-control" tabindex="1"></select>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" style="" id="btSearch">Search</button>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<div class="col-lg-12">
+
+
+
+
+
+
+
+    <div class="card col-lg-12" style="border: 2px solid darkcyan;display: none;" id="tblDataDiv">
+        <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+            <h3 class="h4" style="font-weight: normal">Report Data </h3>
+        </div>
+        <div class="card-body">
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary" style="" id="btnPrint">Print</button>
+
+            </div>
+            <div id="masterContent" style="text-align: center;">
+                
+                <h1>Lot Wise Aessembly Report</h1>
+                <h2 id="model"></h2>
+                
+                <br/>
+                <br />
+
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-lg-4">
+
+
+                        <table class="table table-bordered" id="productionDataWithFault">
+                            <thead>
+                                <tr style="background-color: #666666;color:#eeeeee">
+
+                                    <th scope="col">Total Production</th>
+                                    <th scope="col">Fault Ratio</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+
+                    </div>
+
+                    <div class="col-lg-8" id="chartdiv">
+                        
+
+                    </div>
+                    <br/>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="col-lg-12">
+
+
+                        <table class="table table-bordered" id="QcProductionFaultData">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Assembly Qc Report</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">#SN</th>
+                                    <th scope="col">Fault Name</th>
+                                    <th scope="col">Fault Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+
+                    </div>
+
+                    
+                    
+
+                </div>
+                
+
+                <div class="footer">Printed By:WCMS</div>   
+                
+               
+
+
+                  
+            </div>
+                    </div>
+
+                    <br />
+                  
+
+                </div>
+
+
+            </div>
+
+
+
+
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.css" rel="stylesheet" />
+<script src="~/js/vendor/DatatablePrint/jquery-ui-1.12.1.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script src="~/js/printPreview.js"></script>
+
+
+
+<script src="~/js/amChart/amChart.js"></script>
+<script src="~/js/amChart/pie.js"></script>
+<script>
+    
+    $(function () {
+        //GetProductionQcStatus();
+        
+        LoadAllProjects();
+        $("#txtReqDate").datepicker({ dateFormat: 'dd-mm-yy' }).datepicker("setDate", new Date());
+        $("#btnPrint").printPreview({
+            obj2print: '#masterContent',
+            width: '810',
+            title: 'Mobile Qc Daily Report of production Fault Scenerio'
+        });
+    });
+
+
+    $("#btSearch").click(function () {
+
+
+        LotWiseReportTest();
+
+    });
+
+    function LoadAllProjects() {
+
+        var url = "@Url.Action("GetProjec", "Project")";
+        $.getJSON(url, function(json) {
+            var elem = $("#txtProject");
+            $("#txtProject").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select Project---</option>");
+
+            $.each(json, function(idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+        });
+    }
+
+
+    function LotWiseReportTest() {
+
+        $.ajax({
+            url: ' @Url.Action("GetLotWiseFaultReport", "Report")',
+            type: 'Post',
+            data: JSON.stringify({ project: $("#txtProject").val() }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function(data) {
+                console.log(data.data);
+                //if (data.length == 0) {
+                //    // $('#divSearchedIssue').empty();
+                //    iziToast.warning({
+                //        timeout: 1000,
+                //        imageWidth: 150,
+                //        position: 'center',
+                //        title: 'Warning',
+                //        message: 'No Data Found'
+                //    });
+                //    $("#tblDataDiv").hide();
+                //    return false;
+
+                //} else {
+                $("#tblDataDiv").show();
+                $('#QcProductionFaultData tbody').empty(); 
+                $('#productionDataWithFault tbody').empty();
+                // $("#tblDataDiv").show();
+                var html = '';
+
+                var total = 0;
+                $.each(data.data, function (key, item) {
+
+                    var serial = parseInt(key) + 1;
+                    total += parseInt(item.IssueCriteriaWiseCount);
+
+                    var row = "<tr class='active' style='font-size=15px;height:3px;'>" +
+                        "<td style='height:5px;' class='text-center'>" + serial + "</td>" +
+                        "<td style='height:3px; class='text-center'>" + item.Category + "-" + item.Type + "</td>" +
+                        "<td style='height:5px;' class='text-center'>" + item.IssueCriteriaWiseCount + "</td>" +
+                        "</tr>";
+
+
+                    $('#QcProductionFaultData tbody').append(row);
+
+
+                });
+
+                $('#QcProductionFaultData tbody').append("<tr colspan='3' class='active' style='font-size=15px;height:3px;'>" +
+                    "<td colspan='3' style='height:5px;' class='text-center'>Total Fault    :    " + total + "</td>" +
+                    "</tr>");
+
+                //$("#txtCode").val('');
+                //$('#tblData .tbody').html(html);
+                //;
+
+                //$.when(GetAestheticFaultLists()).then(GetFunctionalFaultLists());
+
+                //}
+                
+                $('#productionDataWithFault tbody').append("<tr  class='active' style='font-size=15px;height:3px;'>" +
+                   "<td style='height:5px;' class='text-center'>" + data.production + "</td>" +
+                     "<td style='height:5px;' class='text-center'>" + data.faultr + "</td>" +
+                   "</tr>");
+
+
+
+
+                Chart(data.data);
+                $("#model").text("Model Name :"+$("#txtProject option:selected").text());
+
+            },
+            error: function(data, textStatus, jqXHR) {
+                toastr.error(textStatus + " " + result + " " + jqXHR);
+            }
+        });
+
+
+    }
+
+    function Chart(data) {
+
+        debugger;
+        //chart
+        var chart = AmCharts.makeChart("chartdiv", {
+
+            // var chart = AmCharts.makeChart("chartdiv", {
+            "type": "pie",
+            "theme": "light",
+            "dataProvider": generateChartData(data),
+            "valueField": "value",
+            "titleField": "Category",
+            "outlineAlpha": 0.4,
+            "depth3D": 25,
+            "innerRadius": 24,
+            "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</span>",
+            "angle": 45,
+            "export": {
+                "enabled": false
+            }
+        });
+    }
+    
+
+
+    function generateChartData(data) {
+        debugger;
+
+        var chartData = [];
+
+
+        $.each(data, function (index, itemData) {
+
+            chartData.push({
+                "Category": itemData.Category + "-" + itemData.Type,
+                "value": itemData.IssueCriteriaWiseCount
+            });
+            //chart.validateData();
+        });
+        return chartData;
+    }
+
+
+
+
+
+
+
+</script>

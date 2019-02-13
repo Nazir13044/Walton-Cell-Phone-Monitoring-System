@@ -1,0 +1,279 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>LogisticsDisplay</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>ProductionDisplay</title>
+        <link href="~/css/clockStyle.css" rel="stylesheet" />
+        <link href="~/css/style.default.css" rel="stylesheet" />
+        <link href="~/js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/js/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .counter-count {
+                text-align: center;
+            }
+        </style>
+    
+    </head>
+
+<body style="background-color: #0C0C1E; ">
+
+
+    <div class="container-fluid" style="margin-top: 0px;background-color: black;border: 5px solid bisque  ">
+
+        <div class="row">
+
+            <div class="clock col-lg-12">
+                <div id="Date"></div>
+                <ul>
+                    <li id="hours"></li>
+                    <li id="point">:</li>
+                    <li id="min"></li>
+                    <li id="point">:</li>
+                    <li id="sec"></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="container-fluid" style="margin-top: 0px; background-color: #123D6A; border: 5px solid #202833; text-align: center;">
+        
+            <marquee direction="right" behavior="alternate" style="font-size: 30px;color: white">Logistics Receive and Send History</marquee>
+        
+        
+        
+    </div>
+    <br/>
+    
+    <div class="container col-12" id="divProductionLineData" style="font-size: 40px; margin-top: 0; color: white;">
+
+       
+
+            <table class="table table-bordered" id="display" style="margin-left: 1px; border: 6px solid khaki;">
+                <thead>
+                    <tr>
+                        <th style="background-color: #182432; color: white; text-align: center">Model</th>
+                        <th style="background-color: #131A23; color: white; text-align: center">Lgst.Ready</th>
+                        <th style="background-color: #2E141B; color: white; text-align: center">Lgst.Deliv.</th>
+                        <th style="background-color: #2A1B3C; color: white; text-align: center">W.H Rcv.</th>
+                        <th style="background-color: black; color: white; text-align: center">Lgst. Sent</th>
+                        <th style="background-color: #202833; color: white; text-align: center">W.H Last Rcv.</th>
+                        
+
+
+                    </tr>
+                </thead>
+                <tbody class="tbody"></tbody>
+            </table>
+      
+    </div>  
+    
+
+
+    @*<div class="container-fluid" style="">
+            <div class="row">
+
+
+                <div class="col-lg-3" style="">
+                    <div class="card card-inverse card-info" style="background-color: #182432; color: white; border: 4px solid khaki">
+
+                        <div class="card-block" style="text-align: center;">
+
+                            <h2 class="card-title">Logistic<br /> Received</h2>
+                            <div class="card-text">
+                                <span id="" style="font-size:40px;color:white;font-weight: bold "></span> 
+                            </div>
+                        </div>
+                        <div class="card-footer" style="font-size: 45px;border-top:2px solid antiquewhite">
+                            <i class="fa fa-download" style="font-size:48px;color:white"></i> &nbsp;&nbsp;<span class="counter-count" id="Lreceived" style="font-size:45px;color:white;font-weight: bold ">2000</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3  ">
+                    <div class="card card-inverse card-info" style="background-color: #131A23; color: white; border: 4px solid khaki; ">
+
+                        <div class="card-block" style="text-align: center;">
+
+                            <h2 class="card-title">Logistic<br /> Send</h2>
+                            <div class="card-text">
+                                <span id="" style="font-size:40px;color:white;font-weight: bold "></span>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="font-size: 45px;border-top:2px solid antiquewhite">
+                            <i class="fa fa-truck" style="font-size:48px;color:white"></i> &nbsp;&nbsp;<span class="counter-count" id="Lsent" style="font-size:45px;color:white;font-weight: bold ">2000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3  ">
+                    <div class="card card-inverse card-info" style="background-color: #2E141B; color: white; border: 4px solid khaki">
+
+                        <div class="card-block" style="text-align: center;">
+
+                            <h2 class="card-title">Warehouse<br /> Received</h2>
+                            <div class="card-text">
+                                <span id="" style="font-size:40px;color:white;font-weight: bold "></span>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="font-size: 45px;border-top:2px solid antiquewhite">
+                            <i class="fa fa-signal" style="font-size:48px;color:white"></i> &nbsp;&nbsp;<span class="counter-count" id="Wreceived" style="font-size:45px;color:white;font-weight: bold ">2000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3  ">
+                    <div class="card card-inverse card-info" style="background-color: #2A1B3C; color: white; border: 4px solid khaki">
+
+                        <div class="card-block" style="text-align: center;">
+
+                            <h2 class="card-title">Warehouse last received Time</h2>
+                            <div class="card-text">
+                                <span id="" style="font-size:40px;color:white;font-weight: bold "></span>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="font-size: 45px;border-top:2px solid antiquewhite">
+                            <i class="fa fa-clock-o" style="font-size:48px;color:white"></i> &nbsp;<span id="WreceivedTime" style="font-size:40px;color:white;font-weight: bold ">2000</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>*@
+
+
+        <script src="~/js/vendor/jquery/jquery-1.9.1.min.js"></script>
+        <script src="~/js/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/js/vendor/chart.js/Chart.min.js"></script>
+
+        <script src="~/js/jquery.appear.js"></script>
+        <script src="~/js/modernizr-1.5.min.js"></script>
+        <script src="~/js/win8.js"></script>
+        <script type="text/javascript">
+            var serverDate = '@(TempData["date"])';
+            $(document).ready(function () {
+                GetLogisticsDisplayData();
+                // Create two variable with the names of the months and days in an array
+                var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+                // Create a newDate() object
+                var newDate = new Date(serverDate);
+                // Extract the current date from Date object
+                newDate.setDate(newDate.getDate());
+                // Output the day, date, month and year
+                $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+
+                setInterval(function () {
+                    // Create a newDate() object and extract the seconds of the current time on the visitor's
+                    var seconds = new Date().getSeconds();
+                    // Add a leading zero to seconds value
+                    $("#sec").html((seconds < 10 ? "0" : "") + seconds);
+                }, 1000);
+
+                setInterval(function () {
+                    // Create a newDate() object and extract the minutes of the current time on the visitor's
+                    var minutes = new Date().getMinutes();
+                    // Add a leading zero to the minutes value
+                    $("#min").html((minutes < 10 ? "0" : "") + minutes);
+                }, 1000);
+
+                setInterval(function () {
+                    // Create a newDate() object and extract the hours of the current time on the visitor's
+                    var hours = new Date().getHours();
+                    // Add a leading zero to the hours value
+                    $("#hours").html((hours < 10 ? "0" : "") + hours);
+                }, 1000);
+                
+
+                //$('.counter-count').each(function () {
+                //    $(this).prop('Counter', 0).animate({
+                //        Counter: $(this).text()
+                //    }, {
+                //        duration: 4000,
+                //        easing: 'swing',
+                //        step: function (now) {
+                //            $(this).text(Math.ceil(now));
+                //        }
+                //    });
+                //});
+
+
+            });            
+
+
+            function GetLogisticsDisplayData()
+            {
+                $.ajax({
+                    url: '  @Url.Action("GetLogisticsDisplayData", "Logistic")',
+                    type: 'GET',
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+                        
+
+                        var html = '';
+
+
+                        if (result.length == 0) {
+                            $('#divProductionLineData').empty();
+                            $('#divProductionLineData').text('No Production Data available');
+                        } else {
+
+                            $.each(result, function (index, itemData) {
+                                html += '<tr style="color: white;text-align:center;font-size:25px;">';
+                                html += '<td style="color: white;text-align:center;">' + itemData.Model + '</td>';
+                                html += '<td style="color: white;text-align:center;">' + itemData.LogisticReceived + '</td>';
+                                html += '<td style="color: white;text-align:center;">' + itemData.LogisticSent + '</td>';
+                                html += '<td style="color: white;text-align:center;">' + itemData.WarehouseReceived + '</td>';
+                                html += '<td style="color:white;text-align:center;">' + itemData.LogisticsLastSent + '</td>';
+                                html += '<td style="color:white;text-align:center;">' + itemData.WarehouseLastReceived + '</td>';
+                               
+                                html += '</tr>';
+
+                            });
+
+                            $('.tbody').html(html);
+                        }
+
+                        //alert(result[0]);
+                        // console.log(result[0]);
+                        //$("#Lreceived").text(result[0]);
+                        ////$("#Lsent").text(result[1]);
+                        //$("#Wreceived").text(result[2]);
+                        //$("#WreceivedTime").text(result[3]);
+                        //$("#Lsent").text(result[1][0].logisticsSendCount);
+                        //console.log(result);
+
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        //toastr.error(result.Message);
+                        // alert("Error");
+                        return false;
+                    }
+                });
+            }
+            window.setInterval(function () {
+                //$('#divProductionLineData').empty();
+                GetLogisticsDisplayData();
+            }, 20000);
+            setTimeout(function () {
+
+                location.reload();
+            }, 600000);
+        </script>
+
+</body>
+
+</html>

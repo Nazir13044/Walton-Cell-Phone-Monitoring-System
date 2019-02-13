@@ -1,0 +1,756 @@
+﻿@{
+    ViewBag.Title = "BatteryComponentInfo";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    .modal-dialog {
+        min-width: 100%;
+        margin: 0;
+    }
+
+
+</style>
+
+<div class="col-lg-10">
+    <div class="card">
+        <div class="card-close">
+
+        </div>
+        <div class="card-header d-flex align-items-center">
+            <h3 class="h4"> Information About Battery</h3>
+        </div>
+        <div class="card-body">
+
+            @*<div class="form-group row">
+                <label class="col-sm-3 form-control-label">Project Id</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtProjectID" type="number" maxlength="11" placeholder="Project ID" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>*@
+
+            <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Project Name</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtProjectName" type="text" maxlength="11" placeholder="Project Name" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>
+            @*<div class="form-group row">
+                <label class="col-sm-3 form-control-label">Line Id</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtLineId" type="number" maxlength="11" placeholder="Line Id" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Line Name</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtLineName" type="text" maxlength="11" placeholder="Line Name" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>*@
+
+           
+            <div class="form-group row">
+                <label class="col-sm-3 form-control-label">PCB Issue</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtPcbIssue" type="number" maxlength="11" placeholder="PCB Issue" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="col-sm-3 form-control-label">PCB Pass</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtPcbPass" type="number" maxlength="11" placeholder="PCB Pass" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 form-control-label">PCB Fail</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtPcbFail" type="number" maxlength="11" placeholder="PCB Fail" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Cell Issue</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtCellIssued" type="number" maxlength="11" placeholder="Cell Issue" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Cell Pass</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtCellPass" type="number" maxlength="11" placeholder="Cell Pass" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Cell Fail</label>
+                <div class="col-sm-7" id="">
+                    <input id="txtCellFail" type="number" maxlength="11" placeholder="Cell Fail" required="" class="form-control form-control-success">
+
+
+                </div>
+            </div>
+            
+           
+            
+            <div class="form-group row">
+                <div class="col-md-3">
+                    &nbsp;
+                </div>
+                <div class="col-sm-1">
+                    <input type="button" id="btnSave" value="Save" class="btn btn-primary" onclick="">
+                    
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary" id="mod">View List</button><br /><br />
+                    <div class="modal fade" id="myModel" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    @*<button class="close" data-dismiss="modal">&times;</button>*@
+                                    <h4 class="modal-title">View Battery Info</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            @*<style>
+                                                table {
+                                                    border-collapse: collapse;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                }
+
+                                                th, td {
+                                                    padding: 8px;
+                                                    text-align: left;
+                                                    border-bottom: 1px solid #ddd;
+                                                }
+
+                                                tr:hover {
+                                                    background-color: #f5f5f5;
+                                                }
+                                            </style>*@
+                                            <table class="table table-bordered table-hover">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th style="display:none">
+                                                            ID
+                                                        </th>
+
+                                                        <th>
+                                                            Project Name
+                                                        </th>
+                                                        <th>
+                                                            PcbIssued
+                                                        </th>
+
+                                                        <th>
+                                                            PcbPassed
+                                                        </th>
+
+                                                        <th>
+                                                            PcbFailed
+                                                        </th>
+
+                                                        <th>
+                                                            CellIssued
+                                                        </th>
+
+                                                        <th>
+                                                            CellPassed
+                                                        </th>
+                                                        <th>
+                                                            CellFailed
+                                                        </th>
+
+                                                        <th>
+                                                            Action
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="tbody"></tbody>
+                                            </table>
+                                        </div>
+
+                                    </form>
+
+                                    <div class="modal-footer">
+
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           
+            
+
+
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="myyModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-10">
+                    <div class="card">
+                        <div class="card-close">
+
+                        </div>
+                        <div class="card-header d-flex align-items-center">
+                            <h3 class="h4"> Information About Battery</h3>
+                        </div>
+                        <div class="card-body">
+
+                            @*<div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Project Id</label>
+                        <div class="col-sm-7" id="">
+                            <input id="txtProjectID" type="number" maxlength="11" placeholder="Project ID" required="" class="form-control form-control-success">
+
+
+                        </div>
+                    </div>*@
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Project Name</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtProjectNameM" type="text" maxlength="11" placeholder="Project Name" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+                            @*<div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Line Id</label>
+                        <div class="col-sm-7" id="">
+                            <input id="txtLineId" type="number" maxlength="11" placeholder="Line Id" required="" class="form-control form-control-success">
+
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Line Name</label>
+                        <div class="col-sm-7" id="">
+                            <input id="txtLineName" type="text" maxlength="11" placeholder="Line Name" required="" class="form-control form-control-success">
+
+
+                        </div>
+                    </div>*@
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">PCB Issue</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtPcbIssueM" type="number" maxlength="11" placeholder="PCB Issue" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">PCB Pass</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtPcbPassM" type="number" maxlength="11" placeholder="PCB Pass" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">PCB Fail</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtPcbFailM" type="number" maxlength="11" placeholder="PCB Fail" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Cell Issue</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtCellIssuedM" type="number" maxlength="11" placeholder="Cell Issue" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Cell Pass</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtCellPassM" type="number" maxlength="11" placeholder="Cell Pass" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Cell Fail</label>
+                                <div class="col-sm-7" id="">
+                                    <input id="txtCellFailM" type="number" maxlength="11" placeholder="Cell Fail" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+
+
+                          
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>*@
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<input type="hidden" id="btryId"/>
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/black/easyui.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script>
+
+    $("#btnSave").click(function () {
+        debugger;
+        loadData();
+
+        //if($("#txtProjectID").val()=="")
+        //{
+        //    iziToast.warning({
+        //        timeout: 1000,
+        //        imageWidth: 150,
+        //        position: 'center',
+        //        title: 'Warning',
+        //        message: ' Project Id Required'
+        //    });
+        //    return false;
+        //}
+        if ($("#txtProjectName").val() == "") {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: ' Project Name Required'
+            });
+            return false;
+
+        }
+            //else if ($("#txtLineId").val() == "")
+            //{
+            //    iziToast.warning({
+            //        timeout: 1000,
+            //        imageWidth: 150,
+            //        position: 'center',
+            //        title: 'Warning',
+            //        message: ' Project Line Id Required'
+            //    });
+            //    return false;
+            //}
+            //else if ($("#txtLineName").val() == "")
+            //{
+            //    iziToast.warning({
+            //        timeout: 1000,
+            //        imageWidth: 150,
+            //        position: 'center',
+            //        title: 'Warning',
+            //        message: ' Project Line Name Required'
+            //    });
+            //    return false;
+            //}
+        else if ($("#txtPcbIssue").val() == "") {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: ' Project PCB Issue Required'
+            });
+            return false;
+        } else if ($("#txtPcbPass").val() == "") {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: ' Project PCB Pass Required'
+            });
+            return false;
+        } else if ($("#txtPcbFail").val() == "") {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: ' Project PCB Fail Required'
+            });
+            return false;
+        } else if ($("#txtCellIssued").val() == "") {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: ' Project Cell Issue Required'
+            });
+            return false;
+        } else if ($("#txtCellPass").val() == "") {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: ' Project Cell Pass Required'
+            });
+            return false;
+        } else if ($("#txtCellFail").val() == "") {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: ' Project Cell fail Required'
+            });
+            return false;
+        }
+        
+        else {
+            var batteryComponent = {}
+            //var batteryObject = [];
+
+            //batteryObject.push({
+            //    ProjectName:$("#txtProjectName").val()
+
+
+            //})
+            batteryComponent.ProjectName = $("#txtProjectName").val();
+            batteryComponent.PcbIssued = $("#txtPcbIssue").val();
+            batteryComponent.PcbPassed = $("#txtPcbPass").val();
+            batteryComponent.PcbFailed = $("#txtPcbFail").val();
+            batteryComponent.CellIssued = $("#txtCellIssued").val();
+            batteryComponent.CellPassed = $("#txtCellFail").val();
+            batteryComponent.CellFailed = $("#txtCellPass").val();
+
+            console.log(batteryComponent);
+        }
+        //alert("Data Saved");
+
+        debugger;
+        $.ajax({
+            url: '@Url.Action("InsertBatteryComponentInfo", "BatteryStation")', //changed For Test
+            type: 'Post',
+            data: JSON.stringify({ batteryComponent: batteryComponent }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function(result) {
+
+                if (result.IsSuccess) {
+                        iziToast.success({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Success',
+                        message: 'Information Saved Successfully'
+                    });
+
+
+                    return true;
+                } else {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result.Message
+                    });
+                    return false;
+                }
+
+            },
+
+            error: function(result) {
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: result
+                });
+
+                return false;
+            }
+        });
+
+
+    });
+
+    $("#mod").click(function () {
+        loadData();
+        $("#myModel").modal('show');
+   
+    });
+   
+  
+
+    //$("#mod").click(function () {
+    //    loadData();
+    //    $("#myModel").modal('show');
+
+    //});
+
+   
+
+    function loadData() {
+        
+        $.ajax({
+            url: "  @Url.Action("GetListByPcbIssue", "BatteryStation")",
+            type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            var html = '';
+            $.each(result, function (key, item) {
+                html += '<tr>';
+                html += '<td style=display:none>' + item.Id + '</td>';
+                
+                html += '<td>' + item.ProjectName + '</td>';
+                html += '<td>' + item.PcbIssued + '</td>';
+                html += '<td>' + item.PcbPassed + '</td>';
+                html += '<td>' + item.PcbFailed + '</td>';
+                html += '<td>' + item.CellIssued + '</td>';
+                html += '<td>' + item.CellPassed + '</td>';
+                html += '<td>' + item.CellFailed + '</td>';
+                 
+                html += '<td><a href="#" onclick="return getById(' + item.Id + ')">Edit</a> | <a href="#" onclick="Delele(' + item.Id + ')">Delete</a></td>';
+                html += '</tr>';
+            });
+            $('.tbody').html(html);
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+    }
+    
+
+    function getById(id) {
+
+        $.ajax({
+
+
+            url: " @Url.Action("GetLineListById", "BatteryStation")?id=" + id,
+            typr: "GET",
+        contentType: "application/json;charset=UTF-8",
+        dataType: "json",
+        success: function (result) {
+
+            console.log(result);
+            
+            $('#btryId').val(result[0].Id);
+            $('#txtProjectNameM').val(result[0].ProjectName);
+            $('#txtPcbIssueM').val(result[0].PcbIssued);
+            $('#txtPcbPassM').val(result[0].PcbPassed);
+            $('#txtPcbFailM').val(result[0].PcbFailed);
+            $('#txtCellIssuedM').val(result[0].CellIssued);
+            $('#txtCellPassM').val(result[0].CellPassed);
+            $('#txtCellFailM').val(result[0].CellFailed);
+
+            $("#myyModel").modal('show');
+            $('#btnUpdate').show();
+            //$('#btnAdd').hide();
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+    return false;
+    }
+    
+
+    
+    function Update() {
+        debugger;
+        var obj = {
+            Id:$('#btryId').val(),
+            ProjectName: $('#txtProjectNameM').val(),
+            PcbIssued: $('#txtPcbIssueM').val(),
+            PcbPassed: $('#txtPcbPassM').val(),
+            PcbFailed: $('#txtPcbFailM').val(),
+            CellIssued: $('#txtCellIssuedM').val(),
+            CellPassed: $('#txtCellPassM').val(),
+            CellFailed: $('#txtCellFailM').val(),
+           
+
+        };
+        debugger;
+        $.ajax({
+         
+            url: "  @Url.Action("UpdateBatteryLine", "BatteryStation")",
+            data: JSON.stringify(obj),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            
+            if (result.IsSuccess) {
+                iziToast.success({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Success',
+                    message: 'Information Update Successfully'
+                });
+
+
+                return true;
+            }
+         
+            loadData();
+            $('#myyModel').modal('hide');
+      
+            
+         
+           
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+    }
+    
+
+    function Delele(id) {
+        var ans = confirm("Are you sure you want to delete this Record?");
+        if (ans) {
+            $.ajax({
+
+
+                url: " @Url.Action("DeleteProductionLine", "BatteryStation")?id=" + id,
+                type: "POST",
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (result) {
+                loadData();
+               
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+    }
+    
+
+    @*function Add() {
+
+
+        if ($('#txtProjectName').val() == "") {
+            iziToast.warning({
+                timeout: 3000,
+                imageWidth: 550,
+                position: 'center',
+                title: 'warning',
+                backgroundColor: 'blue',
+                theme: 'dark', // dark
+                color: 'yellow', // blue, red, green, yellow
+                message: 'Line Name Required'
+            });
+
+            return false;
+        } else {
+
+            var obj = {
+                ProjectName: $('#txtProjectName').val(),
+                PcbIssued: $('#txtPcbIssue').val(),
+                PcbPassed: $('#txtPcbPass').val(),
+                PcbFailed: $('#txtPcbFail').val(),
+                CellIssued: $('#txtCellIssued').val(),
+                CellPassed: $('#txtCellPass').val(),
+                CellFailed: $('#txtCellFail').val(),
+
+
+            };
+
+            $.ajax({
+                url: "@Url.Action("InsertProductionLine", "BatteryStation")",
+                data: JSON.stringify(obj),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                loadData();
+                
+                $('#myyModel').modal('hide');
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+
+
+
+    }
+    }*@
+    
+
+
+
+        </script>

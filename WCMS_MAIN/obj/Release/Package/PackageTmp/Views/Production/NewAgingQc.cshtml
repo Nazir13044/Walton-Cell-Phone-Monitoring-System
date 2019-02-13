@@ -1,0 +1,1207 @@
+﻿@{
+    ViewBag.Title = "NewAgingQc";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<style>
+    #tblComponent tr td {
+        padding: 0px;
+    }
+
+    #tblComponent > tbody > tr > td {
+        height: 10px;
+        font-size: 10px;
+        padding: 0px;
+        border-top: 0px;
+    }
+
+    #tblComponent td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    #tblComponent th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .modal-dialog {
+        min-width: 100%;
+        margin: 0;
+    }
+
+    #btnCrgr {
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 20px;
+        padding: 15px;
+        width: 500px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+        #btnCrgr span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+            #btnCrgr span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+
+        #btnCrgr:hover span {
+            padding-right: 25px;
+        }
+
+            #btnCrgr:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+
+</style>
+
+<div class="container-fluid">
+    @Html.Partial("~/Views/PartialViews/Reports/_AgingStationReport.cshtml")    
+    <div class="row">
+        <div class="card col-lg-8" style="border: 2px solid cadetblue">
+            <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                <h3 class="h4" style="font-weight: normal">Search Mobile Code</h3>
+            </div>
+
+            <div class="form-horizontal" style="margin-top: 30px;">
+                <div class="form-group row" id="divSingleCode">
+                    <label class="col-sm-3 form-control-label"> Scan Bar Code</label>
+                    <div class="col-sm-5" id="">
+                        <input id="txtMobileCode" type="text" placeholder="Scan Code" required="" class="form-control form-control-success">
+                    </div>
+                    <div class="col-sm-2">
+
+                        <button class="btn btn-primary" id="btnClearData"> Clear All</button>
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12 offset-sm-4" id="img" style="display:none;">
+                        <img src="~/img/Filling.gif" style="margin-left: 50px;width: 40px;height: 40px;" />..Loading Please Wait
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card col-lg-4" style="">
+            <div class="row">
+                <button class="btn btn-primary" id="btnCrgr" onclick="location.href='@Url.Action("AgingChargingQc", "Production")';return false;"><span>Click Here For Chargering QC</span></button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col-lg-12" style="border: 2px solid darkcyan;display: none;" id="divAgingData">
+            <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                <h3 class="h4" style="font-weight: normal">Aging Station Checked Mobile</h3>
+            </div>
+
+            <div class="form-group row" id="divCheckBox" style="">
+                <label class="col-sm-4 form-control-label">&nbsp;</label>
+                <div class="i-checks col-sm-8">
+                    <input id="chkPassed" type="checkbox" value="P" class="checkbox-template">
+                    <label for="chkPassed">Batch Passed</label>
+                    &nbsp; &nbsp;
+                    <input id="chkFailed" type="checkbox" value="N" class="checkbox-template">
+                    <label for="chkFailed">Batch Failed</label>
+                </div>
+            </div>
+
+            <span id="m" style="border: 2px solid black;padding: 2px;width: 80px;background-color: black;color: white;font-weight: bold"></span>
+            <table class="table table-responsive-lg header-fixed table-bordered " id="tblAgingComponent">
+                <thead class="" style="background-color: slateblue; color: white;font-size: 15px; ">
+                    <tr>
+                        <th class="text-center">Mobile Code</th>
+                        <th class="text-center">BatchNumber</th>
+                        <th class="text-center">Passed</th>
+                        <th class="text-center">Isues</th>
+                        <th class="text-center">Project Id</th>
+                        <th class="text-center">Project Name</th>
+                        <th class="text-center">Line Id</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody style=""></tbody>
+            </table>
+
+            <div class="form-group row" id="btnDisplay" style="">
+
+                <div class="col-sm-12">
+
+                    <button class="btn btn-primary pull-right" id="btnSaveAgingMasterInfo"> Submit Aging Test Data </button>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+@*<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="card" style="height: 415px; overflow: auto; border: 1px solid #a0522d;">
+
+                <div class="card-header d-flex align-items-center" style="background-color: #a0522d; font-weight: normal; color: white">
+                    <h3 class="h4"> Add Aging batch Information</h3>
+                </div>
+                <div class="card-body">
+
+                    <div class="form-horizontal" style="margin-top: 30px;">
+                        <div class="form-group row" id="divSingleCode">
+                            <label class="col-sm-4 form-control-label">Bar Code</label>
+                            <div class="col-sm-8" id="">
+
+                                <input id="txtMobileCode" type="text" placeholder="Scan Code" required="" class="form-control form-control-success">
+                            </div>
+                        </div>
+
+                        <div class="form-group row" id="divBatchFailed" style="display: none">
+                            <label class="col-sm-4 form-control-label">Scan Every Bar Code</label>
+                            <div class="col-sm-8" id="">
+
+                                <input id="txtAllMobileCode" type="text" placeholder="Scan Mobile Code" required="" class="form-control form-control-success">
+                            </div>
+                        </div>
+
+                        <div class="form-group row" id="divCheckBox" style="display: none">
+                            <label class="col-sm-4 form-control-label">&nbsp;</label>
+                            <div class="i-checks col-sm-8">
+                                <input id="chkPassed" type="checkbox" value="y" class="checkbox-template">
+                                <label for="chkPassed">Batch Passed</label>
+                                &nbsp; &nbsp;
+                                <input id="chkFailed" type="checkbox" value="n" class="checkbox-template">
+                                <label for="chkFailed">Batch Failed</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" id="btnDisplay" style="display: none">
+
+                        <div class="col-sm-8 offset-sm-4">
+
+                            <button class="btn btn-primary" id="btnSaveEmployeeLine" onclick="AgingQcSave();"> Submit</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7" id="divtblData" style="display: none">
+
+            <div class="card " style="border: 2px solid #0c9050">
+                <div class="card-header d-flex align-items-center" style="background-color:crimson;font-weight:normal ;color: white">
+                    <h3 class="h4" style="font-weight: normal">Last Three Scanned Mobile Code</h3>
+                </div>
+                <div class="card-body text-center">
+
+
+                    <table class="table table-bordered table-hover" style="font-size: 20px;">
+                        <thead style="text-align: center">
+                            <tr>
+                                <th style="background-color: mediumslateblue;color: white">Total</th>
+                                <th style="background-color: #0c9050;color: white">Passed</th>
+                                <th style="background-color: red;color: white">Failed </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+
+                            <tr>
+                                <td><span id="total"></span></td>
+                                <td><span id="passed">0</span></td>
+                                <td><span id="failed">0</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+
+
+            <div class="card" style="height: 700px;overflow: auto">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">Project Batch Data</h3>
+                </div>
+
+
+                <div class="card-body">
+
+
+                    <table class="table table-responsive-lg header-fixed table-striped table-bordered table-condensed table-hover dataTable no-footer " id="tblComponent">
+                        <thead class="" style="background-color: #B7472A; color: white;font-size: 15px; ">
+                            <tr>
+                                <th class="text-center">Mobile Code</th>
+                                <th class="text-center">BatchNumber</th>
+                                <th class="text-center">Pass</th>
+                                <th class="text-center">Fail</th>
+                                <th class="text-center">Remarks</th>
+
+                            </tr>
+                        </thead>
+                        <tbody style=""></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-1">
+            &nbsp;
+        </div>
+
+
+    </div>
+    </div>*@
+
+<div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" style="border: 1px solid #922602">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="text-align: center; background-color: #072F4F;color:white ">
+                <h4 class="modal-title" style="text-align: center;">Functional Error List</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <div class="container">
+                    <div class="row" id="modIssues">
+
+
+                    </div>
+                    <div class="form-group row" style="margin-left: 8px;">
+
+
+                        <div class="i-checks col-sm-10" style="">
+                            <input id="chkOthers" type="checkbox" value="y" class="checkbox-template">
+                            <label for="chkOthers" style="color:#f53e16;font-weight: bold">Others</label> &nbsp;&nbsp;
+                            <input id="txtOthers" type="text" style="display: none;width: 200px;" required="" class="form-control form-control-success">
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>*@
+                <button class="btn btn-primary" id="btnOk" style="width: 200px;"> Done</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link href="~/css/jquery-ui-1.12.css" rel="stylesheet" />
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/jquery-ui-1.12.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script src="~/js/printPreview.js"></script>
+
+<script>
+
+
+    function LoadFunctionalIssues() {
+
+        $.ajax({
+            url: '  @Url.Action("GetAllIssueListFunctional", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#modIssues').empty();
+                    $('#modIssues').append('<div class="statistic d-flex align-items-center bg-white has-shadow" ><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"><small>No ongoing task available</small></div></div>');
+
+                    return false;
+                } else {
+
+                    $('#modIssues').empty();
+                    $.each(data, function (index, itemData) {
+
+
+                        $("#modIssues").append('<div class="col-md-4"><form><div class="form-check"><label><input type="checkbox"  name="Errorcheck" value="' + itemData.Name + '"> <span class="label-text">' + itemData.Name + '</span></label></div></form> </div>');
+                    });
+
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+    $("#btnClearData").click(function() {
+        $('#txtMobileCode').val('');
+        $('#txtMobileCode').focus();
+        location.reload();
+        
+    });
+
+    function Clear() {
+
+        $('#txtMobileCode').val('');
+        $('#txtMobileCode').focus();
+    }
+
+
+    $(document).ready(function() {
+        $('#txtMobileCode').val('');
+        $('#txtMobileCode').focus();
+    });
+
+
+    $('input.checkbox-template').on('change', function() {
+
+        debugger;
+        $('input.checkbox-template').not(this).prop('checked', false);
+
+
+    });
+
+    //key up function
+
+    $('#txtMobileCode').keydown(function() {
+        //debugger;
+        var lastTwoDigits = this.value.slice(-2);
+        if (lastTwoDigits.toLowerCase() == '-y' || lastTwoDigits.toLowerCase() == '-n') {
+            GetMobileCodeInfo((this.value));
+            //GetBatchData((this.value));
+        }
+    });
+    var count = 0;
+    var codevalue;
+    function GetMobileCodeInfo(codeValue) {
+        debugger;
+        var mobileCode = codeValue.slice(0, -2);
+        var status = codeValue.slice(-1);
+        codevalue = mobileCode;
+        $.ajax({
+            url: " @Url.Action("GetMobileCodeInfo", "Production")",
+            type: 'Post',
+            data: JSON.stringify({ mobileCode: mobileCode }),
+            dataType: 'json',
+            async: true,
+            contentType: 'application/json',
+            success: function (data) {
+                console.log(data.length);
+                debugger;
+
+
+                if (data.length != 0) {
+                    // console.log(data.length);
+                    $("#divAgingData").show();
+                    if ($('#tblAgingComponent  tbody tr').length > 0) {
+
+
+                        var isExist = false;
+                        var isdifferentBatch = false;
+                        $('#tblAgingComponent  tbody').find("tr").each(function(roww, tr) {
+                            debugger;
+
+                            if (($(tr).find('td:eq(0)').text() == data[0].MobileCode)) {
+
+                                isExist = true;
+                                return false;
+
+                            }
+                        });
+
+                        if (!isExist) {
+                            debugger;
+                          
+                                if (status.toUpperCase() == "N") {
+                                    LoadFunctionalIssues();
+                                    $('#myModal').modal('show');
+
+                                    count += 1;
+
+                                    $("#tblAgingComponent").show();
+
+                                    var nrow = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].MobileCode + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].AgingBatchNumber + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + status.toUpperCase() + "</td>" +
+                                        "<td style='height:3px;width:250px;' class='text-center'><input type='text' name='txtRemarks' style='width:250px;font-size:12px;' class='form-control' /></td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].ProjectId + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].ProjectName + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].LineId + "</td>" +
+                                        "<td><button type='button' class='btn btn-danger remove'><i class='glyphicon glyphicon-remove-sign'></i>remove</button></td>" +
+                                        "</tr>";
+                                    $('#tblAgingComponent tbody').append(nrow);
+                                    $('#txtMobileCode').val('');
+                                    //$('#txtBatch').val('');
+                                    $("#txtMobileCode").focus();
+
+                                    $('#m').text("Total : " + count);
+
+                                } else {
+
+                                    count += 1;
+
+                                    $("#tblAgingComponent").show();
+
+                                    var nrow = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].MobileCode + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].AgingBatchNumber + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + status.toUpperCase() + "</td>" +
+                                        "<td style='height:3px;width:250px;' class='text-center'><input type='text' name='txtRemarks' style='width:250px;font-size:12px;' class='form-control' /></td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].ProjectId + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].ProjectName + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].LineId + "</td>" +
+
+
+                                        "<td><button type='button' class='btn btn-danger remove'><i class='glyphicon glyphicon-remove-sign'></i>remove</button></td>" +
+                                        "</tr>";
+                                    $('#tblAgingComponent tbody').append(nrow);
+                                    $('#txtMobileCode').val('');
+                                    //$('#txtBatch').val('');
+                                    $("#txtMobileCode").focus();
+
+                                    $('#m').text("Total : " + count);
+
+                                }
+                            
+
+
+                        } else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: 'Already added'
+                            });
+                            $('#txtMobileCode').val('');
+                            $("#txtMobileCode").focus();
+                            return false;
+                        }
+                    } else {
+
+
+                        if (status.toUpperCase() == "N") {
+                            LoadFunctionalIssues();
+                            $('#myModal').modal('show');
+
+                            count += 1;
+
+                            $("#tblAgingComponent").show();
+
+                            var nrow = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                                "<td style='height:3px;' class='text-center'>" + data[0].MobileCode + "</td>" +
+                                "<td style='height:3px;' class='text-center'>" + data[0].AgingBatchNumber + "</td>" +
+                                "<td style='height:3px;' class='text-center'>" + status.toUpperCase() + "</td>" +
+                                "<td style='height:3px;width:250px;' class='text-center'><input type='text' name='txtRemarks' style='width:250px;font-size:12px;' class='form-control' /></td>" +
+                                "<td style='height:3px;' class='text-center'>" + data[0].ProjectId + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].ProjectName + "</td>" +
+                                        "<td style='height:3px;' class='text-center'>" + data[0].LineId + "</td>" +
+
+                                "<td><button type='button' class='btn btn-danger remove'><i class='glyphicon glyphicon-remove-sign'></i>remove</button></td>" +
+                                "</tr>";
+                            $('#tblAgingComponent tbody').append(nrow);
+                            $('#txtMobileCode').val('');
+                            //$('#txtBatch').val('');
+                            $("#txtMobileCode").focus();
+
+                            $('#m').text("Total : " + count);
+
+                        } else {
+
+                            count += 1;
+
+                            $("#tblAgingComponent").show();
+
+                            var nrow = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                                "<td style='height:3px;' class='text-center'>" + data[0].MobileCode + "</td>" +
+                                "<td style='height:3px;' class='text-center'>" + data[0].AgingBatchNumber + "</td>" +
+                                "<td style='height:3px;' class='text-center'>" + status.toUpperCase() + "</td>" +
+                                "<td style='height:3px;width:250px;' class='text-center'><input type='text' name='txtRemarks' style='width:250px;font-size:12px;' class='form-control' /></td>" +
+                                "<td style='height:3px;' class='text-center'>" + data[0].ProjectId + "</td>" +
+                                 "<td style='height:3px;' class='text-center'>" + data[0].ProjectName + "</td>" +
+                                 "<td style='height:3px;' class='text-center'>" + data[0].LineId + "</td>" +
+
+
+                                "<td><button type='button' class='btn btn-danger remove'><i class='glyphicon glyphicon-remove-sign'></i>remove</button></td>" +
+                                "</tr>";
+                            $('#tblAgingComponent tbody').append(nrow);
+                            $('#txtMobileCode').val('');
+                            //$('#txtBatch').val('');
+                            $("#txtMobileCode").focus();
+
+                            $('#m').text("Total : " + count);
+
+                        }
+
+
+
+                    }
+                } else {
+                    debugger;
+                   
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'warning',
+                        message: 'item Not Scanned!!'
+                    });
+                 
+                    $("#divAgingData").show();
+
+                    //Newly Added If Not Scan at any point in QC Line 
+
+                    if (status.toUpperCase() == "N") {
+                        LoadFunctionalIssues();
+                        $('#myModal').modal('show');
+
+                        count += 1;
+
+                        $("#tblAgingComponent").show();
+
+                        var nrow = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                            "<td style='height:3px;' class='text-center'>" + mobileCode + "</td>" +
+                            "<td style='height:3px;' class='text-center'></td>" +
+                            "<td style='height:3px;' class='text-center'>" + status.toUpperCase() + "</td>" +
+                            "<td style='height:3px;width:250px;' class='text-center'><input type='text' name='txtRemarks' style='width:250px;font-size:12px;' class='form-control' /></td>" +
+                            "<td style='height:3px;' class='text-center'></td>" +
+                                    "<td style='height:3px;' class='text-center'></td>" +
+                                    "<td style='height:3px;' class='text-center'></td>" +
+
+                            "<td><button type='button' class='btn btn-danger remove'><i class='glyphicon glyphicon-remove-sign'></i>remove</button></td>" +
+                            "</tr>";
+                        $('#tblAgingComponent tbody').append(nrow);
+                        $('#txtMobileCode').val('');
+                        //$('#txtBatch').val('');
+                        $("#txtMobileCode").focus();
+
+                        $('#m').text("Total : " + count);
+
+                    } else {
+
+                        count += 1;
+
+                        $("#tblAgingComponent").show();
+
+                        var nrow = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                            "<td style='height:3px;' class='text-center'>" + mobileCode + "</td>" +
+                            "<td style='height:3px;' class='text-center'></td>" +
+                            "<td style='height:3px;' class='text-center'>" + status.toUpperCase() + "</td>" +
+                            "<td style='height:3px;width:250px;' class='text-center'><input type='text' name='txtRemarks' style='width:250px;font-size:12px;' class='form-control' /></td>" +
+                            "<td style='height:3px;' class='text-center'></td>" +
+                             "<td style='height:3px;' class='text-center'></td>" +
+                             "<td style='height:3px;' class='text-center'></td>" +
+
+
+                            "<td><button type='button' class='btn btn-danger remove'><i class='glyphicon glyphicon-remove-sign'></i>remove</button></td>" +
+                            "</tr>";
+                        $('#tblAgingComponent tbody').append(nrow);
+                        $('#txtMobileCode').val('');
+                        //$('#txtBatch').val('');
+                        $("#txtMobileCode").focus();
+
+                        $('#m').text("Total : " + count);
+
+                    }
+
+
+                    //Newly Added If Not Found At Qc Line  
+                    //return false;
+
+                }
+
+
+            },
+            error: function (data, textStatus, jqXHR) {
+
+            }
+        });
+
+    }
+
+    $("body").on("click", ".remove", function () {
+
+        $(this).closest("tr").remove();
+        count -= 1;
+        $('#m').text("Total : " + count);
+        $('#txtMobileCode').val('');
+        $("#txtMobileCode").focus();
+    });
+    $("#btnSaveAgingMasterInfo").click(function () {
+        
+        
+        debugger;
+        var batchStatus = $('input.checkbox-template:checked').val();
+        var agingType="AG";
+        var checkedNum = $('input.checkbox-template:checked').length;
+        var rowCount = $('#tblAgingComponent >tbody >tr').length;
+        var datacount = 0;
+        if (rowCount < 10) {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'There should be 10 OR More Items In Aging Test'
+            });
+            return false;
+
+        }
+
+
+        else if (batchStatus==null) {
+
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'Please Select Batch Status!!'
+            });
+            return false;
+
+        }
+        else {
+          
+
+            var agingMasterList = [];
+
+            $('#tblAgingComponent  tbody').find("tr").each(function (row, tr) {
+
+
+                agingMasterList.push({
+                    MobileCode: $(tr).find('td:eq(0)').text(),
+                    AgingBatch: $(tr).find('td:eq(1)').text(),
+                    AgingPassed: $(tr).find('td:eq(2)').text(),
+                    AgingIssue: $(tr).find('input[name="txtRemarks"]').val(),
+                    ProjectId: $(tr).find('td:eq(4)').text(),
+                    ProjectName: $(tr).find('td:eq(5)').text(),
+                    LineId: $(tr).find('td:eq(6)').text(),
+                });
+
+            });
+
+            if (agingMasterList.length == rowCount) {
+
+             
+                $.ajax({
+                    url: ' @Url.Action("InsertAgingQcStationInfo", "Production")',
+                    type: 'Post',
+                    data: JSON.stringify({ agingMasterList: agingMasterList, batchStatus: batchStatus,agingType:agingType }),
+                    dataType: 'json',
+                    async: false,
+                    cache: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: 'Information Saved Successfully'
+                            });
+                            //AllClear();
+                            $('#tblAgingComponent tbody').empty();
+                            $("#divAgingData").hide();
+                            $('#txtMobileCode').val('');
+                            $("#txtMobileCode").focus();
+                            $('#chkPassed').prop('checked', false);
+                            $('#chkFailed').prop('checked', false);
+
+                            $('#m').text('0');
+                            count = 0;
+                            //location.reload();
+                            return true;
+
+                        }
+                        else if (result.Id == "0") {
+                            window.location = '@Url.Action("LogOut", "Account")';
+
+                        }
+
+
+                        else {
+                            $('#img').hide();
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: result.Message
+                            });
+
+
+                        }
+
+                    },
+                    
+                    error: function (result, textStatus, jqXHR) {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message
+                        });
+
+                        //return false;
+                    }
+                });
+
+
+            }
+            console.log(agingMasterList);
+            console.log(batchStatus);
+
+        }
+    });
+
+
+    $("#btnOk").click(function () {
+
+        debugger;
+        alert("Hited" + codevalue);
+        var issues = '';
+
+        $('input[name="Errorcheck"]:checked').each(function () {
+            //console.log(this.value);
+            issues += this.value + ',';
+
+        });
+
+        $('#tblAgingComponent  tbody').find("tr").each(function (row, tr) {
+
+
+            if ($(tr).find('td:eq(0)').text().toLowerCase() == codevalue.toLowerCase()) {
+
+                $(tr).find('input[name="txtRemarks"]').val(issues);
+            }
+
+
+        });
+
+        $('#txtMobileCode').val('');
+        $("#txtMobileCode").focus();
+        $('#myModal').modal('hide');
+
+    });
+
+
+
+
+    //NEW Refubrished Codes.....By Asif
+    //NEW Refubrished Codes.....By Asif
+
+    function GetBatchData(codeValue) {
+
+
+        var mobileCode = codeValue.slice(0, -2);
+        var status = (codeValue.slice(-1)).toLowerCase();
+
+        $.ajax({
+            url: " @Url.Action("GetAgingBatchData", "Production")",
+            type: 'Post',
+            data: JSON.stringify({ mobileCode: mobileCode }),
+            dataType: 'json',
+            async: true,
+            contentType: 'application/json',
+            success: function (data) {
+                console.log(data.count);
+
+
+                if (data.length > 0) {
+                    $('#divtblData').show();
+                    $('#tblComponent tbody').empty();
+
+                    $.each(data, function (index, itemData) {
+                        //new logic
+
+
+                        var row = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                            "<td style='height:3px;' class='text-center'>" + itemData.MobileCode + "</td>" +
+                            "<td style='height:3px;' class='text-center'>" + itemData.AgingBatchNumber + "</td>" +
+                            "<td style='height:3px;' class='text-center'><input type='checkbox' class='pass' value=''></td>" +
+                            "<td style='height:3px;' class='text-center'><input type='checkbox'class='fail' value=''></td>" +
+                            "<td style='height:3px;width:250px;' class='text-center'><input type='text' name='txtRemarksS' style='width:250px;' class='form-control' /></td>" +
+                            "</tr>";
+
+
+                        $('#tblComponent tbody').append(row);
+
+
+                    });
+
+                    $('#divCheckBox').show();
+                    $('#btnDisplay').show();
+
+                    $('#txtMobileCode').val('');
+                    $('#total').text(data.length);
+
+
+                }
+
+                else {
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: data.Message,
+                        backgroundColor: '#D4E116',
+                        theme: 'dark', // dark
+                        zindex: 999,
+                        progressBarColor: '#091B2B',
+                        titleSize: 20,
+                        messageColor: '#27281C',
+                        messageSize: 20,
+                    });
+
+                    $('#tblComponent tbody').empty();
+                    $('#txtMobileCode').val('');
+                }
+
+
+            },
+            error: function (data, textStatus, jqXHR) {
+
+            }
+        });
+
+
+    }
+
+
+    $(document).on("click", "#chkPassed", function () {
+        var count;
+        if ($(this).is(":checked")) {
+            $("#tblComponent tbody tr").each(function (index, element) {
+
+
+                $(this).find('input[class=pass]').prop('checked', true);
+                $(this).css('background', '#127348');
+                $(this).find('input[class=fail]').prop('checked', false);
+
+                $(this).css('color', 'whitesmoke'); //new
+                $("#divBatchFailed").hide();
+                $('#divSingleCode').show();
+                // count = count + index;
+
+                count = index + 1;
+            });
+            $('#txtMobileCode').focus();
+            $('#passed').text(count);
+
+            $('#failed').text('0');
+
+
+            // $("#failed").effect("bounce", { times: 3 }, 300);
+            //$("#passed").effect("bounce", { times: 3 }, 300);
+
+            //console.log(count);
+
+        } else {
+            $("#tblComponent tbody tr").each(function () {
+
+
+                $(this).find('input[class=pass]').prop('checked', false);
+                $(this).find('input[class=fail]').prop('checked', false);
+                $(this).css('background', 'transparent');
+                $(this).css('color', 'black'); //new
+                $("#divBatchFailed").hide();
+                $('#divSingleCode').show();
+            });
+            count = 0;
+            $('#passed').text(count);
+
+        }
+    });
+
+
+    $(document).on("click", "#chkFailed", function () {
+        var count;
+        if ($(this).is(":checked")) {
+            $("#tblComponent tbody tr").each(function () {
+
+
+                $(this).find('input[class=pass]').prop('checked', false);
+                $(this).css('background', 'transparent');
+                $(this).css('color', 'black'); //new
+
+                $("#divBatchFailed").show();
+                $('#divSingleCode').hide();
+            });
+            $('#txtAllMobileCode').focus();
+            count = 0;
+            $('#passed').text(count);
+
+        } else {
+            $("#tblComponent tbody tr").each(function () {
+
+
+                $(this).find('input[class=pass]').prop('checked', false);
+                $(this).css('background', 'transparent');
+                $(this).css('color', 'black'); //new
+                $("#divBatchFailed").hide();
+                $('#divSingleCode').show();
+
+            });
+            count = 0;
+            $('#passed').text(count);
+        }
+    });
+
+
+    $(document).on("keyup", "#txtAllMobileCode", function () {
+
+        //$('#txtAllMobileCode').keydown(function () {
+        debugger;
+        debugger;
+        var text = $("#txtAllMobileCode").val();
+        var mobileCode = text.slice(0, -2);
+        var status = (text.slice(-1)).toLowerCase().trim();
+        var passedCount;
+        var failedCount;
+        //alert(text);
+
+
+
+
+        $("#tblComponent tbody tr").each(function () {
+
+
+
+
+
+            if (($(this).find("td:first").text().trim()) == mobileCode && status == "y") {
+
+
+                $(this).find('input[class=pass]').prop('checked', true);
+                $(this).css('background', '#127348');
+                $(this).css('color', 'whitesmoke'); //new
+                $(this).find('input[class=pass]').prop('checked', true);
+                $(this).find('input[class=fail]').prop('checked', false);
+                $("#txtAllMobileCode").val('');
+            }
+
+            if (($(this).find("td:first").text().trim()) == mobileCode && status == "n") {
+                //alert("oky")
+                $(this).find('input[class=fail]').prop('checked', true);
+                $(this).css('background', '#E31613');
+                $(this).find('input[class=fail]').prop('checked', true);
+                $(this).css('color', 'whitesmoke'); //new
+                $("#txtAllMobileCode").val('');
+                $(this).find('input[class=fail]').prop('checked', true);
+                $(this).find('input[class=pass]').prop('checked', false);
+            }
+
+            passedCount = $('input[class=pass]:checked').length;
+            failedCount = $('input[class=fail]:checked').length;
+
+            //alert()
+
+            $('#passed').text(passedCount);
+            $('#failed').text(failedCount);
+
+
+
+        });
+
+
+
+
+    });
+
+    function AgingQcSave() {
+
+
+        var rowCount = $('#tblComponent > tbody > tr').length;
+        var batchStatus = $('input.checkbox-template:checked').val();
+        var datacount = 0;
+        if (rowCount < 0) {
+            iziToast.warning({
+                timeout: 2000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'warning',
+                message: 'There should be 20 items in a batch',
+                backgroundColor: '#E70F0F',
+                theme: 'dark', // dark
+                zindex: 999,
+                progressBarColor: '#091B2B',
+                titleSize: 20,
+                messageColor: '#FDFEFE',
+                messageSize: 20,
+            });
+            return false;
+
+        } else {
+
+
+            var agingQcList = [];
+            var checkedPass;
+            var checkedFail;
+
+            $('#tblComponent tbody').find("tr").each(function (row, tr) {
+                checkedPass = '';
+                if (!$(tr).find('input[class=pass]').is(':checked') && !$(tr).find('input[class=fail]').is(':checked')) {
+                    agingQcList = [];
+                    iziToast.warning({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: 'Please select all pass or fail result',
+                        backgroundColor: '#E70F0F',
+                        theme: 'dark', // dark
+                        zindex: 999,
+                        progressBarColor: '#091B2B',
+                        titleSize: 20,
+                        messageColor: '#FDFEFE',
+                        messageSize: 20,
+                    });
+                    return false;
+                } else {
+
+
+                    if ($(tr).find('input[class="pass"]').is(':checked') && !$(tr).find('input[class="fail"]').is(':checked')) {
+                        checkedPass = 'y';
+
+                    }
+                    if (!$(tr).find('input[class="pass"]').is(':checked') && $(tr).find('input[class="fail"]').is(':checked')) {
+
+                        checkedPass = 'n';
+
+                    }
+
+
+                    agingQcList.push({
+                        MObileCode: $(tr).find('td:eq(0)').text().trim(),
+                        AgingBatchNumber: $(tr).find('td:eq(1)').text().trim(),
+                        Passed: checkedPass,
+                        QcStation: "AGQC",
+                        Remarks: $(tr).find('input[name="txtRemarks"]').val(),
+                    });
+
+
+
+
+                }
+
+            });
+
+            if (rowCount == agingQcList.length) {
+                $.ajax({
+                    url: ' @Url.Action("InsertAgingQc", "Production")',
+                    type: 'Post',
+                    data: JSON.stringify({ productionAgingQc: agingQcList, batchStatus: batchStatus }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: 'Information Saved Successfully',
+                                backgroundColor: '#45B39D',
+                                theme: 'dark', // dark
+                                zindex: 999,
+                                progressBarColor: '#091B2B',
+                                titleSize: 20,
+                                messageColor: '#FDFEFE',
+                                messageSize: 20,
+
+                            });
+
+                            $('#tblComponent tbody').empty();
+                            $("#tblRow").hide();
+                            $("#divtblData").hide();
+
+                            return true;
+
+                        }
+                        else if (result.Id == "0") {
+                            window.location = '@Url.Action("LogOut", "Account")';
+
+                        }
+
+
+                        else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: result.Message
+                            });
+                        }
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message
+                        });
+
+                        //return false;
+                    }
+                });
+
+            }
+            console.log(agingQcList);
+        }
+    }
+    
+</script>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CellPhoneProjectModelStoreContainer" CdmEntityContainer="WCMSCellPhoneProjectEntities">
+    <EntitySetMapping Name="ProjectMasters">
+      <EntityTypeMapping TypeName="CellPhoneProjectModel.ProjectMaster">
+        <MappingFragment StoreEntitySet="ProjectMasters">
+          <ScalarProperty Name="ProjectMasterId" ColumnName="ProjectMasterId" />
+          <ScalarProperty Name="ProjectTypeId" ColumnName="ProjectTypeId" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierModelName" ColumnName="SupplierModelName" />
+          <ScalarProperty Name="NumberOfSample" ColumnName="NumberOfSample" />
+          <ScalarProperty Name="ApproxProjectFinishDate" ColumnName="ApproxProjectFinishDate" />
+          <ScalarProperty Name="SupplierTrustLevel" ColumnName="SupplierTrustLevel" />
+          <ScalarProperty Name="IsScreenTestComplete" ColumnName="IsScreenTestComplete" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ApproxProjectOrderDate" ColumnName="ApproxProjectOrderDate" />
+          <ScalarProperty Name="ApproxShipmentDate" ColumnName="ApproxShipmentDate" />
+          <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+          <ScalarProperty Name="IsProjectManagerAssigned" ColumnName="IsProjectManagerAssigned" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="IsReorder" ColumnName="IsReorder" />
+          <ScalarProperty Name="OsName" ColumnName="OsName" />
+          <ScalarProperty Name="OsVersion" ColumnName="OsVersion" />
+          <ScalarProperty Name="DisplaySize" ColumnName="DisplaySize" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="ProcessorName" ColumnName="ProcessorName" />
+          <ScalarProperty Name="ProcessorClock" ColumnName="ProcessorClock" />
+          <ScalarProperty Name="Chipset" ColumnName="Chipset" />
+          <ScalarProperty Name="FrontCamera" ColumnName="FrontCamera" />
+          <ScalarProperty Name="BackCamera" ColumnName="BackCamera" />
+          <ScalarProperty Name="Ram" ColumnName="Ram" />
+          <ScalarProperty Name="Rom" ColumnName="Rom" />
+          <ScalarProperty Name="Battery" ColumnName="Battery" />
+          <ScalarProperty Name="SimSlotNumber" ColumnName="SimSlotNumber" />
+          <ScalarProperty Name="SlotType" ColumnName="SlotType" />
+          <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+          <ScalarProperty Name="RevisedStatus" ColumnName="RevisedStatus" />
+          <ScalarProperty Name="ManagentComment" ColumnName="ManagentComment" />
+          <ScalarProperty Name="ApproximatePrice" ColumnName="ApproximatePrice" />
+          <ScalarProperty Name="GivenSampleToScreening" ColumnName="GivenSampleToScreening" />
+          <ScalarProperty Name="FinalPrice" ColumnName="FinalPrice" />
+          <ScalarProperty Name="Added" ColumnName="Added" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ProjectNameForScreening" ColumnName="ProjectNameForScreening" />
+          <ScalarProperty Name="SourcingType" ColumnName="SourcingType" />
+          <ScalarProperty Name="ScreeningCommentFromCommercial" ColumnName="ScreeningCommentFromCommercial" />
+          <ScalarProperty Name="PcbaVendorName" ColumnName="PcbaVendorName" />
+          <ScalarProperty Name="PcbaFinalVendor" ColumnName="PcbaFinalVendor" />
+          <ScalarProperty Name="DisplayResulution" ColumnName="DisplayResulution" />
+          <ScalarProperty Name="DisplaySpeciality" ColumnName="DisplaySpeciality" />
+          <ScalarProperty Name="TpVendor" ColumnName="TpVendor" />
+          <ScalarProperty Name="TpFinalVendor" ColumnName="TpFinalVendor" />
+          <ScalarProperty Name="LcdVendor" ColumnName="LcdVendor" />
+          <ScalarProperty Name="LcdFinalVendor" ColumnName="LcdFinalVendor" />
+          <ScalarProperty Name="HousingVendorName" ColumnName="HousingVendorName" />
+          <ScalarProperty Name="HousingFinalVendorName" ColumnName="HousingFinalVendorName" />
+          <ScalarProperty Name="BackCam" ColumnName="BackCam" />
+          <ScalarProperty Name="BackCamAutoFocus" ColumnName="BackCamAutoFocus" />
+          <ScalarProperty Name="BackCamSensor" ColumnName="BackCamSensor" />
+          <ScalarProperty Name="BackCamBsi" ColumnName="BackCamBsi" />
+          <ScalarProperty Name="FrontCam" ColumnName="FrontCam" />
+          <ScalarProperty Name="FrontCamAutoFocus" ColumnName="FrontCamAutoFocus" />
+          <ScalarProperty Name="FrontCamSensor" ColumnName="FrontCamSensor" />
+          <ScalarProperty Name="FrontCamBsi" ColumnName="FrontCamBsi" />
+          <ScalarProperty Name="CpuName" ColumnName="CpuName" />
+          <ScalarProperty Name="ChipsetName" ColumnName="ChipsetName" />
+          <ScalarProperty Name="ChipsetFrequency" ColumnName="ChipsetFrequency" />
+          <ScalarProperty Name="ChipsetBit" ColumnName="ChipsetBit" />
+          <ScalarProperty Name="ChipsetCore" ColumnName="ChipsetCore" />
+          <ScalarProperty Name="MemoryBrandName" ColumnName="MemoryBrandName" />
+          <ScalarProperty Name="Gsensor" ColumnName="Gsensor" />
+          <ScalarProperty Name="Psensor" ColumnName="Psensor" />
+          <ScalarProperty Name="Lsensor" ColumnName="Lsensor" />
+          <ScalarProperty Name="Compass" ColumnName="Compass" />
+          <ScalarProperty Name="Gyroscope" ColumnName="Gyroscope" />
+          <ScalarProperty Name="HallSensor" ColumnName="HallSensor" />
+          <ScalarProperty Name="Otg" ColumnName="Otg" />
+          <ScalarProperty Name="Gps" ColumnName="Gps" />
+          <ScalarProperty Name="SpecialSensor" ColumnName="SpecialSensor" />
+          <ScalarProperty Name="EarphoneConfirmPrice" ColumnName="EarphoneConfirmPrice" />
+          <ScalarProperty Name="EarphoneSupplierName" ColumnName="EarphoneSupplierName" />
+          <ScalarProperty Name="ChargerRating" ColumnName="ChargerRating" />
+          <ScalarProperty Name="ChargerSupplierName" ColumnName="ChargerSupplierName" />
+          <ScalarProperty Name="ThreeLayerScreenProtector" ColumnName="ThreeLayerScreenProtector" />
+          <ScalarProperty Name="BatteryCoverFinishingType" ColumnName="BatteryCoverFinishingType" />
+          <ScalarProperty Name="BatteryCoverLogoType" ColumnName="BatteryCoverLogoType" />
+          <ScalarProperty Name="OtgCable" ColumnName="OtgCable" />
+          <ScalarProperty Name="FlashLight" ColumnName="FlashLight" />
+          <ScalarProperty Name="SecondGen" ColumnName="SecondGen" />
+          <ScalarProperty Name="ThirdGen" ColumnName="ThirdGen" />
+          <ScalarProperty Name="FourthGenFdd" ColumnName="FourthGenFdd" />
+          <ScalarProperty Name="FourthGenTdd" ColumnName="FourthGenTdd" />
+          <ScalarProperty Name="Cdma" ColumnName="Cdma" />
+          <ScalarProperty Name="BatteryRating" ColumnName="BatteryRating" />
+          <ScalarProperty Name="BatteryType" ColumnName="BatteryType" />
+          <ScalarProperty Name="BatterySupplierName" ColumnName="BatterySupplierName" />
+          <ScalarProperty Name="BateeryPossibleSupplierNames" ColumnName="BateeryPossibleSupplierNames" />
+          <ScalarProperty Name="OrderQuantity" ColumnName="OrderQuantity" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="OrderNuber" ColumnName="OrderNuber" />
+          <ScalarProperty Name="ApprovalReviewRemarks" ColumnName="ApprovalReviewRemarks" />
+          <ScalarProperty Name="InitialApprovalDate" ColumnName="InitialApprovalDate" />
+          <ScalarProperty Name="FinalApprovalDate" ColumnName="FinalApprovalDate" />
+          <ScalarProperty Name="ScreeningIssueReviewDate" ColumnName="ScreeningIssueReviewDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

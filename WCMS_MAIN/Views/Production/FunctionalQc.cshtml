@@ -1,0 +1,1635 @@
+﻿@{
+    ViewBag.Title = "FunctionalQc";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2></h2>
+<style>
+
+
+    .modal-dialog {
+        min-width: 100%;
+        margin: 0;
+    }
+     .ui-autocomplete {
+         max-height: 150px;
+         overflow: auto;
+         float: left;
+     }
+
+
+    /*//////*/
+
+
+    /*  bhoechie tab */
+    div.bhoechie-tab-container {
+        z-index: -2;
+        background-color: #ffffff;
+        padding: 0 !important;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+        margin-left: 50px;
+        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        background-clip: padding-box;
+        opacity: 0.97;
+        filter: alpha(opacity=97);
+        display: inline-block;
+    }
+
+    div.bhoechie-tab-menu {
+        padding-right: 0;
+        padding-left: 10px;
+        padding-bottom: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group > a {
+        margin-bottom: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group > a .glyphicon,
+    div.bhoechie-tab-menu div.list-group > a .fa {
+        color: #5A55A3;
+    }
+
+    div.bhoechie-tab-menu div.list-group > a:first-child {
+        border-top-right-radius: 0;
+        -moz-border-top-right-radius: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group > a:last-child {
+        border-bottom-right-radius: 0;
+        -moz-border-bottom-right-radius: 0;
+    }
+
+    div.bhoechie-tab-menu div.list-group > a.active,
+    div.bhoechie-tab-menu div.list-group > a.active .glyphicon,
+    div.bhoechie-tab-menu div.list-group > a.active .fa {
+        background-color: #5A55A3;
+        background-image: #5A55A3;
+        color: #ffffff;
+    }
+
+    div.bhoechie-tab-menu div.list-group > a.active:after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        margin-top: -13px;
+        border-left: 0;
+        border-bottom: 13px solid transparent;
+        border-top: 13px solid transparent;
+        border-left: 10px solid #5A55A3;
+    }
+
+    div.bhoechie-tab-content {
+        background-color: #ffffff;
+        /* border: 1px solid #eeeeee; */
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
+        display: none;
+    }
+
+
+
+
+
+    /* Track */
+
+
+
+    body::-webkit-scrollbar {
+        width: 1em;
+    }
+
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: #5A55A3;
+        outline: 1px solid #5A55A3;
+    }
+
+
+
+
+    #card::-webkit-scrollbar {
+        width: 1em;
+    }
+
+    #card::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    }
+
+    #card::-webkit-scrollbar-thumb {
+        background-color: #5A55A3;
+        outline: 1px solid #5A55A3;
+    }
+
+
+    section {
+        padding: 60px 0;
+    }
+
+    section .section-title {
+        text-align: center;
+        color: #007b5e;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+
+    #tabs {
+        background: #007b5e;
+        color: #eee;
+    }
+
+    #tabs h6.section-title {
+        color: #eee;
+    }
+
+    #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+        color: #f3f3f3;
+        background-color: #5A55A3;
+        border-color: transparent transparent #f3f3f3;
+        border-bottom: 4px solid !important;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #tabs .nav-tabs .nav-link {
+        border: 1px solid transparent;
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+        color: #eee;
+        font-size: 20px;
+    }
+
+
+
+    .circle {
+        margin: 26px;
+        display: inline-block;
+        padding: 16px;
+        text-align: center;
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        border: 2px solid #1d2087;
+    }
+
+    .circle::before,
+    .circle::after {
+        position: absolute;
+        z-index: -1;
+        display: block;
+        content: '';
+    }
+
+    .circle,
+    .circle::before,
+    .circle::after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .circle {
+        position: relative;
+        z-index: 2;
+        background-color: #fff;
+        border: 2px solid #5c5eae;
+        color: #5c5eae;
+        line-height: 50px;
+        overflow: hidden;
+    }
+
+
+
+    .circle::after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        -webkit-transform: scale(.5);
+        transform: scale(.5);
+    }
+
+    .circle:hover::after {
+        border-radius: 50%;
+        -webkit-transform: scale(.9);
+        transform: scale(.9);
+    }
+
+    .circle1 {
+        opacity: 0.4;
+    }
+
+    .circle2 {
+        opacity: 0.6;
+    }
+
+    .circle3 {
+        opacity: 0.8;
+    }
+
+    .circle a {
+        text-decoration: none;
+        color: #1d2087;
+    }
+
+    .circle h2 {
+        font-size: 60px;
+    }
+
+    .circle h2 small {
+        color: #1d2087;
+    }
+
+    .circle p {
+        font-size: 20px;
+        line-height: 26px;
+    }
+</style>
+@*<div class="breadcrumb-holder container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">QC </a></li>
+            <li class="breadcrumb-item active">Functional Qc</li>
+        </ul>
+    </div>*@
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-7">
+            <div class="card" id="card" style="height: 600px; width: 100%; overflow-y: scroll; ">
+
+                <div class="card-header d-flex align-items-center" style="background-color: #057EB3;color: wheat">
+                    <h3 class="h4">Add Functional Qc Result</h3>
+                </div>
+
+
+                <div class="card-body">
+                    <nav>
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"> Scan Mobile Code</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Scan With IMEI</a>
+
+                        </div>
+                    </nav>
+
+
+
+                    <div class="form-group row">
+                        &nbsp;
+                    </div>
+                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                        <!-- flight section -->
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Barcode</label>
+                                <div class="col-sm-6" id="mbCode">
+                                    <input id="txtMobileCode" type="text" placeholder=" Scan Barcode" required="" class="form-control form-control-success">
+                                </div>
+                                <input class="btn btn-warning" type="submit" id="btnClearCode" value="clear" />
+                                @*<input type="submit" id="b" value="bb"/>*@
+                            </div>
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+                            <div class="form-group row" id="divIssue" style="display: none">
+                                <label class="col-sm-3 form-control-label">Issues</label>
+                                <div class="col-sm-6">
+                                    <textarea id="txtIssues" name="txtIssues" placeholder="type issues" required="" style="height: 150px;" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+                            @*<div class="form-group row">
+                                <div class="col-sm-8 offset-sm-4">
+
+                                    <button class="btn btn-primary" id="btnSave" style="display: none; width: 200px;"><i class="fa fa-plus"></i> Save</button>
+                                </div>
+                            </div>*@
+
+                        </div>
+                        <!-- train section -->
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+
+
+                            <div class="form-group row" id="divImei1" style="">
+                                <label class="col-sm-3 form-control-label">Imei 1</label>
+                                <div class="col-sm-7">
+                                    <input id="txtImei" type="text" maxlength="17" placeholder=" Scan Imei" required="" class="form-control form-control-success">
+
+
+                                </div>
+
+                                <input class="btn btn-warning" type="submit" id="btnImeiClear" value="clear" />
+                            </div>
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+
+
+                            <div class="form-group row" id="divImei1" style="">
+                                <label class="col-sm-3 form-control-label">Imei 1</label>
+                                <div class="col-sm-7">
+                                    <input id="txtImei1" type="text" readonly="readonly" placeholder=" Scan Imei 1" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row" id="divImei2" style="">
+                                <label class="col-sm-3 form-control-label">Imei 2</label>
+                                <div class="col-sm-7">
+                                    <input id="txtImei2" type="text" readonly="readonly" placeholder=" Scan Imei 2" required="" class="form-control form-control-success">
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row" id="divImeiIssue" style="display: none">
+                                <label class="col-sm-3 form-control-label">Issues</label>
+                                <div class="col-sm-7">
+                                    @*<input id="txtIssues" type="text" placeholder=" Scan Mobile Code" required="" class="form-control form-control-success">*@
+
+                                    <textarea id="txtImeiIssues" name="txtIssues" placeholder="Scan Mobile Code" required="" style="height: 150px;" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">&nbsp;</label>
+                                <div class="i-checks col-sm-6">
+                                    <input id="chkPassed" checked="checked" type="checkbox" value="y" class="checkbox-template">
+                                    <label for="chkPassed">Passed</label>
+                                    &nbsp; &nbsp;
+                                    <input id="chkFailed" type="checkbox" value="n" class="checkbox-template">
+                                    <label for="chkFailed">Failed</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-8 offset-sm-4">
+
+                                    <button class="btn btn-primary" id="btnImeiSave" style="width: 150px;"> Save</button>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-5" id="cirDiv">
+            <div class="card" style="border: 2px solid darkcyan">
+                <div class="card-header d-flex align-items-center" style="background-color: darkcyan;color: white">
+                    <h3 class="h4" style="font-weight: normal">Functional Station Count</h3>
+                </div>
+                <div class="card-body text-center">
+                    <div class="form-group row" style="font-size: 15px;">
+                        <label class="col-sm-6 form-control-label" style="font-size: 20px; color: #3D2C78; ">Total Checked:</label>
+                        <div class="col-sm-4" id="mbCode">
+                            <h2 id="idCountAll" style="font-size: 25px; color: #3D2C78; "></h2>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group row" style="font-size: 15px;">
+                        <label class="col-sm-6 form-control-label" style="font-size: 20px; color: #0C9050; ">Passed:</label>
+                        <div class="col-sm-4" id="mbCode">
+                            <h2 id="idCountPass" style="font-size: 25px; color: #0C9050;"></h2>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group row" style="font-size: 15px;">
+                        <label class="col-sm-6 form-control-label" style="font-size: 20px; color: red; ">Currently Failed:</label>
+                        <div class="col-sm-4" id="mbCode">
+                            <h2 id="idCountcurrentFail" style="font-size: 25px; color: red;"></h2>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group row" style="font-size: 15px;">
+                        <label class="col-sm-6 form-control-label" style="font-size: 20px; color: #F53E16; ">Total Failed:</label>
+                        <div class="col-sm-4" id="mbCode">
+                            <h2 id="idCountFail" style="font-size: 25px; color: #F53E16;"></h2>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="card " style="border: 2px solid #0c9050">
+                    <div class="card-header d-flex align-items-center" style="background-color:#0c9050;font-weight:normal ;color: white">
+                        <h3 class="h4" style="font-weight: normal">Last Three Scanned Mobile Code</h3>
+                    </div>
+                    <div class="card-body text-center">
+
+
+                        <table class="table table-bordered table-hover">
+                            <thead style="text-align: center">
+                                <tr>
+                                    <th>
+                                       Serial
+
+                                    </th>
+                                    <th>
+                                        CODE
+
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="tbody"></tbody>
+                        </table>
+
+
+                    </div>
+                </div>*@
+
+
+        </div>
+    </div>
+
+</div>
+
+
+@*//modal*@
+
+
+<div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false" >
+    <div class="modal-dialog modal-lg" style="border: 1px solid #922602">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="text-align: center; background-color: #072F4F;color:white ">
+                <h4 class="modal-title" style="text-align: center;">Functional Error List</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <div class="container">
+                    <div class="row" id="modIssues">
+
+                        
+                    </div>
+                    <div class="form-group row" style="margin-left: 8px;">
+
+                        
+                        <div class="i-checks col-sm-10" style="">
+                            <input id="chkOthers"  type="checkbox" value="y" class="checkbox-template">
+                            <label for="chkOthers" style="color:#f53e16;font-weight: bold">Others</label> &nbsp;&nbsp;
+                            <input id="txtOthers" type="text"  style="display: none;width: 200px;" required="" class="form-control form-control-success">
+                        </div>
+                        
+                        
+                        @*<table id="table2" border="1" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Components</th>
+                                    <th>Status</th>
+                                </tr>
+                                
+                            </thead>
+                            <tbody></tbody>
+                        </table>*@
+
+
+
+                        </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="btnSave" style="width: 200px;"> Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/black/easyui.css" rel="stylesheet" />
+@*<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">*@
+@*<script src="~/vendor/JQueryEasyUI/jquery-1.8.0.min.js"></script>*@
+<link href="~/css/jquery-ui-1.12.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/jquery-ui-1.12.js"></script>
+@*<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script>    
+
+    
+
+    //$(document).on("click", 'input[name="Errorcheck"]', function () {
+        
+    //    $("#table2 tbody").append("<tr> <td>'" + $(this).val() + "'</td> <td>Used <input type=checkbox  name=vv text=Used> &nbsp;|| &nbsp; Waste<input type=checkbox  name=vv text='Used'></td></tr>");
+       
+       
+    //});
+
+
+
+
+
+
+
+    $("#chkOthers").click(function () {
+
+        if ($(this).is(':checked')) {
+            
+            $('#txtOthers').show();
+            $('#txtOthers').focus();
+        }
+            
+        else
+            $('#txtOthers').hide();
+            $('#txtOthers').val('');
+       
+    });
+
+
+    $("#btnClearCode").click(function () {
+
+        $("#txtMobileCode").val('');
+        $("#txtMobileCode").focus();
+        $("#txtIssues").val('');
+        $("#divIssue").hide();
+        $("#btnSave").hide();
+
+        //$("#divIssue").show();
+    });
+
+
+    function GetLastthreeEntry() {
+
+
+        $.ajax({
+            url: "  @Url.Action("GetLastThreeCount", "Production")",
+            type: "GET",
+            data: { flag: "FUQC" },
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                var html = '';
+                $.each(result, function (key, item) {
+
+                    var stat = "";
+
+                    if (item.Passed == "Y") {
+                        stat = "Passed";
+                    }
+                    if (item.Passed == "N") {
+                        stat = "Failed";
+                    }
+                    var serial = key + 1;
+                    html += '<tr>';
+                    html += '<td style="text-align:center">' + serial + '</td>';
+                    html += '<td style="text-align:center">' + item.MobileCode + '</td>';
+                    html += '<td style="text-align:center">' + stat + '</td>';
+
+
+                    html += '</tr>';
+                });
+                $('.tbody').html(html);
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+
+
+    }
+
+
+    //window.setInterval(function () {
+
+    //    CountFunctionalQc();
+    //}, 1000);
+
+    function CountFunctionalQc() {
+
+        $.ajax({
+            url: '  @Url.Action("GetFunctionalQcCount", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                if (result.length == 0) {
+                    $('#idCountAll').text('0');
+                    $('#idCountPass').text('0');
+                    $('#idCountcurrentFail').text('0');
+                    $('#idCountFail').text('0');
+                }
+                else {
+                    $('#idCountAll').text(result[0].totalFunctionQc);
+                    $('#idCountPass').text(result[0].passedCount); //result[0].passedCount
+                    $('#idCountcurrentFail').text(result[0].cuFail);
+                    $('#idCountFail').text(result[0].failedCount);
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+
+
+    }
+
+    $('input.checkbox-template').on('change', function () {
+
+        debugger;
+        $('input.checkbox-template').not(this).prop('checked', false);
+        var checkedValue = $('input.checkbox-template:checked').val();
+        if (checkedValue == 'n') {
+
+            $("#divImeiIssue").show();
+            $("#txtImeiIssues").focus();
+
+        } else {
+            $("#divImeiIssue").hide();
+            $("#txtImeiIssues").val('');
+        }
+    });
+
+
+    function hide() {
+        document.getElementById('divIssue').style.display = 'none';
+    }
+
+    function show() {
+        $('#divIssue').show();
+    }
+
+
+
+    function HistoryClear() {
+
+        $("#txtHistoryMobileCode").val('');
+        $("#txtHistoryPassed").val('');
+        $("#txtHistoryIssues").val('');
+        $("#txtHistoryStation").val('');
+
+    }
+    function SaveFunctionQC(code) {
+        // return false;
+
+        debugger;
+        var functionalQcList = [];
+        var mobileCode = code.slice(0, -2);
+        var status = (code.slice(-1)).toLowerCase();
+        //var radioVal = $('input[name=radioCheck]:checked').val();
+        //var issues = $("#txtIssues").val();
+        // console.log(radioVal);
+        if ($("#txtMobileCode").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Mobile Code Required'
+            });
+            return false;
+        }
+        if (status == "y") {
+
+            functionalQcList.push({
+                MobileCode: mobileCode,
+                Passed: status,
+                QcStation: "FUQC",
+
+            });
+
+        }
+        ///Insert Data
+
+        $.ajax({
+            url: '@Url.Action("InsertFunctionalQcStation", "Production")',//changed for test
+            type: 'Post',
+            data: JSON.stringify({ statusList: functionalQcList }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+                if (result.IsSuccess) {
+                    //CountFunctionalQc();
+                    //iziToast.success({
+                    //    timeout: 1000,
+                    //    imageWidth: 100,
+                    //    position: 'center',
+                    //    title: 'Success!-',
+                    //    message: 'Information Saved Successfully',
+                    //    backgroundColor: '#45B39D',
+                    //    theme: 'dark', // dark
+                    //    zindex: 999,
+                    //    progressBarColor: '#091B2B',
+                    //    titleSize: 15,
+                    //    messageColor: '#FDFEFE',
+                    //    messageSize: 15,
+                    //});
+                    AllClear();
+
+                    $("#divHistory").hide();
+                    //GetLastthreeEntry();
+                    //CountFunctionalQc();
+                    location.reload();
+
+                    return true;
+
+                }
+
+                else if (result.Id == "0") {
+                    window.location = '@Url.Action("LogOut", "Account")';
+
+                }
+
+                else {
+                    iziToast.warning({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'warning!-',
+                        message: result.Message,
+                        backgroundColor: '#E70F0F',
+                        theme: 'dark', // dark
+                        zindex: 999,
+                        progressBarColor: '#091B2B',
+                        titleSize: 15,
+                        messageColor: '#FDFEFE',
+                        messageSize: 15,
+
+                    });
+                    $("#txtMobileCode").val('');
+                    return false;
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: result
+                });
+
+                //return false;
+            }
+        });
+        //Insert Data
+
+    }
+
+    function GetQcStatusHistory(val) {
+        debugger;
+        //alert(val);
+        //alert(val);
+
+        var codeValue = val.substring(0, val.length - 2);
+
+        var status = (val.slice(-1)).toLowerCase();
+        //var codeValue = val;
+        //var status = (codeValue.slice(-1)).toLowerCase();
+        // alert(status);
+
+        if (status == "y") {
+            $("#btnSave").hide();
+            $("#divIssue").hide();
+            SaveFunctionQC(val);
+        }
+        if (status == "n") {
+            $("#btnSave").show();
+            var param = codeValue.slice(0, -1);
+            LoadFunctionalIssues();
+            $('#myModal').modal('show');
+            
+            //$("#divIssue").show();
+            //$("#txtIssues").focus();
+
+
+        }
+    }
+    function LoadFunctionalIssues() {
+
+        $.ajax({
+            url: '  @Url.Action("GetAllIssueListFunctional", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (data) {
+                if (data.length == 0) {
+                    $('#modIssues').empty();
+                    $('#modIssues').append('<div class="statistic d-flex align-items-center bg-white has-shadow" ><div class="icon bg-green"><i class="fa fa-calendar-o"></i></div><div class="text"><small>No ongoing task available</small></div></div>');
+
+                    return false;
+                } else {
+
+                    $('#modIssues').empty();
+                    $.each(data, function (index, itemData) {
+
+
+                        $("#modIssues").append('<div class="col-md-4"><form><div class="form-check"><label><input type="checkbox"  name="Errorcheck" value="' + itemData.Name + '"> <span class="label-text">' + itemData.Name + '</span></label></div></form> </div>');
+                    });
+
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+
+
+    $(function () {
+        debugger;
+       
+        $('#txtMobileCode').keydown(function () {
+            debugger;
+            var lastTwoDigits = this.value.slice(-2);
+            if (lastTwoDigits.toLowerCase() == '-y' || lastTwoDigits.toLowerCase() == '-n') {
+
+                GetQcStatusHistory((this.value));
+            }
+        });
+    });
+
+
+    function LoadAllIssues() {
+        var url = "@Url.Action("GetComponentList", "Project")";
+        $.getJSON(url, function (json) {
+            var elem = $("#txtIssues");
+            $("#txtIssues").chosen("destroy");
+            elem.empty();
+
+            elem.append("<option value='0'>---Select---</option>");
+
+            $.each(json, function (idx, obj) {
+
+                elem.append('<option value="' + obj.Id + '">' + obj.value + '</option>');
+            });
+
+            elem.chosen({ width: "100%", height: "10px" });
+
+            //$(".chosen-select").chosen({ height: "10%" });
+
+
+        });
+    }
+
+
+    $(document).ready(function () {
+
+        //GetLastthreeEntry();
+
+        $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        });
+
+
+
+        $('#txtMobileCode').focus();
+
+
+        var issues = [];
+        $.ajax({
+            url: " @Url.Action("GetAllIssueList", "Production")",
+            type: 'GET',
+            dataType: 'json',
+            async: true,
+            contentType: 'application/json',
+            success: function (data) {
+                $.each(data, function (index, itemData) {
+                    issues.push(
+                        itemData.value
+                    );
+                });
+                //console.log(issues);
+            },
+            error: function (data, textStatus, jqXHR) {
+
+            }
+        });
+
+        function split(val) {
+            return val.split(',');
+        }
+
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        var te = [];
+        $("#txtIssues")
+            .on("keydown", function (event) {
+                if (event.keyCode === $.ui.keyCode.TAB &&
+                    $(this).autocomplete("instance").menu.active) {
+                    event.preventDefault();
+                }
+            })
+            .autocomplete({
+                minLength: 0,
+                source: function (request, response) {
+
+                    //console.log(issues.la);
+                    response($.ui.autocomplete.filter(
+                        issues, extractLast(request.term)));
+                },
+                focus: function () {
+
+                    return false;
+                },
+                select: function (event, ui) {
+                    var terms = split(this.value);
+                    terms.pop();
+                    terms.push(ui.item.value);
+                    terms.push("");
+                    this.value = terms.join(",");
+                    return false;
+                }
+            });
+    });
+
+
+    $("#btnSave").click(function () {
+        debugger;
+        var functionalQcList = [];
+        var functionalReworkList = [];
+
+        var code = $("#txtMobileCode").val();
+
+
+        var mobleCode = code.slice(0, -2);
+
+        var status = code.slice(-1);
+        //var radioVal = $('input[name=radioCheck]:checked').val();
+
+        //var issues = $("#txtIssues").val();
+        // console.log(radioVal);
+
+
+        if (status.toLowerCase() == 'n') {
+            var checkedNum = $('input[name="Errorcheck"]:checked').length;
+            
+
+            if (!checkedNum && $('#txtOthers').val() == "") {
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Warning',
+                    message: 'Please Select Issues'
+                });
+                return false;
+            }
+
+        }
+
+        if ($("#txtMobileCode").val() == "") {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Mobile Code Required'
+            });
+            return false;
+        }
+
+
+
+            //if ($("#txtMobileCode").val() != "" && $("#txtIssues").val() == "") {
+
+            //    iziToast.warning({
+            //        timeout: 1000,
+            //        imageWidth: 150,
+            //        position: 'center',
+            //        title: 'Warning',
+            //        message: 'Issues Required'
+            //    });
+            //    return false;
+
+
+            //} 
+        else {
+
+            var issues = '';
+
+            $('input[name="Errorcheck"]:checked').each(function () {
+                //console.log(this.value);
+                issues +=this.value+',';
+                
+            });
+
+            functionalQcList.push({
+                MobileCode: mobleCode,
+                Passed: status,
+                QcStation: "FUQC"
+                //Issues: $("#txtIssues").val()
+
+
+            });
+            
+            if ($('#txtOthers').val() !="") {
+
+                issues += $('#txtOthers').val();
+            }
+
+            functionalReworkList.push({
+                MobileCode: mobleCode,
+                FailedStation: "FUQC",
+                Issues:issues //$("#txtIssues").val()
+            });
+
+            //return false;
+            $.ajax({
+                url: ' @Url.Action("InsertFunctionalQcStation", "Production")', //changed for tesing
+                type: 'Post',
+                data: JSON.stringify({ statusList: functionalQcList, reworkList: functionalReworkList }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.IsSuccess) {
+                        iziToast.success({
+                            timeout: 1000,
+                            imageWidth: 100,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'Information Saved Successfully',
+                            backgroundColor: '#15B34A',
+                            theme: 'dark', // dark
+                            zindex: 999,
+                            progressBarColor: '#091B2B',
+                            titleSize: 15,
+                            messageColor: '#F7FDF9',
+                            messageSize: 15,
+                        });
+                        AllClear();
+                        $("#btnSave").hide();
+                        $("#divHistory").hide();
+                        $("#divNoHistory").hide();
+                        CountFunctionalQc();
+
+                        //GetLastthreeEntry();
+                        location.reload();
+                        return true;
+
+                    }
+
+                    else if (result.Id == "0") {
+                        window.location = '@Url.Action("LogOut", "Account")';
+
+                    }
+                    else {
+                        iziToast.warning({
+                            timeout: 1000,
+                            imageWidth: 100,
+                            position: 'center',
+                            title: 'Warning!-',
+                            message: result.Message,
+                            backgroundColor: '#E70F0F',
+                            theme: 'dark', // dark
+                            zindex: 999,
+                            progressBarColor: '#091B2B',
+                            titleSize: 15,
+                            messageColor: '#FDFEFE',
+                            messageSize: 15,
+                        });
+                        $("#txtMobileCode").val('');
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result
+                    });
+
+                    //return false;
+                }
+            });
+
+
+
+        }
+
+    });
+
+    function AllClear() {
+
+        $("#txtIssues").val('');
+        $("#txtMobileCode").val('');
+        $('.radio-template').prop('checked', false);
+        $('#divIssue').hide();
+
+    }
+
+
+
+
+
+    // Imei Tab js code
+    //Imei Tab js code
+
+    $("#btnImeiClear").click(function () {
+        $("#txtImei1").val('');
+        $("#txtImei").val('');
+        $("#txtImei2").val('');
+        $("#txtImei").focus();
+
+    });
+
+
+
+    $("#btnImeiSave").click(function () {
+
+        var productionMaster = {};
+        var rework = {};
+
+        debugger;
+
+
+
+        if ($("#txtImei1").val() == '' || $("#txtImei2").val() == '') {
+
+
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'IMEI numbers required !'
+            });
+            return false;
+
+
+        }
+
+        if (!$("input.checkbox-template").is(":checked")) {
+            iziToast.warning({
+                timeout: 1000,
+                imageWidth: 150,
+                position: 'center',
+                title: 'Warning',
+                message: 'Please Select Passed or Failed Option !'
+            });
+            return false;
+        }
+
+
+        if ($('input.checkbox-template:checked').val() == 'y') {
+
+            if ($("#txtImei1").val() == '' || $("#txtImei2").val() == '') {
+
+
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Warning',
+                    message: 'IMEI numbers required !'
+                });
+                return false;
+
+
+            }
+
+            else if (!$("input.checkbox-template").is(":checked")) {
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Warning',
+                    message: 'Please Select Passed or Failed Option !'
+                });
+                return false;
+            }
+
+
+            else {
+
+                productionMaster.Imei1 = $("#txtImei1").val();
+                productionMaster.Imei2 = $("#txtImei2").val();
+                productionMaster.Passed = $('input.checkbox-template:checked').val();
+                productionMaster.QcStation = "FUQC";
+
+            }
+
+
+
+
+
+        }
+
+        if ($('input.checkbox-template:checked').val() == 'n') {
+
+            if ($("#txtImei1").val() == '' || $("#txtImei2").val() == '') {
+
+
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Success',
+                    message: 'IMEI numbers required !'
+                });
+
+                return false;
+
+            }
+
+            else if ($("#txtImeiIssues").val() == "") {
+
+
+                iziToast.warning({
+                    timeout: 1000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Success',
+                    message: 'Issues name required !'
+                });
+                return false;
+
+            }
+
+
+            else {
+
+                productionMaster.Imei1 = $("#txtImei1").val();
+                productionMaster.Imei2 = $("#txtImei2").val();
+                productionMaster.Passed = $('input.checkbox-template:checked').val();
+                productionMaster.QcStation = "FUQC";
+                rework.Imei1 = $("#txtImei1").val();
+                rework.Imei2 = $("#txtImei2").val();
+                rework.Issues = $("#txtImeiIssues").val();
+                //productionMaster.Passed = $('input.checkbox-template:checked').val();
+                rework.FailedStation = "FUQC";
+
+            }
+
+        }
+
+        $.ajax({
+            url: ' @Url.Action("PackagingQcResult", "Production")',
+            type: 'Post',
+            data: JSON.stringify({ productionMaster: productionMaster, rework: rework }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                if (result.IsSuccess) {
+                    iziToast.success({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Success',
+                        message: 'Information Saved Successfully'
+                    });
+                    AllClearImeiPart();
+                    $('.nav-tabs a[href="#nav-profile"]').tab('show');
+                    $('#divImeiIssue').hide();
+
+
+                    return true;
+                    //location.reload();
+                } else {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: result.Message
+                    });
+
+                    AllClearImeiPart();
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message: result
+                });
+
+                //return false;
+            }
+        });
+        //alert("All Okay");
+
+    });
+
+
+
+
+    function AllClearImeiPart() {
+        $("#txtImei1").val('');
+        $("#txtImei2").val('');
+        $("#txtImei").val('');
+        $("#txtImeiIssues").val('');
+        $("#txtMobileCode").val('');
+        $('.checkbox-template').prop('checked', false);
+        $('#divImeiIssue').hide();
+
+    }
+
+
+
+
+
+    $(document).ready(function () {
+
+        CountFunctionalQc();
+        $('#txtMobileCode').focus();
+        //$('#txtMobileCode').focus();
+
+        var issues = [];
+        $.ajax({
+            url: " @Url.Action("GetAllIssueList", "Project")",
+            type: 'GET',
+            dataType: 'json',
+            async: true,
+            contentType: 'application/json',
+            success: function (data) {
+                $.each(data, function (index, itemData) {
+                    issues.push(
+                        itemData.value
+                    );
+                });
+                //console.log(issues);
+            },
+            error: function (data, textStatus, jqXHR) {
+
+            }
+        });
+
+        function split(val) {
+            return val.split('+');
+        }
+
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        var te = [];
+        $("#txtImeiIssues")
+            .on("keydown", function (event) {
+                if (event.keyCode === $.ui.keyCode.TAB &&
+                    $(this).autocomplete("instance").menu.active) {
+                    event.preventDefault();
+                }
+            })
+            .autocomplete({
+                minLength: 0,
+                source: function (request, response) {
+
+                    console.log(issues.la);
+                    response($.ui.autocomplete.filter(
+                        issues, extractLast(request.term)));
+                },
+                focus: function () {
+
+                    return false;
+                },
+                select: function (event, ui) {
+                    var terms = split(this.value);
+                    terms.pop();
+                    terms.push(ui.item.value);
+                    terms.push("");
+                    this.value = terms.join("+");
+                    return false;
+                }
+            });
+    });
+
+
+    $("#txtImei").keydown(function () {
+        debugger;
+
+        //var codeValue = val.substring(0, val.length - 2);
+
+        // var status = (val.slice(-1)).toLowerCase();
+        var code = $("#txtImei").val();
+        var imei = code.substring(0, code.length - 2);
+
+        if (imei.length == 15) {
+            ///call ajx
+
+
+            $.ajax({
+                url: '@Url.Action("GetDetailsByImei", "Production")',
+                type: 'Post',
+                data: JSON.stringify({ imei: imei }),
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                success: function (result) {
+
+                    if (result.length == 0) {
+                        iziToast.warning({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Success',
+                            message: 'No data found'
+                        });
+
+                        return true;
+                        //location.reload();
+                    } else {
+
+                        $("#txtImei1").val(result[0].Imei1);
+                        $("#txtImei2").val(result[0].Imei2);
+
+                        GetQcStatusHistoryByImei(imei);
+
+
+                    }
+
+                },
+                error: function (result, textStatus, jqXHR) {
+                    iziToast.error({
+                        timeout: 2000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Error',
+                        message: 'No date found'
+                    });
+
+                    //return false;
+                }
+            });
+
+        } else {
+
+            $("#txtImei1").val('');
+            $("#txtImei2").val('');
+        }
+
+    });
+
+
+
+
+    function GetQcStatusHistoryByImei(imei) {
+        debugger;
+
+
+
+        $.ajax({
+            url: "@Url.Action("GetQcStatusHistoryByImei", "Production")",
+            type: 'Post',
+            data: JSON.stringify({ imei: imei }),
+            dataType: 'json',
+            async: true,
+            contentType: 'application/json',
+            success: function (data) {
+
+                if (data.length == 0) {
+                    $("#divNoHistory").show();
+                    $("#divHistory").hide();
+                    $("#divIssues").hide();
+                    HistoryClear();
+                }
+
+                else {
+                    $("#divNoHistory").hide();
+                    $("#divHistory").show();
+
+                    $("#txtHistoryMobileCode").val(data[0].MobileCode);
+                    //if (data[0].Passed == "N") {
+                    HistoryClear();
+                    $("#txtHistoryMobileCode").val(data[0].MobileCode);
+                    $("#txtHistoryFailed").show();
+                    $("#txtHistoryFailed").val("FAILED");
+                    $("#txtHistoryPassed").hide();
+                    $("#divIssues").show();
+                    $("#txtHistoryIssues").show();
+                    $("#txtHistoryIssues").val(data[0].Issues);
+
+                    //$("#txtHistoryIssues").hide();
+                    $("#divStation").show();
+
+                    //}
+                    //$("#txtHistoryIssues").val(data[0].Issues);
+                    $("#txtHistoryStation").val(data[0].FailedStation);
+                    return true;
+
+                }
+                //console.log(issues);
+            },
+            error: function (data, textStatus, jqXHR) {
+
+            }
+        });
+    }
+
+
+    //nav - home - tab
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var target = $(e.target).attr("href");// activated tab
+        //alert(target)
+        if (target == "#nav-profile")
+            $("#txtImei").focus();
+        $("#divHistory").hide();
+    });
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var target = $(e.target).attr("href");// activated tab
+        //alert(target)
+        if (target == "#nav-home")
+            $("#txtMobileCode").focus();
+        $("#divHistory").hide();
+    });
+
+
+//Imei Tab js code
+    //Imei Tab js code
+</script>

@@ -1,0 +1,108 @@
+﻿
+
+
+
+<div class="container">
+
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModaal">Click To View Report</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModaal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">MMI Report View</h4>
+
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+
+                    <section class="forms">
+
+                        <div class="container-fluid">
+
+                            <div class="col-lg-8 offset-2">
+                                <div class="card" style="height: 300px;">
+                                    <div class="card-close">
+
+                                    </div>
+                                    <div class="card-headerr d-flex align-items-center">
+                                        <h3 class="h4">Search</h3>
+                                    </div>
+                                    <div class="card-bodyy">
+
+                                        <div class="form-horizontal">
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 form-control-label">Model Name</label>
+                                                <div class="col-sm-7" id="">
+                                                    <input id="txtProject" type="text" maxlength="6" placeholder="Model Name" required="" class="form-control form-control-success">
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3  form-control-label"> Date</label>
+                                                <div class="col-sm-7">
+                                                    <input id="txtReqDate" type="text" placeholder="Requisition Date" class="form-control form-control-success">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-4 offset-sm-4">
+
+                                                    <button class="btn btn-primary" id="btn" style="width: 200px;"><i class="fa fa-plus"></i> Search</button>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-12">
+                                <div class="card" id="divCard">
+                                    <div class="card-headeer d-flex align-items-center">
+                                        <h3 class="h4">Report View</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <table id="datatable" class="table  table-bordered " width="900" cellspacing="0">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>Model</th>
+                                                    <th>Line Id</th>
+                                                    <th>MMI Passed</th>
+                                                    <th>MMI Failed</th>
+
+
+
+                                                </tr>
+                                            </thead>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

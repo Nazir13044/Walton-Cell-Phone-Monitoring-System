@@ -1,0 +1,2482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VsunDBModelStoreContainer" CdmEntityContainer="VsunDBEntities">
+    <EntitySetMapping Name="F_CheckItems_Battery">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_Battery">
+        <MappingFragment StoreEntitySet="F_CheckItems_Battery">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_CB">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_CB">
+        <MappingFragment StoreEntitySet="F_CheckItems_CB">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_Charger">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_Charger">
+        <MappingFragment StoreEntitySet="F_CheckItems_Charger">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_GB">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_GB">
+        <MappingFragment StoreEntitySet="F_CheckItems_GB">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_GBW">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_GBW">
+        <MappingFragment StoreEntitySet="F_CheckItems_GBW">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_IMEIC">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_IMEIC">
+        <MappingFragment StoreEntitySet="F_CheckItems_IMEIC">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_IMEIC2">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_IMEIC2">
+        <MappingFragment StoreEntitySet="F_CheckItems_IMEIC2">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_IMEIP">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_IMEIP">
+        <MappingFragment StoreEntitySet="F_CheckItems_IMEIP">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_IMEIR">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_IMEIR">
+        <MappingFragment StoreEntitySet="F_CheckItems_IMEIR">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_IMEIW">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_IMEIW">
+        <MappingFragment StoreEntitySet="F_CheckItems_IMEIW">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_Pallet">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_Pallet">
+        <MappingFragment StoreEntitySet="F_CheckItems_Pallet">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_CheckItems_Relation">
+      <EntityTypeMapping TypeName="VsunDBModel.F_CheckItems_Relation">
+        <MappingFragment StoreEntitySet="F_CheckItems_Relation">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_CK_BT" ColumnName="T_CK_BT" />
+          <ScalarProperty Name="T_CK_FT" ColumnName="T_CK_FT" />
+          <ScalarProperty Name="T_CK_AT" ColumnName="T_CK_AT" />
+          <ScalarProperty Name="T_CK_SMTMMI" ColumnName="T_CK_SMTMMI" />
+          <ScalarProperty Name="T_CK_MMI" ColumnName="T_CK_MMI" />
+          <ScalarProperty Name="T_CK_SWV" ColumnName="T_CK_SWV" />
+          <ScalarProperty Name="T_CK_SWBuilTime" ColumnName="T_CK_SWBuilTime" />
+          <ScalarProperty Name="T_CK_IMEIW" ColumnName="T_CK_IMEIW" />
+          <ScalarProperty Name="T_CK_Reset" ColumnName="T_CK_Reset" />
+          <ScalarProperty Name="T_CK_IMEIC" ColumnName="T_CK_IMEIC" />
+          <ScalarProperty Name="T_CK_Battery" ColumnName="T_CK_Battery" />
+          <ScalarProperty Name="T_CK_Charger" ColumnName="T_CK_Charger" />
+          <ScalarProperty Name="T_CK_GiftBox" ColumnName="T_CK_GiftBox" />
+          <ScalarProperty Name="T_CK_RelationCheck" ColumnName="T_CK_RelationCheck" />
+          <ScalarProperty Name="T_CK_GiftBoxW" ColumnName="T_CK_GiftBoxW" />
+          <ScalarProperty Name="T_CK_CartonBox" ColumnName="T_CK_CartonBox" />
+          <ScalarProperty Name="T_CK_CartonBoxCheck" ColumnName="T_CK_CartonBoxCheck" />
+          <ScalarProperty Name="T_CK_CartonBoxW" ColumnName="T_CK_CartonBoxW" />
+          <ScalarProperty Name="T_CK_Pallet" ColumnName="T_CK_Pallet" />
+          <ScalarProperty Name="T_CK_PalletCheck" ColumnName="T_CK_PalletCheck" />
+          <ScalarProperty Name="T_CK_IMEI" ColumnName="T_CK_IMEI" />
+          <ScalarProperty Name="T_CK_IRIS" ColumnName="T_CK_IRIS" />
+          <ScalarProperty Name="T_CK_Tee" ColumnName="T_CK_Tee" />
+          <ScalarProperty Name="T_CK_IMEIC2" ColumnName="T_CK_IMEIC2" />
+          <ScalarProperty Name="T_CK_GoogleKey" ColumnName="T_CK_GoogleKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_e">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_e">
+        <MappingFragment StoreEntitySet="F_Project_e">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_E8i">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_E8i">
+        <MappingFragment StoreEntitySet="F_Project_E8i">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_E8i_Coffee">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_E8i_Coffee">
+        <MappingFragment StoreEntitySet="F_Project_E8i_Coffee">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_E8s">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_E8s">
+        <MappingFragment StoreEntitySet="F_Project_E8s">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_EF6">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_EF6">
+        <MappingFragment StoreEntitySet="F_Project_EF6">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_EF6_100">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_EF6_100">
+        <MappingFragment StoreEntitySet="F_Project_EF6_100">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_EF6_300">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_EF6_300">
+        <MappingFragment StoreEntitySet="F_Project_EF6_300">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_EF7">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_EF7">
+        <MappingFragment StoreEntitySet="F_Project_EF7">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_F7_S">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_F7_S">
+        <MappingFragment StoreEntitySet="F_Project_F7_S">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_F7s">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_F7s">
+        <MappingFragment StoreEntitySet="F_Project_F7s">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_F8">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_F8">
+        <MappingFragment StoreEntitySet="F_Project_F8">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_GF7">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_GF7">
+        <MappingFragment StoreEntitySet="F_Project_GF7">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_GM3">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_GM3">
+        <MappingFragment StoreEntitySet="F_Project_GM3">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_H7s">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_H7s">
+        <MappingFragment StoreEntitySet="F_Project_H7s">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_HM4i">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_HM4i">
+        <MappingFragment StoreEntitySet="F_Project_HM4i">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_L_6">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_L_6">
+        <MappingFragment StoreEntitySet="F_Project_L_6">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_L25">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_L25">
+        <MappingFragment StoreEntitySet="F_Project_L25">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_MH17">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_MH17">
+        <MappingFragment StoreEntitySet="F_Project_MH17">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_ML13">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_ML13">
+        <MappingFragment StoreEntitySet="F_Project_ML13">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_MM17">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_MM17">
+        <MappingFragment StoreEntitySet="F_Project_MM17">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_MM18">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_MM18">
+        <MappingFragment StoreEntitySet="F_Project_MM18">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_NF_3">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_NF_3">
+        <MappingFragment StoreEntitySet="F_Project_NF_3">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_NF3">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_NF3">
+        <MappingFragment StoreEntitySet="F_Project_NF3">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_Q37">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_Q37">
+        <MappingFragment StoreEntitySet="F_Project_Q37">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_Q39">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_Q39">
+        <MappingFragment StoreEntitySet="F_Project_Q39">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_R5">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_R5">
+        <MappingFragment StoreEntitySet="F_Project_R5">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_RX6">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_RX6">
+        <MappingFragment StoreEntitySet="F_Project_RX6">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_S6_Dual">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_S6_Dual">
+        <MappingFragment StoreEntitySet="F_Project_S6_Dual">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_Sample">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_Sample">
+        <MappingFragment StoreEntitySet="F_Project_Sample">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Project_XXX">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Project_XXX">
+        <MappingFragment StoreEntitySet="F_Project_XXX">
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_IMEI3" ColumnName="T_IMEI3" />
+          <ScalarProperty Name="T_IMEI4" ColumnName="T_IMEI4" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Barcode" ColumnName="T_Barcode" />
+          <ScalarProperty Name="T_BT" ColumnName="T_BT" />
+          <ScalarProperty Name="T_WIFI" ColumnName="T_WIFI" />
+          <ScalarProperty Name="T_SWV" ColumnName="T_SWV" />
+          <ScalarProperty Name="T_BatterySN" ColumnName="T_BatterySN" />
+          <ScalarProperty Name="T_ConnectBattery_Time" ColumnName="T_ConnectBattery_Time" />
+          <ScalarProperty Name="T_ChargerSN" ColumnName="T_ChargerSN" />
+          <ScalarProperty Name="T_ConnectCharger_Time" ColumnName="T_ConnectCharger_Time" />
+          <ScalarProperty Name="T_WriteIMEI_Flag" ColumnName="T_WriteIMEI_Flag" />
+          <ScalarProperty Name="T_WriteIMEI_Time" ColumnName="T_WriteIMEI_Time" />
+          <ScalarProperty Name="T_CheckIMEI_Flag" ColumnName="T_CheckIMEI_Flag" />
+          <ScalarProperty Name="T_CheckIMEI_Time" ColumnName="T_CheckIMEI_Time" />
+          <ScalarProperty Name="T_ResetFactory_Flag" ColumnName="T_ResetFactory_Flag" />
+          <ScalarProperty Name="T_ResetFactory_Time" ColumnName="T_ResetFactory_Time" />
+          <ScalarProperty Name="T_GiftPrint_Flag" ColumnName="T_GiftPrint_Flag" />
+          <ScalarProperty Name="T_GiftPrint_Time" ColumnName="T_GiftPrint_Time" />
+          <ScalarProperty Name="T_RelationCheck_Flag" ColumnName="T_RelationCheck_Flag" />
+          <ScalarProperty Name="T_RelationCheck_Time" ColumnName="T_RelationCheck_Time" />
+          <ScalarProperty Name="T_GiftWeight" ColumnName="T_GiftWeight" />
+          <ScalarProperty Name="T_GiftWeight_Time" ColumnName="T_GiftWeight_Time" />
+          <ScalarProperty Name="T_BOXID" ColumnName="T_BOXID" />
+          <ScalarProperty Name="T_BOXID_Time" ColumnName="T_BOXID_Time" />
+          <ScalarProperty Name="T_BoxWeight" ColumnName="T_BoxWeight" />
+          <ScalarProperty Name="T_BoxWeight_Time" ColumnName="T_BoxWeight_Time" />
+          <ScalarProperty Name="T_BOXGiftCheck_Flag" ColumnName="T_BOXGiftCheck_Flag" />
+          <ScalarProperty Name="T_BOXGiftCheck_Time" ColumnName="T_BOXGiftCheck_Time" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_PalletID_Time" ColumnName="T_PalletID_Time" />
+          <ScalarProperty Name="T_ExportFlag" ColumnName="T_ExportFlag" />
+          <ScalarProperty Name="T_Export_Time" ColumnName="T_Export_Time" />
+          <ScalarProperty Name="T_BatchIndn" ColumnName="T_BatchIndn" />
+          <ScalarProperty Name="T_SPC1" ColumnName="T_SPC1" />
+          <ScalarProperty Name="T_SPC2" ColumnName="T_SPC2" />
+          <ScalarProperty Name="T_SPC3" ColumnName="T_SPC3" />
+          <ScalarProperty Name="T_OutPalletNo" ColumnName="T_OutPalletNo" />
+          <ScalarProperty Name="T_OutPalletNo_Time" ColumnName="T_OutPalletNo_Time" />
+          <ScalarProperty Name="T_Vol" ColumnName="T_Vol" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Flag" ColumnName="T_ReadIMEIPrint_Flag" />
+          <ScalarProperty Name="T_ReadIMEIPrint_Time" ColumnName="T_ReadIMEIPrint_Time" />
+          <ScalarProperty Name="T_SubSN" ColumnName="T_SubSN" />
+          <ScalarProperty Name="T_WriteIMEI_Man" ColumnName="T_WriteIMEI_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Man" ColumnName="T_CheckIMEI_Man" />
+          <ScalarProperty Name="T_GiftPrint_Man" ColumnName="T_GiftPrint_Man" />
+          <ScalarProperty Name="T_RelationCheck_Man" ColumnName="T_RelationCheck_Man" />
+          <ScalarProperty Name="T_GiftWeight_Man" ColumnName="T_GiftWeight_Man" />
+          <ScalarProperty Name="T_BoxWeight_Man" ColumnName="T_BoxWeight_Man" />
+          <ScalarProperty Name="T_CheckIMEI_Flag2" ColumnName="T_CheckIMEI_Flag2" />
+          <ScalarProperty Name="T_CheckIMEI_Time2" ColumnName="T_CheckIMEI_Time2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Projects">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Projects">
+        <MappingFragment StoreEntitySet="F_Projects">
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+          <ScalarProperty Name="T_Close" ColumnName="T_Close" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Rework">
+      <EntityTypeMapping TypeName="VsunDBModel.F_Rework">
+        <MappingFragment StoreEntitySet="F_Rework">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_Value" ColumnName="T_Value" />
+          <ScalarProperty Name="T_ReworkType" ColumnName="T_ReworkType" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkBattery">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkBattery">
+        <MappingFragment StoreEntitySet="F_ReworkBattery">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_OldBatterySN" ColumnName="T_OldBatterySN" />
+          <ScalarProperty Name="T_NewBatterySN" ColumnName="T_NewBatterySN" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkCarton">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkCarton">
+        <MappingFragment StoreEntitySet="F_ReworkCarton">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_BoxID" ColumnName="T_BoxID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkCartonWeight">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkCartonWeight">
+        <MappingFragment StoreEntitySet="F_ReworkCartonWeight">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+          <ScalarProperty Name="T_BoxID" ColumnName="T_BoxID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkCharger">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkCharger">
+        <MappingFragment StoreEntitySet="F_ReworkCharger">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_OldChargerSN" ColumnName="T_OldChargerSN" />
+          <ScalarProperty Name="T_NewChargerSN" ColumnName="T_NewChargerSN" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkCheckIMEIset">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkCheckIMEIset">
+        <MappingFragment StoreEntitySet="F_ReworkCheckIMEIset">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+          <ScalarProperty Name="T_Reason" ColumnName="T_Reason" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkGifBox">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkGifBox">
+        <MappingFragment StoreEntitySet="F_ReworkGifBox">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+          <ScalarProperty Name="T_Value" ColumnName="T_Value" />
+          <ScalarProperty Name="T_ReworkType" ColumnName="T_ReworkType" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkGifboxWeight">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkGifboxWeight">
+        <MappingFragment StoreEntitySet="F_ReworkGifboxWeight">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+          <ScalarProperty Name="T_Reason" ColumnName="T_Reason" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkHandset">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkHandset">
+        <MappingFragment StoreEntitySet="F_ReworkHandset">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+          <ScalarProperty Name="T_Reason" ColumnName="T_Reason" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkIMEI">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkIMEI">
+        <MappingFragment StoreEntitySet="F_ReworkIMEI">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_Value" ColumnName="T_Value" />
+          <ScalarProperty Name="T_ReworkType" ColumnName="T_ReworkType" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkIMEIPrint">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkIMEIPrint">
+        <MappingFragment StoreEntitySet="F_ReworkIMEIPrint">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_Value" ColumnName="T_Value" />
+          <ScalarProperty Name="T_ReworkType" ColumnName="T_ReworkType" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkOutPallet">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkOutPallet">
+        <MappingFragment StoreEntitySet="F_ReworkOutPallet">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_OutPalletID" ColumnName="T_OutPalletID" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkPallet">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkPallet">
+        <MappingFragment StoreEntitySet="F_ReworkPallet">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_PalletID" ColumnName="T_PalletID" />
+          <ScalarProperty Name="T_BoxID" ColumnName="T_BoxID" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkReadset">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkReadset">
+        <MappingFragment StoreEntitySet="F_ReworkReadset">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+          <ScalarProperty Name="T_Reason" ColumnName="T_Reason" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_ReworkRelationCheck">
+      <EntityTypeMapping TypeName="VsunDBModel.F_ReworkRelationCheck">
+        <MappingFragment StoreEntitySet="F_ReworkRelationCheck">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_WOID" ColumnName="T_WOID" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+          <ScalarProperty Name="T_Model" ColumnName="T_Model" />
+          <ScalarProperty Name="T_Color" ColumnName="T_Color" />
+          <ScalarProperty Name="T_IMEI1" ColumnName="T_IMEI1" />
+          <ScalarProperty Name="T_IMEI2" ColumnName="T_IMEI2" />
+          <ScalarProperty Name="T_SN" ColumnName="T_SN" />
+          <ScalarProperty Name="T_Datetime" ColumnName="T_Datetime" />
+          <ScalarProperty Name="T_Reason" ColumnName="T_Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_UserManagement">
+      <EntityTypeMapping TypeName="VsunDBModel.F_UserManagement">
+        <MappingFragment StoreEntitySet="F_UserManagement">
+          <ScalarProperty Name="T_UserName" ColumnName="T_UserName" />
+          <ScalarProperty Name="T_Password" ColumnName="T_Password" />
+          <ScalarProperty Name="T_UserType" ColumnName="T_UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_WOManagement">
+      <EntityTypeMapping TypeName="VsunDBModel.F_WOManagement">
+        <MappingFragment StoreEntitySet="F_WOManagement">
+          <ScalarProperty Name="T_WO" ColumnName="T_WO" />
+          <ScalarProperty Name="T_PO" ColumnName="T_PO" />
+          <ScalarProperty Name="T_Project" ColumnName="T_Project" />
+          <ScalarProperty Name="T_Model" ColumnName="T_Model" />
+          <ScalarProperty Name="T_Color" ColumnName="T_Color" />
+          <ScalarProperty Name="T_EANCode" ColumnName="T_EANCode" />
+          <ScalarProperty Name="T_RefNo" ColumnName="T_RefNo" />
+          <ScalarProperty Name="T_MRP" ColumnName="T_MRP" />
+          <ScalarProperty Name="T_SWVersion" ColumnName="T_SWVersion" />
+          <ScalarProperty Name="T_HWVersion" ColumnName="T_HWVersion" />
+          <ScalarProperty Name="T_FactoryCode" ColumnName="T_FactoryCode" />
+          <ScalarProperty Name="T_Country" ColumnName="T_Country" />
+          <ScalarProperty Name="T_TotalCount" ColumnName="T_TotalCount" />
+          <ScalarProperty Name="T_AllocateCount" ColumnName="T_AllocateCount" />
+          <ScalarProperty Name="T_DualIMEI" ColumnName="T_DualIMEI" />
+          <ScalarProperty Name="T_BeginIMEI" ColumnName="T_BeginIMEI" />
+          <ScalarProperty Name="T_CurrentIMEI" ColumnName="T_CurrentIMEI" />
+          <ScalarProperty Name="T_EndIMEI" ColumnName="T_EndIMEI" />
+          <ScalarProperty Name="T_HaveSN" ColumnName="T_HaveSN" />
+          <ScalarProperty Name="T_BeginSN" ColumnName="T_BeginSN" />
+          <ScalarProperty Name="T_CurrentSN" ColumnName="T_CurrentSN" />
+          <ScalarProperty Name="T_EndSN" ColumnName="T_EndSN" />
+          <ScalarProperty Name="T_SNFlowLen" ColumnName="T_SNFlowLen" />
+          <ScalarProperty Name="T_WriteWiFi" ColumnName="T_WriteWiFi" />
+          <ScalarProperty Name="T_BeginWiFiMac" ColumnName="T_BeginWiFiMac" />
+          <ScalarProperty Name="T_CurrentWiFiMac" ColumnName="T_CurrentWiFiMac" />
+          <ScalarProperty Name="T_EndWiFiMac" ColumnName="T_EndWiFiMac" />
+          <ScalarProperty Name="T_WriteBT" ColumnName="T_WriteBT" />
+          <ScalarProperty Name="T_BeginBTMac" ColumnName="T_BeginBTMac" />
+          <ScalarProperty Name="T_CurrentBTMac" ColumnName="T_CurrentBTMac" />
+          <ScalarProperty Name="T_EndBTMac" ColumnName="T_EndBTMac" />
+          <ScalarProperty Name="T_MinGiftBoxW" ColumnName="T_MinGiftBoxW" />
+          <ScalarProperty Name="T_MaxGiftBoxW" ColumnName="T_MaxGiftBoxW" />
+          <ScalarProperty Name="T_CartonNoFormat" ColumnName="T_CartonNoFormat" />
+          <ScalarProperty Name="T_CartonBoxCap" ColumnName="T_CartonBoxCap" />
+          <ScalarProperty Name="T_MinCartonBoxW" ColumnName="T_MinCartonBoxW" />
+          <ScalarProperty Name="T_MaxCartonBoxW" ColumnName="T_MaxCartonBoxW" />
+          <ScalarProperty Name="T_PalletCap" ColumnName="T_PalletCap" />
+          <ScalarProperty Name="T_PalletNoFormat" ColumnName="T_PalletNoFormat" />
+          <ScalarProperty Name="T_BeginPallID" ColumnName="T_BeginPallID" />
+          <ScalarProperty Name="T_EndPallID" ColumnName="T_EndPallID" />
+          <ScalarProperty Name="T_IMEILableFormatDate" ColumnName="T_IMEILableFormatDate" />
+          <ScalarProperty Name="T_GiftBoxLableFormatDate" ColumnName="T_GiftBoxLableFormatDate" />
+          <ScalarProperty Name="T_CartonBoxLableFormatDate" ColumnName="T_CartonBoxLableFormatDate" />
+          <ScalarProperty Name="T_PalletLableFormatDate" ColumnName="T_PalletLableFormatDate" />
+          <ScalarProperty Name="T_BuildDateTime" ColumnName="T_BuildDateTime" />
+          <ScalarProperty Name="T_BuildIPAddr" ColumnName="T_BuildIPAddr" />
+          <ScalarProperty Name="T_ModifyDateTime" ColumnName="T_ModifyDateTime" />
+          <ScalarProperty Name="T_ModifyIPAddr" ColumnName="T_ModifyIPAddr" />
+          <ScalarProperty Name="T_Close" ColumnName="T_Close" />
+          <ScalarProperty Name="T_BatteryCheckCode" ColumnName="T_BatteryCheckCode" />
+          <ScalarProperty Name="T_ChargerCheckCode" ColumnName="T_ChargerCheckCode" />
+          <ScalarProperty Name="T_2DCode" ColumnName="T_2DCode" />
+          <ScalarProperty Name="T_2DCode_IMEI1" ColumnName="T_2DCode_IMEI1" />
+          <ScalarProperty Name="T_2DCode_IMEI2" ColumnName="T_2DCode_IMEI2" />
+          <ScalarProperty Name="T_2DCode_SN" ColumnName="T_2DCode_SN" />
+          <ScalarProperty Name="T_2DCode_SEP" ColumnName="T_2DCode_SEP" />
+          <ScalarProperty Name="T_SAPCode" ColumnName="T_SAPCode" />
+          <ScalarProperty Name="T_OutPalletNoFormat" ColumnName="T_OutPalletNoFormat" />
+          <ScalarProperty Name="T_OutPalletLableFormatDate" ColumnName="T_OutPalletLableFormatDate" />
+          <ScalarProperty Name="T_SNFormat" ColumnName="T_SNFormat" />
+          <ScalarProperty Name="T_OutPalletCap" ColumnName="T_OutPalletCap" />
+          <ScalarProperty Name="T_CheckVol" ColumnName="T_CheckVol" />
+          <ScalarProperty Name="T_MinVol" ColumnName="T_MinVol" />
+          <ScalarProperty Name="T_MaxVol" ColumnName="T_MaxVol" />
+          <ScalarProperty Name="T_Confirm" ColumnName="T_Confirm" />
+          <ScalarProperty Name="T_MSN" ColumnName="T_MSN" />
+          <ScalarProperty Name="T_CSWVersion" ColumnName="T_CSWVersion" />
+          <ScalarProperty Name="T_PartNo" ColumnName="T_PartNo" />
+          <ScalarProperty Name="T_part" ColumnName="T_part" />
+          <ScalarProperty Name="T_SameIMEI" ColumnName="T_SameIMEI" />
+          <ScalarProperty Name="T_BeginBoxID" ColumnName="T_BeginBoxID" />
+          <ScalarProperty Name="T_EndBoxID" ColumnName="T_EndBoxID" />
+          <ScalarProperty Name="T_BeginOutPallID" ColumnName="T_BeginOutPallID" />
+          <ScalarProperty Name="T_EndOutPallID" ColumnName="T_EndOutPallID" />
+          <ScalarProperty Name="T_HaveSubSN" ColumnName="T_HaveSubSN" />
+          <ScalarProperty Name="T_BeginSubSN" ColumnName="T_BeginSubSN" />
+          <ScalarProperty Name="T_CurrentSubSN" ColumnName="T_CurrentSubSN" />
+          <ScalarProperty Name="T_EndSubSN" ColumnName="T_EndSubSN" />
+          <ScalarProperty Name="T_SubSNFlowLen" ColumnName="T_SubSNFlowLen" />
+          <ScalarProperty Name="T_2DCode_SubSN" ColumnName="T_2DCode_SubSN" />
+          <ScalarProperty Name="T_SubSNFormat" ColumnName="T_SubSNFormat" />
+          <ScalarProperty Name="T_MinQuantity" ColumnName="T_MinQuantity" />
+          <ScalarProperty Name="T_MaxQuantity" ColumnName="T_MaxQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="VsunDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="VsunDBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="VsunDBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="VsunDBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="VsunDBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VsunDBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="VsunDBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VsunDBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="VsunDBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="VsunDBModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

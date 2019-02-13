@@ -1,0 +1,385 @@
+﻿
+@{
+    ViewBag.Title = "PackegingBatch";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    .ui-autocomplete {
+        max-height: 150px;
+        overflow: auto;
+        float: left;
+    }
+
+
+
+
+    .circle {
+        margin: 18px;
+        display: inline-block;
+        padding: 10px;
+        text-align: center;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 2px solid #1d2087;
+    }
+
+        .circle::before,
+        .circle::after {
+            position: absolute;
+            z-index: -1;
+            display: block;
+            content: '';
+        }
+
+        .circle,
+        .circle::before,
+        .circle::after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+
+    .circle {
+        position: relative;
+        z-index: 2;
+        background-color: #fff;
+        border: 2px solid #5c5eae;
+        color: #5c5eae;
+        line-height: 50px;
+        overflow: hidden;
+    }
+
+        .circle:hover {
+            color: #fff;
+        }
+
+        .circle::after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+        }
+
+        .circle:hover::after {
+            background: #5c5eae;
+            border-radius: 50%;
+            -webkit-transform: scale(.9);
+            transform: scale(.9);
+        }
+
+    .circle1 {
+        opacity: 0.4;
+    }
+
+    .circle2 {
+        opacity: 0.6;
+    }
+
+    .circle3 {
+        opacity: 0.8;
+    }
+
+    .circle a {
+        text-decoration: none;
+        color: #1d2087;
+    }
+
+    .circle h2 {
+        font-size: 60px;
+    }
+
+        .circle h2 small {
+            color: #1d2087;
+        }
+
+    .circle p {
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    .failed {
+        background-color: red;
+    }
+</style>
+
+<section class="dashboard-counts no-padding-bottom" style="text-align: center">
+
+    <div class="container-fluid">      
+        <div class="row bg-white has-shadow">
+
+            <!-- Item -->
+            <div class="col-xl-4 col-sm-6">
+
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-blue"><i class="fa fa-hourglass-1"></i></div>
+                    <div class="title">
+                        <span>Total<br>Checked</span>
+
+                    </div>
+                    <div class="number"><strong id="checked"></strong></div>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="col-xl-4 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-red"><i class="fa fa-hourglass-2"></i></div>
+                    <div class="title">
+                        <span>Batch<br>Created</span>
+
+                    </div>
+                    <div class="number"><strong id="created"></strong></div>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="col-xl-4 col-sm-6">
+                <div class="item d-flex align-items-center">
+                    <div class="icon bg-green"><i class="fa fa-check"></i></div>
+                    <div class="title">
+                        <span>Waiting<br></span>
+                        @*<div class="progress">
+                                <div role="progressbar" style="width: 40%; height: 4px;" aria-valuenow="{#val.value}" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-green"></div>
+                            </div>*@
+                    </div>
+                    <div class="number"><strong id="waiting"></strong></div>
+                </div>
+            </div>
+            <!-- Item -->
+       
+        </div>
+    </div>
+</section>
+<section class="forms" id="divForm">
+    <div class="container-fluid">
+        <div class="row">
+            @*<div class="col-sm-2">
+                <div class="circle">
+                    <a href=""><h2 id="idCount"></h2><small>Components</small><p>Issued</p></a>
+                </div>
+            </div>*@
+
+            <!-- Horizontal Form-->
+            <div class="col-lg-6" id="divCard">
+                <div class="card" style="height: 300px; border: 1px solid #26759C; ">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center" style="background-color: #26759C; font-weight: normal; color: white;text-align: center ">
+                        <h3 class="h4">Scan IMEI Code</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-horizontal">
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 form-control-label">Scan Imei</label>
+                                <div class="col-sm-7">
+                                    <input id="txtImei" style="height: 100px;" type="text" placeholder="Scan IMEI" class="form-control form-control-success">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6" id="divCard">
+                <div class="card" style="height: 300px; border: 1px solid #FF5733;">
+                    <div class="card-close">
+
+                    </div>
+                    <div class="card-header d-flex align-items-center" style="background-color: #FF5733; font-weight: normal; color: white; text-align: center; ">
+                        <h3 class="h4">Generated Batch</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <table class="table table-bordered table-hover">
+                            <thead style="text-align: center">
+                                <tr>
+                                    <th>
+                                        Serial
+
+                                    </th>
+                                    <th>
+                                        Batch No
+
+                                    </th>
+                                    
+
+                                </tr>
+                            </thead>
+                            <tbody class="tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link href="~/css/jquery-ui-1.12.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/jquery-ui-1.12.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        CountPackagingBatchInfo();
+        $("#txtImei").focus();
+        
+        $('#txtImei').keydown(function () {
+            
+            if(this.value.length==15)
+
+            InsertPackagingBatch(this.value);
+        });
+
+        
+    });
+    
+
+   
+      
+    
+
+
+    function InsertPackagingBatch(imei) {
+        debugger;
+       
+        $.ajax({
+            url: '  @Url.Action("GeneratePackagingImeiBatch", "Production")',
+            type: 'Post',
+            data: JSON.stringify({ imeiCode: imei }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+                if (result.IsSuccess) {
+
+                    iziToast.success({
+                        timeout: 1000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Success',
+                        message: 'Saved Successfully'
+                    });
+
+                    CountPackagingBatchInfo();
+
+                    $("#divForm").removeClass("failed");
+                    $('#txtImei').val('');
+                    $('#txtImei').focus();
+                    location.reload();
+                    return true;
+
+                } else {
+
+
+                    iziToast.error({
+                        timeout: 5000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning! ',
+                        message: result.Message,
+                        backgroundColor: '#E70F0F',
+                        theme: 'dark', // dark
+                        zindex: 999,
+                        progressBarColor: '#091B2B',
+                        titleSize: 15,
+                        messageColor: '#FDFEFE',
+                        messageSize: 15,
+                    });
+                    $('#txtImei').val('');
+                    $("#divForm").addClass("failed");
+                    $('#txtImei').val('');
+                    // window.location = '@Url.Action("LogOut", "Account")';
+                    return false;
+
+
+                }
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+
+                //return false;
+            }
+
+
+        });
+
+        $('#txtMaterialName').val('');
+        //location.reload();
+    }
+    
+
+    function CountPackagingBatchInfo() {
+
+        $.ajax({
+            url: '  @Url.Action("CountPackagingBatchInfo", "Production")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+               
+                if (result.length == 0) {
+                   // $('#idCount').text('0');
+                    $('#checked').text('0');
+                    $('#created').text('0');
+                    $('#waiting').text('0');
+                    
+                }
+                if (result.length > 0) {
+                   // $('#idCount').text(result[0].totalPackagingBatchCount);
+                    $('#checked').text(result[0].totalPackagingBatchCount);
+                    $('#created').text(result[0].totalBatchCreated);
+                    $('#waiting').text(result[0].waitingforbatch);
+                
+                }
+                
+                if (result[0].batchName.length > 0) {
+                    
+                    var html = '';
+                $.each(result[1].batchName, function (index, item) {
+                        
+
+                    var serial = index + 1;
+                    html += '<tr>';
+                    html += '<td style="text-align:center">' + serial + '</td>';
+                    html += '<td style="text-align:center">' + item + '</td>';
+                        
+
+
+                    html += '</tr>';
+
+                });
+                $('.tbody').html(html);
+                }
+
+
+
+
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+
+       
+    }
+
+
+</script>

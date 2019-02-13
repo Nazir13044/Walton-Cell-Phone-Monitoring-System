@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CellPhoneProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ProjectMasters">
+          <Key>
+            <PropertyRef Name="ProjectMasterId" />
+          </Key>
+          <Property Name="ProjectMasterId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectTypeId" Type="bigint" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar(max)" />
+          <Property Name="SupplierId" Type="bigint" />
+          <Property Name="SupplierName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SupplierModelName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NumberOfSample" Type="int" />
+          <Property Name="ApproxProjectFinishDate" Type="datetime" />
+          <Property Name="SupplierTrustLevel" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsScreenTestComplete" Type="bit" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ApproxProjectOrderDate" Type="datetime2" Precision="7" />
+          <Property Name="ApproxShipmentDate" Type="datetime2" Precision="7" />
+          <Property Name="IsNew" Type="bit" />
+          <Property Name="IsProjectManagerAssigned" Type="bit" />
+          <Property Name="ProjectType" Type="nvarchar(max)" />
+          <Property Name="IsReorder" Type="bit" />
+          <Property Name="OsName" Type="nvarchar(max)" />
+          <Property Name="OsVersion" Type="nvarchar(max)" />
+          <Property Name="DisplaySize" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DisplayName" Type="nvarchar(max)" />
+          <Property Name="ProcessorName" Type="nvarchar(max)" />
+          <Property Name="ProcessorClock" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Chipset" Type="nvarchar(max)" />
+          <Property Name="FrontCamera" Type="nvarchar(max)" />
+          <Property Name="BackCamera" Type="nvarchar(max)" />
+          <Property Name="Ram" Type="nvarchar(max)" />
+          <Property Name="Rom" Type="nvarchar(max)" />
+          <Property Name="Battery" Type="nvarchar(max)" />
+          <Property Name="SimSlotNumber" Type="int" />
+          <Property Name="SlotType" Type="nvarchar(max)" />
+          <Property Name="ProjectStatus" Type="nvarchar(max)" />
+          <Property Name="RevisedStatus" Type="nvarchar(max)" />
+          <Property Name="ManagentComment" Type="nvarchar(max)" />
+          <Property Name="ApproximatePrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GivenSampleToScreening" Type="bigint" />
+          <Property Name="FinalPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Added" Type="bigint" />
+          <Property Name="AddedDate" Type="datetime2" Precision="7" />
+          <Property Name="Updated" Type="bigint" />
+          <Property Name="UpdatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ProjectNameForScreening" Type="nvarchar(max)" />
+          <Property Name="SourcingType" Type="nvarchar(max)" />
+          <Property Name="ScreeningCommentFromCommercial" Type="nvarchar(max)" />
+          <Property Name="PcbaVendorName" Type="nvarchar(max)" />
+          <Property Name="PcbaFinalVendor" Type="nvarchar(max)" />
+          <Property Name="DisplayResulution" Type="nvarchar(max)" />
+          <Property Name="DisplaySpeciality" Type="nvarchar(max)" />
+          <Property Name="TpVendor" Type="nvarchar(max)" />
+          <Property Name="TpFinalVendor" Type="nvarchar(max)" />
+          <Property Name="LcdVendor" Type="nvarchar(max)" />
+          <Property Name="LcdFinalVendor" Type="nvarchar(max)" />
+          <Property Name="HousingVendorName" Type="nvarchar(max)" />
+          <Property Name="HousingFinalVendorName" Type="nvarchar(max)" />
+          <Property Name="BackCam" Type="nvarchar(max)" />
+          <Property Name="BackCamAutoFocus" Type="nvarchar(max)" />
+          <Property Name="BackCamSensor" Type="nvarchar(max)" />
+          <Property Name="BackCamBsi" Type="nvarchar(max)" />
+          <Property Name="FrontCam" Type="nvarchar(max)" />
+          <Property Name="FrontCamAutoFocus" Type="nvarchar(max)" />
+          <Property Name="FrontCamSensor" Type="nvarchar(max)" />
+          <Property Name="FrontCamBsi" Type="nvarchar(max)" />
+          <Property Name="CpuName" Type="nvarchar(max)" />
+          <Property Name="ChipsetName" Type="nvarchar(max)" />
+          <Property Name="ChipsetFrequency" Type="nvarchar(max)" />
+          <Property Name="ChipsetBit" Type="int" />
+          <Property Name="ChipsetCore" Type="nvarchar(max)" />
+          <Property Name="MemoryBrandName" Type="nvarchar(max)" />
+          <Property Name="Gsensor" Type="bit" />
+          <Property Name="Psensor" Type="bit" />
+          <Property Name="Lsensor" Type="bit" />
+          <Property Name="Compass" Type="bit" />
+          <Property Name="Gyroscope" Type="bit" />
+          <Property Name="HallSensor" Type="bit" />
+          <Property Name="Otg" Type="bit" />
+          <Property Name="Gps" Type="bit" />
+          <Property Name="SpecialSensor" Type="nvarchar(max)" />
+          <Property Name="EarphoneConfirmPrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EarphoneSupplierName" Type="nvarchar(max)" />
+          <Property Name="ChargerRating" Type="nvarchar(max)" />
+          <Property Name="ChargerSupplierName" Type="nvarchar(max)" />
+          <Property Name="ThreeLayerScreenProtector" Type="bit" />
+          <Property Name="BatteryCoverFinishingType" Type="nvarchar(max)" />
+          <Property Name="BatteryCoverLogoType" Type="nvarchar(max)" />
+          <Property Name="OtgCable" Type="bit" />
+          <Property Name="FlashLight" Type="bit" />
+          <Property Name="SecondGen" Type="nvarchar(max)" />
+          <Property Name="ThirdGen" Type="nvarchar(max)" />
+          <Property Name="FourthGenFdd" Type="nvarchar(max)" />
+          <Property Name="FourthGenTdd" Type="nvarchar(max)" />
+          <Property Name="Cdma" Type="nvarchar(max)" />
+          <Property Name="BatteryRating" Type="nvarchar(max)" />
+          <Property Name="BatteryType" Type="nvarchar(max)" />
+          <Property Name="BatterySupplierName" Type="nvarchar(max)" />
+          <Property Name="BateeryPossibleSupplierNames" Type="nvarchar(max)" />
+          <Property Name="OrderQuantity" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Color" Type="nvarchar(max)" />
+          <Property Name="OrderNuber" Type="int" />
+          <Property Name="ApprovalReviewRemarks" Type="nvarchar(max)" />
+          <Property Name="InitialApprovalDate" Type="datetime2" Precision="7" />
+          <Property Name="FinalApprovalDate" Type="datetime2" Precision="7" />
+          <Property Name="ScreeningIssueReviewDate" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityContainer Name="CellPhoneProjectModelStoreContainer">
+          <EntitySet Name="ProjectMasters" EntityType="Self.ProjectMasters" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CellPhoneProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ProjectMaster">
+          <Key>
+            <PropertyRef Name="ProjectMasterId" />
+          </Key>
+          <Property Name="ProjectMasterId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectTypeId" Type="Int64" Nullable="false" />
+          <Property Name="ProjectName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierId" Type="Int64" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SupplierModelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NumberOfSample" Type="Int32" />
+          <Property Name="ApproxProjectFinishDate" Type="DateTime" Precision="3" />
+          <Property Name="SupplierTrustLevel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsScreenTestComplete" Type="Boolean" />
+          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ApproxProjectOrderDate" Type="DateTime" Precision="7" />
+          <Property Name="ApproxShipmentDate" Type="DateTime" Precision="7" />
+          <Property Name="IsNew" Type="Boolean" />
+          <Property Name="IsProjectManagerAssigned" Type="Boolean" />
+          <Property Name="ProjectType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsReorder" Type="Boolean" />
+          <Property Name="OsName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OsVersion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisplaySize" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessorClock" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Chipset" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FrontCamera" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BackCamera" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ram" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Battery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SimSlotNumber" Type="Int32" />
+          <Property Name="SlotType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RevisedStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ManagentComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApproximatePrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GivenSampleToScreening" Type="Int64" />
+          <Property Name="FinalPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Added" Type="Int64" />
+          <Property Name="AddedDate" Type="DateTime" Precision="7" />
+          <Property Name="Updated" Type="Int64" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ProjectNameForScreening" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SourcingType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ScreeningCommentFromCommercial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PcbaVendorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PcbaFinalVendor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayResulution" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisplaySpeciality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TpVendor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TpFinalVendor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LcdVendor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LcdFinalVendor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HousingVendorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HousingFinalVendorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BackCam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BackCamAutoFocus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BackCamSensor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BackCamBsi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FrontCam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FrontCamAutoFocus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FrontCamSensor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FrontCamBsi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CpuName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChipsetName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChipsetFrequency" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChipsetBit" Type="Int32" />
+          <Property Name="ChipsetCore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MemoryBrandName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gsensor" Type="Boolean" />
+          <Property Name="Psensor" Type="Boolean" />
+          <Property Name="Lsensor" Type="Boolean" />
+          <Property Name="Compass" Type="Boolean" />
+          <Property Name="Gyroscope" Type="Boolean" />
+          <Property Name="HallSensor" Type="Boolean" />
+          <Property Name="Otg" Type="Boolean" />
+          <Property Name="Gps" Type="Boolean" />
+          <Property Name="SpecialSensor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EarphoneConfirmPrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EarphoneSupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChargerRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChargerSupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThreeLayerScreenProtector" Type="Boolean" />
+          <Property Name="BatteryCoverFinishingType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BatteryCoverLogoType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtgCable" Type="Boolean" />
+          <Property Name="FlashLight" Type="Boolean" />
+          <Property Name="SecondGen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThirdGen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FourthGenFdd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FourthGenTdd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cdma" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BatteryRating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BatteryType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BatterySupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BateeryPossibleSupplierNames" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderQuantity" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderNuber" Type="Int32" />
+          <Property Name="ApprovalReviewRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InitialApprovalDate" Type="DateTime" Precision="7" />
+          <Property Name="FinalApprovalDate" Type="DateTime" Precision="7" />
+          <Property Name="ScreeningIssueReviewDate" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityContainer Name="WCMSCellPhoneProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ProjectMasters" EntityType="Self.ProjectMaster" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CellPhoneProjectModelStoreContainer" CdmEntityContainer="WCMSCellPhoneProjectEntities">
+          <EntitySetMapping Name="ProjectMasters">
+            <EntityTypeMapping TypeName="CellPhoneProjectModel.ProjectMaster">
+              <MappingFragment StoreEntitySet="ProjectMasters">
+                <ScalarProperty Name="ProjectMasterId" ColumnName="ProjectMasterId" />
+                <ScalarProperty Name="ProjectTypeId" ColumnName="ProjectTypeId" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierModelName" ColumnName="SupplierModelName" />
+                <ScalarProperty Name="NumberOfSample" ColumnName="NumberOfSample" />
+                <ScalarProperty Name="ApproxProjectFinishDate" ColumnName="ApproxProjectFinishDate" />
+                <ScalarProperty Name="SupplierTrustLevel" ColumnName="SupplierTrustLevel" />
+                <ScalarProperty Name="IsScreenTestComplete" ColumnName="IsScreenTestComplete" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ApproxProjectOrderDate" ColumnName="ApproxProjectOrderDate" />
+                <ScalarProperty Name="ApproxShipmentDate" ColumnName="ApproxShipmentDate" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="IsProjectManagerAssigned" ColumnName="IsProjectManagerAssigned" />
+                <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+                <ScalarProperty Name="IsReorder" ColumnName="IsReorder" />
+                <ScalarProperty Name="OsName" ColumnName="OsName" />
+                <ScalarProperty Name="OsVersion" ColumnName="OsVersion" />
+                <ScalarProperty Name="DisplaySize" ColumnName="DisplaySize" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="ProcessorName" ColumnName="ProcessorName" />
+                <ScalarProperty Name="ProcessorClock" ColumnName="ProcessorClock" />
+                <ScalarProperty Name="Chipset" ColumnName="Chipset" />
+                <ScalarProperty Name="FrontCamera" ColumnName="FrontCamera" />
+                <ScalarProperty Name="BackCamera" ColumnName="BackCamera" />
+                <ScalarProperty Name="Ram" ColumnName="Ram" />
+                <ScalarProperty Name="Rom" ColumnName="Rom" />
+                <ScalarProperty Name="Battery" ColumnName="Battery" />
+                <ScalarProperty Name="SimSlotNumber" ColumnName="SimSlotNumber" />
+                <ScalarProperty Name="SlotType" ColumnName="SlotType" />
+                <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+                <ScalarProperty Name="RevisedStatus" ColumnName="RevisedStatus" />
+                <ScalarProperty Name="ManagentComment" ColumnName="ManagentComment" />
+                <ScalarProperty Name="ApproximatePrice" ColumnName="ApproximatePrice" />
+                <ScalarProperty Name="GivenSampleToScreening" ColumnName="GivenSampleToScreening" />
+                <ScalarProperty Name="FinalPrice" ColumnName="FinalPrice" />
+                <ScalarProperty Name="Added" ColumnName="Added" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="ProjectNameForScreening" ColumnName="ProjectNameForScreening" />
+                <ScalarProperty Name="SourcingType" ColumnName="SourcingType" />
+                <ScalarProperty Name="ScreeningCommentFromCommercial" ColumnName="ScreeningCommentFromCommercial" />
+                <ScalarProperty Name="PcbaVendorName" ColumnName="PcbaVendorName" />
+                <ScalarProperty Name="PcbaFinalVendor" ColumnName="PcbaFinalVendor" />
+                <ScalarProperty Name="DisplayResulution" ColumnName="DisplayResulution" />
+                <ScalarProperty Name="DisplaySpeciality" ColumnName="DisplaySpeciality" />
+                <ScalarProperty Name="TpVendor" ColumnName="TpVendor" />
+                <ScalarProperty Name="TpFinalVendor" ColumnName="TpFinalVendor" />
+                <ScalarProperty Name="LcdVendor" ColumnName="LcdVendor" />
+                <ScalarProperty Name="LcdFinalVendor" ColumnName="LcdFinalVendor" />
+                <ScalarProperty Name="HousingVendorName" ColumnName="HousingVendorName" />
+                <ScalarProperty Name="HousingFinalVendorName" ColumnName="HousingFinalVendorName" />
+                <ScalarProperty Name="BackCam" ColumnName="BackCam" />
+                <ScalarProperty Name="BackCamAutoFocus" ColumnName="BackCamAutoFocus" />
+                <ScalarProperty Name="BackCamSensor" ColumnName="BackCamSensor" />
+                <ScalarProperty Name="BackCamBsi" ColumnName="BackCamBsi" />
+                <ScalarProperty Name="FrontCam" ColumnName="FrontCam" />
+                <ScalarProperty Name="FrontCamAutoFocus" ColumnName="FrontCamAutoFocus" />
+                <ScalarProperty Name="FrontCamSensor" ColumnName="FrontCamSensor" />
+                <ScalarProperty Name="FrontCamBsi" ColumnName="FrontCamBsi" />
+                <ScalarProperty Name="CpuName" ColumnName="CpuName" />
+                <ScalarProperty Name="ChipsetName" ColumnName="ChipsetName" />
+                <ScalarProperty Name="ChipsetFrequency" ColumnName="ChipsetFrequency" />
+                <ScalarProperty Name="ChipsetBit" ColumnName="ChipsetBit" />
+                <ScalarProperty Name="ChipsetCore" ColumnName="ChipsetCore" />
+                <ScalarProperty Name="MemoryBrandName" ColumnName="MemoryBrandName" />
+                <ScalarProperty Name="Gsensor" ColumnName="Gsensor" />
+                <ScalarProperty Name="Psensor" ColumnName="Psensor" />
+                <ScalarProperty Name="Lsensor" ColumnName="Lsensor" />
+                <ScalarProperty Name="Compass" ColumnName="Compass" />
+                <ScalarProperty Name="Gyroscope" ColumnName="Gyroscope" />
+                <ScalarProperty Name="HallSensor" ColumnName="HallSensor" />
+                <ScalarProperty Name="Otg" ColumnName="Otg" />
+                <ScalarProperty Name="Gps" ColumnName="Gps" />
+                <ScalarProperty Name="SpecialSensor" ColumnName="SpecialSensor" />
+                <ScalarProperty Name="EarphoneConfirmPrice" ColumnName="EarphoneConfirmPrice" />
+                <ScalarProperty Name="EarphoneSupplierName" ColumnName="EarphoneSupplierName" />
+                <ScalarProperty Name="ChargerRating" ColumnName="ChargerRating" />
+                <ScalarProperty Name="ChargerSupplierName" ColumnName="ChargerSupplierName" />
+                <ScalarProperty Name="ThreeLayerScreenProtector" ColumnName="ThreeLayerScreenProtector" />
+                <ScalarProperty Name="BatteryCoverFinishingType" ColumnName="BatteryCoverFinishingType" />
+                <ScalarProperty Name="BatteryCoverLogoType" ColumnName="BatteryCoverLogoType" />
+                <ScalarProperty Name="OtgCable" ColumnName="OtgCable" />
+                <ScalarProperty Name="FlashLight" ColumnName="FlashLight" />
+                <ScalarProperty Name="SecondGen" ColumnName="SecondGen" />
+                <ScalarProperty Name="ThirdGen" ColumnName="ThirdGen" />
+                <ScalarProperty Name="FourthGenFdd" ColumnName="FourthGenFdd" />
+                <ScalarProperty Name="FourthGenTdd" ColumnName="FourthGenTdd" />
+                <ScalarProperty Name="Cdma" ColumnName="Cdma" />
+                <ScalarProperty Name="BatteryRating" ColumnName="BatteryRating" />
+                <ScalarProperty Name="BatteryType" ColumnName="BatteryType" />
+                <ScalarProperty Name="BatterySupplierName" ColumnName="BatterySupplierName" />
+                <ScalarProperty Name="BateeryPossibleSupplierNames" ColumnName="BateeryPossibleSupplierNames" />
+                <ScalarProperty Name="OrderQuantity" ColumnName="OrderQuantity" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="OrderNuber" ColumnName="OrderNuber" />
+                <ScalarProperty Name="ApprovalReviewRemarks" ColumnName="ApprovalReviewRemarks" />
+                <ScalarProperty Name="InitialApprovalDate" ColumnName="InitialApprovalDate" />
+                <ScalarProperty Name="FinalApprovalDate" ColumnName="FinalApprovalDate" />
+                <ScalarProperty Name="ScreeningIssueReviewDate" ColumnName="ScreeningIssueReviewDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

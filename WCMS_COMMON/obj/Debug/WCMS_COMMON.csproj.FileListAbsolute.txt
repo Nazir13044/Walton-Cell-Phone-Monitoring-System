@@ -1,0 +1,24 @@
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.pdb
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.csprojResolveAssemblyReference.cache
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.dll
+c:\users\swrnd\documents\visual studio 2013\Projects\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.dll.config
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.pdb
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.dll
+D:\New Projects\WCMS\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.dll.config
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.pdb
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.dll
+D:\New Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.dll.config
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\WCMS_COMMON.pdb
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.csprojResolveAssemblyReference.cache
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.dll
+D:\Walton Projects\WCMS-GITLAB\WCMS\WCMS_MAIN\WCMS_COMMON\obj\Debug\WCMS_COMMON.pdb

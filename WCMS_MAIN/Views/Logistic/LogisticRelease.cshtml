@@ -1,0 +1,468 @@
+﻿@{
+    ViewBag.Title = "LogisticRelease";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    h5 {
+        font-size: 1.28571429em;
+        font-weight: 700;
+        line-height: 1.2857em;
+        margin: 0;
+    }
+
+    .card {
+        font-size: 1em;
+        overflow: hidden;
+        padding: 0;
+        border: none;
+        border-radius: .28571429rem;
+        box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    }
+
+    .card-block {
+        font-size: 1em;
+        position: relative;
+        margin: 0;
+        padding: 1em;
+        border: none;
+        border-top: 1px solid rgba(34, 36, 38, .1);
+        box-shadow: none;
+    }
+
+    .card-img-top {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .card-title {
+        font-size: 1.28571429em;
+        font-weight: 700;
+        line-height: 1.2857em;
+    }
+
+    .card-text {
+        clear: both;
+        margin-top: .5em;
+        color: rgba(0, 0, 0, .68);
+        text-align: center;
+    }
+
+    .card-footer {
+        font-size: 1em;
+        position: static;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        padding: .75em 1em;
+        color: rgba(0, 0, 0, .4);
+        border-top: 1px solid rgba(0, 0, 0, .05) !important;
+        background: #fff;
+    }
+    h2 {
+        color: white;
+        font-size: 50px;
+    }
+</style>
+<div class="container" style="margin-bottom: 0;">
+    <div class="row mb-5">
+
+
+        <div class="col-sm-6 col-md-6 col-lg-6 mt-6">
+            <div class="card card-inverse card-info" style="background-color: #23323B">
+
+                <div class="card-block" style="text-align: center;">
+
+                    <h2 class="card-title">Total Received</h2>
+                    <div class="card-text">
+                        <span id="received" style="font-size:40px;color:white;font-weight: bold "></span>
+                    </div>
+                </div>
+                @*<div class="card-footer">
+
+                </div>*@
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6 mt-6">
+            <div class="card card-inverse card-info" style="background-color: #0E0A19">
+
+                <div class="card-block" style="text-align: center;">
+
+                    <h2 class=" card-title">
+                    Total Sent</h2>
+                    <div class="card-text">
+                        <span id="sent" style="font-size: 40px; color: white; font-weight: bold"></span>
+                    </div>
+                </div>
+                @*<div class="card-footer">
+
+                </div>*@
+            </div>
+        </div>
+        @*<div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card card-inverse card-info">
+
+                <div class="card-block">
+
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="card-text">
+                        234234
+                    </div>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card card-inverse card-info">
+
+                <div class="card-block">
+
+                    <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                    <div class="card-text">
+                        234234234
+                    </div>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>*@
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-6" style="margin-top: 0;">
+            <div class="card" style="height: 300px; border: 1px solid #431D0B; font-weight: normal; font-style: normal; ">
+
+                <div class="card-header d-flex align-items-center" style="background-color: #431D0B; font-weight: normal; font-style: normal; color: white; text-align: center; ">
+                    <h3 class="h4">Search product to send</h3>
+                </div>
+                <div class="card-body">
+
+                    <div class="form-horizontal" style="margin-top: 30px;">
+                        <div class="form-group row" id="divSingleCode">
+                            <label class="col-sm-4 form-control-label">Scan Box Code</label>
+                            <div class="col-sm-8" id="">
+
+                                <input id="txtBoxCode" type="text" placeholder="Scan Master Box Code" required="" class="form-control form-control-success">
+                            </div>
+
+
+                        </div>
+                        <div class="form-group row" id="divSingleCode">
+                            <div class="col-sm-8 offset-sm-4" id="">
+
+                                <button class="btn btn-primary" id="btnSaveEmployeeLine" onclick="location.reload();"> Clear All</button>
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6" id="divtblData" style="display: none">
+            <div class="card" style="height: 300px; border: 1px solid #6826AE; font-style: normal; font-weight: normal; ">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center" style="background-color: #6826AE; font-style: normal; font-weight: normal; color: white; text-align: center; ">
+                    <h3 class="h4">Result <span id="batchCount" style="text-align: center;margin-left: 50px;"></span></h3>
+                </div>
+                <div class="card-body" style="overflow: auto">
+                    <div class="form-group row" id="divBatchFailed">
+
+                        <div class="col-sm-7" id="">
+                            <button class="btn btn-primary" id="btnSend" style="width: 200px;" onclick="">Send All Product</button>
+                        </div>
+
+
+                    </div>
+
+                    <table class="table table-responsive-lg header-fixed table-striped table-bordered table-condensed table-hover dataTable no-footer " id="tblComponent">
+                        <thead class="" style="background-color: #054C32; font-weight: normal; font-style: normal; color: white; font-size: 12px; ">
+                            <tr>
+                                <th class="text-center">BatchNumber</th>
+                                <th class="text-center">IMEI-1</th>
+                                <th class="text-center">IMEI-2</th>
+                                <th class="text-center">Color</th>
+                                <th class="text-center">Model</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 10px;"></tbody>
+                    </table>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<link href="~/css/iziToast.min.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/js/vendor/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/js/vendor/JQueryEasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link href="~/css/jquery-ui-1.12.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/vendor/jquery.easyui.min.js"></script>
+<script src="~/js/jquery-ui-1.12.js"></script>
+<script src="~/js/iziToast.min.js"></script>
+<script src="~/js/vendor/JqueryChoosen/chosen.jquery.min.js"></script>
+<script>
+    $(function () {
+
+        LogisticSentAndReceivedListCount();
+
+
+        $("#txtBoxCode").focus();
+        $('#txtBoxCode').keydown(function () {
+            debugger;
+            var lastTwoDigits = this.value.slice(-2);
+            if (lastTwoDigits.toLocaleLowerCase() == '-y' || lastTwoDigits.toLocaleLowerCase() == '-n') {
+
+
+                var boxCode = this.value.slice(0, -2);
+
+                getLogisticsList(boxCode);
+            }
+        });
+        
+        function getLogisticsList(boxCode) {
+            
+            debugger;
+            // var mobileCode = codeValue.slice(0, -2);
+            // var status = (codeValue.slice(-1)).toLowerCase();
+
+            $.ajax({
+                url: " @Url.Action("GetLogisticsitems", "Logistic")",
+                type: 'Post',
+                data: JSON.stringify({ boxCode: boxCode }),
+            dataType: 'json',
+            async: true,
+            contentType: 'application/json',
+            success: function(data) {
+                console.log(data);
+                
+                if (data.Id == "1") {
+                    
+                    iziToast.warning({
+                        timeout: 4000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: data.Message
+                    });
+
+                    $('#tblComponent tbody').empty();
+                    $('#txtBoxCode').val('');
+                    $('#txtBoxCode').focus();
+                    $('#divtblData').hide();
+                    $('#tblComponent tbody').empty();
+                    return false;
+                }
+
+                
+                if (data.length > 0) {
+                    $('#divtblData').show();
+                    $('#tblComponent tbody').empty();
+
+                    $.each(data, function(index, itemData) {
+                        //new logic
+
+
+                        var row = "<tr class='active' style='font-size=10px;height:3px;'>" +
+                            "<td style='height:3px;' class='text-center'>" + itemData.BoxCode + "</td>" +
+                            "<td style='height:3px;font-size=10px' class='text-center'>" + itemData.Imei1 + "</td>" +
+                            "<td style='height:3px;font-size=10px' class='text-center'>" + itemData.Imei2 + "</td>" +
+                            "<td style='height:3px;font-size=10px' class='text-center'>" + itemData.Color + "</td>" +
+                            "<td style='height:3px;font-size=10px' class='text-center'>" + itemData.Model + "</td>" +
+                            "</tr>";
+                        $('#tblComponent tbody').append(row);
+                    });
+                    $('#divCheckBox').show();
+                    $('#batchCount').text('( Total Items: '+data.length+')');
+                    $('#divtblData').show();
+                    
+                    $('#txtBoxCode').val('');
+                    $('#txtBoxCode').focus();
+               
+                    
+                } 
+              
+                else {
+                    iziToast.warning({
+                        timeout: 4000,
+                        imageWidth: 150,
+                        position: 'center',
+                        title: 'Warning',
+                        message: data.Message
+                    });
+
+                    $('#tblComponent tbody').empty();
+                    $('#txtBoxCode').val('');
+                    $('#txtBoxCode').focus();
+                   $('#divtblData').hide();
+                    return false;
+                }
+
+
+            },
+            error: function(data, textStatus, jqXHR) {
+
+            }
+        });
+
+        }
+        
+
+        //Receive items event
+        $("#btnSend").click(function () {
+
+            var rowCount = $('#tblComponent >tbody >tr').length;
+            
+
+            if (rowCount === 0) {                
+                iziToast.error({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Error',
+                    message:'No Data to send'
+                });
+                $('#txtBoxCode').val('');
+                $('#txtBoxCode').focus();
+            } else {
+                
+                
+                var logisticsSentItemses = [];
+
+
+                $('#tblComponent tbody').find("tr").each(function (row, tr) {
+
+                    logisticsSentItemses.push({
+
+                        BoxCode: $(tr).find('td:eq(0)').text().trim(),
+                        Imei1: $(tr).find('td:eq(1)').text().trim(),
+                        Imei2: $(tr).find('td:eq(2)').text().trim(),
+                        Color: $(tr).find('td:eq(3)').text(),
+                        Model: $(tr).find('td:eq(4)').text(),
+                    });
+                });
+
+
+                $.ajax({
+                    url: ' @Url.Action("LogisticItemsSend", "Logistic")',
+                    type: 'Post',
+                    data: JSON.stringify({ logisticsSentItemses: logisticsSentItemses }),
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    success: function (result) {
+
+                        if (result.IsSuccess) {
+                            iziToast.success({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Success',
+                                message: 'Send Successfully'
+                            });
+
+                            $('#tblComponent tbody').empty();
+                            $("#tblRow").hide();
+                             $("#divtblData").hide();
+                            $('#txtBoxCode').val('');
+                            $('#txtBoxCode').focus();
+                            //CountLogisticsData();
+                            LogisticSentAndReceivedListCount();
+                            return true;
+
+                        }
+                        else if (result.Id == "0") {
+                            window.location = '@Url.Action("LogOut", "Account")';
+
+                        }
+
+
+                        else {
+                            iziToast.error({
+                                timeout: 2000,
+                                imageWidth: 150,
+                                position: 'center',
+                                title: 'Error',
+                                message: result.Message
+                            });
+                        
+                            $('#txtBoxCode').val('');
+                            $('#txtBoxCode').focus();
+                        }
+
+                    },
+                    error: function (result, textStatus, jqXHR) {
+                        iziToast.error({
+                            timeout: 2000,
+                            imageWidth: 150,
+                            position: 'center',
+                            title: 'Error',
+                            message: result.Message
+                        });
+
+                        //return false;
+                    }
+                });
+            }
+
+            });
+           
+
+
+
+
+
+
+    });
+    
+
+
+    function LogisticSentAndReceivedListCount() {
+
+
+        $.ajax({
+            url: '  @Url.Action("LogisticSentAndReceivedListCount", "Logistic")',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function (result) {
+
+                //alert(result[0]);
+               // console.log(result[0]);
+                $("#received").text(result[0]);
+                $("#sent").text(result[1]);
+            },
+            error: function (result, textStatus, jqXHR) {
+                //toastr.error(result.Message);
+                // alert("Error");
+                return false;
+            }
+        });
+    }
+
+</script>
